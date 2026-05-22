@@ -21,7 +21,50 @@ SMALL_CHUNK_MAX_CHARS = 500
 TABLE_INTRO_SUMMARY_RE = re.compile(r"^\s*the following table\b[\s:,-]*(.*)$", re.IGNORECASE)
 
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "openai/gpt-4o-mini")
+FINANTIAL_TABLE_PATTERN = r"^(.+?)\s+([\$\d,\(\)]+)\s+([\$\d,\(\)]+)(?:\s+([\$\d,\(\)]+))?$"
 
+
+def _preprocess_line(line: str) -> str:
+    # Fix 1: glued adjacent parenthesized numbers
+    # '(6,015)(5,896)' → '(6,015) (5,896)'
+    line = re.sub(r'\)\s*(\$?\()', r') \1', line)
+    
+    # Fix 2: label glued directly to first value (letter→digit/$/()
+    # 'Deferred income tax assets4,956' → 'Deferred income tax assets 4,956'
+    # 'Net income (loss)(926)'          → 'Net income (loss) (926)'
+    line = re.sub(r'([a-zA-Z])\s*(\$?\(?\d)', r'\1 \2', line)
+    
+    return line
+def parse_financial_table(line):
+    """
+    Parses lines like:
+    'Total revenues26,775 27,251 27,938'
+    'Net income (loss)3,097 (926)3,878'
+    into {label: [val_2025, val_2024, val_2023]}
+    """
+    # Match: any text label followed by numbers (with optional parens for negatives)
+    
+    line = line.strip()
+    line = _preprocess_line(line)     
+    match = re.match(FINANTIAL_TABLE_PATTERN, line)
+    if match:
+        label = match.group(1).strip()
+        vals  = [parse_num(match.group(i)) for i in [2, 3, 4] if match.group(i)]
+        return label + " | " + " | ".join(str(v) for v in vals)
+    else:
+        return line.strip()
+
+def parse_num(s):
+    if s is None: return None
+    s = s.replace("$", "").replace(",", "").strip()
+    if s.startswith("(") and s.endswith(")"):
+        inner = s[1:-1].strip()
+        if re.fullmatch(r'-?[\d.]+', inner):   # ← guard against "6015)(5896"
+            try: return -float(inner)
+            except: return None
+        return None                             # ← malformed, skip silently
+    try: return float(s)
+    except: return None
 
 def _context_compact(ctx):
     parts = [ctx.section, ctx.subsection, ctx.subsubsection]
@@ -29,6 +72,7 @@ def _context_compact(ctx):
 
 
 def _convert_detected_lines(lines):
+    # Convert list of lines into cleaned text with normalized whitespace, while preserving line breaks.
     cleaned_lines = []
     blank_run = 0
 
@@ -115,7 +159,7 @@ def _build_table_chunk_summary(lines, labels, page_ctx):
 
     page_hint = page_ctx.to_header_str()
 
-    if has_openrouter_api_key() and (table_lines or context_lines or intro_summary):
+    if table_lines or context_lines or intro_summary:
         prompt = build_table_summary_prompt(
             page_hint=page_hint,
             context_lines=context_lines,
@@ -136,14 +180,6 @@ def _build_table_chunk_summary(lines, labels, page_ctx):
         except Exception:
             pass
 
-    if intro_summary and page_hint:
-        return _truncate_summary_words(f"{intro_summary} | {page_hint}", max_words=20)
-    if intro_summary:
-        return _truncate_summary_words(intro_summary, max_words=20)
-    if page_hint and table_lines:
-        return _truncate_summary_words(f"{page_hint} | {table_lines[0].strip()}", max_words=20)
-    if table_lines:
-        return _truncate_summary_words(table_lines[0].strip(), max_words=20)
     return _truncate_summary_words(page_hint or "Financial Table", max_words=20)
 
 
@@ -233,6 +269,7 @@ def _split_large_chunks_by_chars(chunks, max_chunk_chars):
         cur_labels = []
         cur_chars = 0
 
+        # Split chunk into parts of max_chunk_chars, trying to split on line boundaries when possible.
         for line, label in zip(working_lines, working_labels):
             line_len = max(len((line or "").strip()), 1)
 
@@ -336,6 +373,9 @@ def preprocess_section(
             continue
 
         line_kind = "table" if label == LineLabel.TABLE_ROW else "narrative"
+        if line_kind == "table":
+            line = parse_financial_table(line)
+
         if cur_lines and cur_kind != line_kind:
             flush()
 
@@ -348,6 +388,7 @@ def preprocess_section(
 
     flush()
 
+    # Post-process chunks: split large ones, merge small ones, then apply overlap. Recompute summaries only once at the end.
     chunks = _split_large_chunks_by_chars(chunks, max_chunk_chars)
     chunks = _merge_small_chunks_to_previous(chunks, SMALL_CHUNK_MAX_CHARS)
     _apply_char_overlap(chunks, chunk_overlap_chars)
