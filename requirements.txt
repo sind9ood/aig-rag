@@ -1,0 +1,12 @@
+edgartools
+chromadb
+streamlit>=1.28.0
+langchain>=0.1.0
+langchain-openai>=0.1.0
+langchain-core>=0.1.0
+rank-bm25>=0.2.2
+python-dotenv>=1.0.0
+sentence_transformers>=2.0.0
+certifi>=2024.0.0
+scikit-learn>=1.4.0
+price-parser>=0.4.0
