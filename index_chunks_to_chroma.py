@@ -1,0 +1,90 @@
+import chromadb
+from chromadb.config import Settings
+import argparse
+import json
+
+from src.indexing.filing_chunk_orchestrator import FilingChunkOrchestrator
+
+
+CHROMA_PATH = "data/chroma"
+COLLECTION_NAME = "rag"
+
+
+def build_chroma(chunks):
+    client = chromadb.PersistentClient(
+        path=CHROMA_PATH,
+        settings=Settings(anonymized_telemetry=False),
+    )
+    collection = client.get_or_create_collection(name=COLLECTION_NAME)
+
+    existing_ids = set(collection.get(include=[]).get("ids", []))
+    added = 0
+    skipped = 0
+
+    for idx, chunk in enumerate(chunks):
+        chunk_idx = chunk.get("chunk_index")
+        id_suffix = chunk_idx if chunk_idx is not None else idx
+        doc_id = f"{chunk.get('year')}_{chunk.get('section', 'unknown')}_{id_suffix}"
+        if doc_id in existing_ids:
+            skipped += 1
+            continue
+
+        summary = chunk.get("summary") or ""
+        page_context = chunk.get("page_context") or ""
+        page_section = chunk.get("page_section") or ""
+        hybrid_embedding_text = "\n".join([p for p in [summary, page_context, page_section] if p]).strip()
+        if not hybrid_embedding_text:
+            hybrid_embedding_text = chunk.get("text", "")
+        metadata = {
+            "year": int(chunk.get("year") or 0),
+            "section": chunk.get("section") or "",
+            "table_row_count": int(chunk.get("table_row_count") or 0),
+            "chunk_nature": chunk.get("chunk_nature") or "",
+            "summary": summary,
+            "page_number": int(chunk.get("page_number") or 0),
+            "page_context": page_context,
+            "page_section": page_section,
+            "page_subsection": chunk.get("page_subsection") or "",
+            "page_subsubsection": chunk.get("page_subsubsection") or "",
+            "hybrid_embedding_text": hybrid_embedding_text,
+        }
+
+        try:
+            collection.add(
+                ids=[doc_id],
+                documents=[chunk.get("text", "")],
+                metadatas=[metadata],
+            )
+            existing_ids.add(doc_id)
+            added += 1
+            if added % 50 == 0:
+                print(f"Progress: added={added}, skipped={skipped}")
+        except Exception as exc:
+            print(f"Failed to add chunk {doc_id}: {exc}")
+            raise
+
+    print(f"ChromaDB done. Added {added} chunks, skipped {skipped} existing.")
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Index chunks into ChromaDB.")
+    parser.add_argument("--max-filings", type=int, default=6)
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+
+    chunk_orchestrator = FilingChunkOrchestrator(company_cik="0000005272", filing_form="10-K")
+    chunks = chunk_orchestrator.build(max_filings=args.max_filings)
+    chunk_stats = chunk_orchestrator.summarize_chunks(chunks)
+
+    print(f"Built {len(chunks)} chunks")
+    print("Chunk stats:")
+    print(json.dumps(chunk_stats, indent=2))
+    
+    build_chroma(chunks)
+
+
+if __name__ == "__main__":
+    main()
