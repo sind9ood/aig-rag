@@ -4,3 +4,5 @@ data/aig-2023-annual-report.pdf
 data/aig-2024-annual-report.pdf
 *.pyc
 *.bin
+data/chroma/
+db/
