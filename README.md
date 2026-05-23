@@ -56,7 +56,7 @@ Start Chroma server once per session:
 
 ```bash
 source .venv/bin/activate
-chroma run --path ./data
+chroma run --path ./db
 ```
 
 ### Step A. Optional: review generated chunks before indexing

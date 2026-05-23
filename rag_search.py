@@ -43,9 +43,10 @@ def evaluate(
 
     if retrieval_review_path is not None:
         runner.write_outputs(case_results, summary, retrieval_review_path, retrieval_review_path_summary)
-        print(f"Saved evaluation retrieval review: {retrieval_review_path}")
+        import logging
+        logging.info(f"Saved evaluation retrieval review: {retrieval_review_path}")
         if retrieval_review_path_summary is not None:
-            print(f"Saved evaluation retrieval review summary: {retrieval_review_path_summary}")
+            logging.info(f"Saved evaluation retrieval review summary: {retrieval_review_path_summary}")
 
     return {**summary, "case_results": case_results}
 

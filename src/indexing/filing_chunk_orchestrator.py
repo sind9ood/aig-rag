@@ -1,11 +1,3 @@
-"""EDGAR filing loader + chunk orchestration.
-
-This module owns:
-- loading 10-K filings from EDGAR
-- building chunks by delegating to chunk_builder
-- reporting chunk statistics
-"""
-
 import os
 import statistics
 import numpy as np
@@ -23,6 +15,9 @@ TARGET_LABELS = {name: get_variable_aliases(name) for name in VARIABLE_PATHS}
 
 
 class FilingChunkOrchestrator:
+    """
+    FilingChunkOrchestrator is responsible for orchestrating the loading of EDGAR filings and building of chunks with metadata.
+    """
     def __init__(self, company_cik=None, filing_form=None, identity_email=None):
         self.target_labels = TARGET_LABELS
         self.company_cik = company_cik
@@ -46,14 +41,15 @@ class FilingChunkOrchestrator:
         chunks = []
         for filing in self.filings[:max_filings]:
             cur_obj = filing.obj()
-            print(f"Processing filing: {cur_obj.filing_date}")            
+            import logging
+            logging.info(f"Processing filing: {cur_obj.filing_date}")            
             for item in cur_obj.items:
                 section = item.lower()
-                print(f"  Processing section: {section}")
+                logging.info(f"  Processing section: {section}")
                 try:
                     source_text = cur_obj[item]
                 except Exception as exc:
-                    print(f"Skipping item {item}: unable to read source document ({exc})")
+                    logging.warning(f"Skipping item {item}: unable to read source document ({exc})")
                     continue
 
                 if source_text is None:
@@ -64,7 +60,7 @@ class FilingChunkOrchestrator:
 
                 source_text = source_text.strip()
                 if not source_text:
-                    print(f"Skipping item {item}: source document is empty")
+                    logging.warning(f"Skipping item {item}: source document is empty")
                     continue    
 
                 # preprocess into chunks with metadata

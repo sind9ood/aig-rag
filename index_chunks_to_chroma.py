@@ -1,3 +1,6 @@
+import logging
+from pathlib import Path
+
 import chromadb
 from chromadb.config import Settings
 import argparse
@@ -6,7 +9,7 @@ import json
 from src.indexing.filing_chunk_orchestrator import FilingChunkOrchestrator
 
 
-CHROMA_PATH = "data/chroma"
+CHROMA_PATH = "db"
 COLLECTION_NAME = "rag"
 
 
@@ -58,17 +61,20 @@ def build_chroma(chunks):
             existing_ids.add(doc_id)
             added += 1
             if added % 50 == 0:
-                print(f"Progress: added={added}, skipped={skipped}")
+                import logging
+                logging.info(f"Progress: added={added}, skipped={skipped}")
         except Exception as exc:
-            print(f"Failed to add chunk {doc_id}: {exc}")
+            logging.error(f"Failed to add chunk {doc_id}: {exc}")
             raise
 
-    print(f"ChromaDB done. Added {added} chunks, skipped {skipped} existing.")
+    logging.info(f"ChromaDB done. Added {added} chunks, skipped {skipped} existing.")
 
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Index chunks into ChromaDB.")
     parser.add_argument("--max-filings", type=int, default=6)
+    parser.add_argument("--max-chunk-chars", type=int, default=4000)
+    parser.add_argument("--chunk-overlap-chars", type=int, default=800)
     return parser.parse_args()
 
 
@@ -76,13 +82,21 @@ def main():
     args = parse_args()
 
     chunk_orchestrator = FilingChunkOrchestrator(company_cik="0000005272", filing_form="10-K")
-    chunks = chunk_orchestrator.build(max_filings=args.max_filings, max_chunk_chars=2000, chunk_overlap_chars=400)
+    chunks = chunk_orchestrator.build(max_filings=args.max_filings, 
+                                      max_chunk_chars=args.max_chunk_chars, 
+                                      chunk_overlap_chars=args.chunk_overlap_chars)
     chunk_stats = chunk_orchestrator.summarize_chunks(chunks)
 
-    print(f"Built {len(chunks)} chunks")
-    print("Chunk stats:")
-    print(json.dumps(chunk_stats, indent=2))
-    
+    logging.info(f"Built {len(chunks)} chunks")
+
+    logging.info("Chunk stats:")
+    logging.info(json.dumps(chunk_stats, indent=2))
+
+    # save chunk stats for reference
+    stats_path = Path(CHROMA_PATH) / "chunk_stats.json"
+    with open(stats_path, "w") as f:
+        json.dump(chunk_stats, f)
+
     build_chroma(chunks)
 
 

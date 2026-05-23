@@ -2,6 +2,10 @@ import argparse
 import json
 from pathlib import Path
 
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+
 from src.indexing.chunk_builder import preprocess_section
 from src.indexing.filing_chunk_orchestrator import FilingChunkOrchestrator
 
@@ -70,7 +74,20 @@ def main():
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"Saved session review file: {out}")
+    import logging
+    logging.info(f"Saved session review file: {out}")
+
+    # stats for chunk size distribution: use python's built-in statistics module or just compute basic percentiles manually
+    char_counts = [row["char_count"] for row in rows]
+
+    # visualize distributions: one histograms for char counts
+    plt.figure(figsize=(10, 6))
+    sns.histplot(char_counts, bins=20, kde=True)
+    plt.title("Distribution of Chunk Character Counts")
+    plt.xlabel("Character Count")
+    plt.ylabel("Frequency")
+    plt.grid(True)
+    plt.show()
 
 
 if __name__ == "__main__":

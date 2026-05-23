@@ -11,7 +11,8 @@ class TableAwareRetriever:
     def __init__(self, chunks, chroma_collection=None):
         self.chunks = [dict(chunk) for chunk in chunks]
         self.chroma_collection = chroma_collection
-        print(f"Total chunks: {len(self.chunks)}")
+        import logging
+        logging.info(f"Total chunks: {len(self.chunks)}")
 
     def _target_scope_pool(self, target_year, scope="all"):
         # filter by table nature if specified, otherwise use all chunks in the target year window
