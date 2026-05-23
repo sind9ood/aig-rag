@@ -120,7 +120,7 @@ class TableAwareRetriever:
             ranked.append(item)
         return ranked
 
-    def retrieve_configurable(
+    def retrieve(
         self,
         variable_name,
         query,

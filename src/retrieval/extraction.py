@@ -43,9 +43,9 @@ def extract_from_metadata(
     if variable_name in ["total_revenue", "shareholder_equity"]:
         response_text = call_openrouter(prompt, model=DEFAULT_MODEL)
     else:
-        response_text = call_openrouter(prompt, model=DEFAULT_MODEL)
+        response_text = call_openrouter(prompt, model=ADVANCED_MODEL)
     # call LLM to extract the variable value based on retrieved docs and examples
-    # response_text = call_openrouter(prompt, model=ADVANCED_MODEL)
+    # response_text = call_openrouter(prompt, model=DEFAULT_MODEL)
     parsed = parse_json_response(response_text)
 
     if parsed is not None:
@@ -58,6 +58,7 @@ def extract_from_metadata(
             "value": parsed_value or response_text.strip(),
             "retrieved_docs": retrieved_docs,
             "raw_response": response_text,
+            "supporting_docs": supporting_docs
         }
 
     # Handle malformed JSON-like empty outputs such as:
@@ -67,12 +68,14 @@ def extract_from_metadata(
             "value": "N/A",
             "retrieved_docs": retrieved_docs,
             "raw_response": response_text,
+            "supporting_docs": [],
         }
 
     return {
         "value": response_text.strip() if response_text else None,
         "retrieved_docs": retrieved_docs,
         "raw_response": response_text,
+        "supporting_docs": [],
     }
 
 
@@ -171,7 +174,36 @@ def parse_json_response(text):
     try:
         return json.loads(cleaned)
     except json.JSONDecodeError:
+        # Fallback: try to extract malformed JSON with uppercase keys or unquoted values
+        return _extract_malformed_json(text)
+
+
+def _extract_malformed_json(text):
+    """Extract value and supporting_docs from malformed JSON patterns like {VALUE: BBB+, SUPPORTING_DOCS: [1]}"""
+    if not text:
         return None
+    
+    cleaned = text.strip().lower()
+    
+    # Extract value (handles both quoted and unquoted values)
+    value_match = re.search(r'[\{,]\s*"?value"?\s*:\s*(["\']?)([^,\}]+?)\1\s*[,\}]', cleaned, re.IGNORECASE)
+    if value_match:
+        value = value_match.group(2).strip().strip('"\'')
+        
+        # Extract supporting_docs
+        docs_match = re.search(r'[\{,]\s*"?supporting_docs"?\s*:\s*\[([^\]]*)\]', cleaned, re.IGNORECASE)
+        supporting_docs = []
+        if docs_match:
+            docs_str = docs_match.group(1)
+            # Extract all numbers from the list
+            supporting_docs = [int(d.strip()) for d in docs_str.split(',') if d.strip().isdigit()]
+        
+        return {
+            "value": value if value and value.lower() != 'null' else None,
+            "supporting_docs": supporting_docs
+        }
+    
+    return None
 
 
 def _is_empty_value_response(text):

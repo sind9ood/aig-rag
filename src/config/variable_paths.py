@@ -19,7 +19,7 @@ VARIABLE_PATHS = {
         aliases=["total revenues"],
         description="The total revenues (or total net revenues) for AIG in the target year, as reported in the income statement. This figure represents the total amount of money earned from AIG's business activities before any expenses are deducted. It may be labeled as 'Total Revenues', 'Total Net Revenues', 'Revenues', or similar variations in the financial statements.",
         top_k=20,
-        max_docs=3,
+        max_docs=4,
         query_template="total revenues in {year}",
     ),
     # "total_assets": VariablePathConfig(

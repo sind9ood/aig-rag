@@ -6,7 +6,14 @@ def build_query_plan_system_prompt():
 
 
 def build_extraction_system_prompt():
-    return "You answer using only the supplied SEC filing context."
+    return (
+        "You answer using only the supplied SEC filing context. "
+        "You MUST return ONLY valid JSON with exactly two keys: \"value\" and \"supporting_docs\". "
+        "Do not include any explanatory text, commentary, or analysis before or after the JSON. "
+        "The JSON keys must be lowercase: \"value\" and \"supporting_docs\". "
+        "All values must be properly quoted. "
+        "If you cannot find the value, return exactly: {\"value\": null, \"supporting_docs\": []}"
+    )
 
 
 def build_retrieval_query_plan_prompt(
@@ -58,7 +65,7 @@ def build_extraction_prompt(
             f"Filing year: {chunk.get('filing_year')}\n"
             f"Section: {chunk.get('section')}\n"
             f"Table row count: {chunk.get('table_row_count')}\n"
-            f"Excerpt:\n{chunk.get('excerpt', '')}"
+            f"Full text:\n{chunk.get('full_text', '')}"
         )
     
 
@@ -66,7 +73,11 @@ def build_extraction_prompt(
 
     task_instruction = (
             f"Extract the exact reported numeric value or categorical value for '{target_label}' in {target_year-1}.\n"
-            "Return valid JSON with exactly two keys: value and supporting_docs.\n"
+            "Return ONLY valid JSON with exactly two keys: \"value\" and \"supporting_docs\".\n"
+            "Do not include any text before or after the JSON.\n"
+            "For example: {\"value\": \"BBB+\", \"supporting_docs\": [1]} means the value is BBB+ and it is supported by document 1.\n"
+            "If the value cannot be found, return: {\"value\": null, \"supporting_docs\": []}\n"
+            "Ensure all JSON keys are lowercase and all string values are quoted.\n"
             f"Possible aliases for this target include: {', '.join(aliases[:8])}.\n"
             f"Think of possible formats (e.g. numeric, percentage, currency) and available representations (e.g. text, symbols) for this target.\n"
             "If the target label or aliases are clearly shown in a table, first look for the values adjacent to that row label.\n"
@@ -88,7 +99,7 @@ def build_extraction_prompt(
             "If the source omits units, infer from nearby context (e.g., 'in millions').\n"
             "If a number is wrapped by parentheses, treat it as a negative value (example: '(1,234)' means '-1,234').\n"
             "For losses/negative values, use '-<amount>'.\n"
-            "Do not add commentary or analysis."
+            "CRITICAL: Return ONLY the JSON. No explanatory text, no markdown code fences, no preamble."
     )
 
     return (

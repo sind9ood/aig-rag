@@ -76,7 +76,7 @@ def main():
     args = parse_args()
 
     chunk_orchestrator = FilingChunkOrchestrator(company_cik="0000005272", filing_form="10-K")
-    chunks = chunk_orchestrator.build(max_filings=args.max_filings)
+    chunks = chunk_orchestrator.build(max_filings=args.max_filings, max_chunk_chars=2000, chunk_overlap_chars=400)
     chunk_stats = chunk_orchestrator.summarize_chunks(chunks)
 
     print(f"Built {len(chunks)} chunks")

@@ -11,6 +11,7 @@ from pathlib import Path
 import chromadb
 from chromadb.config import Settings
 from dotenv import load_dotenv
+import pandas as pd
 from price_parser import Price
 
 from src.config.runtime_aliases import build_retrieval_queries
@@ -23,7 +24,8 @@ from src.retrieval.retrieve_docs import TableAwareRetriever
 CHROMA_PATH = "data/chroma"
 COLLECTION_NAME = "rag"
 EVAL_PATH = Path("eval/ground_truth.csv")
-DEFAULT_RETRIEVAL_REVIEW_PATH = Path("output/eval_results.json")
+DEFAULT_RETRIEVAL_REVIEW_DETAIL_PATH = Path("output/eval_results.json")
+DEFAULT_RETRIEVAL_REVIEW_SUMMARY_PATH = Path("output/eval_summary.csv")
 NUMBER_TOKEN_RE = re.compile(r"\(\s*[-+]?\$?\d[\d,]*(?:\.\d+)?\s*\)|[-+]?\$?\d[\d,]*(?:\.\d+)?")
 
 
@@ -103,7 +105,7 @@ def _values_match(variable_name, prediction, ground_truth):
     return prediction == ground_truth
 
 
-def _rank_in_docs(ground_truth, retrieved_docs):
+def _rank_in_docs(ground_truth, retrieved_docs, supporting_docs=None):
     if not ground_truth:
         return -1
 
@@ -114,15 +116,15 @@ def _rank_in_docs(ground_truth, retrieved_docs):
             for found in NUMBER_TOKEN_RE.findall(text):
                 value = _parse_numeric(found)
                 if value is not None and _numeric_match(value, gt_num):
-                    return rank
-        return -1
+                    return rank, rank in supporting_docs if supporting_docs is not None else False
+        return -1, False
 
     needle = ground_truth.strip().upper()
     for rank, doc in enumerate(retrieved_docs, start=1):
         text = "\n".join(filter(None, [doc.get("excerpt", ""), doc.get("full_text", "")])).upper()
         if needle and needle in text:
-            return rank
-    return -1
+            return rank, rank in supporting_docs if supporting_docs is not None else False
+    return -1, False
 
 
 def _serialize_docs(retrieved_docs):
@@ -145,18 +147,18 @@ def _serialize_docs(retrieved_docs):
     return out
 
 
-def _predict_value(retriever, variable_name, target_year):
+def _run_rag(retriever, variable_name, target_year, scope="all"):
     config = VARIABLE_PATHS[variable_name]
     base_query = config.query_template.format(year=target_year)
     query_bundle = build_retrieval_queries(variable_name, base_query, target_year=target_year)
     bm25_query = query_bundle.get("bm25_query", "")
     embedding_query = query_bundle.get("embedding_query", "")
 
-    docs = retriever.retrieve_configurable(
+    docs = retriever.retrieve(
         variable_name=variable_name,
         query=embedding_query,
         target_year=target_year,
-        scope="table_only",
+        scope=scope,
         top_k=config.top_k,
         bm25_query=bm25_query,
         embedding_query=embedding_query,
@@ -166,17 +168,21 @@ def _predict_value(retriever, variable_name, target_year):
     return {
         "query": embedding_query,
         "prediction": result.get("value") or result.get("raw_response") or "",
+        "supporting_docs": result.get("supporting_docs", []),
         "raw_response": result.get("raw_response"),
         "retrieved_docs": _serialize_docs(result.get("retrieved_docs", [])),
     }
 
 
-def _evaluate_case(retriever, row, row_year, variable_name):
+def _evaluate_case(retriever, row, row_year, variable_name, scope="all"):
     ground_truth = _normalize(variable_name, row[variable_name])
-    prediction_result = _predict_value(retriever, variable_name, row_year)
+    prediction_result = _run_rag(retriever, variable_name, row_year, scope=scope)
     prediction = _normalize(variable_name, prediction_result["prediction"])
     correct = _values_match(variable_name, prediction, ground_truth)
-    retrieval_rank = _rank_in_docs(ground_truth, prediction_result["retrieved_docs"])
+    retrieval_rank, retrieval_hit = _rank_in_docs(ground_truth, 
+                                   prediction_result["retrieved_docs"], 
+                                   prediction_result.get("supporting_docs", []))
+
     return {
         "year": row_year,
         "variable": variable_name,
@@ -185,17 +191,21 @@ def _evaluate_case(retriever, row, row_year, variable_name):
         "ground_truth": ground_truth,
         "correct": correct,
         "retrieval_rank": retrieval_rank,
+        "retrieval_hit": retrieval_hit,
         "raw_response": prediction_result["raw_response"],
         "retrieved_docs": prediction_result["retrieved_docs"],
+        "supporting_docs": prediction_result.get("supporting_docs", []),
     }
 
 
 def evaluate(
     eval_path,
     retrieval_review_path = None,
+    retrieval_review_path_summary = None,
     year = None,
     strict_variables = False,
     workers = 1,
+    scope = "all",
 ):
     _ = strict_variables
     load_dotenv()
@@ -220,22 +230,39 @@ def evaluate(
     with ThreadPoolExecutor(max_workers=worker_count) as executor:
         for row in rows:
             row_year = int(row["year"])
-            eval_fn = partial(_evaluate_case, retriever, row, row_year)
+            eval_fn = partial(_evaluate_case, retriever, row, row_year, scope=scope)
             row_results = list(executor.map(eval_fn, variables)) if worker_count > 1 else [eval_fn(v) for v in variables]
             case_results.extend(row_results)
 
+    case_outputs = []
     for case in case_results:
         total += 1
         correct += int(case["correct"])
-        retrieval_hit += int(case["retrieval_rank"] != -1)
+        retrieval_hit += int(case["retrieval_hit"])
+        
+        # build dict for dataframe and serialization
+        case_outputs.append({
+            "year": case["year"],
+            "variable": case["variable"],
+            "query": case["query"],
+            "prediction": case["prediction"],
+            "ground_truth": case["ground_truth"],
+            "correct": case["correct"],
+            "retrieval_rank": case["retrieval_rank"],
+            "retrieval_hit": case["retrieval_hit"],
+            "raw_response": case["raw_response"],
+            "retrieved_docs": case["retrieved_docs"],
+        })
+
         print(
-            "year={} variable={} prediction={} ground_truth={} correct={} retrieval_rank={}".format(
+            "year={} variable={} prediction={} ground_truth={} correct={} retrieval_rank={} retrieval_hit={}".format(
                 case["year"],
                 case["variable"],
                 case["prediction"],
                 case["ground_truth"],
                 case["correct"],
                 case["retrieval_rank"],
+                case["retrieval_hit"],
             )
         )
 
@@ -255,10 +282,14 @@ def evaluate(
     print(f"retrieval_hit_rate={summary['retrieval_hit_rate']:.2%}")
 
     if retrieval_review_path is not None:
-        payload = {"summary": summary, "cases": case_results}
+        payload = {"summary": summary, "cases": case_outputs}
         retrieval_review_path.parent.mkdir(parents=True, exist_ok=True)
         retrieval_review_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
         print(f"Saved evaluation retrieval review: {retrieval_review_path}")
+
+        out_df = pd.DataFrame(case_outputs)[["year", "variable", "prediction", "ground_truth", "correct"]]
+        out_df.to_csv(retrieval_review_path_summary, index=False)
+        print(f"Saved evaluation retrieval review summary: {retrieval_review_path_summary}")    
 
     return {**summary, "case_results": case_results}
 
@@ -286,9 +317,10 @@ def main():
         clear_query_rewrite_caches()
     evaluate(
         Path(args.eval_path),
-        retrieval_review_path=DEFAULT_RETRIEVAL_REVIEW_PATH,
+        retrieval_review_path=DEFAULT_RETRIEVAL_REVIEW_DETAIL_PATH,
+        retrieval_review_path_summary=DEFAULT_RETRIEVAL_REVIEW_SUMMARY_PATH,
         workers=args.workers,
-        year=2025
+        scope="table_only"
     )
 
 

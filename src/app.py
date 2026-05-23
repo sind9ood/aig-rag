@@ -65,18 +65,18 @@ def available_years(chunks):
     return list(range(max_year, min_year - 1, -1))
 
 
-def extract_variable_for_year(retriever, variable_name, target_year):
+def extract_variable_for_year(retriever, variable_name, target_year, scope="all"):
     config = VARIABLE_PATHS[variable_name]
     base_query = config.query_template.format(year=target_year-1)
     query_bundle = build_retrieval_queries(variable_name, base_query, target_year=target_year-1)
     bm25_query = query_bundle.get("bm25_query", "")
     embedding_query = query_bundle.get("embedding_query", "")
 
-    docs = retriever.retrieve_configurable(
+    docs = retriever.retrieve(
         variable_name=variable_name,
         query=embedding_query,
         target_year=target_year,    # retrieval is based on filing target year
-        scope="all",              # retrieval scope is all chunks (narrative + tables)
+        scope=scope,              # retrieval scope is all chunks (narrative + tables)
         top_k=config.top_k,
         bm25_query=bm25_query,
         embedding_query=embedding_query,
@@ -142,7 +142,7 @@ def main():
         rows = []
         for variable_name in VARIABLE_ORDER:
             config = VARIABLE_PATHS[variable_name]
-            result = extract_variable_for_year(retriever, variable_name, selected_year)
+            result = extract_variable_for_year(retriever, variable_name, selected_year, scope="all")
             rows.append(
                 {
                     "Variable": config.display_name,

@@ -213,8 +213,12 @@ def _merge_small_chunks_to_previous(chunks, max_small_chars):
 
     merged = [chunks[0]]
     for nxt in chunks[1:]:
-        if len(nxt.get("text", "")) <= max_small_chars:
-            cur = merged[-1]
+        cur = merged[-1]
+        if (
+            len(nxt.get("text", "")) <= max_small_chars
+            and not cur.get("__split_from_oversized")
+            and not nxt.get("__split_from_oversized")
+        ):
             cur["__lines"].extend(nxt.get("__lines", []))
             cur["__labels"].extend(nxt.get("__labels", []))
             _refresh_chunk(cur)
@@ -258,6 +262,7 @@ def _split_large_chunks_by_chars(chunks, max_chunk_chars):
                     lead_chunk = dict(chunk)
                     lead_chunk["__lines"] = lead_lines
                     lead_chunk["__labels"] = lead_labels
+                    lead_chunk["__split_from_oversized"] = True
                     _refresh_chunk(lead_chunk)
                     split_chunks.append(lead_chunk)
                     working_lines = working_lines[first_table_idx:]
@@ -292,6 +297,7 @@ def _split_large_chunks_by_chars(chunks, max_chunk_chars):
             sub_chunk = dict(chunk)
             sub_chunk["__lines"] = sub_lines
             sub_chunk["__labels"] = sub_labels
+            sub_chunk["__split_from_oversized"] = True
             _refresh_chunk(sub_chunk)
             split_chunks.append(sub_chunk)
 
@@ -400,5 +406,6 @@ def preprocess_section(
     for chunk in chunks:
         chunk.pop("__lines", None)
         chunk.pop("__labels", None)
+        chunk.pop("__split_from_oversized", None)
 
     return chunks

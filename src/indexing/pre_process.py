@@ -299,7 +299,7 @@ def _apply_char_overlap(chunks: list[dict], overlap_chars: int) -> None:
     for i in range(1, len(chunks)):
         prev_text = chunks[i - 1].get("text", "")
         if not prev_text:
-            continue
+            continue``
 
         overlap = prev_text[-overlap_chars:].strip()
         if not overlap:

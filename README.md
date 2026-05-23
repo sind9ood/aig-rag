@@ -2,7 +2,7 @@
 
 This repository builds a retrieval pipeline for AIG 10-K filings, with:
 - model-based line classification (`table_row` vs `narrative`, footer handled separately),
-- simplified chunking for indexing,
+- chunking for indexing,
 - Chroma indexing,
 - hybrid retrieval (BM25 on chunk text + embedding on summary/context),
 - LLM-based extraction and evaluation.
@@ -34,9 +34,9 @@ EDGAR_IDENTITY_EMAIL=you@example.com
 OPENROUTER_MODEL=openai/gpt-4o-mini
 ```
 
-ChromaDB setup (short):
+ChromaDB setup:
 - Chroma is installed from `requirements.txt` during setup.
-- Start Chroma server (DB path is `./data`):
+- Start Chroma server (Default DB path is `./db`):
 
 ```bash
 source .venv/bin/activate
@@ -47,7 +47,7 @@ chroma run --path ./data
 
 ```bash
 source .venv/bin/activate
-python index_chunks_to_chroma.py --max-filings 2
+python index_chunks_to_chroma.py --max-filings 6
 ```
 
 ## 2) Current Pipeline
@@ -98,55 +98,35 @@ python rag_search.py
 ```
 
 Useful options:
-
 ```bash
-python rag_search.py --year 2021
-python rag_search.py --limit 2
-python rag_search.py --retrieval-review-path output/eval_results.json
+python rag_search.py --refresh-rewrite
+python rag_search.py --workers 4
 ```
 
-### Step E. Retrieval-only diagnostics (no extraction)
+## 3) Chunking Logic (summary)
 
-```bash
-source .venv/bin/activate
-python rag_search.py --year 2021 --limit 2
-```
+a. Table detection: Chunking first cleans and classifies lines as `table_row`, `narrative`, or `footer` (by a simple classifier and REGEX), and groups consecutive same-type lines into chunks. 
 
-## 3) Current Chunking Logic (Simplified)
+b. Table row normalization: Table rows are normalized with `parse_financial_table()` to align labels and numeric columns and to handle parenthesized negatives. 
 
-Chunking is implemented in `src/indexing/chunk_builder.py` and currently does:
+c. Split large chunk: Chunks larger than `max_chunk_chars` (default 4000) are split by character budget while respecting line boundaries, and narrative lead-ins before the first table row are peeled into a separate chunk. 
 
-1. classify lines (`table_row` or `narrative`, skipping footer lines),
-2. split chunks only when label type changes (`table` <-> `narrative`),
-3. merge any chunk smaller than 500 chars into previous chunk,
-4. add character overlap from previous chunk (`--chunk-overlap-chars`),
-5. compute summary once at the end from final merged content.
+d. Merge small chunks: Very small chunks below `SMALL_CHUNK_MAX_CHARS` (500) are merged into the previous chunk to avoid tiny fragments. A trailing overlap window (`chunk_overlap_chars`, default 800) is inserted at the start of the next chunk as a synthetic leading line so context and labels are preserved. 
 
-Table summary logic:
-- if a line starts with "The following table ...", use that as summary,
-- otherwise use LLM summary when API key is available,
-- fallback to first table line / page header.
+e. Summary for each chunk: Summaries and derived metadata are recomputed once after splitting, merging, and overlap are finalized; final chunks include metadata but omit internal helper fields.
 
-## 4) Current Retrieval Logic
 
-Retriever: `src/retrieval/retrieve_docs.py` (`TableAwareRetriever`)
+## 4) Retrieval Logic
 
-Current ranking path:
-- BM25 similarity against chunk `text`,
-- embedding similarity against:
-  - chunk `summary` if available,
-  - else `page_context + page_section`.
+Retrieval is implemented in `src/retrieval/retrieve_docs.py` by `TableAwareRetriever`. 
 
-Fusion:
-- Reciprocal rank fusion (RRF) combines BM25 and embedding ranks.
+a. It filters chunks for the target year and scope (`table_only`, `narrative_only`, `all`) then ranks candidates using BM25 on chunk `text` and embedding similarity on `hybrid_embedding_text`. 
 
-Query building:
-- `src/config/runtime_aliases.py` builds search query using cached LLM outputs (`@lru_cache`):
-  - alias terms,
-  - time-period include/exclude terms,
-  - retrieval query plan (`query`, `locate_terms`, `table_terms`).
+b. BM25 is computed with `rank_bm25` over tokenized chunk text; embedding similarity is measured by similarity between expanded query (LLM) and chunk summary. 
 
-There is no separate legacy reranking stage anymore.
+c. Scores are normalized and fused using the `BM25_SCORE_WEIGHT` and `EMBEDDING_SCORE_WEIGHT` environment-configurable weights; 
+
+d. the retriever returns the requested `top_k`.
 
 ## 5) Training / Pseudo Labels
 
@@ -170,3 +150,27 @@ Generate pseudo labels for CSV line data: (Need human review for editing)
 source .venv/bin/activate
 python -m src.indexing.train.pseudo_label_table_rows --input-dir data
 ```
+## 6) Experimental Results
+
+Ground Truth:
+
+| year | total_revenues | sp_rating | shareholders_equity |
+|---|---|---|---|
+| 2021 | "586,481" | BBB+ | "66,362" |
+| 2022 | "596,112" | BBB+ | "65,956" |
+| 2023 | "526,634" | BBB+ | "40,002" |
+| 2024 | "539,306" | BBB+ | "45,351" |
+| 2025 | "161,322" | BBB+ | "42,521" |
+
+The table below summarizes evaluation accuracy for different retrieval and chunking configurations on the target task.
+
+| Chunk size | Top K | Data source | Accuracy |
+|---|---|---|---|
+| max_chunk_size=4000, chunk-overlap-chars=800 | 3 | table-only | 15/15 |
+| max_chunk_size=4000, chunk-overlap-chars=800 | 3 | all | 13/15 |
+| max_chunk_size=4000, chunk-overlap-chars=800 | 4 | table-only | 15/15 |
+| max_chunk_size=4000, chunk-overlap-chars=800 | 4 | all | 14/15 |
+| max_chunk_size=2000, chunk-overlap-chars=400 | 3 | table-only | ??/15 |
+| max_chunk_size=2000, chunk-overlap-chars=400 | 3 | all | ??/15 |
+| max_chunk_size=2000, chunk-overlap-chars=400 | 4 | table-only | ??/15 |
+| max_chunk_size=2000, chunk-overlap-chars=400 | 4 | all | ??/15 |
