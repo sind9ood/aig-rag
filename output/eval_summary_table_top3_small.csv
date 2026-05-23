@@ -9,7 +9,7 @@ year,variable,prediction,ground_truth,correct
 2023,shareholders_equity,40002.0,"40,002",True
 2023,sp_rating,BBB+,BBB+,True
 2024,total_revenues,46802,"46,802",True
-2024,shareholders_equity,37021,"45,351",False
+2024,shareholders_equity,N/A,"45,351",False
 2024,sp_rating,BBB+,BBB+,True
 2025,total_revenues,27251.0,"27,251",True
 2025,shareholders_equity,42521.0,"42,521",True

@@ -170,7 +170,7 @@ The table below summarizes evaluation accuracy for different retrieval and chunk
 | max_chunk_size=4000, chunk-overlap-chars=800 | 3 | all | 13/15 |
 | max_chunk_size=4000, chunk-overlap-chars=800 | 4 | table-only | 15/15 |
 | max_chunk_size=4000, chunk-overlap-chars=800 | 4 | all | 14/15 |
-| max_chunk_size=2000, chunk-overlap-chars=400 | 3 | table-only | ??/15 |
-| max_chunk_size=2000, chunk-overlap-chars=400 | 3 | all | ??/15 |
-| max_chunk_size=2000, chunk-overlap-chars=400 | 4 | table-only | ??/15 |
-| max_chunk_size=2000, chunk-overlap-chars=400 | 4 | all | ??/15 |
+| max_chunk_size=2000, chunk-overlap-chars=400 | 3 | table-only | 12/15 |
+| max_chunk_size=2000, chunk-overlap-chars=400 | 3 | all | 14/15 |
+| max_chunk_size=2000, chunk-overlap-chars=400 | 5 | table-only | 15/15 |
+| max_chunk_size=2000, chunk-overlap-chars=400 | 5 | all | 14/15 |
