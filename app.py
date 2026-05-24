@@ -12,7 +12,7 @@ from src.retrieval.retrieve_docs import TableAwareRetriever
 
 VARIABLE_ORDER = list(VARIABLE_PATHS.keys())
 
-CHROMA_PATH = "db"
+CHROMA_PATH = "db_test"
 COLLECTION_NAME = "rag"
 
 
@@ -65,7 +65,7 @@ def available_years(chunks):
     return list(range(max_year, min_year - 1, -1))
 
 
-def extract_variable_for_year(retriever, variable_name, target_year, scope="all"):
+def extract_variable_for_year(retriever, variable_name, target_year, match_method="hybrid", table_bonus=True):
     config = VARIABLE_PATHS[variable_name]
     base_query = config.query_template.format(year=target_year-1)
     query_bundle = build_retrieval_queries(variable_name, base_query, target_year=target_year-1)
@@ -157,7 +157,7 @@ def main():
         for variable_name in VARIABLE_ORDER:
             config = VARIABLE_PATHS[variable_name]
             # Pass match_method to extract_variable_for_year using a local variable
-            result = extract_variable_for_year(retriever, variable_name, selected_year, scope="all")
+            result = extract_variable_for_year(retriever, variable_name, selected_year, match_method=match_method, table_bonus=True)
             query_rows.append({
                 "Variable": config.display_name,
                 "BM25 Query": result["bm25_query"],
