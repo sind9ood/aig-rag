@@ -39,10 +39,11 @@ class FilingChunkOrchestrator:
         self.filings = self.get_raw_filings()
 
         chunks = []
-        for filing in self.filings[:max_filings]:
+        for filing in self.filings[1:max_filings+1]:  # Skip the most recent filing which may be incomplete
             cur_obj = filing.obj()
             import logging
-            logging.info(f"Processing filing: {cur_obj.filing_date}")            
+            logging.info(f"Processing filing: {cur_obj.filing_date}")         
+
             for item in cur_obj.items:
                 section = item.lower()
                 logging.info(f"  Processing section: {section}")

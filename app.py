@@ -72,6 +72,10 @@ def extract_variable_for_year(retriever, variable_name, target_year, scope="all"
     bm25_query = query_bundle.get("bm25_query", "")
     embedding_query = query_bundle.get("embedding_query", "")
 
+    # match_method will be passed in main()
+    import inspect
+    frame = inspect.currentframe().f_back
+    match_method = frame.f_locals.get('match_method', 'hybrid')
     docs = retriever.retrieve(
         variable_name=variable_name,
         query=embedding_query,
@@ -79,6 +83,7 @@ def extract_variable_for_year(retriever, variable_name, target_year, scope="all"
         top_k=config.top_k,
         bm25_query=bm25_query,
         embedding_query=embedding_query,
+        match_method=match_method,
     )
 
     result = extract_from_metadata(docs, variable_name, target_year, max_docs=config.max_docs)
@@ -140,12 +145,19 @@ def main():
 
     st.caption("Path config is loaded from src/config/variable_paths.py")
 
+    match_method = st.selectbox(
+        "Retrieval Match Method",
+        options=["hybrid", "bm25", "embedding"],
+        index=0,
+        help="Choose which retrieval method to use: hybrid (default), BM25 only, or embedding only."
+    )
     if st.button("Run extraction", type="primary"):
         rows = []
         query_rows = []
         for variable_name in VARIABLE_ORDER:
             config = VARIABLE_PATHS[variable_name]
-            result = extract_variable_for_year(retriever, variable_name, selected_year)
+            # Pass match_method to extract_variable_for_year using a local variable
+            result = extract_variable_for_year(retriever, variable_name, selected_year, scope="all")
             query_rows.append({
                 "Variable": config.display_name,
                 "BM25 Query": result["bm25_query"],

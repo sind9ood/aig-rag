@@ -129,6 +129,40 @@ def _make_chunk(
     chunk_nature = "table_main" if table_row_count > narrative_count else "narrative_main"
     compact_ctx = _context_compact(page_ctx)
 
+    # Maintain context_lines (5 narrative lines before table chunk)
+    context_lines = []
+    table_intro = None
+    title_lines = []
+
+    # If lines are LineClassification objects, extract is_title
+    for i, line in enumerate(lines):
+        label = labels[i] if labels and i < len(labels) else None
+
+        # If line is a LineClassification, extract .is_title and .line
+        is_title = False
+        line_text = line
+        if hasattr(line, 'is_title'):
+            is_title = getattr(line, 'is_title', False)
+            line_text = getattr(line, 'line', line)
+        if is_title:
+            title_lines.append(line_text)
+        if label == LineLabel.NARRATIVE:
+            context_lines.append(line_text)
+
+        # Table intro: use TABLE_INTRO_SUMMARY_RE pattern
+        if table_intro is None and chunk_type == "table" and label == LineLabel.NARRATIVE:
+            m = TABLE_INTRO_SUMMARY_RE.match(line_text)
+            if m:
+                remainder = (m.group(1) or "").strip().strip(".:")
+                if remainder:
+                    table_intro = remainder
+                    
+    # Only keep last 5 narrative lines before table
+    if chunk_type == "table":
+        context_lines = context_lines[-5:]
+    else:
+        context_lines = context_lines[:5]
+
     return {
         "text": text,
         "summary": None,
@@ -147,57 +181,71 @@ def _make_chunk(
         "page_subsubsection": page_ctx.subsubsection,
         "__lines": list(lines),
         "__labels": list(labels),
+        "context_lines": context_lines,
+        "table_intro": table_intro,
+        "title_lines": title_lines,
     }
 
 
-def _extract_intro_summary(lines):
+def build_chunk_summary(chunk):
+    """
+    Build a summary for any chunk using metadata: page context, context_lines, table_intro, title_lines, etc., but table lines are only used as snippet (first 5, <500 chars) for all chunk types.
+    """
+    page_hint = chunk.get("page_context") or ""
+    context_lines = chunk.get("context_lines", [])
+    table_intro = chunk.get("table_intro")
+    title_lines = chunk.get("title_lines", [])
+
+    # For snippet: use first 5 table lines (char < 500) for all chunk types
+    lines = chunk.get("__lines", [])
+    snippet_lines = []
+    total_chars = 0
     for line in lines:
-        m = TABLE_INTRO_SUMMARY_RE.match(line)
-        if not m:
-            continue
-        remainder = (m.group(1) or "").strip().strip(".:")
-        if remainder:
-            return remainder
-    return None
+        if len(snippet_lines) >= 5:
+            break
+        if total_chars + len(line) > 500:
+            break
+        snippet_lines.append(line)
+        total_chars += len(line)
+    snippet = " ".join(snippet_lines).strip()
 
+    # Compose prompt for LLM
+    prompt_parts = []
+    if page_hint:
+        prompt_parts.append(f"Page context: {page_hint}")
+    if title_lines:
+        prompt_parts.append(f"Titles: {' | '.join(title_lines)}")
+    if table_intro:
+        prompt_parts.append(f"Table intro: {table_intro}")
+    if context_lines:
+        prompt_parts.append(f"Context: {' | '.join(context_lines)}")
+    if snippet:
+        prompt_parts.append(f"Snippet: {snippet}")
 
-def _build_table_chunk_summary(lines, labels, page_ctx):
-    """
-    Build a summary for a table chunk.
-    """
-    intro_summary = _extract_intro_summary(lines)
+    prompt = "\n".join(prompt_parts)
 
-    # For table chunks, we want to extract up to 8 table rows and up to 5 narrative lines of context. 
-    # We use these as input to a summary prompt, along with page-level metadata as additional context. 
-    context_lines = [line for line, label in zip(lines, labels) if label == LineLabel.NARRATIVE][-5:]
-    table_lines = [line for line, label in zip(lines, labels) if label == LineLabel.TABLE_ROW][:8]
-    if not table_lines:
-        table_lines = [line for line in lines if line.strip()][:8]
+    # If prompt is empty, return fallback immediately without calling LLM
+    if not prompt.strip():
+        return "No summary"
 
-    page_hint = page_ctx.to_header_str()
-
-    if table_lines or context_lines or intro_summary:
-        prompt = build_table_summary_prompt(
-            page_hint=page_hint,
-            context_lines=context_lines,
-            table_lines=table_lines,
-            initial_summary=intro_summary,
+    # Use LLM to generate summary
+    try:
+        content = chat_completion(
+            messages=[{"role": "user", "content": prompt}],
+            model=OPENROUTER_MODEL,
+            temperature=0,
+            max_tokens=64,
+            timeout=60,
         )
-        try:
-            content = chat_completion(
-                messages=[{"role": "user", "content": prompt}],
-                model=OPENROUTER_MODEL,
-                temperature=0,
-                max_tokens=64,
-                timeout=60,
-            )
-            summary = str(content).strip().strip('"')
-            if summary:
-                return _truncate_summary_words(summary, max_words=20)
-        except Exception:
-            pass
+        summary = str(content).strip().strip('"')
+        if summary:
+            return _truncate_summary_words(summary, max_words=30)
+    except Exception:
+        pass
 
-    return _truncate_summary_words(page_hint or "Financial Table", max_words=20)
+    # Fallback: use page_hint or first available metadata
+    fallback = page_hint or (title_lines[0] if title_lines else "") or (context_lines[0] if context_lines else "")
+    return _truncate_summary_words(fallback or "No summary", max_words=30)
 
 
 def _refresh_chunk(chunk, recompute_summary = False):
@@ -216,16 +264,7 @@ def _refresh_chunk(chunk, recompute_summary = False):
     chunk["chunk_type"] = "table" if table_row_count >= 10 or table_row_count > narrative_count else "narrative"
     chunk["chunk_nature"] = "table_main" if table_row_count > narrative_count else "narrative_main"
     if recompute_summary:
-        if chunk["chunk_type"] == "table":
-            page_ctx = PageContext(
-                page_number=chunk.get("page_number"),
-                section=chunk.get("page_section"),
-                subsection=chunk.get("page_subsection"),
-                subsubsection=chunk.get("page_subsubsection"),
-            )
-            chunk["summary"] = _build_table_chunk_summary(lines, labels, page_ctx)
-        else:
-            chunk["summary"] = None
+        chunk["summary"] = build_chunk_summary(chunk)
 
 
 def _merge_small_chunks_to_previous(chunks, max_small_chars):
@@ -242,6 +281,18 @@ def _merge_small_chunks_to_previous(chunks, max_small_chars):
         ):
             cur["__lines"].extend(nxt.get("__lines", []))
             cur["__labels"].extend(nxt.get("__labels", []))
+            # Merge context_lines, table_intro, title_lines
+            cur["context_lines"] = (cur.get("context_lines", []) + nxt.get("context_lines", []))[-5:]
+            # Merge table_intro: prefer first non-None, or concatenate if both exist and are different
+            cur_intro = cur.get("table_intro")
+            nxt_intro = nxt.get("table_intro")
+            if cur_intro and nxt_intro and cur_intro != nxt_intro:
+                # If both exist and are different, concatenate with separator
+                cur["table_intro"] = f"{cur_intro} | {nxt_intro}"
+            elif not cur_intro and nxt_intro:
+                cur["table_intro"] = nxt_intro
+            # else: keep cur_intro (even if None)
+            cur["title_lines"] = list(set(cur.get("title_lines", []) + nxt.get("title_lines", [])))
             _refresh_chunk(cur)
         else:
             merged.append(nxt)
@@ -338,6 +389,11 @@ def _split_large_chunks_by_chars(chunks, max_chunk_chars):
             sub["__lines"]  = lead_lines + working_lines[s:e]
             sub["__labels"] = lead_labels + working_labels[s:e]
             sub["__split_from_oversized"] = True
+
+            # Propagate context_lines, table_intro, title_lines
+            sub["context_lines"] = list(chunk.get("context_lines", []))
+            sub["table_intro"] = chunk.get("table_intro")
+            sub["title_lines"] = list(chunk.get("title_lines", []))
             
             _refresh_chunk(sub)
 

@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Optional
 
 import joblib
+from src.indexing.rule_based_table_detector import is_table_row
 from src.indexing.train.train_table_detector import ThreeWayEmbedder, build_context_parts
 
 MODEL_PATH = Path("model/table_row_classifier.joblib")
@@ -61,6 +62,7 @@ class LineClassification:
     line: str
     label: LineLabel
     page_ctx: PageContext
+    is_title: bool = False
 
 
 def _build_input(lines, idx, window_size, max_line_chars):
@@ -113,13 +115,33 @@ def is_page_number(line, raw_lines, line_idx):
     return all_prev_blank and all_next_blank
 
 
+def is_title_line(line):
+    s = line.strip()
+    if not s or len(s) < 4:
+        return False
+
+    # All-caps
+    if s.isupper() and len(s.split()) <= 8:
+        return True
+
+    # Title case short line
+    elif s.istitle() and len(s.split()) <= 8:
+        return True
+
+    # Mixed caps with colon: "Segment Results:"
+    elif re.match(r'^[A-Z][a-zA-Z\s]+:$', s) and len(s) < 60:
+        return True
+
+    return False
+
+
 def extract_footer_metadata(line, current_page):
     """
     Extract page number, form label, and section info from a footer line.
     Based on patterns observed in AIG filings (Need more generalization).
     """
     stripped = line.strip()
-    
+
     # Try to extract page number
     m_page = PAGE_NUMBER_RE.match(stripped)
     if m_page and current_page.page_number is None:
@@ -155,17 +177,29 @@ def classify_lines(text):
 
         # Classify line using classifier
         pred = predict_line_label(raw_lines, i)
+
+        # #######################################
+        # from src.indexing.rule_based_table_detector import predict_line_label_rule_based
+        # pred = predict_line_label_rule_based(raw_lines, i)
+        # if pred == "other":
+        #     # Fallback heuristic: if the line looks like a page number, classify as footer
+        #     if is_page_number(line, raw_lines, i):
+        #         pred = "footer"
+        #     else:
+        #         pred = "narrative"
+        # #######################################
         
         # Determine label
         if is_page_number(line, raw_lines, i) or pred == "footer":
             label = LineLabel.FOOTER
-            # Extract metadata from footer line
             extract_footer_metadata(line, current_page)
         elif pred == "table_row":
             label = LineLabel.TABLE_ROW
         else:
             label = LineLabel.NARRATIVE
-        
+
+        is_title = is_title_line(line)
+
         results.append(
             LineClassification(
                 line_index=i,
@@ -178,6 +212,7 @@ def classify_lines(text):
                     subsection=current_page.subsection,
                     subsubsection=current_page.subsubsection,
                 ),
+                is_title=is_title,
             )
         )
 

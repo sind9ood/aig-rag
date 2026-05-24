@@ -15,8 +15,8 @@ def parse_args():
     parser.add_argument("--out", default="output/review_session_data.json", help="Output JSON path")
     parser.add_argument("--max-filings", type=int, default=3)
     parser.add_argument("--filing-index", type=int, default=1, help="0-based filing index")
-    parser.add_argument("--max-chunk-chars", type=int, default=4000)
-    parser.add_argument("--chunk-overlap-chars", type=int, default=800)
+    parser.add_argument("--max-chunk-chars", type=int, default=2000)
+    parser.add_argument("--chunk-overlap-chars", type=int, default=400)
     return parser.parse_args()
 
 

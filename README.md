@@ -7,8 +7,8 @@ This repository builds a retrieval pipeline for AIG 10-K filings, with:
 - hybrid retrieval (BM25 on chunk text + embedding on summary/context),
 - LLM-based extraction and evaluation.
 
-## 1) Architecture
-<img src="doc/architecture.jpg" width="70%">
+## 1) Pipeline
+<img src="doc/architecture.jpg" width="80%">
 
 ## 2) Setup
 
@@ -53,7 +53,7 @@ source .venv/bin/activate
 python index_chunks_to_chroma.py --max-filings 6
 ```
 
-## 3) Current Pipeline
+## 3) Run Pipeline
 
 Start Chroma server once per session:
 
@@ -167,13 +167,21 @@ Ground Truth:
 
 The table below summarizes evaluation accuracy for different retrieval and chunking configurations on the target task.
 
-| Method | Chunk size | Top K | Accuracy | Recall@3 | MRR |
-|---|---|---|---|---|---|
-| Hybrid + Table Bonus | max_chunk_size=2000, chunk-overlap-chars=400 | 3 | 100% (15/15) |  100% (15/15) | 0.8556 |
-| Hybrid + Table Bonus | max_chunk_size=2000, chunk-overlap-chars=400 | 1 | 80% (12/15) |  80% (12/15) | - |
-| Hybrid | max_chunk_size=2000, chunk-overlap-chars=400 | 3 | 66.67% (10/15) |  53.33% (8/15) | 0.4222 |
-| BM25 Only | max_chunk_size=2000, chunk-overlap-chars=400 | 3 | 100% (15/15) | 93.33% (14/15) | 0.7222 |
-| Embedding Only | max_chunk_size=2000, chunk-overlap-chars=400 | 3 | 13.33% (2/15) | 13.33% (2/15) | 0.0889 |
+| Method | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
+|---|---|---|---|---|---|---|
+| Hybrid + Table Bonus + M/L + Table Row Cleaning | 2000 | 400 | 3 | 100% (15/15) |  100% (15/15) | 0.8556 |
+| Hybrid + Table Bonus + M/L + Table Row Cleaning | 2000 | 400 | 1 | 80% (12/15) |  80% (12/15) | - |
+| Hybrid + M/L + Table Row Cleaning | 2000 | 400 | 3 | 66.67% (10/15) |  53.33% (8/15) | 0.4222 |
+| BM25 Only + M/L + Table Row Cleaning | 2000 | 400 | 3 | 93.33% (14/15) | 93.33% (14/15) | 0.7222 |
+| BM25 Only + M/L + Table Row Cleaning | 2000 | 400 | 1 | 40% (6/15) | 40.00% (6/15) | 0.4000 |
+| Embedding Only + M/L + Table Row Cleaning | 2000 | 400 | 3 | 13.33% (2/15) | 13.33% (2/15) | 0.0889 |
+| BM25 + Regex + Table Row Cleaning | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
+| BM25 + Regex + No Table Row Cleaning | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
+| BM25 + M/L + No Table Row Cleaning | 2000 | 400 | 3 | 26.67% (4/15) | 26.67% (4/15) | 0.2667 |
 
+The table below summarize chunking stats with different table detection mechanism and chunk size.
 
-Retrieval Performance
+| Method | Max chunk size | Chunk overlap | Total Chunk | Table Chunk | Narrative Chunk | Chunk Size Distribution |
+|---|---|---|---|---|---|---|
+| M/L | 2000 | 400 | 5133 | 2509 | 2642 | "p10": 783.0, "p25": 1282.5, "p75": 2222.0, "p90": 2370.0|
+| Rule | 2000 | 400 | 5383 | 3067 | 2316 | "p10": 659.0, "p25": 1157.0, "p75": 2182.5, "p90": 2390.0 |

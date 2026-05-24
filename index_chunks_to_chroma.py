@@ -10,7 +10,7 @@ from src.indexing.filing_chunk_orchestrator import FilingChunkOrchestrator
 
 
 COLLECTION_NAME = "rag"
-
+logging.basicConfig(level=logging.INFO)
 
 def build_chroma(chunks, chroma_path="db"):
     client = chromadb.PersistentClient(
@@ -71,8 +71,8 @@ def build_chroma(chunks, chroma_path="db"):
 def parse_args():
     parser = argparse.ArgumentParser(description="Index chunks into ChromaDB.")
     parser.add_argument("--max-filings", type=int, default=6)
-    parser.add_argument("--max-chunk-chars", type=int, default=4000)
-    parser.add_argument("--chunk-overlap-chars", type=int, default=800)
+    parser.add_argument("--max-chunk-chars", type=int, default=2000)
+    parser.add_argument("--chunk-overlap-chars", type=int, default=400)
     parser.add_argument("--chroma-path", default="db", help="Path to the ChromaDB index")    
     return parser.parse_args()
 

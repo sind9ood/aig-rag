@@ -13,6 +13,7 @@ EVAL_PATH = Path("eval/ground_truth.csv")
 DEFAULT_RETRIEVAL_REVIEW_DETAIL_PATH = Path("output/eval_results.json")
 DEFAULT_RETRIEVAL_REVIEW_SUMMARY_PATH = Path("output/eval_summary.csv")
 
+logging.basicConfig(level=logging.INFO)
 
 def evaluate(
     chroma_path,
@@ -21,6 +22,8 @@ def evaluate(
     retrieval_review_path_summary = None,
     year = None,
     workers = 1,
+    match_method = "hybrid",
+    table_bonus = True,
 ):
     load_dotenv()
     if not Path(chroma_path).exists():
@@ -32,6 +35,8 @@ def evaluate(
         Path(eval_path),
         chroma_path=chroma_path,
         collection_name=COLLECTION_NAME,
+        match_method=match_method,
+        table_bonus=table_bonus
     )
 
     summary, case_results = runner.evaluate_all(year=year, workers=workers)
@@ -68,6 +73,17 @@ def parse_args():
         default=1,
         help="Parallel workers for per-variable evaluation (start with 2-4)",
     )
+    parser.add_argument(
+        "--match-method",
+        default="hybrid",
+        choices=["hybrid", "bm25", "embedding"],
+        help="Retrieval match method: hybrid (default), bm25, or embedding."
+    )
+    parser.add_argument(
+        "--table-bonus",
+        action="store_false",
+        help="Apply table bonus in hybrid ranking",
+    )
     return parser.parse_args()
 
 
@@ -82,6 +98,8 @@ def main():
         retrieval_review_path_summary=Path(args.output_summary_path),
         year=args.year,
         workers=args.workers,
+        match_method=args.match_method,
+        table_bonus=args.table_bonus
     )
 
 

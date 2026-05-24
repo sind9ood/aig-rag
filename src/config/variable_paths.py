@@ -42,7 +42,7 @@ VARIABLE_PATHS = {
         display_name="S&P Long-term Debt Rating",
         aliases=["s&p long-term debt rating", "senior long-term debt", "s&p ratings"],
         description="The S&P long-term debt credit rating for AIG in the target year, such as 'A', 'BBB-', etc.",
-        top_k=10,
+        top_k=20,
         max_docs=3,
         query_template="s&p long-term debt rating in {year}",
     ),

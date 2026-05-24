@@ -48,20 +48,25 @@ class RagEvaluationRunner:
         self.variable_paths = variable_paths
 
     @classmethod
-    def from_paths(cls, eval_path, chroma_path, collection_name="rag"):
+    def from_paths(cls, eval_path, chroma_path, collection_name="rag", match_method="hybrid", table_bonus=True):
         eval_rows = cls.load_eval_rows(eval_path)
-        retriever = cls.load_retriever(chroma_path, collection_name)
-        return cls(retriever, eval_rows)
+        retriever = cls.load_retriever(chroma_path, collection_name, match_method=match_method)
+        instance = cls(retriever, eval_rows)
+        instance._match_method = match_method
+        instance._table_bonus = table_bonus
+        return instance
 
     @staticmethod
-    def load_retriever(chroma_path, collection_name):
+    def load_retriever(chroma_path, collection_name, match_method="hybrid"):
         client = chromadb.PersistentClient(
             path=chroma_path,
             settings=Settings(anonymized_telemetry=False),
         )
         collection = client.get_or_create_collection(name=collection_name)
         chunks = RagEvaluationRunner._reconstruct_chunks(collection)
-        return TableAwareRetriever(chunks=chunks, chroma_collection=collection)
+        retriever = TableAwareRetriever(chunks=chunks, chroma_collection=collection)
+        retriever._match_method = match_method
+        return retriever
 
     @staticmethod
     def _reconstruct_chunks(collection):
@@ -129,8 +134,14 @@ class RagEvaluationRunner:
         return prediction == ground_truth
 
     def _rank_in_docs(self, ground_truth, retrieved_docs, supporting_docs):
+        """
+        Returns (rank, retrieval_hit, retrieval_hit_in_supporting_docs):
+            - rank: 1-based index of first match, or -1 if not found
+            - retrieval_hit: True if found, False otherwise
+            - retrieval_hit_in_supporting_docs: True if found and rank is in supporting_docs, else False
+        """
         if not ground_truth:
-            return -1, False
+            return -1, False, False
 
         gt_num = self._parse_numeric(ground_truth)
         if gt_num is not None:
@@ -139,14 +150,18 @@ class RagEvaluationRunner:
                 for found in NUMBER_TOKEN_RE.findall(text):
                     value = self._parse_numeric(found)
                     if value is not None and self._numeric_match(value, gt_num):
-                        return rank, rank in supporting_docs if supporting_docs is not None else False
-            return -1, False
+                        retrieval_hit = True
+                        retrieval_hit_in_supporting_docs = rank in supporting_docs if supporting_docs is not None else False
+                        return rank, retrieval_hit, retrieval_hit_in_supporting_docs
+            return -1, False, False
 
         needle = ground_truth.strip().upper()
         for rank, doc in enumerate(retrieved_docs, start=1):
             if needle and needle in doc.get("full_text", "").upper():
-                return rank, rank in supporting_docs if supporting_docs is not None else False
-        return -1, False
+                retrieval_hit = True
+                retrieval_hit_in_supporting_docs = rank in supporting_docs if supporting_docs is not None else False
+                return rank, retrieval_hit, retrieval_hit_in_supporting_docs
+        return -1, False, False
 
     @staticmethod
     def _serialize_docs(retrieved_docs):
@@ -175,6 +190,8 @@ class RagEvaluationRunner:
         bm25_query = query_bundle.get("bm25_query", "")
         embedding_query = query_bundle.get("embedding_query", "")
 
+        match_method = getattr(self, "_match_method", "hybrid")
+        table_bonus = getattr(self, "_table_bonus", True)
         docs = self.retriever.retrieve(
             variable_name=variable_name,
             query=embedding_query,
@@ -182,6 +199,8 @@ class RagEvaluationRunner:
             top_k=config.top_k,
             bm25_query=bm25_query,
             embedding_query=embedding_query,
+            match_method=match_method,
+            table_bonus=table_bonus
         )
         result = extract_from_metadata(docs, variable_name, target_year, max_docs=config.max_docs)
 
@@ -198,7 +217,7 @@ class RagEvaluationRunner:
         prediction_result = self._run_rag(variable_name, row_year)
         prediction = self._normalize(variable_name, prediction_result["prediction"])
         correct = self._values_match(prediction, ground_truth)
-        retrieval_rank, retrieval_hit = self._rank_in_docs(
+        retrieval_rank, retrieval_hit, retrieval_hit_in_supporting_docs = self._rank_in_docs(
             ground_truth,
             prediction_result["retrieved_docs"],
             prediction_result.get("supporting_docs", []),
@@ -213,6 +232,7 @@ class RagEvaluationRunner:
             "correct": correct,
             "retrieval_rank": retrieval_rank,
             "retrieval_hit": retrieval_hit,
+            "retrieval_hit_in_supporting_docs": retrieval_hit_in_supporting_docs,            
             "raw_response": prediction_result["raw_response"],
             "retrieved_docs": prediction_result["retrieved_docs"],
             "supporting_docs": prediction_result.get("supporting_docs", []),
@@ -233,12 +253,23 @@ class RagEvaluationRunner:
                 row_results = list(executor.map(eval_fn, self.variable_paths.keys())) if worker_count > 1 else [eval_fn(v) for v in self.variable_paths.keys()]
                 case_results.extend(row_results)
 
+        # Compute MRR (Mean Reciprocal Rank) from retrieval_rank
+        reciprocal_ranks = []
+        for case in case_results:
+            rank = case.get("retrieval_rank", -1)
+            if isinstance(rank, int) and rank > 0:
+                reciprocal_ranks.append(1.0 / rank)
+            else:
+                reciprocal_ranks.append(0.0)
+        mrr = sum(reciprocal_ranks) / len(reciprocal_ranks) if reciprocal_ranks else 0.0
+
         summary = {
             "cases": len(case_results),
             "correct": sum(int(case["correct"]) for case in case_results),
             "accuracy": 0.0,
             "retrieval_hit": sum(int(case["retrieval_hit"]) for case in case_results),
             "retrieval_hit_rate": 0.0,
+            "mrr": mrr,
         }
         summary["accuracy"] = (summary["correct"] / summary["cases"]) if summary["cases"] else 0.0
         summary["retrieval_hit_rate"] = (summary["retrieval_hit"] / summary["cases"]) if summary["cases"] else 0.0
@@ -252,13 +283,13 @@ class RagEvaluationRunner:
         retrieval_review_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
 
         if retrieval_review_path_summary is not None:
-            out_df = pd.DataFrame(case_results)[["year", "variable", "prediction", "ground_truth", "correct"]]
+            out_df = pd.DataFrame(case_results)[["year", "variable", "prediction", "ground_truth", "correct", "retrieval_rank", "retrieval_hit", "retrieval_hit_in_supporting_docs"]]
             out_df.to_csv(retrieval_review_path_summary, index=False)
 
     @staticmethod
     def print_case(case):
         print(
-            "year={} variable={} prediction={} ground_truth={} correct={} retrieval_rank={} retrieval_hit={}".format(
+            "year={} variable={} prediction={} ground_truth={} correct={} retrieval_rank={} retrieval_hit={} retrieval_hit_in_supporting_docs={}".format(
                 case["year"],
                 case["variable"],
                 case["prediction"],
@@ -266,6 +297,7 @@ class RagEvaluationRunner:
                 case["correct"],
                 case["retrieval_rank"],
                 case["retrieval_hit"],
+                case["retrieval_hit_in_supporting_docs"],
             )
         )
 
@@ -277,3 +309,4 @@ class RagEvaluationRunner:
         print(f"accuracy={summary['accuracy']:.2%}")
         print(f"retrieval_hit={summary['retrieval_hit']}")
         print(f"retrieval_hit_rate={summary['retrieval_hit_rate']:.2%}")
+        print(f"mrr={summary['mrr']:.4f}")
