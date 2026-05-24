@@ -168,5 +168,5 @@ Ground Truth:
 The table below summarizes evaluation accuracy for different retrieval and chunking configurations on the target task.
 
 | Chunk size | Top K | Accuracy |
-|---|---|---|---|
+|---|---|---|
 | max_chunk_size=2000, chunk-overlap-chars=400 | 3 | 100% (15/15) |
