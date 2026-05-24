@@ -167,6 +167,13 @@ Ground Truth:
 
 The table below summarizes evaluation accuracy for different retrieval and chunking configurations on the target task.
 
-| Chunk size | Top K | Accuracy |
-|---|---|---|
-| max_chunk_size=2000, chunk-overlap-chars=400 | 3 | 100% (15/15) |
+| Method | Chunk size | Top K | Accuracy | Recall@3 | MRR |
+|---|---|---|---|---|---|
+| Hybrid + Table Bonus | max_chunk_size=2000, chunk-overlap-chars=400 | 3 | 100% (15/15) |  100% (15/15) | 0.8556 |
+| Hybrid + Table Bonus | max_chunk_size=2000, chunk-overlap-chars=400 | 1 | 80% (12/15) |  80% (12/15) | - |
+| Hybrid | max_chunk_size=2000, chunk-overlap-chars=400 | 3 | 66.67% (10/15) |  53.33% (8/15) | 0.4222 |
+| BM25 Only | max_chunk_size=2000, chunk-overlap-chars=400 | 3 | 100% (15/15) | 93.33% (14/15) | 0.7222 |
+| Embedding Only | max_chunk_size=2000, chunk-overlap-chars=400 | 3 | 13.33% (2/15) | 13.33% (2/15) | 0.0889 |
+
+
+Retrieval Performance
