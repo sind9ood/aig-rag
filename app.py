@@ -12,7 +12,7 @@ from src.retrieval.retrieve_docs import TableAwareRetriever
 
 VARIABLE_ORDER = list(VARIABLE_PATHS.keys())
 
-CHROMA_PATH = "data/chroma"
+CHROMA_PATH = "db"
 COLLECTION_NAME = "rag"
 
 
@@ -75,8 +75,7 @@ def extract_variable_for_year(retriever, variable_name, target_year, scope="all"
     docs = retriever.retrieve(
         variable_name=variable_name,
         query=embedding_query,
-        target_year=target_year,    # retrieval is based on filing target year
-        scope=scope,              # retrieval scope is all chunks (narrative + tables)
+        target_year=target_year,
         top_k=config.top_k,
         bm25_query=bm25_query,
         embedding_query=embedding_query,
@@ -84,12 +83,14 @@ def extract_variable_for_year(retriever, variable_name, target_year, scope="all"
 
     result = extract_from_metadata(docs, variable_name, target_year, max_docs=config.max_docs)
     retrieved_docs = result.get("retrieved_docs", [])
+    supporting_docs = result.get("supporting_docs", [])
     return {
         "value": result.get("value") or result.get("raw_response") or "N/A",
         "retrieved_docs": retrieved_docs,
-        "source": result.get("source", "not_found"),
-        "filing_year": retrieved_docs[0].get("filing_year") if retrieved_docs else None,
-        "section": retrieved_docs[0].get("section") if retrieved_docs else None,
+        "supporting_docs": supporting_docs,
+        "base_query": base_query,
+        "bm25_query": bm25_query,
+        "embedding_query": embedding_query,
     }
 
 
@@ -100,13 +101,14 @@ def format_retrieved_docs(retrieved_docs):
     parts = []
     for doc in retrieved_docs[:3]:
         excerpt = doc.get("excerpt", "").replace("\n", " ").strip()
-        parts.append(f"{doc.get('filing_year')} / {doc.get('section')} / {excerpt[:120]}")
+        # Only show excerpt, not full text or other fields
+        parts.append(f"{excerpt[:120]}")
     return "\n".join(parts)
 
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title="AIG Table Variable Viewer", layout="wide")
+    st.set_page_config(page_title="AIG 10-K Variable Viewer", layout="wide")
     st.title("AIG 10-K Variable Viewer")
     st.caption("Select a year to retrieve source documents and summarize them with OpenRouter.")
 
@@ -140,20 +142,26 @@ def main():
 
     if st.button("Run extraction", type="primary"):
         rows = []
+        query_rows = []
         for variable_name in VARIABLE_ORDER:
             config = VARIABLE_PATHS[variable_name]
-            result = extract_variable_for_year(retriever, variable_name, selected_year, scope="all")
+            result = extract_variable_for_year(retriever, variable_name, selected_year)
+            query_rows.append({
+                "Variable": config.display_name,
+                "BM25 Query": result["bm25_query"],
+                "Embedding Query": result["embedding_query"],
+            })
             rows.append(
                 {
                     "Variable": config.display_name,
-                    "Year": selected_year,
                     "Value": result.get("value") or "N/A",
+                    "Supporting Docs": result.get("supporting_docs", []),
                     "Retrieved Docs": format_retrieved_docs(result["retrieved_docs"]),
-                    "Source": result["source"],
-                    "Filing Year Used": result["filing_year"],
                 }
             )
 
+        st.subheader("Retrieval Queries")
+        st.dataframe(query_rows, hide_index=True, use_container_width=True)
         st.subheader(f"Results for {selected_year}")
         st.dataframe(rows, hide_index=True, use_container_width=True)
 

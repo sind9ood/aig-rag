@@ -14,25 +14,12 @@ class TableAwareRetriever:
         import logging
         logging.info(f"Total chunks: {len(self.chunks)}")
 
-    def _target_scope_pool(self, target_year, scope="all"):
-        # filter by table nature if specified, otherwise use all chunks in the target year window
-        if scope == "table_only":
-            return [
-                c for c in self.chunks
-                if c.get("year") is not None and target_year == c["year"] 
-                and c.get("chunk_nature") == "table_main"
-            ]
-        elif scope == "narrative_only":
-            return [
-                c for c in self.chunks
-                if c.get("year") is not None and target_year == c["year"] 
-                and c.get("chunk_nature") != "table_main"
-            ]
-        else:
-            return [
-                c for c in self.chunks
-                if c.get("year") is not None and target_year == c["year"]
-            ]
+    def _target_scope_pool(self, target_year):
+        # Always use all chunks in the target year window
+        return [
+            c for c in self.chunks
+            if c.get("year") is not None and target_year == c["year"]
+        ]
 
     def _bm25_score_map(self, pool, query, text_field="text"):
         if not pool:
@@ -106,13 +93,15 @@ class TableAwareRetriever:
         candidate_indices = sorted(set(bm25_norm.keys()) | set(emb_norm.keys()))
         fused_scores = {}
         for idx in candidate_indices:
-            bm25_component = BM25_SCORE_WEIGHT * bm25_norm.get(idx, 0.0)
-            emb_component = EMBEDDING_SCORE_WEIGHT * emb_norm.get(idx, 0.0)
-            fused_scores[idx] = bm25_component + emb_component
             # add table_main bonus if applicable
             if pool[idx].get("chunk_nature") == "table_main":
-                fused_scores[idx] += 0.5        
-
+                bm25_weight = BM25_SCORE_WEIGHT * 2.0  
+            else:
+                bm25_weight = BM25_SCORE_WEIGHT 
+            bm25_component = bm25_weight * bm25_norm.get(idx, 0.0)  
+            emb_component = EMBEDDING_SCORE_WEIGHT * emb_norm.get(idx, 0.0)
+            fused_scores[idx] = bm25_component + emb_component
+ 
         ranked_idx = sorted(candidate_indices, key=lambda i: fused_scores.get(i, 0.0), reverse=True)[:top_k]
         ranked = []
         for final_rank, idx in enumerate(ranked_idx, start=1):
@@ -129,13 +118,12 @@ class TableAwareRetriever:
         variable_name,
         query,
         target_year,
-        scope="all",
         top_k=5,
         bm25_query=None,
         embedding_query=None,
     ):
         _ = variable_name
-        pool = self._target_scope_pool(target_year, scope=scope)
+        pool = self._target_scope_pool(target_year)
 
         if not pool:
             return []

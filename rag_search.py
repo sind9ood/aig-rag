@@ -21,7 +21,6 @@ def evaluate(
     retrieval_review_path_summary = None,
     year = None,
     workers = 1,
-    scope = "all",
 ):
     load_dotenv()
     if not Path(chroma_path).exists():
@@ -35,7 +34,7 @@ def evaluate(
         collection_name=COLLECTION_NAME,
     )
 
-    summary, case_results = runner.evaluate_all(year=year, workers=workers, scope=scope)
+    summary, case_results = runner.evaluate_all(year=year, workers=workers)
     for case in case_results:
         runner.print_case(case)
 
@@ -57,7 +56,7 @@ def parse_args():
     parser.add_argument("--output-path", default=str(DEFAULT_RETRIEVAL_REVIEW_DETAIL_PATH), help="Path to save detailed JSON review")
     parser.add_argument("--output-summary-path", default=str(DEFAULT_RETRIEVAL_REVIEW_SUMMARY_PATH), help="Path to save summary CSV")
     parser.add_argument("--year", type=int, default=None, help="Optional year filter (e.g., 2021)")
-    parser.add_argument("--scope", default="all", choices=["all", "table_only"], help="Scope of document retrieval")
+    # --scope argument removed
     parser.add_argument(
         "--refresh-rewrite",
         action="store_true",
@@ -83,7 +82,6 @@ def main():
         retrieval_review_path_summary=Path(args.output_summary_path),
         year=args.year,
         workers=args.workers,
-        scope=args.scope,
     )
 
 

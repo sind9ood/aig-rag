@@ -5,7 +5,7 @@ from src.evaluation.rag_evaluator import RagEvaluationRunner
 
 
 class DummyRetriever:
-    def retrieve(self, variable_name, query, target_year, scope, top_k, bm25_query=None, embedding_query=None):
+    def retrieve(self, variable_name, query, target_year, top_k, bm25_query=None, embedding_query=None):
         return [
             {
                 "filing_year": target_year,
@@ -54,7 +54,7 @@ def test_rag_evaluator_summary_and_case_structure():
             "supporting_docs": [1],
         }
 
-        summary, cases = runner.evaluate_all(year=2021, workers=1, scope="all")
+        summary, cases = runner.evaluate_all(year=2021, workers=1)
 
     assert summary["cases"] == len(VARIABLE_PATHS)
     assert summary["accuracy"] in (0.0, 1.0)

@@ -32,7 +32,7 @@ class RagEvaluationConfig:
     output_detail_path: Path | None = None
     output_summary_path: Path | None = None
     year: int | None = None
-    scope: str = "all"
+    # scope removed
     workers: int = 1
 
 
@@ -168,7 +168,7 @@ class RagEvaluationRunner:
             )
         return out
 
-    def _run_rag(self, variable_name, target_year, scope="all"):
+    def _run_rag(self, variable_name, target_year):
         config = self.variable_paths[variable_name]
         base_query = config.query_template.format(year=target_year)
         query_bundle = build_retrieval_queries(variable_name, base_query, target_year=target_year)
@@ -179,7 +179,6 @@ class RagEvaluationRunner:
             variable_name=variable_name,
             query=embedding_query,
             target_year=target_year,
-            scope=scope,
             top_k=config.top_k,
             bm25_query=bm25_query,
             embedding_query=embedding_query,
@@ -194,9 +193,9 @@ class RagEvaluationRunner:
             "retrieved_docs": self._serialize_docs(result.get("retrieved_docs", [])),
         }
 
-    def _evaluate_case(self, row, row_year, variable_name, scope="all"):
+    def _evaluate_case(self, row, row_year, variable_name):
         ground_truth = self._normalize(variable_name, row.get(variable_name))
-        prediction_result = self._run_rag(variable_name, row_year, scope=scope)
+        prediction_result = self._run_rag(variable_name, row_year)
         prediction = self._normalize(variable_name, prediction_result["prediction"])
         correct = self._values_match(prediction, ground_truth)
         retrieval_rank, retrieval_hit = self._rank_in_docs(
@@ -219,7 +218,7 @@ class RagEvaluationRunner:
             "supporting_docs": prediction_result.get("supporting_docs", []),
         }
 
-    def evaluate_all(self, year, workers, scope):
+    def evaluate_all(self, year, workers):
         rows = self.eval_rows
         if year is not None:
             rows = [row for row in rows if int(row.get("year", 0)) == year]
@@ -230,7 +229,7 @@ class RagEvaluationRunner:
         with ThreadPoolExecutor(max_workers=worker_count) as executor:
             for row in rows:
                 row_year = int(row["year"])
-                eval_fn = partial(self._evaluate_case, row, row_year, scope=scope)
+                eval_fn = partial(self._evaluate_case, row, row_year)
                 row_results = list(executor.map(eval_fn, self.variable_paths.keys())) if worker_count > 1 else [eval_fn(v) for v in self.variable_paths.keys()]
                 case_results.extend(row_results)
 

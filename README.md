@@ -8,7 +8,7 @@ This repository builds a retrieval pipeline for AIG 10-K filings, with:
 - LLM-based extraction and evaluation.
 
 ## 1) Architecture
-<img src="doc/architecture.jpg" width="75%">
+<img src="doc/architecture.jpg" width="70%">
 
 ## 2) Setup
 
@@ -123,11 +123,11 @@ e. Summary for each chunk: Summaries and derived metadata are recomputed once af
 
 Retrieval is implemented in `src/retrieval/retrieve_docs.py` by `TableAwareRetriever`. 
 
-a. It filters chunks for the target year and scope (`table_only`, `narrative_only`, `all`) then ranks candidates using BM25 on chunk `text` and embedding similarity on `hybrid_embedding_text`. 
+a. It filters chunks for the target year then ranks candidates using BM25 on chunk `text` and embedding similarity on `hybrid_embedding_text`. 
 
 b. BM25 is computed with `rank_bm25` over tokenized chunk text; embedding similarity is measured by similarity between expanded query (LLM) and chunk summary. 
 
-c. Scores are normalized and fused using the `BM25_SCORE_WEIGHT` and `EMBEDDING_SCORE_WEIGHT` environment-configurable weights; 
+c. Scores are normalized and fused using the `BM25_SCORE_WEIGHT` and `EMBEDDING_SCORE_WEIGHT` environment-configurable weights; Boost weights for BM25 if target chunk nature is table. 
 
 d. the retriever returns the requested `top_k`.
 
@@ -167,13 +167,6 @@ Ground Truth:
 
 The table below summarizes evaluation accuracy for different retrieval and chunking configurations on the target task.
 
-| Chunk size | Top K | Data source | Accuracy |
+| Chunk size | Top K | Accuracy |
 |---|---|---|---|
-| max_chunk_size=4000, chunk-overlap-chars=800 | 3 | table-only | 15/15 |
-| max_chunk_size=4000, chunk-overlap-chars=800 | 3 | all | 13/15 |
-| max_chunk_size=4000, chunk-overlap-chars=800 | 4 | table-only | 15/15 |
-| max_chunk_size=4000, chunk-overlap-chars=800 | 4 | all | 14/15 |
-| max_chunk_size=2000, chunk-overlap-chars=400 | 3 | table-only | 12/15 |
-| max_chunk_size=2000, chunk-overlap-chars=400 | 3 | all | 14/15 |
-| max_chunk_size=2000, chunk-overlap-chars=400 | 5 | table-only | 15/15 |
-| max_chunk_size=2000, chunk-overlap-chars=400 | 5 | all | 14/15 |
+| max_chunk_size=2000, chunk-overlap-chars=400 | 3 | 100% (15/15) |
