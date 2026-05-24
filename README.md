@@ -8,7 +8,7 @@ This repository builds a retrieval pipeline for AIG 10-K filings, with:
 - LLM-based extraction and evaluation.
 
 ## 1) Architecture
-<img src="doc/architecture.jpg" width="50%">
+<img src="doc/architecture.jpg" width="75%">
 
 ## 2) Setup
 
