@@ -9,13 +9,12 @@ import json
 from src.indexing.filing_chunk_orchestrator import FilingChunkOrchestrator
 
 
-CHROMA_PATH = "db"
 COLLECTION_NAME = "rag"
 
 
-def build_chroma(chunks):
+def build_chroma(chunks, chroma_path="db"):
     client = chromadb.PersistentClient(
-        path=CHROMA_PATH,
+        path=chroma_path,
         settings=Settings(anonymized_telemetry=False),
     )
     collection = client.get_or_create_collection(name=COLLECTION_NAME)
@@ -61,7 +60,6 @@ def build_chroma(chunks):
             existing_ids.add(doc_id)
             added += 1
             if added % 50 == 0:
-                import logging
                 logging.info(f"Progress: added={added}, skipped={skipped}")
         except Exception as exc:
             logging.error(f"Failed to add chunk {doc_id}: {exc}")
@@ -75,6 +73,7 @@ def parse_args():
     parser.add_argument("--max-filings", type=int, default=6)
     parser.add_argument("--max-chunk-chars", type=int, default=4000)
     parser.add_argument("--chunk-overlap-chars", type=int, default=800)
+    parser.add_argument("--chroma-path", default="db", help="Path to the ChromaDB index")    
     return parser.parse_args()
 
 
@@ -93,11 +92,11 @@ def main():
     logging.info(json.dumps(chunk_stats, indent=2))
 
     # save chunk stats for reference
-    stats_path = Path(CHROMA_PATH) / "chunk_stats.json"
+    stats_path = Path(args.chroma_path) / "chunk_stats.json"
     with open(stats_path, "w") as f:
         json.dump(chunk_stats, f)
 
-    build_chroma(chunks)
+    build_chroma(chunks, chroma_path=args.chroma_path)
 
 
 if __name__ == "__main__":

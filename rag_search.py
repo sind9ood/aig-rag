@@ -1,3 +1,4 @@
+import logging
 import argparse
 import os
 from pathlib import Path
@@ -7,8 +8,6 @@ from src.config.runtime_aliases import clear_query_rewrite_caches
 from src.evaluation.rag_evaluator import RagEvaluationRunner
 
 
-# CHROMA_PATH = "db"
-CHROMA_PATH = "data/chroma"
 COLLECTION_NAME = "rag"
 EVAL_PATH = Path("eval/ground_truth.csv")
 DEFAULT_RETRIEVAL_REVIEW_DETAIL_PATH = Path("output/eval_results.json")
@@ -16,6 +15,7 @@ DEFAULT_RETRIEVAL_REVIEW_SUMMARY_PATH = Path("output/eval_summary.csv")
 
 
 def evaluate(
+    chroma_path,
     eval_path,
     retrieval_review_path = None,
     retrieval_review_path_summary = None,
@@ -24,14 +24,14 @@ def evaluate(
     scope = "all",
 ):
     load_dotenv()
-    if not Path(CHROMA_PATH).exists():
-        raise FileNotFoundError(f"ChromaDB index not found at {CHROMA_PATH}. Run index_chunks_to_chroma.py first.")
+    if not Path(chroma_path).exists():
+        raise FileNotFoundError(f"ChromaDB index not found at {chroma_path}. Run index_chunks_to_chroma.py first.")
     if not os.getenv("OPENROUTER_API_KEY"):
         raise RuntimeError("Missing OPENROUTER_API_KEY. Add it to your .env file.")
 
     runner = RagEvaluationRunner.from_paths(
         Path(eval_path),
-        chroma_path=CHROMA_PATH,
+        chroma_path=chroma_path,
         collection_name=COLLECTION_NAME,
     )
 
@@ -43,7 +43,6 @@ def evaluate(
 
     if retrieval_review_path is not None:
         runner.write_outputs(case_results, summary, retrieval_review_path, retrieval_review_path_summary)
-        import logging
         logging.info(f"Saved evaluation retrieval review: {retrieval_review_path}")
         if retrieval_review_path_summary is not None:
             logging.info(f"Saved evaluation retrieval review summary: {retrieval_review_path_summary}")
@@ -53,6 +52,7 @@ def evaluate(
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Evaluate retrieval/extraction against eval/ground_truth.csv")
+    parser.add_argument("--chroma-path", default="db", help="Path to the ChromaDB index")
     parser.add_argument("--eval-path", default=str(EVAL_PATH), help="Path to the evaluation CSV")
     parser.add_argument("--output-path", default=str(DEFAULT_RETRIEVAL_REVIEW_DETAIL_PATH), help="Path to save detailed JSON review")
     parser.add_argument("--output-summary-path", default=str(DEFAULT_RETRIEVAL_REVIEW_SUMMARY_PATH), help="Path to save summary CSV")
@@ -77,7 +77,8 @@ def main():
     if args.refresh_rewrite:
         clear_query_rewrite_caches()
     evaluate(
-        Path(args.eval_path),
+        chroma_path=args.chroma_path,
+        eval_path=Path(args.eval_path),
         retrieval_review_path=Path(args.output_path),
         retrieval_review_path_summary=Path(args.output_summary_path),
         year=args.year,

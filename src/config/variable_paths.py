@@ -19,7 +19,7 @@ VARIABLE_PATHS = {
         aliases=["total revenues"],
         description="The total revenues (or total net revenues) for AIG in the target year, as reported in the income statement. This figure represents the total amount of money earned from AIG's business activities before any expenses are deducted. It may be labeled as 'Total Revenues', 'Total Net Revenues', 'Revenues', or similar variations in the financial statements.",
         top_k=20,
-        max_docs=3,
+        max_docs=5,
         query_template="total revenues in {year}",
     ),
     # "total_assets": VariablePathConfig(
@@ -35,7 +35,7 @@ VARIABLE_PATHS = {
         aliases=["total aig shareholders' equity"],
         description="The total AIG shareholders' equity for AIG in the target year, as reported in the balance sheet. This figure represents the residual interest in the assets of AIG after deducting liabilities, essentially showing the net worth of the company attributable to its shareholders. It may be labeled as 'Total Shareholders' Equity', 'Total Stockholders' Equity', 'Total Equity', or similar variations in the financial statements.",
         top_k=20,
-        max_docs=3,
+        max_docs=5,
         query_template="total aig shareholders' equity in {year}",
     ),
     "sp_rating": VariablePathConfig(
@@ -43,7 +43,7 @@ VARIABLE_PATHS = {
         aliases=["s&p long-term debt rating", "senior long-term debt", "s&p ratings"],
         description="The S&P long-term debt credit rating for AIG in the target year, such as 'A', 'BBB-', etc.",
         top_k=10,
-        max_docs=3,
+        max_docs=5,
         query_template="s&p long-term debt rating in {year}",
     ),
 }

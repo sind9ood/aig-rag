@@ -299,7 +299,7 @@ def _split_large_chunks_by_chars(chunks, max_chunk_chars):
             e -= 1  # trim post-overlap
         while s < start and cost() > budget: 
             s += 1  # trim pre-overlap
-        while e > start + 1 and cost() > budget: 
+        while e > s + 1 and cost() > budget: 
             e -= 1  # trim core last resort
         return s, e
 

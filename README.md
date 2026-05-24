@@ -7,7 +7,10 @@ This repository builds a retrieval pipeline for AIG 10-K filings, with:
 - hybrid retrieval (BM25 on chunk text + embedding on summary/context),
 - LLM-based extraction and evaluation.
 
-## 1) Setup
+## 1) Architecture
+<img src="doc/architecture.jpg" width="50%">
+
+## 2) Setup
 
 Run from repo root:
 
@@ -50,7 +53,7 @@ source .venv/bin/activate
 python index_chunks_to_chroma.py --max-filings 6
 ```
 
-## 2) Current Pipeline
+## 3) Current Pipeline
 
 Start Chroma server once per session:
 
@@ -77,17 +80,17 @@ python review_session_data.py \
 
 ```bash
 source .venv/bin/activate
-python index_chunks_to_chroma.py --max-filings 2
+python index_chunks_to_chroma.py --max-filings 6 --max-chunk-chars 4000 --chunk-overlap-chars 800
 ```
 
 ### Step C. Run app
 
 ```bash
 source .venv/bin/activate
-streamlit run src/app.py
+streamlit run app.py
 ```
 
-The app loads existing `data/chroma` automatically.
+The app loads existing `db` automatically.
 If DB files exist but collection has no chunks, run Step B first.
 
 ### Step D. Evaluate retrieval + extraction
@@ -103,7 +106,7 @@ python rag_search.py --refresh-rewrite
 python rag_search.py --workers 4
 ```
 
-## 3) Chunking Logic (summary)
+## 4) Chunking Logic (summary)
 
 a. Table detection: Chunking first cleans and classifies lines as `table_row`, `narrative`, or `footer` (by a simple classifier and REGEX), and groups consecutive same-type lines into chunks. 
 
@@ -116,7 +119,7 @@ d. Merge small chunks: Very small chunks below `SMALL_CHUNK_MAX_CHARS` (500) are
 e. Summary for each chunk: Summaries and derived metadata are recomputed once after splitting, merging, and overlap are finalized; final chunks include metadata but omit internal helper fields.
 
 
-## 4) Retrieval Logic
+## 5) Retrieval Logic
 
 Retrieval is implemented in `src/retrieval/retrieve_docs.py` by `TableAwareRetriever`. 
 
@@ -128,7 +131,7 @@ c. Scores are normalized and fused using the `BM25_SCORE_WEIGHT` and `EMBEDDING_
 
 d. the retriever returns the requested `top_k`.
 
-## 5) Training / Pseudo Labels
+## 6) Training / Pseudo Labels
 
 Train table detector model:
 
@@ -150,7 +153,7 @@ Generate pseudo labels for CSV line data: (Need human review for editing)
 source .venv/bin/activate
 python -m src.indexing.train.pseudo_label_table_rows --input-dir data
 ```
-## 6) Experimental Results
+## 7) Experimental Results
 
 Ground Truth:
 

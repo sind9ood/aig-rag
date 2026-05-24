@@ -109,6 +109,9 @@ class TableAwareRetriever:
             bm25_component = BM25_SCORE_WEIGHT * bm25_norm.get(idx, 0.0)
             emb_component = EMBEDDING_SCORE_WEIGHT * emb_norm.get(idx, 0.0)
             fused_scores[idx] = bm25_component + emb_component
+            # add table_main bonus if applicable
+            if pool[idx].get("chunk_nature") == "table_main":
+                fused_scores[idx] += 0.5        
 
         ranked_idx = sorted(candidate_indices, key=lambda i: fused_scores.get(i, 0.0), reverse=True)[:top_k]
         ranked = []
