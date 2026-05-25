@@ -6,6 +6,7 @@ from chromadb.config import Settings
 import argparse
 import json
 
+from src.indexing.chunk_builder import ChunkBuilderFactory, SimpleChunkBuilder, TableAwareChunkBuilder
 from src.indexing.filing_chunk_orchestrator import FilingChunkOrchestrator
 
 
@@ -73,14 +74,16 @@ def parse_args():
     parser.add_argument("--max-filings", type=int, default=6)
     parser.add_argument("--max-chunk-chars", type=int, default=2000)
     parser.add_argument("--chunk-overlap-chars", type=int, default=400)
-    parser.add_argument("--chroma-path", default="db", help="Path to the ChromaDB index")    
+    parser.add_argument("--chroma-path", default="db", help="Path to the ChromaDB index")
+    parser.add_argument("--chunker", choices=["simple", "table-aware"], default="table-aware", help="Chunk builder type")
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
 
-    chunk_orchestrator = FilingChunkOrchestrator(company_cik="0000005272", filing_form="10-K")
+    chunk_builder = ChunkBuilderFactory.get_chunk_builder(args.chunker)
+    chunk_orchestrator = FilingChunkOrchestrator(chunk_builder=chunk_builder, company_cik="0000005272", filing_form="10-K")
     chunks = chunk_orchestrator.build(max_filings=args.max_filings, 
                                       max_chunk_chars=args.max_chunk_chars, 
                                       chunk_overlap_chars=args.chunk_overlap_chars)

@@ -35,6 +35,7 @@ def main():
         retrieval_review_path=Path(args.output_path),
         year=args.year,
         strict_variables=args.strict_variables,
+        table_bonus=args.table_bonus,
     )
 
 

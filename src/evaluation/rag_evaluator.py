@@ -19,7 +19,7 @@ from price_parser import Price
 from src.config.runtime_aliases import build_retrieval_queries
 from src.config.variable_paths import VARIABLE_PATHS
 from src.retrieval.extraction import extract_from_metadata
-from src.retrieval.retrieve_docs import TableAwareRetriever
+from src.retrieval.retrieve_docs import RetrieverFactory
 
 NUMBER_TOKEN_RE = re.compile(r"\(\s*[-+]?\$?\d[\d,]*(?:\.\d+)?\s*\)|[-+]?\$?\d[\d,]*(?:\.\d+)?")
 
@@ -47,6 +47,7 @@ class RagEvaluationRunner:
         self.eval_rows = eval_rows
         self.variable_paths = variable_paths
 
+
     @classmethod
     def from_paths(cls, eval_path, chroma_path, collection_name="rag", match_method="hybrid", table_bonus=True):
         eval_rows = cls.load_eval_rows(eval_path)
@@ -64,8 +65,7 @@ class RagEvaluationRunner:
         )
         collection = client.get_or_create_collection(name=collection_name)
         chunks = RagEvaluationRunner._reconstruct_chunks(collection)
-        retriever = TableAwareRetriever(chunks=chunks, chroma_collection=collection)
-        retriever._match_method = match_method
+        retriever = RetrieverFactory.get_retriever(match_method, chunks=chunks, chroma_collection=collection)
         return retriever
 
     @staticmethod
@@ -199,8 +199,7 @@ class RagEvaluationRunner:
             top_k=config.top_k,
             bm25_query=bm25_query,
             embedding_query=embedding_query,
-            match_method=match_method,
-            table_bonus=table_bonus
+            table_bonus=table_bonus,
         )
         result = extract_from_metadata(docs, variable_name, target_year, max_docs=config.max_docs)
 

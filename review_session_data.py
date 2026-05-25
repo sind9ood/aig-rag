@@ -6,7 +6,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-from src.indexing.chunk_builder import preprocess_section
+from src.indexing.chunk_builder import ChunkBuilderFactory, preprocess_section
 from src.indexing.filing_chunk_orchestrator import FilingChunkOrchestrator
 
 
@@ -22,7 +22,8 @@ def parse_args():
 
 def main():
     args = parse_args()
-    builder = FilingChunkOrchestrator(company_cik="0000005272", filing_form="10-K")
+    chunk_builder = ChunkBuilderFactory.get_chunk_builder("table-aware")
+    builder = FilingChunkOrchestrator(chunk_builder=chunk_builder, company_cik="0000005272", filing_form="10-K")
     filings = builder.get_raw_filings()[: args.max_filings]
     filing = filings[args.filing_index]
     cur_obj = filing.obj()

@@ -9,7 +9,6 @@ from typing import Any, Dict, List
 
 from src.config.runtime_aliases import get_variable_aliases
 from src.config.variable_paths import VARIABLE_PATHS
-from .chunk_builder import preprocess_section
 
 TARGET_LABELS = {name: get_variable_aliases(name) for name in VARIABLE_PATHS}
 
@@ -18,7 +17,8 @@ class FilingChunkOrchestrator:
     """
     FilingChunkOrchestrator is responsible for orchestrating the loading of EDGAR filings and building of chunks with metadata.
     """
-    def __init__(self, company_cik=None, filing_form=None, identity_email=None):
+    def __init__(self, chunk_builder, company_cik=None, filing_form=None, identity_email=None):
+        self.chunk_builder = chunk_builder        
         self.target_labels = TARGET_LABELS
         self.company_cik = company_cik
         self.filing_form = filing_form
@@ -66,13 +66,13 @@ class FilingChunkOrchestrator:
 
                 # preprocess into chunks with metadata
                 filing_year = cur_obj.filing_date.year
-                chunks += preprocess_section(
+
+                chunks += self.chunk_builder.build_chunks(
                     source_text,
-                    section,
-                    filing_year,
-                    self.target_labels,
                     max_chunk_chars=max_chunk_chars,
-                    chunk_overlap_chars=chunk_overlap_chars,
+                    chunk_overlap_chars=chunk_overlap_chars,                    
+                    section_name=section,
+                    year=filing_year
                 )
         return chunks
 

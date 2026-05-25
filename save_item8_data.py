@@ -3,6 +3,7 @@
 import argparse
 from pathlib import Path
 
+from src.indexing.chunk_builder import ChunkBuilderFactory, SimpleChunkBuilder
 from src.indexing.filing_chunk_orchestrator import FilingChunkOrchestrator
 
 
@@ -16,7 +17,8 @@ def parse_args():
 
 def main():
     args = parse_args()
-    builder = FilingChunkOrchestrator()
+    chunk_builder = ChunkBuilderFactory.get_chunk_builder("simple")
+    builder = FilingChunkOrchestrator(chunk_builder=chunk_builder)
     filings = builder.get_raw_filings()[: args.max_filings]
     filing = filings[args.filing_index]
     cur_obj = filing.obj()

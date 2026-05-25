@@ -167,17 +167,18 @@ Ground Truth:
 
 The table below summarizes evaluation accuracy for different retrieval and chunking configurations on the target task.
 
-| Method | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
-|---|---|---|---|---|---|---|
-| Hybrid + Table Bonus + M/L + Table Row Cleaning | 2000 | 400 | 3 | 100% (15/15) |  100% (15/15) | 0.8556 |
-| Hybrid + Table Bonus + M/L + Table Row Cleaning | 2000 | 400 | 1 | 80% (12/15) |  80% (12/15) | - |
-| Hybrid + M/L + Table Row Cleaning | 2000 | 400 | 3 | 66.67% (10/15) |  53.33% (8/15) | 0.4222 |
-| BM25 Only + M/L + Table Row Cleaning | 2000 | 400 | 3 | 93.33% (14/15) | 93.33% (14/15) | 0.7222 |
-| BM25 Only + M/L + Table Row Cleaning | 2000 | 400 | 1 | 40% (6/15) | 40.00% (6/15) | 0.4000 |
-| Embedding Only + M/L + Table Row Cleaning | 2000 | 400 | 3 | 13.33% (2/15) | 13.33% (2/15) | 0.0889 |
-| BM25 + Regex + Table Row Cleaning | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
-| BM25 + Regex + No Table Row Cleaning | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
-| BM25 + M/L + No Table Row Cleaning | 2000 | 400 | 3 | 26.67% (4/15) | 26.67% (4/15) | 0.2667 |
+| Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
+|---|---|---|---|---|---|---|---|
+| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table | 2000 | 400 | 3 | 100% (15/15) |  100% (15/15) | 0.8556 |
+| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table |2000 | 400 | 1 | 80% (12/15) |  80% (12/15) | - |
+| Hybrid + M/L + Table Row Cleaning | Table | 2000 | 400 | 3 | 66.67% (10/15) |  53.33% (8/15) | 0.4222 |
+| Embedding + M/L + Table Row Cleaning | Table | 2000 | 400 | 3 | 13.33% (2/15) | 13.33% (2/15) | 0.0889 |
+| BM25 + M/L + Table Row Cleaning | Table | 2000 | 400 | 1 | 40% (6/15) | 40.00% (6/15) | - |
+| BM25 + M/L + Table Row Cleaning | Table | 2000 | 400 | 3 | 93.33% (14/15) | 93.33% (14/15) | 0.7222 |
+| BM25 + M/L + No Table Row Cleaning | Table | 2000 | 400 | 3 | 26.67% (4/15) | 26.67% (4/15) | 0.2667 |
+| BM25 + Regex + Table Row Cleaning | Table | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
+| BM25 + Regex + No Table Row Cleaning | Table | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
+| BM25 | Simple | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.5111 |
 
 The table below summarize chunking stats with different table detection mechanism and chunk size.
 
