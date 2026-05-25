@@ -7,10 +7,22 @@ This repository builds a retrieval pipeline for AIG 10-K filings, with:
 - hybrid retrieval (BM25 on chunk text + embedding on summary/context),
 - LLM-based extraction and evaluation.
 
-## 1) Pipeline
+## 1. Architecture
+
+### 1.1 Key Design Decisions
+1. **ML line classifier** (TF-IDF + logistic regression) instead of 
+   fixed-size chunking — EDGAR tables have broken structure that 
+   char-based splitting cannot handle.
+2. **Table-aware chunking** — split/merge preserving table row integrity
+   with lead chunk prepended to every sub-chunk.
+3. **Two-tower hybrid retrieval** — BM25 on raw text (base query) + 
+   vector search on LLM-generated chunk summaries (expanded query).
+
+
+### 1.2 Pipeline
 <img src="doc/architecture.jpg" width="80%">
 
-## 2) Setup
+## 2. Setup
 
 Run from repo root:
 
@@ -53,7 +65,7 @@ source .venv/bin/activate
 python index_chunks_to_chroma.py --max-filings 6
 ```
 
-## 3) Run Pipeline
+## 3. Run Pipeline
 
 Start Chroma server once per session:
 
@@ -102,11 +114,13 @@ python rag_search.py
 
 Useful options:
 ```bash
-python rag_search.py --refresh-rewrite
-python rag_search.py --workers 4
+python rag_search.py --refresh-rewrite  # refresh query plan to generate new search query for embedding method
+python rag_search.py --workers 4        # run in parallel
 ```
 
-## 4) Chunking Logic (summary)
+## 4. Detailed Logic for Table-awre Chunking & Two-Tower Hybrid Retrieval
+
+### 4.1 Chunking Logic
 
 a. Table detection: Chunking first cleans and classifies lines as `table_row`, `narrative`, or `footer` (by a simple classifier and REGEX), and groups consecutive same-type lines into chunks. 
 
@@ -119,7 +133,7 @@ d. Merge small chunks: Very small chunks below `SMALL_CHUNK_MAX_CHARS` (500) are
 e. Summary for each chunk: Summaries and derived metadata are recomputed once after splitting, merging, and overlap are finalized; final chunks include metadata but omit internal helper fields.
 
 
-## 5) Retrieval Logic
+### 4.2. Retrieval Logic
 
 Retrieval is implemented in `src/retrieval/retrieve_docs.py` by `TableAwareRetriever`. 
 
@@ -131,7 +145,7 @@ c. Scores are normalized and fused using the `BM25_SCORE_WEIGHT` and `EMBEDDING_
 
 d. the retriever returns the requested `top_k`.
 
-## 6) Training / Pseudo Labels
+## 5. M/L Line Classifier
 
 Train table detector model:
 
@@ -153,9 +167,8 @@ Generate pseudo labels for CSV line data: (Need human review for editing)
 source .venv/bin/activate
 python -m src.indexing.train.pseudo_label_table_rows --input-dir data
 ```
-## 7) Experimental Results
-
-Ground Truth:
+## 6. Experimental Results
+### 6.1. Ground Truth
 
 | year | total_revenues | sp_rating | shareholders_equity |
 |---|---|---|---|
@@ -165,6 +178,7 @@ Ground Truth:
 | 2024 | "539,306" | BBB+ | "45,351" |
 | 2025 | "161,322" | BBB+ | "42,521" |
 
+### 6.2. Result
 
 The table below summarizes evaluation result for `different chunking/retrieval methods` on the target task.
 
@@ -201,7 +215,7 @@ The table below summarize chunking stats with `different table detection/chunkin
 | Simple | 1000 | 200 | 9886 | 0 | 9886 | "p10": 1000.0, "p25": 1000.0, "p75": 1000.0, "p90": 1000.0 |
 
 
-### Challenging Case Example: `underwriting_income`
+### 6.3. Challenging Case Example: `underwriting_income`
 
 **Variable:** `underwriting_income`  
 **Label:** "Underwriting Income - General Insurance Segment"
@@ -214,5 +228,5 @@ The table below summarize chunking stats with `different table detection/chunkin
 
 | Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
 |---|---|---|---|---|---|---|---|
-| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table | 1000 | 200 | 5 | 40.00% (2/5) | 40.00% (2/5) | 0.2000 |
+| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table | 1000 | 200 | 5 | 80.00% (4/5) | 80.00% (4/5) | 0.3000 |
 | BM25 + M/L + Table Row Cleaning | Table | 1000 | 200 | 5 | 0% (0/5) |  20% (1/5) | 0.0667 |
