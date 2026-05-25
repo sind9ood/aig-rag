@@ -6,4 +6,5 @@ data/aig-2024-annual-report.pdf
 *.bin
 data/chroma/
 db/
-*.sqlite
+*.sqlite3
+

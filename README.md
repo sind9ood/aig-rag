@@ -165,7 +165,8 @@ Ground Truth:
 | 2024 | "539,306" | BBB+ | "45,351" |
 | 2025 | "161,322" | BBB+ | "42,521" |
 
-The table below summarizes evaluation accuracy for different retrieval and chunking configurations on the target task.
+
+The table below summarizes evaluation result for `different chunking/retrieval methods` on the target task.
 
 | Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
 |---|---|---|---|---|---|---|---|
@@ -180,9 +181,38 @@ The table below summarizes evaluation accuracy for different retrieval and chunk
 | BM25 + Regex + No Table Row Cleaning | Table | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
 | BM25 | Simple | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.5111 |
 
-The table below summarize chunking stats with different table detection mechanism and chunk size.
+
+The table below summarize evaluation result for `different chunking configurations` on the target task.
+
+| Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
+|---|---|---|---|---|---|---|---|
+| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table | 1000 | 200 | 5 | 100% (15/15) |  100% (15/15) | 0.6444 |
+| BM25 + M/L + Table Row Cleaning | Table | 1000 | 200 | 5 | 80.00% (12/15) | 80.00% (12/15) | 0.4967 |
+| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table | 1000 | 200 | 3 | 93.33% |  93.33% (14/15) | 0.6222 |
+| BM25 + M/L + Table Row Cleaning | Table | 1000 | 200 | 3 | 53.33% (8/15) | 53.33% (8/15) | 0.4333 |
+
+
+The table below summarize chunking stats with `different table detection/chunking mechanism` and chunk size.
 
 | Method | Max chunk size | Chunk overlap | Total Chunk | Table Chunk | Narrative Chunk | Chunk Size Distribution |
 |---|---|---|---|---|---|---|
 | M/L | 2000 | 400 | 5133 | 2509 | 2642 | "p10": 783.0, "p25": 1282.5, "p75": 2222.0, "p90": 2370.0|
 | Rule | 2000 | 400 | 5383 | 3067 | 2316 | "p10": 659.0, "p25": 1157.0, "p75": 2182.5, "p90": 2390.0 |
+| Simple | 1000 | 200 | 9886 | 0 | 9886 | "p10": 1000.0, "p25": 1000.0, "p75": 1000.0, "p90": 1000.0 |
+
+
+### Challenging Case Example: `underwriting_income`
+
+**Variable:** `underwriting_income`  
+**Label:** "Underwriting Income - General Insurance Segment"
+
+**Why is this challenging?**
+
+- The term appears in many places throughout the filing.
+- Figures are reported for different contexts: consolidated, operating segments, and by location (e.g., international vs. North America).
+- The relevant title or section for the operating segment may not be close to the actual value in the document, making context association difficult.
+
+| Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
+|---|---|---|---|---|---|---|---|
+| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table | 1000 | 200 | 5 | 40.00% (2/5) | 40.00% (2/5) | 0.2000 |
+| BM25 + M/L + Table Row Cleaning | Table | 1000 | 200 | 5 | 0% (0/5) |  20% (1/5) | 0.0667 |
