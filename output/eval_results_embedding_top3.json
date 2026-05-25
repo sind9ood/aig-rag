@@ -1,0 +1,779 @@
+{
+  "summary": {
+    "cases": 15,
+    "correct": 1,
+    "accuracy": 0.06666666666666667,
+    "retrieval_hit": 1,
+    "retrieval_hit_rate": 0.06666666666666667,
+    "mrr": 0.06666666666666667
+  },
+  "cases": [
+    {
+      "year": 2021,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary statement of operations revenue table summary of revenues operating results",
+      "prediction": "N/A",
+      "ground_truth": "43,736",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "I need to find total revenue for 2020 in the SEC filing documents provided.\n\nLooking through the documents, I don't see a clear \"total revenue\" or \"total revenues\" line item with a value for 2020 in the provided document excerpts. The documents show balance sheet items, equity reconciliations, and other financial data, but not a complete income statement with total revenue clearly labeled.\n\n{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 16",
+          "table_row_count": 40,
+          "year_index": 0,
+          "excerpt": ")\n41,294\n39,921\nOther assets(c)\nTotal assets\n$\n100,770\n$\n97,799\nLiabilities:\nDue to affiliate(b)\n$\n3,224\n$\n3,231\nIntercompany tax payable(b)\n2,669\n2,700\nNotes and bonds payable 23,068\n20,467\nJunior subordinated debt 1,561\n1,542\nSeries AIGFP matched notes and bonds payable\nLoans from subsidiaries(b)\nOther liabilities (includes intercompany derivative liabilities of $0 in 2020 and $33 in 2019)\n3,130\n1,561\n1,542\nSeries AIGFP matched notes and bonds payable\nLoans from subsidiaries(b)\nOther liabiliti",
+          "full_text": ")\n41,294\n39,921\nOther assets(c)\nTotal assets\n$\n100,770\n$\n97,799\nLiabilities:\nDue to affiliate(b)\n$\n3,224\n$\n3,231\nIntercompany tax payable(b)\n2,669\n2,700\nNotes and bonds payable 23,068\n20,467\nJunior subordinated debt 1,561\n1,542\nSeries AIGFP matched notes and bonds payable\nLoans from subsidiaries(b)\nOther liabilities (includes intercompany derivative liabilities of $0 in 2020 and $33 in 2019)\n3,130\n1,561\n1,542\nSeries AIGFP matched notes and bonds payable\nLoans from subsidiaries(b)\nOther liabilities (includes intercompany derivative liabilities of $0 in 2020 and $33 in 2019)\n3,130\n3,448\nTotal liabilities\n34,408\n32,124\nAIG Shareholders’ equity:\nPreferred stock\nCommon stock\n4,766\n4,766\nTreasury stock\n(49,322)\n(48,987)\nAdditional paid-in capital\n81,418\n81,345\nRetained earnings\n15,504\n23,084\nAccumulated other comprehensive income\n13,511\n4,982\nTotal AIG shareholders’ equity\n66,362\n65,675\nTotal liabilities and equity\n$\n100,770\n$\n97,799\n(a)At December 31, 2020 and 2019, included restricted cash of $0 million and $102 million, respectively.\n(b)\nEliminated in consolidation.\n(c)",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2021,
+          "section": "item 4",
+          "table_row_count": 60,
+          "year_index": 0,
+          "excerpt": "ty\n$\n49,116\n$\n51,231\n$\n47,621\nTotal common shares outstanding 861,558,049\n869,999,031\n866,609,429\nBook value per common share\n$\n76.46\n$\n74.93\n$\n65.04\nAdjusted book value per common share 57.01\n58.89\n54.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2020\n2019\n2018\nActual or annualized net income (loss",
+          "full_text": "ty\n$\n49,116\n$\n51,231\n$\n47,621\nTotal common shares outstanding 861,558,049\n869,999,031\n866,609,429\nBook value per common share\n$\n76.46\n$\n74.93\n$\n65.04\nAdjusted book value per common share 57.01\n58.89\n54.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2020\n2019\n2018\nActual or annualized net income (loss) attributable to AIG\ncommon shareholders\n$\n(5,973)\n$\n3,326\n$\n(6)\nActual or annualized adjusted after-tax income (loss) attributable\nto AIG common shareholders\n2,201\n4,078\n1,215\nAverage AIG common shareholders' equity\n$\n63,225\n$\n62,205\n$\n60,819\nLess: Average AOCI\n7,529\n3,261\n1,193\nAdd: Average cumulative unrealized gains and losses related to\nFortitude Re’s Funds Withheld Assets\n2,653\n-\n-\nLess: Average DTA\n8,437\n9,605\n10,133\nAverage adjusted AIG common shareholders' equity\n$\n49,912\n$\n49,339\n$\n49,493\nReturn on common equity\n(9.4)\n%\n5.3\n%\n0.0\n%\nAdjusted return on common equity\n4.4\n%\n8.3\n%\n2.5\n%\nThe following table presents a reconciliation of pre-tax income/net income (loss) attributable to AIG to adjusted pre-tax income/adjusted after-tax income attributable to AIG:",
+          "bm25_score": null,
+          "embedding_score": 0.994185,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "red VIEs. ILS are financial instruments for which the values are determined based on insurance losses caused primarily by natural catastrophes such as major earthquakes and hurricanes. We report the investment in AlphaCat funds, which is approximately $118 million and $124 million at December 31, 2020 and December 31, 2019, respectively, in Other Invested Assets in the Consolidated Balance Sheets.\nThe following unaudited summarized pro forma consolidated income statement information assumes that",
+          "full_text": "red VIEs. ILS are financial instruments for which the values are determined based on insurance losses caused primarily by natural catastrophes such as major earthquakes and hurricanes. We report the investment in AlphaCat funds, which is approximately $118 million and $124 million at December 31, 2020 and December 31, 2019, respectively, in Other Invested Assets in the Consolidated Balance Sheets.\nThe following unaudited summarized pro forma consolidated income statement information assumes that the acquisition of Validus occurred as of January 1, 2017. The pro forma amounts are for comparative purposes only and may not necessarily reflect the results of operations that would have resulted had the acquisition been completed at the beginning of the applicable period and may not be indicative of the results that will be attained in the future.\nYear Ended December 31,",
+          "bm25_score": null,
+          "embedding_score": 0.977323,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2021,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "65675",
+      "ground_truth": "66,362",
+      "correct": false,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"65675\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 115,
+          "year_index": 0,
+          "excerpt": "e 13,511\n4,982\nTotal AIG shareholders’ equity 66,362\n65,675\nNon-redeemable noncontrolling interests 1,752\nTotal equity 67,199\n67,427\nTotal liabilities and equity\n$\n586,481\n$\n525,064\n*\nSee Note 10 for details of balances associated with variable interest entities.\nSee accompanying Notes to Consolidated Financial Statements.\nAmerican International Group, Inc.\nConsolidated Statements of Income (Loss)\nYears Ended December 31,\n(dollars in millions, except per common share data)\n2020\n2019\n2018\nRevenue",
+          "full_text": "e 13,511\n4,982\nTotal AIG shareholders’ equity 66,362\n65,675\nNon-redeemable noncontrolling interests 1,752\nTotal equity 67,199\n67,427\nTotal liabilities and equity\n$\n586,481\n$\n525,064\n*\nSee Note 10 for details of balances associated with variable interest entities.\nSee accompanying Notes to Consolidated Financial Statements.\nAmerican International Group, Inc.\nConsolidated Statements of Income (Loss)\nYears Ended December 31,\n(dollars in millions, except per common share data)\n2020\n2019\n2018\nRevenues:\nPremiums\n$\n28,523\n$\n30,561\n$\n30,614\nPolicy fees\n2,917\n3,015\n2,791\nNet investment income:\nNet investment income - excluding Fortitude Re funds withheld assets\n12,578\n14,619\n13,086\nNet investment income - Fortitude Re funds withheld assets*\n1,053\n-\n-\nTotal net investment income\n13,631\n14,619\n13,086\nNet realized capital gains (losses):\nNet realized capital gains (losses) - excluding Fortitude Re funds withheld\nassets and embedded derivative\n(56)\n(51)\nNet realized capital gains on Fortitude Re funds withheld assets*\n-\n-\nNet realized capital losses on Fortitude Re funds withheld embedded derivative*\n(2,645)\n-\n-\nTotal net realized capital gains (losses)\n(2,238)\n(51)\nOther income\nTotal revenues\n43,736\n49,746\n47,389\nBenefits, losses and expenses:\nPolicyholder benefits and losses incurred\n24,806\n25,402\n27,412\nInterest credited to policyholder account balances\n3,622\n3,832\n3,754\nAmortization of deferred policy acquisition costs\n4,211\n5,164\n5,386\nGeneral operating and other expenses\n8,396\n8,537\n9,302\nInterest expense\n1,457\n1,417\n1,309\nLoss on extinguishment of debt\nNet (gain) loss on sale of divested businesses\n8,525\n(38)\nTotal benefits, losses and expenses\n51,029\n44,459\n47,132\nIncome (loss) from continuing operations before income tax expense (benefit)\n(7,293)\n5,287\nIncome tax expense (benefit):\nCurrent\nDeferred\n(1,677)\n(182)\nIncome tax expense (benefit)\n(1,460)\n1,166\nIncome (loss) from continuing operations\n(5,833)\n4,121\nIncome (loss) from discontinued operations, net of income taxes\n(42)\nNet income (loss)\n(5,829)\n4,169\nLess:\nNet income from continuing operations attributable to noncontrolling interests\nNet income (loss) attributable to AIG\n(5,944)\n3,348\n(6)\nLess: Dividends on preferred stock\n-\nNet income (loss) attributable to AIG common shareholders\n$\n(5,973)\n$\n3,326\n$\n(6)\nIncome (loss) per common share attributable to AIG common shareholders:\nBasic:",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "illion, private equity funds of $5.2 billion, and affordable housing partnerships of $331 million.\n(b)\nAt December 31, 2020, approximately 68 percent of our hedge fund portfolio is available for redemption in 2021. The remaining 32 percent will be available for redemption between 2022 and 2027.\n(c)\nNet of accumulated depreciation of $756 million and $703 million in 2020 and 2019, respectively.\n(d)\nIncludes AIG’s 3.5 percent ownership interest in Fortitude Holdings which is recorded using the mea",
+          "full_text": "illion, private equity funds of $5.2 billion, and affordable housing partnerships of $331 million.\n(b)\nAt December 31, 2020, approximately 68 percent of our hedge fund portfolio is available for redemption in 2021. The remaining 32 percent will be available for redemption between 2022 and 2027.\n(c)\nNet of accumulated depreciation of $756 million and $703 million in 2020 and 2019, respectively.\n(d)\nIncludes AIG’s 3.5 percent ownership interest in Fortitude Holdings which is recorded using the measurement alternative for equity securities and is carried at cost, which was $100 million as of December 31, 2020.\nOther Invested Assets Carried at Fair Value\nCertain hedge funds, private equity funds, and other investment partnerships for which we have elected the fair value option are reported at fair value with changes in fair value recognized in Net investment income.\nOther Invested Assets – Equity Method Investments\nWe account for hedge funds, private equity funds, affordable housing partnerships and other investment partnerships using the equity method of accounting unless our interest is so minor that we may have virtually no influence over partnership operating and financial policies, or we have elected the fair value option. Under the equity method of accounting, our carrying amount generally is our share of the net asset value of the funds or the partnerships, and changes in our share of the net asset values are recorded in Net investment income. In applying the equity method of accounting, we consistently use the most recently available financial information provided by the general partner or manager of each of these investments. Hedge funds are reported as of the balance sheet date. Private equity funds are generally reported on a one-quarter lag. The financial statements of these investees are generally audited annually.\nSummarized Financial Information of Equity Method Investees\nThe following is the aggregated summarized financial information of our equity method investees, including those for which the fair value option has been elected:",
+          "bm25_score": null,
+          "embedding_score": 0.948429,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "(1,040,062,063)\n866,609,429\nShares issued\n-\n3,389,602\n3,389,602\nShares repurchased\n-\n-\n-\nShares, end of year 1,906,671,492\n(1,036,672,461)\n869,999,031\nYear Ended December | 31.0 | 2020.0\nShares, beginning of year 1,906,671,492\n(1,036,672,461)\n869,999,031\nShares issued\n-\n3,719,970\n3,719,970\nShares repurchased\n-\n(12,160,952) (12,160,952)\nShares, end of year 1,906,671,492\n(1,045,113,443)\n861,558,049\nDividends\nDividends are payable on AIG Common Stock only when, as and if declared by our Board of Di",
+          "full_text": "(1,040,062,063)\n866,609,429\nShares issued\n-\n3,389,602\n3,389,602\nShares repurchased\n-\n-\n-\nShares, end of year 1,906,671,492\n(1,036,672,461)\n869,999,031\nYear Ended December | 31.0 | 2020.0\nShares, beginning of year 1,906,671,492\n(1,036,672,461)\n869,999,031\nShares issued\n-\n3,719,970\n3,719,970\nShares repurchased\n-\n(12,160,952) (12,160,952)\nShares, end of year 1,906,671,492\n(1,045,113,443)\n861,558,049\nDividends\nDividends are payable on AIG Common Stock only when, as and if declared by our Board of Directors in its discretion, from funds legally available for this purpose. In considering whether to pay a dividend on or purchase shares of AIG Common Stock, our Board of Directors considers a number of factors, including, but not limited to: the capital resources available to support our insurance operations and business strategies, AIG’s funding capacity and capital resources in comparison to internal benchmarks, expectations for capital generation, rating agency expectations for capital, regulatory standards for capital and capital distributions, and such other factors as our Board of Directors may deem relevant. The payment of dividends is also subject to the terms of AIG’s outstanding Series A Preferred Stock, pursuant to which no dividends may be declared or paid on any AIG Common Stock unless the full dividends for the latest completed dividend period on all outstanding shares of Series A Preferred Stock have been declared and paid or provided for.\nThe following table presents declaration date, record date, payment date and dividends paid per common share on AIG Common Stock in the twelve months ended December 31, 2020, 2019 and 2018:",
+          "bm25_score": null,
+          "embedding_score": 0.93833,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2021,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial summary debt rating",
+      "prediction": "N/A",
+      "ground_truth": "BBB+",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "I need to find the S&P long-term debt rating for AIG in 2020. Let me look through the documents for relevant rating information.\n\nDocument 2 mentions rating agency actions in 2020, specifically that S&P placed credit ratings on CreditWatch with negative implications on October 27, 2020, but doesn't explicitly state the long-term debt rating value.\n\nDocument 3 mentions \"Composite AIG Credit Ratings\" but the table content is cut off.\n\nThe documents provided don't contain a clear explicit value for the S&P long-term debt rating in 2020 (such as \"BBB+\" or similar). The text references rating actions but doesn't show the actual rating value in the available text.\n\n{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "d with individual corporate executives, with the risk committees receiving regular reports regarding compliance with each policy to support risk governance at our corporate level as well as in each business unit. We review our governance and committee structure on a regular basis and make changes as appropriate to continue to effectively manage and govern both our risks and risk-taking activities.\nOur Board of Directors oversees the management of risk through its Risk and Capital Committee (RCC)",
+          "full_text": "d with individual corporate executives, with the risk committees receiving regular reports regarding compliance with each policy to support risk governance at our corporate level as well as in each business unit. We review our governance and committee structure on a regular basis and make changes as appropriate to continue to effectively manage and govern both our risks and risk-taking activities.\nOur Board of Directors oversees the management of risk through its Risk and Capital Committee (RCC) and Audit Committee. These committees regularly interact with other committees of the Board of Directors which are further described below. Our Chief Risk Officer (CRO) reports to both the RCC and our President and Global Chief Operating Officer.\nThe Group Risk Committee (GRC): The GRC is the senior management group responsible for assessing all significant risk issues on a global basis to protect our financial strength and reputation. The GRC is chaired by our CRO and includes members of the Executive Leadership Team (ELT). Our CRO reports periodically on behalf of the GRC to both the RCC and the Audit Committee of the Board of Directors. Our CRO is also a member of the ELT providing ERM the opportunity to contribute to, review, monitor and consider the impact of changes in strategy.\nManagement committees that support the GRC are described below. These committees are comprised of senior executives and experienced business representatives from a range of functions and business units throughout AIG and its subsidiaries. These committees are charged with identifying, analyzing and reviewing specific risk matters within their respective mandates. In addition, various working groups (e.g. reputational risk, control agenda) are in place in support of the GRC to manage and monitor the various risks across the organization.",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "ts of downgrades in our financial strength ratings see Note 11 to the Consolidated Financial Statements and Part I, Item 1A. Risk Factors – Liquidity, Capital and Credit.\nrecent Rating Agency Actions\nIn response to the announcement by AIG on October 26, 2020 of its intention to separate its Life and Retirement business from AIG, the rating agencies in the tables above took the following actions:\n\n\n\n\nOn October 27, 2020, S&P placed the credit ratings of AIG and the financial strength ratings ",
+          "full_text": "ts of downgrades in our financial strength ratings see Note 11 to the Consolidated Financial Statements and Part I, Item 1A. Risk Factors – Liquidity, Capital and Credit.\nrecent Rating Agency Actions\nIn response to the announcement by AIG on October 26, 2020 of its intention to separate its Life and Retirement business from AIG, the rating agencies in the tables above took the following actions:\n\n\n\n\nOn October 27, 2020, S&P placed the credit ratings of AIG and the financial strength ratings of most of the General Insurance subsidiaries on CreditWatch with negative implications. S&P also placed the financial strength ratings of the Life and Retirement subsidiaries on CreditWatch with developing implications.\nRegulation and Supervision\nFor a discussion of our regulation and supervision by different regulatory authorities in the United States and abroad, including with respect to our liquidity and capital resources see Part 1. Item 1. Business – Regulation and Item 1A. Risk Factors – Regulation.\nDividends\nOn February 12, 2020, our Board of Directors declared a cash dividend on AIG Common Stock of $0.32 per share, payable on March 30, 2020 to shareholders of record on March 16, 2020. On May 4, 2020, our Board of Directors declared a cash dividend on AIG Common Stock of $0.32 per share, payable on June 29, 2020 to shareholders of record on June 15, 2020. On August 3, 2020, our Board of Directors declared a cash dividend on AIG Common Stock of $0.32 per share, payable on September 30, 2020 to shareholders of record on September 17, 2020. On November 5, 2020, our Board of Directors declared a cash dividend on AIG Common Stock of $0.32 per share, payable on December 28, 2020 to shareholders of record on December 14, 2020.\nOn February 16, 2021, our Board of Directors declared a cash dividend on AIG Common Stock of $0.32 per share, payable on March 30, 2021 to shareholders of record on March 16, 2021.",
+          "bm25_score": null,
+          "embedding_score": 0.951384,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "rade\nBB\nB\nLower\nGrade\nTotal\nOther fixed maturity securities\n$\n107,016\n$\n80,877\n$\n187,893\n$\n9,670\n$\n6,999\n$\n2,177\n$\n18,846\n$\n206,739\nMortgage-backed, asset-backed and collateralized 53,818\n4,480\n58,298\n10,696\n11,739\n70,037\nTotal*\n$\n160,834\n$\n85,357\n$\n246,191\n$\n10,352\n$\n7,360\n$\n12,873\n$\n30,585\n$\n276,776\n*\nExcludes $10.6 million of fixed maturity securities for which no NAIC Designation is available.\nCredit Ratings\nAt December 31, 2020, approximately 89 percent of our fixed maturity securities were",
+          "full_text": "rade\nBB\nB\nLower\nGrade\nTotal\nOther fixed maturity securities\n$\n107,016\n$\n80,877\n$\n187,893\n$\n9,670\n$\n6,999\n$\n2,177\n$\n18,846\n$\n206,739\nMortgage-backed, asset-backed and collateralized 53,818\n4,480\n58,298\n10,696\n11,739\n70,037\nTotal*\n$\n160,834\n$\n85,357\n$\n246,191\n$\n10,352\n$\n7,360\n$\n12,873\n$\n30,585\n$\n276,776\n*\nExcludes $10.6 million of fixed maturity securities for which no NAIC Designation is available.\nCredit Ratings\nAt December 31, 2020, approximately 89 percent of our fixed maturity securities were held by our domestic entities. Approximately 88 percent of these securities were rated investment grade by one or more of the principal rating agencies. Our investment decision process relies primarily on internally generated fundamental analysis and internal risk ratings. Third-party rating services’ ratings and opinions provide one source of independent perspective for consideration in the internal analysis.\nMoody’s Investors Service Inc. (Moody’s), Standard & Poor’s Financial Services LLC, a subsidiary of S&P Global Inc. (S&P), or similar foreign rating services rate a significant portion of our foreign entities’ fixed maturity securities portfolio. Rating services are not available for some foreign-issued securities. Our Credit Risk Management department closely reviews the credit quality of the foreign portfolio’s non-rated fixed maturity securities. At December 31, 2020, approximately 95 percent of such investments were either rated investment grade or, on the basis of our internal analysis, were equivalent from a credit standpoint to securities rated investment grade. Approximately 27 percent of the foreign entities’ fixed maturity securities portfolio is comprised of sovereign fixed maturity securities supporting policy liabilities in the country of issuance.\nComposite AIG Credit Ratings",
+          "bm25_score": null,
+          "embedding_score": 0.902092,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2022,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary statement of operations revenue table summary of revenues operating results",
+      "prediction": "N/A",
+      "ground_truth": "52,057",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 15",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "to Junior Subordinated Indenture, dated as of December 1, 1996, among AIG Life Holdings, Inc. (as successor to American General Corporation), AIG and Deutsche Bank Trust Company Americas, as trustee.\nIncorporated by reference to Exhibit 4 to AIG’s Quarterly Report on Form 10-Q, filed with the SEC on August 6, 2021 (File No. 1-8787).\nTABLE OF CONTENTS\nVoting Trust Agreement\nNone.\nMaterial contracts\n(1) American International Group, Inc. 2010 Stock Incentive Plan*\nIncorporated by reference to Appe",
+          "full_text": "to Junior Subordinated Indenture, dated as of December 1, 1996, among AIG Life Holdings, Inc. (as successor to American General Corporation), AIG and Deutsche Bank Trust Company Americas, as trustee.\nIncorporated by reference to Exhibit 4 to AIG’s Quarterly Report on Form 10-Q, filed with the SEC on August 6, 2021 (File No. 1-8787).\nTABLE OF CONTENTS\nVoting Trust Agreement\nNone.\nMaterial contracts\n(1) American International Group, Inc. 2010 Stock Incentive Plan*\nIncorporated by reference to Appendix B in AIG’s Definitive Proxy Statement, dated April 12, 2010 (Filed No. 1-8787).\n(2) AIG Amended Form of 2010 Stock Incentive Plan DSU Award Agreement*\nIncorporated by reference to Exhibit 10.14 to AIG’s Quarterly Report on Form 10-Q for the quarter ended March 31, 2012 (File No. 1-8787).\n(3) Letter Agreement, dated August 14, 2013, between AIG and Kevin Hogan*\nIncorporated by reference to Exhibit 10.2 to AIG’s Quarterly Report on Form 10-Q for the quarter ended March 31, 2015 (File No. 1-8787).\n(4) Non-Solicitation and Non-Disclosure Agreement, dated August 14, 2013, between AIG and Kevin Hogan*\nIncorporated by reference to Exhibit 10.3 to AIG’s Quarterly Report on Form 10-Q for the quarter ended March 31, 2015 (File No. 1-8787).\n(5) Executive Officer Form of Release and Restrictive Covenant Agreement*\nIncorporated by reference to Exhibit 10.5 to AIG’s Quarterly Report on Form 10-Q for the quarter ended March 31, 2016 (File No. 1-8787).",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2022,
+          "section": "item 1a",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "\nIf our businesses do not perform well and/or their estimated fair values decline, we may be required to recognize an impairment of our goodwill or establish an additional valuation allowance against the deferred income tax assets, which could have a material adverse effect on our results of operations and financial condition.\nCompetition and Employees\n\n\nTABLE OF CONTENTS\nITEM 1A | Risk Factors\nRisk Factors\nInvesting in AIG involves risk. In deciding whether to invest in AIG, you should caref",
+          "full_text": "\nIf our businesses do not perform well and/or their estimated fair values decline, we may be required to recognize an impairment of our goodwill or establish an additional valuation allowance against the deferred income tax assets, which could have a material adverse effect on our results of operations and financial condition.\nCompetition and Employees\n\n\nTABLE OF CONTENTS\nITEM 1A | Risk Factors\nRisk Factors\nInvesting in AIG involves risk. In deciding whether to invest in AIG, you should carefully consider the following risk factors. Any of these risk factors could have a significant or material adverse effect on our businesses, results of operations, financial condition or liquidity. They could also cause significant fluctuations and volatility in the trading price of our securities. Readers should not consider any descriptions of these factors to be a complete set of all potential risks that could affect AIG. These factors should be considered carefully together with the other information contained in this report and the other reports and materials filed by us with the SEC. Further, many of these risks are interrelated and could occur under similar business and economic conditions, and the occurrence of certain of them may in turn cause the emergence or exacerbate the effect of others. Such a combination could materially increase the severity of the impact of these risks on our businesses, results of operations, financial condition and liquidity above and beyond a risk’s singular impact.\nMARKET CONDITIONS",
+          "bm25_score": null,
+          "embedding_score": 0.99411,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2022,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": ")\n-\n(151) (33)\n-\nCredit contracts (47)\n-\n-\n-\n-\n-\nOther contracts (7) (63)\n-\n-\n-\n-\n(8)\n-\nTotal derivative liabilities, net(a) (102) (104)\n-\n(1)\n-\n(119)\n-\nFortitude Re funds withheld payable\n-\n2,645\n-\n(276)\n-\n-\n3,673\n6,042\n(1,377)\n-\nTotal\n$\n6,808\n$\n5,222\n$\n-\n$\n$\n(1)\n$\n$\n3,673\n$\n15,721\n$\n(2,852)\n$\n-\n(a)Total Level 3 derivative exposures have been netted in these tables for presentation purposes only.\nNet realized and unrealized gains and losses included in income related to Level 3 assets and liabi",
+          "full_text": ")\n-\n(151) (33)\n-\nCredit contracts (47)\n-\n-\n-\n-\n-\nOther contracts (7) (63)\n-\n-\n-\n-\n(8)\n-\nTotal derivative liabilities, net(a) (102) (104)\n-\n(1)\n-\n(119)\n-\nFortitude Re funds withheld payable\n-\n2,645\n-\n(276)\n-\n-\n3,673\n6,042\n(1,377)\n-\nTotal\n$\n6,808\n$\n5,222\n$\n-\n$\n$\n(1)\n$\n$\n3,673\n$\n15,721\n$\n(2,852)\n$\n-\n(a)Total Level 3 derivative exposures have been netted in these tables for presentation purposes only.\nNet realized and unrealized gains and losses included in income related to Level 3 assets and liabilities shown above are reported in the Consolidated Statements of Income (Loss) as follows:",
+          "bm25_score": null,
+          "embedding_score": 0.977028,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2022,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "40058",
+      "ground_truth": "65,956",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"40058\", \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "idered for adjustment and/or disclosure.\nThe accompanying consolidated financial statements have been prepared in accordance with accounting principles generally accepted in the United States (U.S. GAAP). All material intercompany accounts and transactions have been eliminated.\nSales/disposals of ASSETS AND Businesses\nSeparation of Life and Retirement Business and Relationship with Blackstone Inc.\nOn October 26, 2020, AIG announced its intention to separate its Life and Retirement business from ",
+          "full_text": "idered for adjustment and/or disclosure.\nThe accompanying consolidated financial statements have been prepared in accordance with accounting principles generally accepted in the United States (U.S. GAAP). All material intercompany accounts and transactions have been eliminated.\nSales/disposals of ASSETS AND Businesses\nSeparation of Life and Retirement Business and Relationship with Blackstone Inc.\nOn October 26, 2020, AIG announced its intention to separate its Life and Retirement business from AIG. On November 2, 2021, AIG and Blackstone Inc. (Blackstone) completed the acquisition by Blackstone of a 9.9 percent equity stake in SAFG Retirement Services, Inc. (SAFG), which is the holding company for AIG’s Life and Retirement business, for $2.2 billion in an all cash transaction, subject to adjustment if the final pro forma adjusted book value is greater or lesser than the target pro forma adjusted book value. This resulted in a $629 million decrease to AIG’s shareholders’ equity. As part of the separation, most of AIG’s investment operations were transferred to SAFG or its subsidiaries as of December 31, 2021, and AIG entered into a long-term asset management relationship with Blackstone to manage an initial $50 billion of Life and Retirement’s existing investment portfolio beginning in the fourth quarter of 2021, with that amount increasing by increments of $8.5 billion per year for five years beginning in the fourth quarter of 2022, for an aggregate of $92.5 billion. In addition, Blackstone designated one member of the Board of Directors of SAFG, which consists of 11 directors. Pursuant to the definitive agreement, Blackstone will be required to hold its ownership interest in SAFG following the completion of the separation of the Life and Retirement business, subject to exceptions permitting Blackstone to sell 25%, 67% and 75% of its shares after the first, second and third anniversaries, respectively, of the initial public offering of SAFG (the IPO), with the transfer restrictions terminating in full on the fifth anniversary of the IPO. In the event that the IPO of SAFG is not completed prior to November 2, 2023, Blackstone will have the right to require AIG to undertake the IPO, and in the event that the IPO has not been completed prior to November 2, 2024, Blackstone will have the right to exchange all or a portion of its ownership interest in SAFG for shares of AIG’s common stock on the terms set forth in the definitive agreement. On November 1, 2021, SAFG declared a dividend payable to AIG Parent in the amount of $8.3 billion. In connection with such dividend, SAFG issued a promissory note to AIG Parent in the amount of $8.3 billion, which will be required to be paid to AIG Parent prior to the IPO of SAFG. As of February 16, 2022, no amounts have been paid under the promissory note. While we currently believe the IPO is the next step in the separation of the Life and Retirement business from AIG, no assurance can be given regarding the form that future separation transactions may take or the specific terms or timing thereof, or that a separation will in fact occur. Any separation transaction will be subject to the satisfaction of various conditions and approvals, including approval by the AIG Board of Directors, receipt of insurance and other required regulatory approvals, and satisfaction of any applicable requirements of the Securities and Exchange Commission (SEC).",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2022,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "s also reflects management’s assumptions on certain macroeconomic factors that include, but are not limited to, gross domestic product growth, employment, inflation, housing price index, interest rates and credit spreads.\nAccrued interest is excluded from the measurement of the allowance for credit losses and accrued interest is reversed through interest income once a loan is placed on nonaccrual.\nAccrued interest is excluded from the measurement of the allowance for credit losses and accrued in",
+          "full_text": "s also reflects management’s assumptions on certain macroeconomic factors that include, but are not limited to, gross domestic product growth, employment, inflation, housing price index, interest rates and credit spreads.\nAccrued interest is excluded from the measurement of the allowance for credit losses and accrued interest is reversed through interest income once a loan is placed on nonaccrual.\nAccrued interest is excluded from the measurement of the allowance for credit losses and accrued interest is reversed through interest income once a loan is placed on nonaccrual.\nWhen all or a portion of a loan is deemed uncollectible, the uncollectible portion of the carrying amount of the loan is charged off against the allowance.\nWe also have off-balance sheet commitments related to our commercial mortgage loans. The liability for expected credit losses related to these commercial mortgage loan commitments is reported in Other liabilities in the Consolidated Balance Sheets. When a commitment is funded, we record a loan receivable and reclassify the liability for expected credit losses related to the commitment into loan allowance for expected credit losses. Other changes in the liability for expected credit losses on loan commitments are recorded in Net realized gains (losses) in the Consolidated Statements of Income (Loss).\nPrior to the adoption of the Financial Instruments Credit Losses Standard on January 1, 2020",
+          "bm25_score": null,
+          "embedding_score": 0.948254,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2022,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "1, PSUs and RSUs granted via the annual 2021 LTI award (as of the date of grant), and those existing from the 2020 and 2019 LTI awards (as of the third quarter) accrue dividend equivalent rights (DERs) as AIG’s dividends are declared. These DERs will be settled in cash only if the underlying units’ vesting conditions are met; previously accrued DEUs were not impacted by this change.\nUnit Valuation\nUnit Valuation\nThe fair value of time-vesting RSUs as well as PSUs that are earned based on certain",
+          "full_text": "1, PSUs and RSUs granted via the annual 2021 LTI award (as of the date of grant), and those existing from the 2020 and 2019 LTI awards (as of the third quarter) accrue dividend equivalent rights (DERs) as AIG’s dividends are declared. These DERs will be settled in cash only if the underlying units’ vesting conditions are met; previously accrued DEUs were not impacted by this change.\nUnit Valuation\nUnit Valuation\nThe fair value of time-vesting RSUs as well as PSUs that are earned based on certain company-specific metrics was based on the closing price of AIG Common Stock on the grant date; while the fair value of PSUs that are earned based on AIG’s relative total shareholder return (TSR) was determined on the grant date using a Monte Carlo simulation.\nThe following table presents the assumptions used to estimate the fair value of PSUs that vest based on AIG’s TSR:",
+          "bm25_score": null,
+          "embedding_score": 0.938121,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2022,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "N/A",
+      "ground_truth": "BBB+",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "s can affect the valuation of residential/commercial mortgages, residential/commercial mortgage-backed securities and other structured securities with underlying assets that include residential/commercial mortgages, trusts that include residential/commercial real estate and/or mortgages, residential mortgage insurance and reinsurance contracts and commercial real estate investments.\nInterest rates\nInterest rates\nInterest rate risk can arise from a mismatch in the interest rate exposure of assets",
+          "full_text": "s can affect the valuation of residential/commercial mortgages, residential/commercial mortgage-backed securities and other structured securities with underlying assets that include residential/commercial mortgages, trusts that include residential/commercial real estate and/or mortgages, residential mortgage insurance and reinsurance contracts and commercial real estate investments.\nInterest rates\nInterest rates\nInterest rate risk can arise from a mismatch in the interest rate exposure of assets versus liabilities. Lower interest rates generally result in lower investment income and make some of our product offerings less attractive to investors. Conversely, higher interest rates are typically beneficial for the opposite reasons. However, when rates rise quickly, there can be an asymmetric GAAP accounting effect where the existing securities lose market value, which is largely reported through Other comprehensive income, and the offsetting decrease in the value of certain liabilities may not be recognized. Changes in interest rates can affect the valuation of fixed maturity securities, financial liabilities, insurance contracts including but not limited to universal life, fixed rate annuities, variable annuities and derivative contracts. Additionally, for variable annuity, index annuity, and equity indexed universal life products, deviations in actual versus expected policyholder behavior can be driven by fluctuations in various market variables, including interest rates. Policies with guaranteed living benefit options or riders are also subject to the risk of actual benefit utilization being different than expected.\nCredit spreads",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "is and assessment of credit risks, trending of those risks and reporting of other key risk metrics and limits, as may be required\nCredit Reserving\nincluding but not limited to development of a proper framework, policies and procedures for establishing accurate identification of (i) reserves for credit losses and (ii) other-than-temporary impairments for securities portfolios\nMarket Risk Management\nOverview\nMarket risk is defined as the risk of adverse impact due to systemic movements in one or m",
+          "full_text": "is and assessment of credit risks, trending of those risks and reporting of other key risk metrics and limits, as may be required\nCredit Reserving\nincluding but not limited to development of a proper framework, policies and procedures for establishing accurate identification of (i) reserves for credit losses and (ii) other-than-temporary impairments for securities portfolios\nMarket Risk Management\nOverview\nMarket risk is defined as the risk of adverse impact due to systemic movements in one or more of the following market risk drivers: equity and commodity prices, residential and commercial real estate values, interest rates, credit spreads, foreign exchange, inflation, and their respective levels of volatility.\nWe are engaged in a variety of insurance, investment and other financial services businesses that expose us to market risk, directly and indirectly. We are exposed to market risks primarily within our insurance and capital markets activities, on both the asset and the liability sides of our balance sheet through on- and off-balance sheet exposures. Within each business, the risk officer is responsible for creating a framework for proper identification of market risks, and ensuring that the risks are appropriately measured, monitored and managed, and are in accordance with the risk governance framework established by the CRO.\nThe scope and magnitude of our market risk exposures is managed under a robust framework that contains defined risk limits and minimum standards for managing market risk in a manner consistent with our risk appetite statement. Our market risk management framework focuses on quantifying the financial repercussions of changes in the above mentioned market risk drivers.\nMany of our market risk exposures, including exposures to changes in levels of interest rates and equity prices, are associated with the asset and liability exposures of our Life and Retirement companies. These exposures are generally long-term in nature. Examples of liability-related exposures include interest rate sensitive surrenders in our fixed deferred annuity product portfolio. Also, we have equity market risk sensitive surrenders in our variable annuity product portfolio. These interactive asset-liability types of risk exposures are regularly monitored in accordance with the risk governance framework noted above.\nGovernance",
+          "bm25_score": null,
+          "embedding_score": 0.937565,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "dditionally, for variable annuity, index annuity, and equity indexed universal life products, deviations in actual versus expected policyholder behavior can be driven by fluctuations in various market variables, including interest rates. Policies with guaranteed living benefit options or riders are also subject to the risk of actual benefit utilization being different than expected.\nCredit spreads\nCredit spreads\nCredit spreads measure an instrument’s risk premium or yield relative to that of a c",
+          "full_text": "dditionally, for variable annuity, index annuity, and equity indexed universal life products, deviations in actual versus expected policyholder behavior can be driven by fluctuations in various market variables, including interest rates. Policies with guaranteed living benefit options or riders are also subject to the risk of actual benefit utilization being different than expected.\nCredit spreads\nCredit spreads\nCredit spreads measure an instrument’s risk premium or yield relative to that of a comparable duration, default-free instrument. Changes in credit spreads can affect the valuation of fixed maturity securities, including but not limited to corporate bonds, asset backed securities, mortgage-backed securities, AIG-issued debt obligations, credit derivatives, derivative credit valuation adjustments and economic valuation of insurance liabilities. Much like higher interest rates, wider credit spreads paired with unchanged expectations about default losses imply higher investment income in the long term. In the short term, quickly rising spreads will cause a loss in the value of existing fixed maturity securities, which is largely reported through Other comprehensive income. A precipitous widening of credit spreads may also signal a fundamental weakness in the credit worthiness of bond obligors, potentially resulting in default losses.\nForeign exchange (FX) rates\nWe are a globally diversified enterprise with income, assets and liabilities denominated in, and capital deployed in, a variety of currencies. Changes in FX rates can affect the valuation of a broad range of balance sheet and income statement items as well as the settlement of cash flows exchanged in specific transactions.\nCommodity prices\nChanges in commodity prices (the value of commodities) can affect the valuation of publicly-traded commodities, commodity indices, derivatives on commodities and commodity indices, and other commodity-linked investments and insurance contracts. We are exposed to commodity prices primarily through their impact on the prices and credit quality of commodity producers’ debt and equity securities in our investment portfolio.\nInflation",
+          "bm25_score": null,
+          "embedding_score": 0.881041,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2023,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary notes revenue table statement of earnings summary of revenues",
+      "prediction": "N/A",
+      "ground_truth": "56,437",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "I need to find total revenue for 2022 in the provided documents. The documents provided are from AIG's 2023 filing but contain only narrative text about fair value measurements, tax laws, and derivatives - no financial tables with revenue figures are present.\n\n{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "When these receivables are measured at fair value, we use market-observable interest rates to determine fair value.\nSeparate Account Assets\nSeparate account assets are composed primarily of registered and unregistered open-end mutual funds that generally trade daily and are measured at fair value in the manner discussed above for equity securities traded in active markets.\nFreestanding Derivatives\nFreestanding Derivatives\nDerivative assets and liabilities can be exchange-traded or traded over-th",
+          "full_text": "When these receivables are measured at fair value, we use market-observable interest rates to determine fair value.\nSeparate Account Assets\nSeparate account assets are composed primarily of registered and unregistered open-end mutual funds that generally trade daily and are measured at fair value in the manner discussed above for equity securities traded in active markets.\nFreestanding Derivatives\nFreestanding Derivatives\nDerivative assets and liabilities can be exchange-traded or traded over-the-counter (OTC). We generally value exchange-traded derivatives such as futures and options using quoted prices in active markets for identical derivatives at the balance sheet date.\nOTC derivatives are valued using market transactions and other market evidence whenever possible, including market-based inputs to models, model calibration to market clearing transactions, broker or dealer quotations or alternative pricing sources with reasonable levels of price transparency. When models are used, the selection of a particular model to value an OTC derivative depends on the contractual terms of, and specific risks inherent in the instrument, as well as the availability of pricing information in the market. We generally use similar models to value similar instruments. Valuation models require a variety of inputs, including contractual terms, market prices and rates, yield curves, credit curves, measures of volatility, prepayment rates and correlations of such inputs. For OTC derivatives that trade in liquid markets, such as generic forwards, swaps and options, model inputs can generally be corroborated by observable market data by correlation or other means, and model selection does not involve significant management judgment.",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2023,
+          "section": "item 1a",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "arryforwards arising from an ownership change under Section 382 of the Internal Revenue Code would be dependent on the value of our equity and the AFR at the time of any ownership change. If we were to experience an “ownership change,” it is possible that a significant portion of our tax loss and credit carryforwards could expire before we would be able to use them to offset future taxable income.\nAIG’s previous Tax Asset Protection Plan (the TAP Plan), which was designed to reduce the likelihoo",
+          "full_text": "arryforwards arising from an ownership change under Section 382 of the Internal Revenue Code would be dependent on the value of our equity and the AFR at the time of any ownership change. If we were to experience an “ownership change,” it is possible that a significant portion of our tax loss and credit carryforwards could expire before we would be able to use them to offset future taxable income.\nAIG’s previous Tax Asset Protection Plan (the TAP Plan), which was designed to reduce the likelihood of an “ownership change,” was not extended and thus expired in accordance with its terms on December 11, 2022. The protective amendment (the Protective Amendment) to the Amended and Restated Certificate of Incorporation, which is designed to prevent certain transfers of AIG Common Stock that could result in an “ownership change,” will expire in accordance with its terms on May 13, 2023. If AIG were to experience an “ownership change,” it will no longer have the benefit of the TAP Plan or the Protective Amendment after their respective expiration dates, which would limit its ability to utilize its then remaining tax attributes to offset future tax liability.\nNew and proposed changes to tax laws could increase our corporate taxes or make some of our products less attractive to consumers. The recently enacted Inflation Reduction Act (the IRA), which establishes a new 15 percent corporate alternative minimum tax (CAMT) on adjusted book income (of corporations that have an average adjusted book income in excess of $1 billion over a three tax year period) for tax years beginning after December 31, 2022 may impact AIG’s after-tax earnings or cash flow. AIG may be required to pay tax equal to 15% of AIG’s pre-tax financial statement income, as adjusted by the IRA, despite AIG’s U.S. federal net operating loss carryforwards and foreign tax credits.\nThe IRA also includes a nondeductible 1% excise tax on the repurchase of corporate stock for transactions occurring in taxable years after December 31, 2022. The 1% excise tax on share repurchases would increase AIG’s cost of share repurchases.",
+          "bm25_score": null,
+          "embedding_score": 0.988515,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "alue by using dealer quotations, discounted cash flow analyses and/or internal valuation models. The determination of fair value considers inputs such as interest rate, maturity, the borrower’s creditworthiness, collateral, subordination, guarantees, past-due status, yield curves, credit curves, prepayment rates, market pricing for comparable loans and other relevant factors.\nOther Invested Assets\nOther Invested Assets\nWe initially estimate the fair value of investments in certain hedge funds, p",
+          "full_text": "alue by using dealer quotations, discounted cash flow analyses and/or internal valuation models. The determination of fair value considers inputs such as interest rate, maturity, the borrower’s creditworthiness, collateral, subordination, guarantees, past-due status, yield curves, credit curves, prepayment rates, market pricing for comparable loans and other relevant factors.\nOther Invested Assets\nOther Invested Assets\nWe initially estimate the fair value of investments in certain hedge funds, private equity funds and other investment partnerships by reference to the transaction price. Subsequently, we generally obtain the fair value of these investments from net asset value information provided by the general partner or manager of the investments, the financial statements of which are generally audited annually. We consider observable market data and perform certain control procedures to validate the appropriateness of using the net asset value as a fair value measurement. The fair values of other investments carried at fair value, such as direct private equity holdings, are initially determined based on transaction price and are subsequently estimated based on available evidence such as market transactions in similar instruments, other financing transactions of the issuer and other available financial information for the issuer, with adjustments made to reflect illiquidity as appropriate.\nShort-term Investments\nFor short-term investments that are measured at amortized cost, the carrying amounts of these assets approximate fair values because of the relatively short period of time between origination and expected realization, and their limited exposure to credit risk. Securities purchased under agreements to resell (reverse repurchase agreements) are generally treated as collateralized receivables. We report certain receivables arising from securities purchased under agreements to resell as Short-term investments in the Consolidated Balance Sheets. When these receivables are measured at fair value, we use market-observable interest rates to determine fair value.\nSeparate Account Assets\nSeparate account assets are composed primarily of registered and unregistered open-end mutual funds that generally trade daily and are measured at fair value in the manner discussed above for equity securities traded in active markets.\nFreestanding Derivatives",
+          "bm25_score": null,
+          "embedding_score": 0.986059,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2023,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "40058",
+      "ground_truth": "40,002",
+      "correct": true,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"40058\", \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 20,
+          "year_index": 0,
+          "excerpt": "hat are designated as hedging instruments when the change in the fair value of the hedged item is not reported in Net realized gains (losses).\n•Foreign exchange gains and losses resulting from foreign currency transactions.\n•Changes in fair value of the embedded derivative related to the Fortitude Re funds withheld assets.\nThe following table presents the components of Net realized gains (losses):\nYears Ended December 31,202220212020\n(in millions)ExcludingFortitudeRe FundsWithheldAssetsFortitude",
+          "full_text": "hat are designated as hedging instruments when the change in the fair value of the hedged item is not reported in Net realized gains (losses).\n•Foreign exchange gains and losses resulting from foreign currency transactions.\n•Changes in fair value of the embedded derivative related to the Fortitude Re funds withheld assets.\nThe following table presents the components of Net realized gains (losses):\nYears Ended December 31,202220212020\n(in millions)ExcludingFortitudeRe FundsWithheldAssetsFortitudeReFundsWithheldAssetsTotalExcludingFortitudeRe FundsWithheldAssetsFortitudeReFundsWithheldAssetsTotalExcludingFortitudeRe FundsWithheldAssetsFortitudeReFundsWithheldAssetsTotal\nSales of fixed maturity securities $(871) $(311) $(1,182)$211 $717 $928 | 307.0 | 707.0 | 1014.0\nIntent to sell (66)— (66)— — — (3)— (3)\nChange in allowance for credit losses on fixed maturity securities (184) (32) (216)19 7 26 | -270.0 | -10.0 | -280.0\nChange in allowance for credit losses on loans (55) (47) (102)163 9 | 172.0 | None | -103.0\nForeign exchange transactions (17) (5) (22)16 (5)11 | 365.0 | 13.0 | 378.0\nVariable annuity embedded derivatives, net of related hedges 1,221 — 1,221 (39)— (39)166 — 166\nAll other derivatives and hedge accounting 1,814 (134)1,680 179 28 207 | -672.0 | -249.0 | -921.0\nSales of alternative investments and real estate investments 193 43 236 988 237 1,225 143 — 143\nOther (39)— (39)214 10 224 13 — 13\nNet realized gains (losses) – excluding Fortitude Re funds withheld embedded derivative 1,996 (486)1,510 1,751 1,003 | 2754.0 | None | 407.0\nNet realized gains (losses) on Fortitude Re funds withheld embedded derivative— 7,481 7,481 — (603) (603)— | -2645.0 | -2645.0\nNet realized gains (losses)$1,996 $6,995 $8,991 $1,751 $400 $2,151 | -56.0 | -2182.0 | -2238.0\nCHANGE IN UNREALIZED APPRECIATION (DEPRECIATION) OF INVESTMENTS\nThe following table presents the increase (decrease) in unrealized appreciation (depreciation) of our available for sale securities and other investments:\nYears Ended December 31,\n(in millions)20222021\nIncrease (decrease) in unrealized appreciation (depreciation) of investments:\nFixed maturity securities | -47741.0 | -9255.0\nOther investments (25)—\nTotal increase (decrease) in unrealized appreciation (depreciation) of investments | -47766.0 | -9255.0\nThe following table summarizes the unrealized gains and losses recognized in Net investment income during the reporting period on equity securities and other investments still held at the reporting date:",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "dited 2013$41 $327 $682 $945 $1,139 $1,235 $1,314 $1,362 | 1440.0 | 1466.0 | -81.0\n201466 366 849 1,158 1,387 1,573 1,658 | 1758.0 | 1820.0 | -128.0\n201563 390 791 1,055 1,282 1,488 | 1686.0 | 1818.0 | -269.0\n201673 499 1,002 1,358 1,659 1,826 1,903 —\n201764 391 761 1,118 1,396 1,515 —\n201886 486 835 1,126 1,415 —\n201994 367 642 953 —\n202084 356 648 —\n202143 151 —\n202230 —\nTotal | 11719.0 | -478.0\nU.S. Property and Special Risks\nU.S. Property products include commercial, industrial and energy-re",
+          "full_text": "dited 2013$41 $327 $682 $945 $1,139 $1,235 $1,314 $1,362 | 1440.0 | 1466.0 | -81.0\n201466 366 849 1,158 1,387 1,573 1,658 | 1758.0 | 1820.0 | -128.0\n201563 390 791 1,055 1,282 1,488 | 1686.0 | 1818.0 | -269.0\n201673 499 1,002 1,358 1,659 1,826 1,903 —\n201764 391 761 1,118 1,396 1,515 —\n201886 486 835 1,126 1,415 —\n201994 367 642 953 —\n202084 356 648 —\n202143 151 —\n202230 —\nTotal | 11719.0 | -478.0\nU.S. Property and Special Risks\nU.S. Property products include commercial, industrial and energy-related property insurance products and services that cover exposures to manmade and natural disasters, including business interruption. U.S. Special Risk products include aerospace, environmental, political risk, trade credit, surety and marine insurance, and program business for various small and medium sized enterprises insurance lines. The program segments include both property and casualty exposures. Recent years have seen an increasing proportion of non-admitted coverages which has altered the underlying customer profile to be less severe in the aggregate.\nIncurred Losses and Allocated Loss Adjustment Expenses, Undiscounted and Net of Reinsurance",
+          "bm25_score": null,
+          "embedding_score": 0.928013,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2023,
+          "section": "item 1a",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "nvestment portfolio in the future.\nOur valuation of investments and derivatives involves the application of methodologies and assumptions to derive estimates, which may differ from actual experience and could result in changes to investment valuations that may materially adversely affect our business, results of operations, financial condition and liquidity or lead to volatility in our net income.\nDuring periods of market disruption, it has been and may continue to be difficult to value certain ",
+          "full_text": "nvestment portfolio in the future.\nOur valuation of investments and derivatives involves the application of methodologies and assumptions to derive estimates, which may differ from actual experience and could result in changes to investment valuations that may materially adversely affect our business, results of operations, financial condition and liquidity or lead to volatility in our net income.\nDuring periods of market disruption, it has been and may continue to be difficult to value certain of our investments or derivatives if trading becomes less frequent and/or market data becomes less observable. There may be cases where certain assets in normally active markets with significant observable data become inactive with insufficient observable data due to the financial environment or market conditions in effect at that time. As a result, valuations may include inputs and assumptions that are less observable or require greater estimation and judgment as well as valuation methods that are more complex. These values may not be realized in a market transaction, may not reflect the value of the asset and may change very rapidly as market conditions change and valuation assumptions are modified. Decreases in value and/or an inability to realize that value in a market transaction or other disposition may have a material adverse effect on our business, results of operations, financial condition and liquidity.\nFor information regarding volatility in accounting as it relates to Fortitude Re, see Reserves and Exposures – “Fortitude Re may fail to perform its obligations and the accounting treatment of our reinsurance agreements with Fortitude Re leads to volatility in our results of operations” above.\nLIQUIDITY, CAPITAL AND CREDIT",
+          "bm25_score": null,
+          "embedding_score": 0.913915,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2023,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "N/A",
+      "ground_truth": "BBB+",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 7",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "irectly attributed to settling and paying claims of insureds and include, but are not limited to, legal fees, adjuster’s fees and the portion of general expenses allocated to claim settlement costs.\nLoan-to-value ratio  Principal amount of loan amount divided by appraised value of collateral securing the loan.\nLoss ratio  Losses and loss adjustment expenses incurred divided by net premiums earned.\nLoss ratio  Losses and loss adjustment expenses incurred divided by net premiums earned.\nLoss reser",
+          "full_text": "irectly attributed to settling and paying claims of insureds and include, but are not limited to, legal fees, adjuster’s fees and the portion of general expenses allocated to claim settlement costs.\nLoan-to-value ratio  Principal amount of loan amount divided by appraised value of collateral securing the loan.\nLoss ratio  Losses and loss adjustment expenses incurred divided by net premiums earned.\nLoss ratio  Losses and loss adjustment expenses incurred divided by net premiums earned.\nLoss reserve development  The increase or decrease in incurred losses and loss adjustment expenses related to prior years as a result of the re-estimation of loss reserves at successive valuation dates for a given group of claims.\nLoss reserves  Liability for unpaid losses and loss adjustment expenses. The estimated ultimate cost of settling claims relating to insured events that have occurred on or before the balance sheet date, whether or not reported to the insurer at that date.\nMaster netting agreement  An agreement between two counterparties who have multiple derivative contracts with each other that provides for the net settlement of all contracts covered by such agreement, as well as pledged collateral, through a single payment, in a single currency, in the event of default on or upon termination of any one such contract.\nNatural catastrophe losses are generally weather or seismic events having a net impact on AIG in excess of $10 million each and man-made catastrophe losses, such as terrorism and civil disorders that exceed the $10 million threshold.\nNet premiums written represent the sales of an insurer, adjusted for reinsurance premiums assumed and ceded, during a given period. Net premiums earned are the revenue of an insurer for covering risk during a given period. Net premiums written are a measure of performance for a sales period, while net premiums earned are a measure of performance for a coverage period.\nNoncontrolling interests  The portion of equity ownership in a consolidated subsidiary not attributable to the controlling parent company.\nPolicy fees  An amount added to a policy premium, or deducted from a policy cash value or contract holder account, to reflect the cost of issuing a policy, establishing the required records, sending premium notices and other related expenses.",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2023,
+          "section": "item 7",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": ", in conjunction with the credit executives within ERM, reviews these developments, monitors compliance with credit triggers that may require the reinsurer to post collateral, and seeks to use other appropriate means to mitigate any material risks arising from these developments.\nFor additional information on reinsurance recoverable, see Critical Accounting Estimates – Reinsurance Assets.\nGlossary\nAccident year  The annual calendar accounting period in which loss events occurred, regardless of w",
+          "full_text": ", in conjunction with the credit executives within ERM, reviews these developments, monitors compliance with credit triggers that may require the reinsurer to post collateral, and seeks to use other appropriate means to mitigate any material risks arising from these developments.\nFor additional information on reinsurance recoverable, see Critical Accounting Estimates – Reinsurance Assets.\nGlossary\nAccident year  The annual calendar accounting period in which loss events occurred, regardless of when the losses are actually reported, booked or paid.\nAccident year combined ratio, as adjusted (Accident year combined ratio, ex-CAT)  The combined ratio excluding catastrophe losses and related reinstatement premiums, prior year development, net of premium adjustments, and the impact of reserve discounting.\nAccident year loss ratio, as adjusted (Accident year loss ratio, ex-CAT)  The loss ratio excluding catastrophe losses and related reinstatement premiums, prior year development, net of premium adjustments, and the impact of reserve discounting.\nAcquisition ratio  Acquisition costs divided by net premiums earned. Acquisition costs are those costs incurred to acquire new and renewal insurance contracts and also include the amortization of VOBA and DAC. Acquisition costs vary with sales and include, but are not limited to, commissions, premium taxes, direct marketing costs and certain costs of personnel engaged in sales support activities such as underwriting.\nAdjusted revenues exclude Net realized gains (losses), income from non-operating litigation settlements (included in Other income for GAAP purposes), changes in fair value of securities used to hedge guaranteed living benefits (included in Net investment income for GAAP purposes) and income from elimination of the international reporting lag. Adjusted revenues is a GAAP measure for our segments.\nAssets under administration include assets under management and Retail Mutual Funds and Group Retirement mutual fund assets that we sell or administer.\nAttritional losses are losses recorded in the current accident year, which are not catastrophe losses.\nAUM  Assets under management include assets in the general and separate accounts of our subsidiaries that support liabilities and surplus related to our life and annuity insurance products and the notional value of stable value wrap contracts.",
+          "bm25_score": null,
+          "embedding_score": 0.915793,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2023,
+          "section": "item 7",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "a coverage period.\nNoncontrolling interests  The portion of equity ownership in a consolidated subsidiary not attributable to the controlling parent company.\nPolicy fees  An amount added to a policy premium, or deducted from a policy cash value or contract holder account, to reflect the cost of issuing a policy, establishing the required records, sending premium notices and other related expenses.\nPool  A reinsurance arrangement whereby all of the underwriting results of the pool members are com",
+          "full_text": "a coverage period.\nNoncontrolling interests  The portion of equity ownership in a consolidated subsidiary not attributable to the controlling parent company.\nPolicy fees  An amount added to a policy premium, or deducted from a policy cash value or contract holder account, to reflect the cost of issuing a policy, establishing the required records, sending premium notices and other related expenses.\nPool  A reinsurance arrangement whereby all of the underwriting results of the pool members are combined and then shared by each member in accordance with its pool participation percentage.\nPremiums and deposits – Life and Retirement includes direct and assumed amounts received and earned on traditional life insurance policies, group benefit policies and life-contingent payout annuities, as well as deposits received on universal life, investment-type annuity contracts, FHLB funding agreements and mutual funds.\nPrior year development  See Loss reserve development.\nRBC  Risk-Based Capital  A formula designed to measure the adequacy of an insurer’s statutory surplus compared to the risks inherent in its business.\nReinstatement premiums  Premiums on an insurance policy over and above the initial premium imposed at the beginning of the policy payable to reinsurers or receivable from insurers to restore coverage limits that have been reduced or exhausted as a result of reinsured losses under certain excess of loss reinsurance contracts.\nReinsurance  The practice whereby one insurer, the reinsurer, in consideration of a premium paid to that insurer, agrees to indemnify another insurer, the ceding company, for part or all of the liability of the ceding company under one or more policies or contracts of insurance which it has issued.\nReinsurance recoverables are comprised of paid losses recoverable, ceded loss reserves, ceded reserves for unearned premiums, and Life and Annuity reinsurance recoverables (ceded policy and claim reserves and policyholder contract deposits).\nRetroactive reinsurance  See Deferred gain on retroactive reinsurance.",
+          "bm25_score": null,
+          "embedding_score": 0.839557,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2024,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary revenue section revenue table summary of revenues annual",
+      "prediction": "N/A",
+      "ground_truth": "46,802",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 8",
+          "table_row_count": 19,
+          "year_index": 0,
+          "excerpt": "analysis is segmented by major coverages, such as D&O, E&O, etc. and then further segmented by major industry groups (e.g. corporate accounts, national accounts, financial institutions, private/not-for-profit, etc.). We also separately review primary business from excess business for certain product lines.\nIncurred Losses and Allocated Loss Adjustment Expenses, Undiscounted and Net of Reinsurance\nYears Ended December 31, (in millions)\nDecember | 31.0 | 2023.0\nAccidentYear 20142015201620172018201",
+          "full_text": "analysis is segmented by major coverages, such as D&O, E&O, etc. and then further segmented by major industry groups (e.g. corporate accounts, national accounts, financial institutions, private/not-for-profit, etc.). We also separately review primary business from excess business for certain product lines.\nIncurred Losses and Allocated Loss Adjustment Expenses, Undiscounted and Net of Reinsurance\nYears Ended December 31, (in millions)\nDecember | 31.0 | 2023.0\nAccidentYear 20142015201620172018201920202021202220232023Prior YearDevelopmentExcludingthe Impactof ADCTotal of IBNRLiabilitiesPlus ExpectedDevelopmenton ReportedLossesCumulativeNumber ofReportedClaimsIncurredImpactof ADCIBNRImpactof ADC 2023(Net ofImpactof ADC)Total ofIBNRLiabilitiesNet of Impactof ADC\nUnaudited\n2014$1,812 $1,777 $1,892 $1,927 $1,960 $1,981 $2,000 $2,057 $2,014 $2,017 $3 $91 17,650 | -297.0 | None | 23.0\n20151,737 1,762 1,743 1,788 1,830 1,874 1,959 2,044 2,048 4 78 16,253 | -495.0 | None | 15.0\n20161,605 1,855 1,993 2,064 2,139 2,281 2,325 2,308 (17)133 16,127 — — | 2308.0 | 133.0\n20171,564 1,675 1,756 1,846 1,898 1,987 1,957 (30)130 15,269 — — | 1957.0 | 130.0\n20181,640 1,766 1,882 2,063 2,225 2,322 97 498 14,833 — — | 2322.0 | 498.0\n20191,503 1,536 1,627 1,926 1,912 (14)513 13,319 — — | 1912.0 | 513.0\n20201,213 1,252 1,408 1,457 49 331 10,390 — — | 1457.0 | 331.0\n20211,430 1,408 1,388 (20)894 7,117 — — | 1388.0 | 894.0\n20221,130 1,108 (22)948 5,809 — — | 1108.0 | 948.0\n20231,043 950 6,467 — — | 1043.0 | 950.0\nTotal | 17560.0 | 50.0 | None\nCumulative Paid Losses and Allocated Loss Adjustment Expenses, Net of Reinsurance from the table below (11,645)— | 501.0 | -11144.0\nLiabilities for losses and loss adjustment expenses and prior year development before accident year 2014, net of reinsurance | 271.0 | 27.0 | None\nUnallocated loss adjustment expense prior year development 17\nLiabilities for losses and loss adjustment expenses and prior year loss development, net of reinsurance | 6186.0 | 94.0 | None\nIncurred Losses and Loss Adjustment Expenses, Undiscounted, Net of Reinsurance (including impact of ADC)",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2024,
+          "section": "item 1a",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "ially acceptable terms, failure of a third-party provider to perform as anticipated or in compliance with applicable laws or regulations, inability of a third-party provider to provide the required volumes of services or our third-party providers experiencing cyberattacks or data breaches, could materially and adversely affect our business, results of operations, financial condition and liquidity.\nLike other global companies, the systems and networks we maintain and third-party systems and netwo",
+          "full_text": "ially acceptable terms, failure of a third-party provider to perform as anticipated or in compliance with applicable laws or regulations, inability of a third-party provider to provide the required volumes of services or our third-party providers experiencing cyberattacks or data breaches, could materially and adversely affect our business, results of operations, financial condition and liquidity.\nLike other global companies, the systems and networks we maintain and third-party systems and networks we use have in the past been, and may in the future be, subject to or targets of unauthorized or fraudulent access, including physical or electronic break-ins or unauthorized tampering, as well as attempted cybersecurity threats such as “denial of service” attacks, phishing, automated attacks, and other disruptive attacks, including ransomware. Cyber threats are constantly evolving and the techniques used in these attacks change, develop and evolve rapidly, including the use of emerging technologies, such as broader forms of artificial intelligence and quantum computing by nation state threat actors and criminal organizations. The new cyber risks introduced by these changes in technology require us to devote significant attention to identification, assessment and analysis of the risks and implementation of corresponding preventative measures. Additionally, the frequency and sophistication of such threats continue to increase and often become further heightened in connection with geopolitical tensions. Also, like other global companies, we have an increasing challenge of retaining and attracting highly qualified personnel to assist us in combatting these security threats.",
+          "bm25_score": null,
+          "embedding_score": 0.998072,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2024,
+          "section": "item 1a",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "risks and implementation of corresponding preventative measures. Additionally, the frequency and sophistication of such threats continue to increase and often become further heightened in connection with geopolitical tensions. Also, like other global companies, we have an increasing challenge of retaining and attracting highly qualified personnel to assist us in combatting these security threats.\nThere is no assurance that our cybersecurity measures, including information security and technology",
+          "full_text": "risks and implementation of corresponding preventative measures. Additionally, the frequency and sophistication of such threats continue to increase and often become further heightened in connection with geopolitical tensions. Also, like other global companies, we have an increasing challenge of retaining and attracting highly qualified personnel to assist us in combatting these security threats.\nThere is no assurance that our cybersecurity measures, including information security and technology policies and standards, administrative, technical and physical controls and other actions by us or contracted third-parties designed as preventative, will provide fully effective protection from threats to our data, systems and networks, including malware and computer virus attacks, ransomware, unauthorized access, business e-mail compromise, misuse, denial-of-service attacks, system failures and other disruptions. AIG maintains insurance to cover operational risks, such as cyber risk and technology outages, but this insurance may not cover all costs associated with the consequences of information systems or personal, confidential or proprietary information being compromised. In the case of a successful ransomware attack in which our data and information systems are compromised and applicable restore control processes to restore access are not effective, our information could be held hostage until a ransom, which may be significant, is paid. In some cases, such a compromise may not be immediately detected which may make it difficult to restore critical services, mitigate damage to assets and maintain the integrity and security of data including our policyholder, employee, agent, and other confidential information processed through our systems and networks.\nAdditionally, since we rely heavily on information technology and systems (which increasingly will include the use of artificial intelligence) and on the integrity and timeliness of data to run our businesses and service our customers, any such security event and resulting compromise of systems or data may impede or interrupt our business operations and our ability to service our customers, and otherwise may materially and adversely affect our business, results of operations, financial condition and liquidity.",
+          "bm25_score": null,
+          "embedding_score": 0.933088,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2024,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "40058",
+      "ground_truth": "45,351",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"40058\", \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 4",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "Earned income on such economic hedges is reclassified from net realized gains and losses to specific APTI line items based on the economic risk being hedged (e.g. net investment income and interest credited to policyholder account balances);\n•income or loss from discontinued operations;\n•net loss reserve discount benefit (charge);\n•pension expense related to lump sum payments to former employees;\n•net gain or loss on divestitures and other;\n•non-operating litigation reserves and settlements;\n•re",
+          "full_text": "Earned income on such economic hedges is reclassified from net realized gains and losses to specific APTI line items based on the economic risk being hedged (e.g. net investment income and interest credited to policyholder account balances);\n•income or loss from discontinued operations;\n•net loss reserve discount benefit (charge);\n•pension expense related to lump sum payments to former employees;\n•net gain or loss on divestitures and other;\n•non-operating litigation reserves and settlements;\n•restructuring and other costs related to initiatives designed to reduce operating expenses, improve efficiency and simplify our organization;\n•the portion of favorable or unfavorable prior year reserve development for which we have ceded the risk under retroactive reinsurance agreements and related changes in amortization of the deferred gain;\n•integration and transaction costs associated with acquiring or divesting businesses;\n•losses from the impairment of goodwill;\n•non-recurring costs associated with the implementation of non-ordinary course legal or regulatory changes or changes to accounting principles; and\n•income from elimination of the international reporting lag.\n•General Insurance\n–Ratios: We, along with most property and casualty insurance companies, use the loss ratio, the expense ratio and the combined ratio as measures of underwriting performance. These ratios are relative measurements that describe, for every $100 of net premiums earned, the amount of losses and loss adjustment expenses (which for General Insurance excludes net loss reserve discount), and the amount of other underwriting expenses that would be incurred. A combined ratio of less than 100 indicates underwriting income and a combined ratio of over 100 indicates an underwriting loss. Our ratios are calculated using the relevant segment information calculated under GAAP, and thus may not be comparable to similar ratios calculated for regulatory reporting purposes. The underwriting environment varies across countries and products, as does the degree of litigation activity, all of which affect such ratios. In addition, investment returns, local taxes, cost of capital, regulation, product type and competition can have an effect on pricing and consequently on profitability as reflected in underwriting income and associated ratios.",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2024,
+          "section": "item 2",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "ITEM 2 | Properties",
+          "full_text": "ITEM 2 | Properties",
+          "bm25_score": null,
+          "embedding_score": 0.932979,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2024,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "illions)Total VIEAssetsOn-BalanceSheet(c)\nOff-BalanceSheetTotal\nDecember | 31.0 | 2023.0\nReal estate and investment entities(a)\n$528,053 $9,125 $3,720 (d)\n$12,845\nOther(b)\n1,027 58 748 (e)\nTotal $529,080 | 9183.0 | 4468.0 | 13651.0\nDecember | 31.0 | 2022.0\nReal estate and investment entities(a)\n$504,219 $9,145 $3,938 (d)\n$13,083\nOther(b)\n1,302 247 747 (e)\nTotal $505,521 | 9392.0 | 4685.0 | 14077.0\n(a)Comprised primarily of hedge funds and private equity funds.\n(b)At December 31, 2023 and 2022, e",
+          "full_text": "illions)Total VIEAssetsOn-BalanceSheet(c)\nOff-BalanceSheetTotal\nDecember | 31.0 | 2023.0\nReal estate and investment entities(a)\n$528,053 $9,125 $3,720 (d)\n$12,845\nOther(b)\n1,027 58 748 (e)\nTotal $529,080 | 9183.0 | 4468.0 | 13651.0\nDecember | 31.0 | 2022.0\nReal estate and investment entities(a)\n$504,219 $9,145 $3,938 (d)\n$13,083\nOther(b)\n1,302 247 747 (e)\nTotal $505,521 | 9392.0 | 4685.0 | 14077.0\n(a)Comprised primarily of hedge funds and private equity funds.\n(b)At December 31, 2023 and 2022, excludes approximately $1,971 million and $2,057 million, respectively, of VIE assets related to AIGFP and its consolidated subsidiaries, with maximum off-balance sheet exposure to loss of $1,941 million and $2,033 million, respectively. For additional information, see Note 1.\n(c)At December 31, 2023 and 2022, $9.1 billion and $9.3 billion, respectively, of our total unconsolidated VIE assets were recorded as Other invested assets.\n(d)These amounts represent our unfunded commitments to invest in private equity funds and hedge funds.\n(e)These amounts represent our estimate of the maximum exposure to loss under certain insurance policies issued to VIEs if a hypothetical loss occurred to the extent of the full amount of the insured value. Our insurance policies cover defined risks and our estimate of liability is included in our insurance reserves on the balance sheet.\nREAL ESTATE AND INVESTMENT ENTITIES\nThrough our insurance operations and AIG Global Real Estate Investment Corp., we are an investor in various real estate investment entities, some of which are VIEs. These investments are typically with unaffiliated third-party developers via a partnership or limited liability company structure. The VIEs’ activities consist of the development or redevelopment of commercial, industrial and residential real estate. Our involvement varies from being a passive equity investor or finance provider to actively managing the activities of the VIEs.\nOur insurance operations participate as passive investors in the equity issued by certain third-party-managed hedge and private equity funds that are VIEs. Our insurance operations typically are not involved in the design or establishment of these VIEs, nor do they actively participate in the management of the VIEs.\nSECURITIZATION AND REPACKAGING VEHICLES",
+          "bm25_score": null,
+          "embedding_score": 0.919854,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2024,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "N/A",
+      "ground_truth": "BBB+",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 1",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "ough regulated swap execution facilities for certain swaps (other than security-based swaps) and (iii) margin and collateral requirements.\nInternational\nIn the UK, the Prudential Regulation Authority (PRA) is the lead prudential supervisor for our UK insurance operations and the Financial Conduct Authority has oversight of AIG’s insurance operations for consumer protection and competition matters.\nIn the EU, various Directives and Regulations affect our international (re)insurance operations. Th",
+          "full_text": "ough regulated swap execution facilities for certain swaps (other than security-based swaps) and (iii) margin and collateral requirements.\nInternational\nIn the UK, the Prudential Regulation Authority (PRA) is the lead prudential supervisor for our UK insurance operations and the Financial Conduct Authority has oversight of AIG’s insurance operations for consumer protection and competition matters.\nIn the EU, various Directives and Regulations affect our international (re)insurance operations. The Luxembourg insurance regulator, the Commissariat aux Assurances, is the insurance regulator for AIG Europe SA, which serves our European Economic Area (EEA) and Swiss policyholders. In addition, financial companies that operate in the EU are subject to a range of regulations enforced by the national regulators in each member state in which that firm operates. Solvency II governs the insurance industry’s solvency framework for the EU, including minimum capital and solvency requirements, governance requirements, risk management and public reporting standards.\nAIG’s operating (re)insurance subsidiaries in Bermuda are regulated by the Bermuda Monetary Authority (BMA). Bermuda’s Insurance Act 1978, the applicable Codes of Conduct and related regulations impose solvency and liquidity standards and auditing and reporting requirements on Bermuda (re)insurance companies and grant the BMA powers to supervise, investigate and intervene in the affairs of (re)insurance companies. A variety of requirements and restrictions are imposed on our Bermuda operating (re)insurance subsidiaries including: periodic financial reporting; corporate governance framework; solvency and financial performance; compliance with minimum enhanced capital requirements; and minimum solvency margins and liquidity ratios (the latter for general business (re)insurers); and limitations on dividends and distributions.",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2024,
+          "section": "item 1",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "solvency assessment of the insurer’s material risks in normal and stressed environments, and submit annual Own Risk and Solvency Assessment (ORSA) summary reports to the insurance group’s lead U.S.-state regulator.\n•The Corporate Governance Annual Disclosure Model Act (CGAD), which requires insurers to submit an annual filing regarding their corporate governance structure, policies and practices.\n•And, specific to our life insurance subsidiaries, the NAIC's new Valuation Manual, which contains a",
+          "full_text": "solvency assessment of the insurer’s material risks in normal and stressed environments, and submit annual Own Risk and Solvency Assessment (ORSA) summary reports to the insurance group’s lead U.S.-state regulator.\n•The Corporate Governance Annual Disclosure Model Act (CGAD), which requires insurers to submit an annual filing regarding their corporate governance structure, policies and practices.\n•And, specific to our life insurance subsidiaries, the NAIC's new Valuation Manual, which contains a principle-based reserving (PBR) approach to life insurance company reserves. PBR is designed to tailor the reserving process to more closely reflect the risks of specific products rather than the factor-based approach employed historically.\nThe NAIC also provides standardized insurance industry accounting and reporting guidance through the NAIC Accounting Manual, which establishes statutory accounting principles applicable to (re)insurance companies. Statutory accounting principles promulgated by the NAIC may be modified by individual state laws, regulations and permitted practices granted by our domiciliary insurance regulators.\nThe NAIC has undertaken a multi-pronged effort to determine whether additional standards, safeguards or disclosures are required in connection with certain investments by U.S. insurance companies, including related party investments, structured securities and other complex assets.\nIn December 2020, the NAIC amended the Holding Company Models to incorporate a Liquidity Stress Testing (LST) requirement for large life insurers based on a set of scope criteria and a Group Capital Calculation (GCC) requirement. These amendments require the ultimate controlling person of every U.S. insurer that is scoped into the LST framework to submit LST results to the insurance group’s lead state insurance regulator on an annual basis. In addition, these amendments require the ultimate controlling person of every U.S. insurer to submit GCC reports to the insurance group’s lead state insurance regulator on an annual basis unless an exemption applies. The provisions of the December 2020 amendments to the Holding Company Models that authorize the GCC and LST were signed into law by New York State in August 2023, making AIG formally subject to them beginning in 2024.",
+          "bm25_score": null,
+          "embedding_score": 0.924103,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2024,
+          "section": "item 1",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "uirements and restrictions are imposed on our Bermuda operating (re)insurance subsidiaries including: periodic financial reporting; corporate governance framework; solvency and financial performance; compliance with minimum enhanced capital requirements; and minimum solvency margins and liquidity ratios (the latter for general business (re)insurers); and limitations on dividends and distributions.\nThe Monetary Authority of Singapore (MAS) supervises AIG’s insurance subsidiary in Singapore. It ha",
+          "full_text": "uirements and restrictions are imposed on our Bermuda operating (re)insurance subsidiaries including: periodic financial reporting; corporate governance framework; solvency and financial performance; compliance with minimum enhanced capital requirements; and minimum solvency margins and liquidity ratios (the latter for general business (re)insurers); and limitations on dividends and distributions.\nThe Monetary Authority of Singapore (MAS) supervises AIG’s insurance subsidiary in Singapore. It has broad authority under the Insurance Act 1966 to regulate insurance business in Singapore as well as insurers, insurance intermediaries and related institutions. Our Singapore insurance operations are subject to minimum capital and solvency requirements as well as financial reporting, corporate governance and conduct of business requirements. The MAS has authority to conduct inspections and investigations on insurers and to administer sanctions for regulatory non-compliance. Our Singapore insurance subsidiary holds insurance entities in the Asia Pacific region. The MAS holds the Chief Executive of the Singapore insurance subsidiary principally responsible for the management and conduct of the business of the subsidiary, including the business of its subsidiaries and overseas branches.\nThe Japan Financial Services Agency (JFSA) regulates AIG’s operating insurance subsidiaries and insurance holding company in Japan. The JFSA has extensive authority under the Insurance Business Act and related regulations to oversee licensing, sales practices, business conduct, investments, reserves and solvency, amongst other matters. Our Japanese insurance operations are required to maintain a minimum solvency margin ratio (SMR), which is a measure of capital adequacy. The failure to maintain an appropriate SMR, or comply with other similar indicators of financial health, could result in the JFSA imposing corrective actions on our operations.\nFSB and IAIS",
+          "bm25_score": null,
+          "embedding_score": 0.855389,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2025,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary revenue section revenue table summary of revenues income details",
+      "prediction": "N/A",
+      "ground_truth": "27,251",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 78,
+          "year_index": 0,
+          "excerpt": "and other relevant factors. Fair values for securities sold but not yet purchased are based on current market prices.\nASSETS AND LIABILITIES MEASURED AT FAIR VALUE ON A RECURRING BASIS\nThe following table presents information about assets and liabilities measured at fair value on a recurring basis and indicates the level of the fair value measurement based on the observability of the inputs used:\nDecember 31, 2024Level 1Level 2Level 3Counterparty\nNetting(a)\nCashCollateralTotal\n(in millions)\nAsse",
+          "full_text": "and other relevant factors. Fair values for securities sold but not yet purchased are based on current market prices.\nASSETS AND LIABILITIES MEASURED AT FAIR VALUE ON A RECURRING BASIS\nThe following table presents information about assets and liabilities measured at fair value on a recurring basis and indicates the level of the fair value measurement based on the observability of the inputs used:\nDecember 31, 2024Level 1Level 2Level 3Counterparty\nNetting(a)\nCashCollateralTotal\n(in millions)\nAssets:\nBonds available for sale:\nU.S. government and government sponsored entities\n$36 $3,231 $— $— $— $3,267\nObligations of states, municipalities and political subdivisions\n— 3,140 3 — — 3,143\nNon-U.S. governments 161 7,939 7 — — 8,107\nCorporate debt— 31,586 240 — — 31,826\nRMBS— 6,710 1,894 — — 8,604\nCMBS— 3,900 26 — — 3,926\nCLO/ABS— 4,293 840 — — 5,133\nTotal bonds available for sale\n197 60,799 3,010 — — 64,006\nOther bond securities:\nObligations of states, municipalities and political subdivisions— 50 — — — 50\nNon-U.S. governments— 24 — — — 24\nCorporate debt— 281 1 — — 282\nRMBS— 50 50 — — 100\nCMBS— 43 — — — 43\nCLO/ABS— 133 113 — — 246\nTotal other bond securities\n— 581 164 — — 745\nEquity securities\n689 — 15 — — 704\nOther invested assets(b)\n3,810 119 163 — — 4,092\nDerivative assets(c):\nInterest rate contracts— 277 — — — 277\nForeign exchange contracts\n— 296 — — — 296\nEquity contracts\n— — 20 — — 20\nCredit contracts\n— — 31 — — 31\nCounterparty netting and cash collateral\n— — — | -270.0 | -304.0 | -574.0\nTotal derivative assets\n— 573 | 51.0 | -270.0 | None\nShort-term investments\n7,942 1,847 — — — 9,789\nOther assets(c)\n— — 129 — — 129\nTotal(d)\n$12,638 $63,919 | 3532.0 | -270.0 | None\nDecember 31, 2024Level 1Level 2Level 3Counterparty\nNetting(a)\nCashCollateralTotal\n(in millions)\nLiabilities:\nDerivative liabilities(c):\nInterest rate contracts\n$— $304 $— $— $— $304\nForeign exchange contracts\n— 267 — — — 267\nEquity contracts\n— — 20 — — 20\nCredit contracts\n— — 31 — — 31\nCounterparty netting and cash collateral\n— — — | -270.0 | -201.0 | -471.0\nTotal derivative liabilities\n— 571 | 51.0 | -270.0 | None\nFortitude Re funds withheld payable\n— — (128)— — (128)\nOther liabilities\n— — 100 — — 100\nTotal$— $571 | 23.0 | -270.0 | None\nDecember 31, 2023Level 1Level 2Level 3Counterparty\nNetting(a)\nCashCollateralTotal\n(in millions)\nAssets:\nBonds available for sale:\nU.S. government and government sponsored entities",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 66,
+          "year_index": 0,
+          "excerpt": "eral\n— — — | -270.0 | -201.0 | -471.0\nTotal derivative liabilities\n— 571 | 51.0 | -270.0 | None\nFortitude Re funds withheld payable\n— — (128)— — (128)\nOther liabilities\n— — 100 — — 100\nTotal$— $571 | 23.0 | -270.0 | None\nDecember 31, 2023Level 1Level 2Level 3Counterparty\nNetting(a)\nCashCollateralTotal\n(in millions)\nAssets:\nBonds available for sale:\nU.S. government and government sponsored entities\nDecember 31, 2023Level 1Level 2Level 3Counterparty\nNetting(a)\nCashCollateralTotal\n(in millions)\nAss",
+          "full_text": "eral\n— — — | -270.0 | -201.0 | -471.0\nTotal derivative liabilities\n— 571 | 51.0 | -270.0 | None\nFortitude Re funds withheld payable\n— — (128)— — (128)\nOther liabilities\n— — 100 — — 100\nTotal$— $571 | 23.0 | -270.0 | None\nDecember 31, 2023Level 1Level 2Level 3Counterparty\nNetting(a)\nCashCollateralTotal\n(in millions)\nAssets:\nBonds available for sale:\nU.S. government and government sponsored entities\nDecember 31, 2023Level 1Level 2Level 3Counterparty\nNetting(a)\nCashCollateralTotal\n(in millions)\nAssets:\nBonds available for sale:\nU.S. government and government sponsored entities\n$15 $4,380 $— $— $— $4,395\nObligations of states, municipalities and political subdivisions\n— 4,830 3 — — 4,833\nNon-U.S. governments 233 8,156 7 — — 8,396\nCorporate debt— 32,023 323 — — 32,346\nRMBS— 4,415 1,792 — — 6,207\nCMBS— 4,122 25 — — 4,147\nCLO/ABS— 3,629 1,289 — — 4,918\nTotal bonds available for sale\n248 61,555 3,439 — — 65,242\nOther bond securities:\nObligations of states, municipalities and political subdivisions— 51 — — — 51\nNon-U.S. governments— 24 — — — 24\nCorporate debt— 210 45 — — 255\nRMBS— 42 51 — — 93\nCMBS— 33 — — — 33\nCLO/ABS— 69 138 — — 207\nTotal other bond securities\n— 429 234 — — 663\nEquity securities\n612 39 14 — — 665\nOther invested assets (b)\n— 155 221 — — 376\nDerivative assets(c):\nInterest rate contracts— 335 406 — — 741\nForeign exchange contracts\n— 450 1 — — 451\nEquity contracts\n— 18 48 — — 66\nCredit contracts\n— — 33 — — 33\nOther contracts— — 1 — — 1\nCounterparty netting and cash collateral\n— — — | -450.0 | -711.0 | -1161.0\nTotal derivative assets\n— 803 | 489.0 | -450.0 | None\nShort-term investments\n2,613 6,750 — — — 9,363\nOther assets(c)\n— — 243 — — 243\nTotal(d)\n$3,473 $69,731 | 4640.0 | -450.0 | None\nLiabilities:\nDerivative liabilities(c):\nInterest rate contracts\n$— $352 $— $— $— $352\nForeign exchange contracts\n— 561 3 — — 564\nCredit contracts\n— 3 33 — — 36\nCounterparty netting and cash collateral\n— — — | -450.0 | -249.0 | -699.0\nTotal derivative liabilities\n— 916 | 36.0 | -450.0 | None\nFortitude Re funds withheld payable\n— — (148)— — (148)\nOther liabilities— 107 122 — — 229\nTotal$— $1,023 | 10.0 | -450.0 | None",
+          "bm25_score": null,
+          "embedding_score": 0.881276,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": ",2335,530\nU.S. Personal Insurance 8362,0482,884\nUK/Europe Casualty and Financial lines 7,2801,9529,232\nUK/Europe Property and Special Risks 2,3551,7614,116\nUK/Europe and Japan Personal Insurance 1,2696701,939\nTotal $32,522$20,685$53,207\nReconciling Items\nDiscount on workers' compensation lines (2,111)\nOther product lines*15,384\nUnallocated loss adjustment expenses 2,688\nTotal Loss Reserves $69,168\n*Reinsurance recoverable for other product lines of $8.4 billion resulted in a net liability for un",
+          "full_text": ",2335,530\nU.S. Personal Insurance 8362,0482,884\nUK/Europe Casualty and Financial lines 7,2801,9529,232\nUK/Europe Property and Special Risks 2,3551,7614,116\nUK/Europe and Japan Personal Insurance 1,2696701,939\nTotal $32,522$20,685$53,207\nReconciling Items\nDiscount on workers' compensation lines (2,111)\nOther product lines*15,384\nUnallocated loss adjustment expenses 2,688\nTotal Loss Reserves $69,168\n*Reinsurance recoverable for other product lines of $8.4 billion resulted in a net liability for unpaid losses and loss adjustment expenses of $7.0 billion for the year ended December 31, 2024.\nPrior Year Development\nIn the sections below, we provide details by coverage group regarding incurred losses, reserve balances and prior year development. The first table below shows prior year development by coverage group, the first two columns of which will again be presented in the coverage group sections that follow. After this table we describe historical drivers of prior year development as well as actuarial methods and relevant terminology. The following coverage group sections present the undiscounted incurred losses and allocated loss adjustment expenses by accident year on a net basis after reinsurance, with separate presentation of the adverse development cover where applicable, excluding related amortization of the deferred gain. Each section also contains a description of the business included in that section. Finally, we show a table of claims payout patterns by coverage.\nIn 2017, we entered into adverse development reinsurance agreement (ADC) cessions with NICO under which we transferred to NICO 80 percent of the reserve risk on substantially all of our U.S. Commercial long-tail exposures for accident years 2015 and prior.\nThe following table presents the reconciliation of net prior year development before the ADC cessions from the tables below to the net prior year development after ADC cessions and amortization of deferred gain for the year ended December 31, 2024:",
+          "bm25_score": null,
+          "embedding_score": 0.861882,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2025,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "N/A",
+      "ground_truth": "42,521",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 15,
+          "year_index": 0,
+          "excerpt": "4 $200 $612 | 79.0 | 1774.0 | 3305.0\nDecember 31, 202320232022202120202019PriorTotal\n(in millions)\n>1.2X $398 $167 $394 $135 | 156.0 | 1784.0 | 3034.0\n1.00 - 1.20X 5 71 254 56 | 21.0 | 298.0 | 705.0\n<1.00X— 11 — — — | 86.0 | 97.0\nTotal commercial mortgages $403 $249 $648 $191 | 177.0 | 2168.0 | 3836.0\nThe following table presents loan-to-value ratios(b) for commercial mortgages by year of vintage:\nDecember 31, 202420242023202220212020PriorTotal\n(in millions)\nLess than 65%$107 $433 $177 $485 | 71",
+          "full_text": "4 $200 $612 | 79.0 | 1774.0 | 3305.0\nDecember 31, 202320232022202120202019PriorTotal\n(in millions)\n>1.2X $398 $167 $394 $135 | 156.0 | 1784.0 | 3034.0\n1.00 - 1.20X 5 71 254 56 | 21.0 | 298.0 | 705.0\n<1.00X— 11 — — — | 86.0 | 97.0\nTotal commercial mortgages $403 $249 $648 $191 | 177.0 | 2168.0 | 3836.0\nThe following table presents loan-to-value ratios(b) for commercial mortgages by year of vintage:\nDecember 31, 202420242023202220212020PriorTotal\n(in millions)\nLess than 65%$107 $433 $177 $485 | 71.0 | 1012.0 | 2285.0\n65% to 75%— 40 — 54 — | 317.0 | 411.0\n76% to 80%— — — 31 — | 51.0 | 82.0\nGreater than 80%39 21 23 42 | 8.0 | 394.0 | 527.0\nTotal commercial mortgages $146 $494 $200 $612 | 79.0 | 1774.0 | 3305.0\nDecember 31, 202320232022202120202019PriorTotal\n(in millions)\nLess than 65%$359 $159 $492 $177 | 156.0 | 1385.0 | 2728.0\n65% to 75%10 15 137 — | 21.0 | 367.0 | 550.0\n76% to 80%— 32 10 — — — 42\nGreater than 80%34 43 9 14 — | 416.0 | 516.0\nTotal commercial mortgages $403 $249 $648 $191 | 177.0 | 2168.0 | 3836.0",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "specified period of time at the prevailing market rate; however, renewal options that have not been exercised as of December 31, 2024 are excluded until management attains a reasonable level of certainty. Some leases also include termination options at specified times and term; however, termination options are not reflected in the lease asset and liability balances until they have been exercised.\nThe weighted average discount rate and lease term assumptions used in determining the liability are ",
+          "full_text": "specified period of time at the prevailing market rate; however, renewal options that have not been exercised as of December 31, 2024 are excluded until management attains a reasonable level of certainty. Some leases also include termination options at specified times and term; however, termination options are not reflected in the lease asset and liability balances until they have been exercised.\nThe weighted average discount rate and lease term assumptions used in determining the liability are 3.36 percent and 10.1 years, respectively. The primary assumption used to determine the discount rate is the cost of funding for the Company, which is based on the secured borrowing rate for terms similar to the lease term, and for the major financial markets in which AIG operates.\nRent expense was $164 million, $162 million and $174 million for the years ended December 31, 2024, 2023 and 2022, respectively.\nThe following table presents the future undiscounted cash flows under operating leases at December 31, 2024:",
+          "bm25_score": null,
+          "embedding_score": 0.921197,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "0 | 394.0 | 527.0\nTotal commercial mortgages $146 $494 $200 $612 | 79.0 | 1774.0 | 3305.0\nDecember 31, 202320232022202120202019PriorTotal\n(in millions)\nLess than 65%$359 $159 $492 $177 | 156.0 | 1385.0 | 2728.0\n65% to 75%10 15 137 — | 21.0 | 367.0 | 550.0\n76% to 80%— 32 10 — — — 42\nGreater than 80%34 43 9 14 — | 416.0 | 516.0\nTotal commercial mortgages $403 $249 $648 $191 | 177.0 | 2168.0 | 3836.0\n(a)The debt service coverage ratio compares a property’s net operating income to its debt service p",
+          "full_text": "0 | 394.0 | 527.0\nTotal commercial mortgages $146 $494 $200 $612 | 79.0 | 1774.0 | 3305.0\nDecember 31, 202320232022202120202019PriorTotal\n(in millions)\nLess than 65%$359 $159 $492 $177 | 156.0 | 1385.0 | 2728.0\n65% to 75%10 15 137 — | 21.0 | 367.0 | 550.0\n76% to 80%— 32 10 — — — 42\nGreater than 80%34 43 9 14 — | 416.0 | 516.0\nTotal commercial mortgages $403 $249 $648 $191 | 177.0 | 2168.0 | 3836.0\n(a)The debt service coverage ratio compares a property’s net operating income to its debt service payments, including principal and interest. Our weighted average debt service coverage ratio was 1.8x at both periods  ended at December 31, 2024 and December 31, 2023. The debt service coverage ratios are updated when additional relevant information becomes available.\n(b)The loan-to-value ratio compares the current unpaid principal balance of the loan to the estimated fair value of the underlying property collateralizing the loan. Our weighted average loan-to-value ratio was 65 percent and 62 percent at December 31, 2024 and December 31, 2023, respectively. The loan-to-value ratios have been updated within the last three months to reflect the current carrying values of the loans. We update the valuations of collateral properties by obtaining independent appraisals, generally at least once per year.\nThe following table presents supplementary credit quality information related to commercial mortgages:",
+          "bm25_score": null,
+          "embedding_score": 0.850767,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2025,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "N/A",
+      "ground_truth": "BBB+",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 6",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "loss exposure, and reinsurance. The potential inadequacy of the liabilities we establish for unpaid losses and loss adjustment expenses is a key risk faced by the General Insurance companies, which we manage through internal controls and oversight of the loss reserve setting process, as well as reviews by external experts. For further information, see Critical Accounting Estimates – Loss Reserves.\nThe potential inadequacy of premiums charged for future risk periods on risks underwritten in our p",
+          "full_text": "loss exposure, and reinsurance. The potential inadequacy of the liabilities we establish for unpaid losses and loss adjustment expenses is a key risk faced by the General Insurance companies, which we manage through internal controls and oversight of the loss reserve setting process, as well as reviews by external experts. For further information, see Critical Accounting Estimates – Loss Reserves.\nThe potential inadequacy of premiums charged for future risk periods on risks underwritten in our portfolios can impact the General Insurance companies’ ability to achieve an underwriting profit. We develop pricing based on our estimates of losses and expenses, but factors such as market pressures and the inherent uncertainty and complexity in estimating losses may result in premiums that are inadequate to generate underwriting profit.\nOur business is exposed to various catastrophic events, including natural disasters, man-made catastrophes, or pandemic disease, in which multiple losses can occur and affect multiple lines of business in any calendar year, adversely affecting our business and operating results. Concentration of exposure in certain industries or geographies may cause us to suffer disproportionate losses.\nOur business is exposed to loss events, such as fires or explosions, that have the potential to generate losses from a single insured client. The net risk to us is managed to acceptable limits established by the Chief Underwriting Officer through a combination of internal underwriting standards and external reinsurance.\nSince we use reinsurance to limit our losses, we are exposed to risks associated with reinsurance including the recoverability of expected payments from reinsurers due to either an inability or unwillingness to pay, contracts that do not respond properly to the event or actual reinsurance coverage that is different than anticipated, which is monitored through our credit risk management framework.",
+          "bm25_score": null,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 2,
+          "filing_year": 2025,
+          "section": "item 6",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "erage flow forecasts and stress testing.\nOPERATIONAL RISK MANAGEMENT\nOperational risk is defined as the risk of loss, or other adverse consequences, resulting from inadequate or failed internal processes, people, systems, or from external events. Operational risk includes legal, regulatory, technology, compliance, third-party and business continuity risks, but excludes business and strategy risks.\nOperational risk is inherent in our business entities and can have many impacts, including but not ",
+          "full_text": "erage flow forecasts and stress testing.\nOPERATIONAL RISK MANAGEMENT\nOperational risk is defined as the risk of loss, or other adverse consequences, resulting from inadequate or failed internal processes, people, systems, or from external events. Operational risk includes legal, regulatory, technology, compliance, third-party and business continuity risks, but excludes business and strategy risks.\nOperational risk is inherent in our business entities and can have many impacts, including but not limited to, unexpected economic losses or gains, reputational harm due to negative publicity, regulatory action from supervisory agencies and operational and business disruptions, and/or damage to customer relationships.\nERM, working together with other control and assurance functions and first line Risk Control Owners through the risk and control framework, provides an independent view of operational risks for each of the business areas.\nCybersecurity Risk\nAIG, like other global companies, continues to witness the increased sophistication and activities of unauthorized parties attempting cyber and other computer-related penetrations such as “denial of service” attacks, phishing, untargeted but sophisticated and automated attacks, and other disruptive software in an effort to compromise systems, networks and obtain sensitive information.\nERM works closely with and supports the risk management practices of Information Technology, the Information Security Office and the business units and functions that form the lines of defense against the cybersecurity risks that we face.\nFor additional information regarding the privacy data protection and cybersecurity regulations to which we are subject, see Part I, Item 1. Business – Regulation – Privacy, Data Protection, Cybersecurity and Artificial Intelligence Requirements. For additional discussion of cybersecurity risks, see Part I, Item 1A. Risk Factors – Business and Operations. For additional information regarding our cybersecurity risk management as well as strategy and governance, please see Part 1, Item 1C. Cybersecurity.\nBUSINESS AND STRATEGY RISKS",
+          "bm25_score": null,
+          "embedding_score": 0.908163,
+          "hybrid_embedding_rank": null
+        },
+        {
+          "rank": 3,
+          "filing_year": 2025,
+          "section": "item 6",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "Since we use reinsurance to limit our losses, we are exposed to risks associated with reinsurance including the recoverability of expected payments from reinsurers due to either an inability or unwillingness to pay, contracts that do not respond properly to the event or actual reinsurance coverage that is different than anticipated, which is monitored through our credit risk management framework.\nWe closely manage insurance risk by monitoring and controlling the nature and geographic location of",
+          "full_text": "Since we use reinsurance to limit our losses, we are exposed to risks associated with reinsurance including the recoverability of expected payments from reinsurers due to either an inability or unwillingness to pay, contracts that do not respond properly to the event or actual reinsurance coverage that is different than anticipated, which is monitored through our credit risk management framework.\nWe closely manage insurance risk by monitoring and controlling the nature and geographic location of the risks in each underwritten line of business, concentrations in industries, the terms and conditions of the underwriting and the premiums we charge for taking on the risk. We analyze concentrations of risks using various modeling techniques, including both probability distributions (stochastic) and/or single-point estimates (deterministic) approaches.\nRisk Measurement, Monitoring and Limits\nWe use several approaches to measure our insurance risk exposure including sensitivity and scenario analyses, stochastic methods, and experience studies. Additionally, there are risk-specific assessment tools in place to appropriately manage the variety of insurance risks to which we are exposed.\nFor additional information on our three-tiered hierarchy of limits, see – Risk Appetite, Limits, Identification and Measurement – Risk Limits.\nNatural Catastrophe Risk\nWe manage catastrophe exposure with multiple approaches such as setting risk limits based on aggregate Probable Maximum Loss (PML) modeling, monitoring overall exposures and risk accumulations, modifying our gross underwriting standards, and purchasing catastrophe reinsurance through both the traditional reinsurance and capital markets in addition to other reinsurance protections.\nWe use third-party catastrophe risk models and other tools to evaluate and simulate frequency and severity of catastrophic events and associated losses to our portfolios of exposures with adjustments applied to modeled losses to account for loss adjustment expenses, model biases, data quality and non-modeled risks.",
+          "bm25_score": null,
+          "embedding_score": 0.825018,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    }
+  ]
+}

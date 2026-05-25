@@ -1,0 +1,433 @@
+{
+  "summary": {
+    "cases": 15,
+    "correct": 4,
+    "accuracy": 0.26666666666666666,
+    "retrieval_hit": 4,
+    "retrieval_hit_rate": 0.26666666666666666,
+    "mrr": 0.26666666666666666
+  },
+  "cases": [
+    {
+      "year": 2021,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary revenue section revenue table summary of revenues income details",
+      "prediction": "N/A",
+      "ground_truth": "43,736",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off previously reported within Legacy as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nThe accounting policies of the segments are the same as those described in Note 2. We evaluate segme",
+          "full_text": "AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off previously reported within Legacy as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nThe accounting policies of the segments are the same as those described in Note 2. We evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and net income (loss) attributable to AIG, respectively. These items generally fall into one or more of the following broad categories: legacy matters having no relevance to our current businesses or operating performance; adjustments to enhance transparency to the underlying economics of transactions; and measures that we believe to be common to the industry. Legal entities are attributed to each segment based upon the predominance of activity in that legal entity. For the items excluded from adjusted revenues and adjusted pre-tax income (loss) see the table below.\nThe following table presents AIG’s continuing operations by operating segment:",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2021,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net worth",
+      "prediction": "66362",
+      "ground_truth": "66,362",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"66362\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 53,
+          "year_index": 0,
+          "excerpt": "2019\n2018\nTotal AIG shareholders' equity\n$\n66,362",
+          "full_text": "mmon share\n57.01\n58.89\nThe following table presents a reconciliation of Book value per common share to Book value per common share, excluding AOCI adjusted for the cumulative unrealized gains and losses related to Fortitude Re’s Funds Withheld Assets and DTA (Adjusted book value per common share), which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nAt December 31,\n(in millions, except per common share data)\n2020\n2019\n2018\nTotal AIG shareholders' equity\n$\n66,362\n$\n65,675\n$\n56,361\nPreferred equity\n-\nTotal AIG common shareholders' equity\n65,877\n65,190\n56,361\nLess: Accumulated other comprehensive income (loss)\n13,511\n4,982\n(1,413)\nAdd: Cumulative unrealized gains and losses related to\nFortitude Re’s Funds Withheld Assets\n4,657\n-\n-\nLess: Deferred tax assets\n7,907\n8,977\n10,153\nAdjusted common shareholders' equity\n$\n49,116\n$\n51,231\n$\n47,621\nTotal common shares outstanding\n861,558,049\n869,999,031\n866,609,429\nBook value per common share\n$\n76.46\n$\n74.93\n$\n65.04\nAdjusted book value per common share\n57.01\n58.89\n54.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2021,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "N/A",
+      "ground_truth": "BBB+",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "ppends numerical modifiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)\nS&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)\nFitch ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.",
+          "full_text": "ppends numerical modifiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)\nS&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)\nFitch ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(d)\nThese credit ratings are current opinions of the rating agencies. They may be changed, suspended or withdrawn at any time by the rating agencies as a result of changes in, or unavailability of, information or based on other circumstances. Ratings may also be withdrawn at our request. For a discussion of rating agency actions in response to AIG’s announced intention to separate its Life and Retirement business from AIG, see Recent Rating Agency Actions below.\nWe are party to some agreements that contain “ratings triggers.” Depending on the ratings maintained by one or more rating agencies, these triggers could result in (i) the termination or limitation of credit availability or a requirement for accelerated repayment, (ii) the termination of business contracts or (iii) a requirement to post collateral for the benefit of counterparties.\nIn the event of a downgrade of AIG’s long-term senior debt ratings, AIG Financial Products Corp. and related subsidiaries (collectively AIGFP) and certain other AIG entities would be required to post additional collateral under some derivative and other transactions, or certain of the counterparties of AIGFP or of such other AIG entities would be permitted to terminate such transactions early.\nThe actual amount of collateral that we would be required to post to counterparties in the event of such downgrades, or the aggregate amount of payments that we could be required to make, depends on market conditions, the fair value of outstanding affected transactions and other factors prevailing at the time of the downgrade.\nFor a discussion of the effects of downgrades in our credit ratings see Note 11 to the Consolidated Financial Statements and Part I, Item 1A. Risk Factors – Liquidity, Capital and Credit.\nFINANCIAL STRENGTH Ratings",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2022,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary revenue section revenue table summary of revenues income details",
+      "prediction": "N/A",
+      "ground_truth": "52,057",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "Other Operations\nOther Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nThe accounting policies of the segments are the sam",
+          "full_text": "l as AIG’s Global Specialty business.\nNorth America and International operating segments consist of the following products:\n– Commercial Lines – consists of Liability, Financial Lines, Property, Global Specialty and Crop Risk Services.\n– Personal Insurance – consists of Personal Lines and Accident & Health.\nLife and Retirement\nLife and Retirement business is presented as four operating segments:\n\n\nGroup Retirement – consists of record-keeping, plan administrative and compliance services, financial planning and advisory solutions offered to employer-defined contribution plan participants, along with proprietary and non-proprietary annuities and advisory and brokerage products offered outside of plans.\n\n\nInstitutional Markets – consists of stable value wrap products, structured settlement and pension risk transfer annuities, corporate- and bank-owned life insurance, high net worth products and guaranteed investment contracts (GICs).\nFor additional information on the Life and Retirement business, see Note 1.\nOther Operations\nOther Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nThe accounting policies of the segments are the same as those described in Note 2. We evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and net income (loss) attributable to AIG, respectively. These items generally fall into one or more of the following broad categories: legacy matters having no relevance to our current businesses or operating performance; adjustments to enhance transparency to the underlying economics of transactions; and measures that we believe to be common to the industry. Legal entities are attributed to each segment based upon the predominance of activity in that legal entity. For the items excluded from adjusted revenues and adjusted pre-tax income (loss) see the table below.",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2022,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net worth",
+      "prediction": "56,354",
+      "ground_truth": "65,956",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"56,354\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 60,
+          "year_index": 0,
+          "excerpt": "shareholders' equity\n$\n56,354\n$\n49,116\n$\n51,231\nTotal common shares outstanding\n818.7\n861.6\n870.0\nBook value per common share\n$\n79.97\n$\n76.46\n$\n74.93\nAdjusted book value per common share\n68.83\n57.01\n58.89\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2021\n2020\n2019\nActual or annualized net income (loss",
+          "full_text": "shareholders' equity\n$\n56,354\n$\n49,116\n$\n51,231\nTotal common shares outstanding\n818.7\n861.6\n870.0\nBook value per common share\n$\n79.97\n$\n76.46\n$\n74.93\nAdjusted book value per common share\n68.83\n57.01\n58.89\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2021\n2020\n2019\nActual or annualized net income (loss) attributable to AIG\ncommon shareholders\n$\n9,359\n$\n(5,973)\n$\n3,326\nActual or annualized adjusted after-tax income\nattributable to AIG common shareholders\n4,430\n2,201\n4,078\nAverage AIG common shareholders' equity\n$\n64,704\n$\n63,225\n$\n62,205\nLess: Average AOCI\n9,096\n7,529\n3,261\nAdd: Average cumulative unrealized gains and losses related to\nFortitude Re funds withheld assets\n3,200\n2,653\n-\nLess: Average DTA\n7,025\n8,437\n9,605\nAverage adjusted AIG common shareholders' equity\n$\n51,783\n$\n49,912\n$\n49,339\nReturn on common equity\n14.5\n%\n(9.4)\n%\n5.3\n%\nAdjusted return on common equity\n8.6\n%\n4.4\n%\n8.3\n%\nThe following table presents a reconciliation of revenues to adjusted revenues:",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2022,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial summary debt rating",
+      "prediction": "N/A",
+      "ground_truth": "BBB+",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "fiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)\nS&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)\nFitch Ratings Inc. (Fitch) ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.",
+          "full_text": "fiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)\nS&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)\nFitch Ratings Inc. (Fitch) ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(d)\nAIG guarantees all obligations of AIG Financial Products Corp.\nThese credit ratings are current opinions of the rating agencies. They may be changed, suspended or withdrawn at any time by the rating agencies as a result of changes in, or unavailability of, information or based on other circumstances. Ratings may also be withdrawn at our request. For a discussion of rating agency actions in response to AIG’s announced intention to separate its Life and Retirement business from AIG, see Rating Agency Actions Related to the Announced Separation of Life and Retirement below.\nWe are party to some agreements that contain “ratings triggers.” Depending on the ratings maintained by one or more rating agencies, these triggers could result in (i) the termination or limitation of credit availability or a requirement for accelerated repayment, (ii) the termination of business contracts or (iii) a requirement to post collateral for the benefit of counterparties.\nIn the event of a downgrade of AIG’s long-term senior debt ratings, AIG Financial Products Corp. and related subsidiaries (collectively AIGFP) and certain other AIG entities would be required to post additional collateral under some derivative and other transactions, or certain of the counterparties of AIGFP or of such other AIG entities would be permitted to terminate such transactions early.\nThe actual amount of collateral that we would be required to post to counterparties in the event of such downgrades, or the aggregate amount of payments that we could be required to make, depends on market conditions, the fair value of outstanding affected transactions and other factors prevailing at the time of the downgrade.",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2023,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary revenue section revenue table summary of revenues statement of earnings",
+      "prediction": "N/A",
+      "ground_truth": "56,437",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "Other Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nSEGMENT RESULTS\nThe accounting policies of the segments are describe",
+          "full_text": "de term life and universal life insurance. International operations primarily include distribution of life and health products in the UK and Ireland.\n•Institutional Markets – consists of stable value wrap products, structured settlement and pension risk transfer annuities, corporate- and bank-owned life insurance, high net worth products and guaranteed investment contracts (GICs).\nOTHER OPERATIONS\nOTHER OPERATIONS\nOther Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nSEGMENT RESULTS\nThe accounting policies of the segments are described in Note 2. We evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and pre-tax income (loss), respectively. These items generally fall into one or more of the following broad categories: legacy matters having no relevance to our current businesses or operating performance; adjustments to enhance transparency to the underlying economics of transactions; and measures that we believe to be common to the industry. Legal entities are attributed to each segment based upon the predominance of activity in that legal entity. For the items excluded from adjusted revenues and adjusted pre-tax income (loss), see the table below.\nThe following table presents AIG’s continuing operations by operating segment:",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2023,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net worth",
+      "prediction": "49116",
+      "ground_truth": "40,002",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"49116\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 7",
+          "table_row_count": 13,
+          "year_index": 0,
+          "excerpt": "d common shareholders' equity$54,229 $56,354 $49,116\nTotal common shares outstanding734.1 818.7 861.6\nBook value per common share$53.83 $79.97 $76.46\nAdjusted book value per common share73.87 68.83 57.01\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2022 2021 2020\nActual or annualized net income (loss)",
+          "full_text": "d common shareholders' equity$54,229 $56,354 $49,116\nTotal common shares outstanding734.1 818.7 861.6\nBook value per common share$53.83 $79.97 $76.46\nAdjusted book value per common share73.87 68.83 57.01\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2022 2021 2020\nActual or annualized net income (loss) attributable to AIG common shareholders$10,247 $9,359 $(5,973)\nActual or annualized adjusted after-tax income attributable to AIG common shareholders3,586 4,430 2,201\nAverage AIG common shareholders' equity$48,769 $64,704 $63,225\nLess: Average DTA4,739 7,025 8,437\nLess: Average AOCI(12,551)9,096 7,529\nAdd: Average cumulative unrealized gains and losses related to Fortitude Re funds withheld assets(1,053)3,200 2,653\nSubtotal: AOCI plus cumulative unrealized gains and losses related to Fortitude Re funds withheld assets(11,498)5,896 4,876\nAverage adjusted AIG common shareholders' equity$55,528 $51,783 $49,912\nReturn on common equity21.0 %14.5 %(9.4)%\nAdjusted return on common equity6.5 %8.6 %4.4 %\nThe following table presents a reconciliation of revenues to adjusted revenues:",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2023,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial summary debt rating",
+      "prediction": "A-",
+      "ground_truth": "BBB+",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"A-\", \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 7",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "ated investment entities related to real estate investments of $1.9 billion and other securitization vehicles of $4.5 billion.\n(d)Includes reclassifications of debt between AIG general borrowings and AIG borrowings supported by assets.\n(e)Represents debt for AIGFP and its subsidiaries that were previously consolidated.\n(f)Includes the effect of consolidating previously unconsolidated partnerships.\n(e)Represents debt for AIGFP and its subsidiaries that were previously consolidated.\n(f)Includes th",
+          "full_text": "ated investment entities related to real estate investments of $1.9 billion and other securitization vehicles of $4.5 billion.\n(d)Includes reclassifications of debt between AIG general borrowings and AIG borrowings supported by assets.\n(e)Represents debt for AIGFP and its subsidiaries that were previously consolidated.\n(f)Includes the effect of consolidating previously unconsolidated partnerships.\n(e)Represents debt for AIGFP and its subsidiaries that were previously consolidated.\n(f)Includes the effect of consolidating previously unconsolidated partnerships.\nIn the next four quarters, unless redeemed or purchased, no material long-term debt is due to mature. Corebridge has the ability to further continue the DDTL borrowing (currently due June 21, 2023) through the final maturity date of the DDTL Facility on February 25, 2025.\nFor additional information on debt outstanding, see Note 14 to the Consolidated Financial Statements.\nCREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2024,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary revenue section revenue table summary of revenues income details",
+      "prediction": "N/A",
+      "ground_truth": "46,802",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "Other Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nSEGMENT RESULTS\nWe evaluate segment performance based on adjusted re",
+          "full_text": "side of plans.\n•Life Insurance – primary products in the U.S. include term life and universal life insurance. International operations primarily include distribution of life and health products in the UK and Ireland. Corebridge previously announced agreements to sell Laya and AIG Life. The sale of Laya closed on October 31, 2023 and the AIG Life sale is expected to close in the first half of 2024.\n•Institutional Markets – consists of stable value wrap products, structured settlement and pension risk transfer annuities, corporate- and bank-owned life insurance, high net worth products and guaranteed investment contracts (GICs).\nFor further discussion on the ongoing separation of the Life and Retirement business from AIG and other recent activity, see Note 1.\nOTHER OPERATIONS\nOther Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nSEGMENT RESULTS\nWe evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and pre-tax income (loss), respectively. These items generally fall into one or more of the following broad categories: legacy matters having no relevance to our current businesses or operating performance; adjustments to enhance transparency to the underlying economics of transactions; and measures that we believe to be common to the industry. Legal entities are attributed to each segment based upon the predominance of activity in that legal entity. For the items excluded from adjusted revenues and adjusted pre-tax income (loss), see the table below.\nThe following table presents AIG’s continuing operations by operating segment:",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2024,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net worth",
+      "prediction": "52799",
+      "ground_truth": "45,351",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"52799\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 7",
+          "table_row_count": 13,
+          "year_index": 0,
+          "excerpt": "d common shareholders' equity$52,799 $55,721 $58,082\nTotal common shares outstanding688.8 734.1 818.7\nBook value per common share$65.14 $55.15 $80.11\nAdjusted book value per common share76.65 75.90 70.94\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2023 2022 2021\nActual or annualized net income (loss)",
+          "full_text": "d common shareholders' equity$52,799 $55,721 $58,082\nTotal common shares outstanding688.8 734.1 818.7\nBook value per common share$65.14 $55.15 $80.11\nAdjusted book value per common share76.65 75.90 70.94\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2023 2022 2021\nActual or annualized net income (loss) attributable to AIG common shareholders$3,614 $10,198 $10,338\nActual or annualized adjusted after-tax income attributable to AIG common shareholders4,921 4,036 4,934\nAverage AIG common shareholders' equity$41,930 $49,338 $64,445\nLess: Average DTA4,322 4,796 7,025\nLess: Average AOCI(19,499)(13,468)7,240\nAdd: Average cumulative unrealized gains and losses related to Fortitude Re funds withheld assets(2,475)(1,053)3,200\nSubtotal: AOCI plus cumulative unrealized gains and losses related to Fortitude Re funds withheld assets(17,024)(12,415)4,040\nAverage adjusted AIG common shareholders' equity$54,632 $56,957 $53,380\nReturn on common equity8.6 %20.7 %16.0 %\nAdjusted return on common equity9.0 %7.1 %9.2 %\nThe following table presents a reconciliation of revenues to adjusted revenues:",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2024,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "BBB+",
+      "ground_truth": "BBB+",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"BBB+\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 7",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "he major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term DebtSenior Long-Term Debt\nMoody'sS&PMoody's(a)\nS&P(b)",
+          "full_text": "he major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term DebtSenior Long-Term Debt\nMoody'sS&PMoody's(a)\nS&P(b)\nFitch(c)\nAmerican International Group, Inc.\nP-2 (2nd of 4)A-2 (2nd of 5)Baa 2 (4th of 9) / Positive\nBBB+ (4th of 9) /\nStable\nBBB+ (4th of 9) /\nStable\nCorebridge Financial, Inc.\nBaa 2 (4th of 9) / Stable\nBBB+ (4th of 9) /\nStable\nBBB+ (4th of 9) /\nStable\n(a)Moody’s appends numerical modifiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)S&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)Fitch Ratings Inc. (Fitch) ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\nThese credit ratings are current opinions of the rating agencies. They may be changed, suspended or withdrawn at any time by the rating agencies as a result of changes in, or unavailability of, information or based on other circumstances. Ratings may also be withdrawn at our request.\nWe are party to some agreements that contain “ratings triggers.” Depending on the ratings maintained by one or more rating agencies, these triggers could result in (i) the termination or limitation of credit availability or a requirement for accelerated repayment, (ii) the termination of business contracts or (iii) a requirement to post collateral for the benefit of counterparties.\nIn the event of a downgrade of AIG’s long-term senior debt ratings, certain AIG entities would be required to post additional collateral under some derivative and other transactions, or certain of the counterparties of such AIG entities would be permitted to terminate such transactions early.\nThe actual amount of collateral that we would be required to post to counterparties in the event of such downgrades, or the aggregate amount of payments that we could be required to make, depends on market conditions, the fair value of outstanding affected transactions and other factors prevailing at the time of the downgrade.\nFINANCIAL STRENGTH RATINGS\nFinancial Strength ratings estimate an insurance company’s ability to pay its obligations under an insurance policy. The following table presents the ratings of our significant insurance subsidiaries as of the date of this filing.",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2025,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary statement of operations revenue table summary of revenues operating results",
+      "prediction": "27251",
+      "ground_truth": "27,251",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"27251\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "mination and consolidations(3)(5)10\nTotal Revenue$27,251 $27,938 $29,996\nTotal Revenues*\n(in millions)202420232022\nNorth America$13,031 $14,701 $15,163",
+          "full_text": "mination and consolidations(3)(5)10\nTotal Revenue$27,251 $27,938 $29,996\nTotal Revenues*\n(in millions)202420232022\nNorth America$13,031 $14,701 $15,163\nInternational14,220 13,237 14,833\nConsolidated$27,251 $27,938 $29,996\nReal Estate and Other Fixed Assets,Net of Accumulated Depreciation\n(in millions)202420232022\nNorth America$804 $760 $768\nInternational312 372 385\nConsolidated$1,116 $1,132 $1,153\n*Revenues are generally reported according to the geographic location of the segment. International revenues consists of revenues from our General Insurance International operations.\n4. Discontinued Operations Presentation\nDISCONTINUED OPERATIONS PRESENTATION\nWe present a business, or a component of an entity, as discontinued operations if a) it meets the held-for-sale criteria, or is disposed of by sale, or is disposed of other than by sale, and b) the disposal of the business, or component of an entity, represents a strategic shift that has (or will have) a major effect on AIG’s financial results.\nPre-Deconsolidation of Corebridge\nCorebridge completed its initial public offering in September 2022 and AIG continued to sell its interest in Corebridge through secondary offerings. On May 16, 2024, AIG entered into a stock purchase agreement with Corebridge and Nippon Life Insurance Company (Nippon). On June 3, 2024, AIG closed on a secondary offering of 30 million shares of Corebridge common stock. The sale was recorded as an equity transaction as AIG controlled Corebridge as of the transaction date. The aggregate gross proceeds of the offering, before deducting underwriting discounts and commission and other expenses payable by AIG, were $876 million. As a result of the offering, AIG recorded an increase of $261 million in Total AIG shareholders' equity.\nDeconsolidation of Corebridge\nOn June 9, 2024, AIG held 48.4 percent of Corebridge common stock, waived its right to majority representation on the Corebridge Board of Directors and one of AIG's designees resigned from the Corebridge Board of Directors as of June 9, 2024 (the Deconsolidation Date). As a result, AIG met the requirements for the deconsolidation of Corebridge.",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2025,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "44051",
+      "ground_truth": "42,521",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"44051\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 6",
+          "table_row_count": 19,
+          "year_index": 0,
+          "excerpt": "hare63.98 59.60 49.10\nAdjusted tangible book value per share67.62 72.96 73.55\nCore operating book value per share61.75 52.74 38.53\nThe following table presents reconciliations of Return on equity to Adjusted return on equity, Tangible return on equity and Core operating return on equity, which are non-GAAP measures. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2024 2023 2022\nActual or annualized net income (loss) attributable to AIG comm",
+          "full_text": "hare63.98 59.60 49.10\nAdjusted tangible book value per share67.62 72.96 73.55\nCore operating book value per share61.75 52.74 38.53\nThe following table presents reconciliations of Return on equity to Adjusted return on equity, Tangible return on equity and Core operating return on equity, which are non-GAAP measures. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2024 2023 2022\nActual or annualized net income (loss) attributable to AIG common shareholders$(1,426)$3,614 $10,198\nActual or annualized adjusted after-tax income attributable to AIG common shareholders$3,254 $3,205 $2,121\nAverage AIG common shareholders' equity$44,051 $41,930 $49,338\nLess: Average investments AOCI(5,132)(14,836)(9,003)\nAverage AIG adjusted common shareholders' equity$49,183 $56,766 $58,341\nAverage AIG common shareholders' equity$44,051 $41,930\nLess: Average intangibles3,797 4,070\nAverage AIG tangible common shareholders' equity$40,254 $37,860\nAverage AIG common shareholders' equity$44,051 $41,930\nLess: Average AIG's ownership interest in Corebridge6,770 7,376\nLess: Average Investments AOCI - AIG(2,351)(3,254)\nLess: Average deferred tax assets3,998 4,322\nAverage AIG core operating shareholders' equity$35,634 $33,486\nReturn on equity(3.2)%8.6 %20.7 %\nAdjusted return on equity6.6 5.6 3.6\nReturn on tangible equity8.1 8.5 N/A\nCore operating return on equity9.1 9.6 N/A\nThe following table presents a reconciliation of pre-tax income (loss)/net income (loss) attributable to AIG to adjusted pre-tax income (loss)/adjusted after-tax income (loss) attributable to AIG:",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2025,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial summary debt rating",
+      "prediction": "BBB+",
+      "ground_truth": "BBB+",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"BBB+\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 6",
+          "table_row_count": 17,
+          "year_index": 0,
+          "excerpt": "CREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG Parent as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term DebtSenior Lon",
+          "full_text": "pan Holdings Kabushiki Kaisha267 — — (28)— 239\nTotal general borrowings10,338 660 (2,046)(113)(113)8,726\nBorrowings supported by assets37 — (1)— 1 37\nOther subsidiaries' notes, bonds, loans and mortgages payable - not guaranteed by AIG— 1 — — — 1\nTotal long-term debt$10,375 $661 $(2,047)$(113)$(112)$8,764\nDebt of consolidated investment entities - not guaranteed by AIG(a)\n$231 $— (1)— (72)(b)\n$158\n(a)At December 31, 2024, includes debt of consolidated investment entities primarily related to real estate investments of $158 million. At December 31, 2023, includes debt of consolidated investment entities related to real estate investments of $79 million and other securitization vehicles of $152 million.\n(b)Includes the effect of consolidating previously unconsolidated partnerships.\nDebt Maturities\nThe following table summarizes maturing long-term debt at December 31, 2024 of AIG for the next four quarters:\nFirstQuarterSecondQuarterThirdQuarterFourthQuarter\n(in millions)2025202520252025Total\nGeneral borrowings$239 $146 $— $— $385\nBorrowings supported by assets— — — 12 12\nOther subsidiaries' notes, bonds, loans and mortgages payable— — — 1 1\nTotal$239 $146 $— $13 $398\nCREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG Parent as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term DebtSenior Long-Term Debt\nMoody'sS&PMoody's(a)\nS&P(b)\nFitch(c)\nAmerican International Group, Inc.\nP-2 (2nd of 4)A-2 (2nd of 5)Baa 2 (4th of 9) / Positive\nBBB+ (4th of 9) /\nPositive\nBBB+ (4th of 9) /\nStable",
+          "bm25_score": 1.0,
+          "embedding_score": null,
+          "hybrid_embedding_rank": null
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+year,variable,prediction,ground_truth,correct,retrieval_rank,retrieval_hit,retrieval_hit_in_supporting_docs
+2021,total_revenues,43736,"43,736",True,2,True,True
+2021,shareholders_equity,66362,"66,362",True,1,True,True
+2021,sp_rating,BBB+,BBB+,True,3,True,True
+2022,total_revenues,52100,"52,057",True,-1,False,False
+2022,shareholders_equity,65956,"65,956",True,3,True,True
+2022,sp_rating,BBB+,BBB+,True,2,True,True
+2023,total_revenues,56437,"56,437",True,2,True,True
+2023,shareholders_equity,40002.0,"40,002",True,1,True,True
+2023,sp_rating,BBB+,BBB+,True,2,True,False
+2024,total_revenues,46802,"46,802",True,2,True,True
+2024,shareholders_equity,45351.0,"45,351",True,1,True,True
+2024,sp_rating,BBB+,BBB+,True,1,True,True
+2025,total_revenues,27251.0,"27,251",True,1,True,True
+2025,shareholders_equity,42521.0,"42,521",True,2,True,True
+2025,sp_rating,BBB+,BBB+,True,1,True,True

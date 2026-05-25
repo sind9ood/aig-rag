@@ -1,0 +1,800 @@
+{
+  "summary": {
+    "cases": 15,
+    "correct": 10,
+    "accuracy": 0.6666666666666666,
+    "retrieval_hit": 8,
+    "retrieval_hit_rate": 0.5333333333333333,
+    "mrr": 0.3
+  },
+  "cases": [
+    {
+      "year": 2021,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary statement of operations revenue table summary of revenues operating results",
+      "prediction": "43736",
+      "ground_truth": "43,736",
+      "correct": true,
+      "retrieval_rank": 2,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"43736\", \"supporting_docs\": [2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 1",
+          "table_row_count": 5,
+          "year_index": 0,
+          "excerpt": "(dollars in millions)\n(a)\nOur Total revenues were $43.7 billion in 2020. The graph above represents Adjusted revenues. For reconciliation of Adjusted revenues to Total revenues see Note 3 to the Consolidated Financial Statements.\n(b)\nGeneral Insurance adjusted revenues is comprised of $10.3 billion and $13.4 billion of Net premiums earned in North America and International, respectively, and $2.9 billion in Net investment income.",
+          "full_text": "diaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off previously reported within Legacy as well as the historical results of our legacy insurance lines ceded to Fortitude Reinsurance Company Ltd. (Fortitude Re).\nDiversified Mix of Businesses\n(dollars in millions)\n(a)\nOur Total revenues were $43.7 billion in 2020. The graph above represents Adjusted revenues. For reconciliation of Adjusted revenues to Total revenues see Note 3 to the Consolidated Financial Statements.\n(b)\nGeneral Insurance adjusted revenues is comprised of $10.3 billion and $13.4 billion of Net premiums earned in North America and International, respectively, and $2.9 billion in Net investment income.\n(c)\nOn October 26, 2020, we announced our intention to separate our Life and Retirement business from AIG.",
+          "bm25_score": 0.753042,
+          "embedding_score": 0.968347,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nReal Estate and Other Fixed Assets,\nTotal Revenues*\nNet of Accumulated Depreciation\n(in millions)",
+          "full_text": "revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nReal Estate and Other Fixed Assets,\nTotal Revenues*\nNet of Accumulated Depreciation\n(in millions)\n2020\n2019\n2018\n2020\n2019\n2018\nNorth America\n$\n30,204\n$\n36,930\n$\n31,376\n$\n1,230\n$\n1,333\n$\n1,479\nInternational 13,532\n12,816\n16,013\nConsolidated\n$\n43,736\n$\n49,746\n$\n47,389\n$\n1,840\n$\n1,953\n$\n2,172\n *Revenues are generally reported according to the geographic location of the segment. International revenues consists of revenues from our General Insurance International operating segment.\n4. Business Combination\nOn July 18, 2018, we completed the purchase of a 100 percent voting interest in Validus, a leading provider of reinsurance, primary insurance, and asset management services, for $5.5 billion in cash.\nThe purchase was accounted for under the acquisition method. Accordingly, the total purchase price was allocated to the estimated fair values of assets acquired and liabilities assumed. This allocation resulted in the purchase price exceeding the fair value of net assets acquired, which results in a difference recorded as goodwill. Goodwill generated from the acquisition is attributable to expected synergies from future growth and potential future monetization opportunities. Goodwill related to the purchase of Validus assigned to our General Insurance operating segments was $1.8 billion for North America and $157 million for International.\nIn addition, Validus participates in the market for insurance-linked securities (ILS) primarily through AlphaCat Managers, Ltd (AlphaCat). AlphaCat is an asset manager primarily for third-party investors and in connection with the issuance of ILS invests in AlphaCat funds which are considered VIEs. ILS are financial instruments for which the values are determined based on insurance losses caused primarily by natural catastrophes such as major earthquakes and hurricanes. We report the investment in AlphaCat funds, which is approximately $118 million and $124 million at December 31, 2020 and December 31, 2019, respectively, in Other Invested Assets in the Consolidated Balance Sheets.",
+          "bm25_score": 0.815437,
+          "embedding_score": 0.901822,
+          "hybrid_embedding_rank": 3
+        },
+        {
+          "rank": 3,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off previously reported within Legacy as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nThe accounting policies of the segments are the same as those described in Note 2. We evaluate segme",
+          "full_text": "AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off previously reported within Legacy as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nThe accounting policies of the segments are the same as those described in Note 2. We evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and net income (loss) attributable to AIG, respectively. These items generally fall into one or more of the following broad categories: legacy matters having no relevance to our current businesses or operating performance; adjustments to enhance transparency to the underlying economics of transactions; and measures that we believe to be common to the industry. Legal entities are attributed to each segment based upon the predominance of activity in that legal entity. For the items excluded from adjusted revenues and adjusted pre-tax income (loss) see the table below.\nThe following table presents AIG’s continuing operations by operating segment:",
+          "bm25_score": 1.0,
+          "embedding_score": 0.364167,
+          "hybrid_embedding_rank": 4
+        }
+      ],
+      "supporting_docs": [
+        2
+      ]
+    },
+    {
+      "year": 2021,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net worth",
+      "prediction": "66362",
+      "ground_truth": "66,362",
+      "correct": true,
+      "retrieval_rank": 3,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"66362\", \"supporting_docs\": [3]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 60,
+          "year_index": 0,
+          "excerpt": "ty\n$\n49,116\n$\n51,231\n$\n47,621\nTotal common shares outstanding 861,558,049\n869,999,031\n866,609,429\nBook value per common share\n$\n76.46\n$\n74.93\n$\n65.04\nAdjusted book value per common share 57.01\n58.89\n54.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2020\n2019\n2018\nActual or annualized net income (loss",
+          "full_text": "ty\n$\n49,116\n$\n51,231\n$\n47,621\nTotal common shares outstanding 861,558,049\n869,999,031\n866,609,429\nBook value per common share\n$\n76.46\n$\n74.93\n$\n65.04\nAdjusted book value per common share 57.01\n58.89\n54.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2020\n2019\n2018\nActual or annualized net income (loss) attributable to AIG\ncommon shareholders\n$\n(5,973)\n$\n3,326\n$\n(6)\nActual or annualized adjusted after-tax income (loss) attributable\nto AIG common shareholders\n2,201\n4,078\n1,215\nAverage AIG common shareholders' equity\n$\n63,225\n$\n62,205\n$\n60,819\nLess: Average AOCI\n7,529\n3,261\n1,193\nAdd: Average cumulative unrealized gains and losses related to\nFortitude Re’s Funds Withheld Assets\n2,653\n-\n-\nLess: Average DTA\n8,437\n9,605\n10,133\nAverage adjusted AIG common shareholders' equity\n$\n49,912\n$\n49,339\n$\n49,493\nReturn on common equity\n(9.4)\n%\n5.3\n%\n0.0\n%\nAdjusted return on common equity\n4.4\n%\n8.3\n%\n2.5\n%\nThe following table presents a reconciliation of pre-tax income/net income (loss) attributable to AIG to adjusted pre-tax income/adjusted after-tax income attributable to AIG:",
+          "bm25_score": 0.895635,
+          "embedding_score": 0.734475,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2021,
+          "section": "item 4",
+          "table_row_count": 60,
+          "year_index": 0,
+          "excerpt": "ty\n$\n49,116\n$\n51,231\n$\n47,621\nTotal common shares outstanding 861,558,049\n869,999,031\n866,609,429\nBook value per common share\n$\n76.46\n$\n74.93\n$\n65.04\nAdjusted book value per common share 57.01\n58.89\n54.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2020\n2019\n2018\nActual or annualized net income (loss",
+          "full_text": "ty\n$\n49,116\n$\n51,231\n$\n47,621\nTotal common shares outstanding 861,558,049\n869,999,031\n866,609,429\nBook value per common share\n$\n76.46\n$\n74.93\n$\n65.04\nAdjusted book value per common share 57.01\n58.89\n54.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2020\n2019\n2018\nActual or annualized net income (loss) attributable to AIG\ncommon shareholders\n$\n(5,973)\n$\n3,326\n$\n(6)\nActual or annualized adjusted after-tax income (loss) attributable\nto AIG common shareholders\n2,201\n4,078\n1,215\nAverage AIG common shareholders' equity\n$\n63,225\n$\n62,205\n$\n60,819\nLess: Average AOCI\n7,529\n3,261\n1,193\nAdd: Average cumulative unrealized gains and losses related to\nFortitude Re’s Funds Withheld Assets\n2,653\n-\n-\nLess: Average DTA\n8,437\n9,605\n10,133\nAverage adjusted AIG common shareholders' equity\n$\n49,912\n$\n49,339\n$\n49,493\nReturn on common equity\n(9.4)\n%\n5.3\n%\n0.0\n%\nAdjusted return on common equity\n4.4\n%\n8.3\n%\n2.5\n%\nThe following table presents a reconciliation of pre-tax income/net income (loss) attributable to AIG to adjusted pre-tax income/adjusted after-tax income attributable to AIG:",
+          "bm25_score": 0.895635,
+          "embedding_score": 0.619124,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 53,
+          "year_index": 0,
+          "excerpt": "2019\n2018\nTotal AIG shareholders' equity\n$\n66,362",
+          "full_text": "mmon share 57.01\n58.89\nThe following table presents a reconciliation of Book value per common share to Book value per common share, excluding AOCI adjusted for the cumulative unrealized gains and losses related to Fortitude Re’s Funds Withheld Assets and DTA (Adjusted book value per common share), which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nAt December 31,\n(in millions, except per common share data)\n2020\n2019\n2018\nTotal AIG shareholders' equity\n$\n66,362\n$\n65,675\n$\n56,361\nPreferred equity\n-\nTotal AIG common shareholders' equity\n65,877\n65,190\n56,361\nLess: Accumulated other comprehensive income (loss)\n13,511\n4,982\n(1,413)\nAdd: Cumulative unrealized gains and losses related to\nFortitude Re’s Funds Withheld Assets\n4,657\n-\n-\nLess: Deferred tax assets\n7,907\n8,977\n10,153\nAdjusted common shareholders' equity\n$\n49,116\n$\n51,231\n$\n47,621\nTotal common shares outstanding\n861,558,049\n869,999,031\n866,609,429\nBook value per common share\n$\n76.46\n$\n74.93\n$\n65.04\nAdjusted book value per common share\n57.01\n58.89\n54.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.458115,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        3
+      ]
+    },
+    {
+      "year": 2021,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "BBB+",
+      "ground_truth": "BBB+",
+      "correct": true,
+      "retrieval_rank": 3,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"BBB+\", \"supporting_docs\": [3]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "ppends numerical modifiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)\nS&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)\nFitch ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.",
+          "full_text": "ppends numerical modifiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)\nS&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)\nFitch ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(d)\nThese credit ratings are current opinions of the rating agencies. They may be changed, suspended or withdrawn at any time by the rating agencies as a result of changes in, or unavailability of, information or based on other circumstances. Ratings may also be withdrawn at our request. For a discussion of rating agency actions in response to AIG’s announced intention to separate its Life and Retirement business from AIG, see Recent Rating Agency Actions below.\nWe are party to some agreements that contain “ratings triggers.” Depending on the ratings maintained by one or more rating agencies, these triggers could result in (i) the termination or limitation of credit availability or a requirement for accelerated repayment, (ii) the termination of business contracts or (iii) a requirement to post collateral for the benefit of counterparties.\nIn the event of a downgrade of AIG’s long-term senior debt ratings, AIG Financial Products Corp. and related subsidiaries (collectively AIGFP) and certain other AIG entities would be required to post additional collateral under some derivative and other transactions, or certain of the counterparties of AIGFP or of such other AIG entities would be permitted to terminate such transactions early.\nThe actual amount of collateral that we would be required to post to counterparties in the event of such downgrades, or the aggregate amount of payments that we could be required to make, depends on market conditions, the fair value of outstanding affected transactions and other factors prevailing at the time of the downgrade.\nFor a discussion of the effects of downgrades in our credit ratings see Note 11 to the Consolidated Financial Statements and Part I, Item 1A. Risk Factors – Liquidity, Capital and Credit.\nFINANCIAL STRENGTH Ratings",
+          "bm25_score": 1.0,
+          "embedding_score": 0.719889,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 76,
+          "year_index": 0,
+          "excerpt": "is carried at the principal amount borrowed, including unamortized discounts, hedge accounting valuation adjustments and fair value adjustments, when applicable.\nThe following table lists our total debt outstanding at December 31, 2020 and 2019. The interest rates presented in the following table are the range of contractual rates in effect at December 31, 2020, including fixed and variable-rates:\nBalance at\nBalance at\nAt December | 31.0 | 2020.0\nRange of\nMaturity\nDecember 31,\nDecember 31,\n(in m",
+          "full_text": "is carried at the principal amount borrowed, including unamortized discounts, hedge accounting valuation adjustments and fair value adjustments, when applicable.\nThe following table lists our total debt outstanding at December 31, 2020 and 2019. The interest rates presented in the following table are the range of contractual rates in effect at December 31, 2020, including fixed and variable-rates:\nBalance at\nBalance at\nAt December | 31.0 | 2020.0\nRange of\nMaturity\nDecember 31,\nDecember 31,\n(in millions)\nInterest Rate(s)\nDate(s)\n2020\n2019\nDebt issued or guaranteed by AIG:\nAIG general borrowings:\nNotes and bonds payable\n0% - 8.13%\n2021 - 2097\n$\n23,068\n$\n20,467\nJunior subordinated debt\n4.88% - 8.63%\n2037 - 2058\n1,561\n1,542\nAIG Japan Holdings Kabushiki Kaisha\n0.28% - 0.35%\n2021 - 2025\nAIGLH notes and bonds payable\n6.63% - 7.50%\n2025 - 2029\nAIGLH junior subordinated debt\n7.57% - 8.50%\n2030 - 2046\nValidus notes and bonds payable\n8.88%\n2040\nTotal AIG general borrowings\n25,981\n23,349\nAIG borrowings supported by assets:(a)\nSeries AIGFP matched notes and bonds payable\n0.23% - 0.23%\n2046 - 2047\nGIAs, at fair value\n0.00% - 7.15%\n2021 - 2047\n2,033\n2,003\nNotes and bonds payable, at fair value\n0.50% - 10.37%\n2030 - 2049\nTotal AIG borrowings supported by assets\n2,118\n2,083\nTotal debt issued or guaranteed by AIG\n28,099\n25,432\nOther subsidiaries notes, bonds, loans and mortgages\npayable - not guaranteed by AIG\n2.76%\n2022 - 2023\nTotal long-term debt\n28,103\n25,479\nDebt of consolidated investment entities - not guaranteed by AIG(b)\n0% - 9.31%\n2021 - 2062\n9,431\n9,871\nTotal debt\n$\n37,534\n$\n35,350",
+          "bm25_score": 0.569669,
+          "embedding_score": 0.848125,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "r contracts\nEmbedded derivatives (4,722) (1,464)\nTotal\n$\n(3,336)\n$\n(361)\n$\nBy Classification:\nPolicy fees\n$\n$\n$\nNet investment income (8) (125) (3)\nNet realized capital gains (losses) - excluding Fortitude Re funds withheld assets (508) (316)\nNet realized capital gains (losses) on Fortitude Re funds withheld assets (2,894)\n-\n-\nPolicyholder benefits and claims incurred (2)\nTotal\n$\n(3,336)\n$\n(361)\n$\nCredit Risk-Related Contingent Features\nWe estimate that at December 31, 2020, based on our outstan",
+          "full_text": "r contracts\nEmbedded derivatives (4,722) (1,464)\nTotal\n$\n(3,336)\n$\n(361)\n$\nBy Classification:\nPolicy fees\n$\n$\n$\nNet investment income (8) (125) (3)\nNet realized capital gains (losses) - excluding Fortitude Re funds withheld assets (508) (316)\nNet realized capital gains (losses) on Fortitude Re funds withheld assets (2,894)\n-\n-\nPolicyholder benefits and claims incurred (2)\nTotal\n$\n(3,336)\n$\n(361)\n$\nCredit Risk-Related Contingent Features\nWe estimate that at December 31, 2020, based on our outstanding financial derivative transactions, a downgrade of our long-term senior debt ratings to BBB or BBB– by Standard & Poor’s Financial Services LLC, a subsidiary of S&P Global Inc., and/or a downgrade to Baa2 or Baa3 by Moody’s Investors’ Service, Inc. would permit counterparties to make additional collateral calls and permit certain counterparties to elect early termination of contracts, resulting in corresponding collateral postings and termination payments in the total amount of up to approximately $47 million. The aggregate fair value of our derivatives that were in a net liability position and that contain such credit risk-related contingencies which can be triggered below our long-term senior debt ratings of BBB+ or Baa1 was approximately $257 million and $336 million at December 31, 2020 and 2019, respectively. The aggregate fair value of assets posted as collateral under these contracts at December 31, 2020 and 2019, was approximately $306 million and $381 million, respectively.\nHybrid Securities with Embedded Credit Derivatives\nWe invest in hybrid securities (such as credit-linked notes) with the intent of generating income, and not specifically to acquire exposure to embedded derivative risk. As is the case with our other investments in RMBS, CMBS, CDOs and ABS, our investments in these hybrid securities are exposed to losses only up to the amount of our initial investment in the hybrid security. Other than our initial investment in the hybrid securities, we have no further obligation to make payments on the embedded credit derivatives in the related hybrid securities.",
+          "bm25_score": 0.893247,
+          "embedding_score": 0.511189,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        3
+      ]
+    },
+    {
+      "year": 2022,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary statement of operations revenue table summary of revenues operating results",
+      "prediction": "52100",
+      "ground_truth": "52,057",
+      "correct": true,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"52100\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 1",
+          "table_row_count": 5,
+          "year_index": 0,
+          "excerpt": "(dollars in millions)\n(a)\nOur Total revenues were $52.1 billion in 2021. The graph above represents Adjusted revenues. For reconciliation of Adjusted revenues to Total revenues see Note 3 to the Consolidated Financial Statements.\n(b)\nGeneral Insurance adjusted revenues is comprised of $11.0 billion and $14.1 billion of Net premiums earned in North America and International, respectively, and $3.3 billion in Net investment income.",
+          "full_text": "G Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Reinsurance Company Ltd. (Fortitude Re).\nDiversified Mix of Businesses\n(dollars in millions)\n(a)\nOur Total revenues were $52.1 billion in 2021. The graph above represents Adjusted revenues. For reconciliation of Adjusted revenues to Total revenues see Note 3 to the Consolidated Financial Statements.\n(b)\nGeneral Insurance adjusted revenues is comprised of $11.0 billion and $14.1 billion of Net premiums earned in North America and International, respectively, and $3.3 billion in Net investment income.\n(c)\nOn October 26, 2020, we announced our intention to separate our Life and Retirement business from AIG.",
+          "bm25_score": 0.862881,
+          "embedding_score": 0.782624,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2022,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "Other Operations\nOther Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nThe accounting policies of the segments are the sam",
+          "full_text": "l as AIG’s Global Specialty business.\nNorth America and International operating segments consist of the following products:\n– Commercial Lines – consists of Liability, Financial Lines, Property, Global Specialty and Crop Risk Services.\n– Personal Insurance – consists of Personal Lines and Accident & Health.\nLife and Retirement\nLife and Retirement business is presented as four operating segments:\n\n\nGroup Retirement – consists of record-keeping, plan administrative and compliance services, financial planning and advisory solutions offered to employer-defined contribution plan participants, along with proprietary and non-proprietary annuities and advisory and brokerage products offered outside of plans.\n\n\nInstitutional Markets – consists of stable value wrap products, structured settlement and pension risk transfer annuities, corporate- and bank-owned life insurance, high net worth products and guaranteed investment contracts (GICs).\nFor additional information on the Life and Retirement business, see Note 1.\nOther Operations\nOther Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nThe accounting policies of the segments are the same as those described in Note 2. We evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and net income (loss) attributable to AIG, respectively. These items generally fall into one or more of the following broad categories: legacy matters having no relevance to our current businesses or operating performance; adjustments to enhance transparency to the underlying economics of transactions; and measures that we believe to be common to the industry. Legal entities are attributed to each segment based upon the predominance of activity in that legal entity. For the items excluded from adjusted revenues and adjusted pre-tax income (loss) see the table below.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.572605,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2022,
+          "section": "item 1",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "Adjusted revenues to Total revenues see Note 3 to the Consolidated Financial Statements.\n(b)\nGeneral Insurance adjusted revenues is comprised of $11.0 billion and $14.1 billion of Net premiums earned in North America and International, respectively, and $3.3 billion in Net investment income.",
+          "full_text": "Adjusted revenues to Total revenues see Note 3 to the Consolidated Financial Statements.\n(b)\nGeneral Insurance adjusted revenues is comprised of $11.0 billion and $14.1 billion of Net premiums earned in North America and International, respectively, and $3.3 billion in Net investment income.\n(c)\nOn October 26, 2020, we announced our intention to separate our Life and Retirement business from AIG.\nGeographic Concentration\nIn 2021, 5.9 percent of our property casualty direct premiums were written in the state of California, and 13.6 percent and 6.9 percent were written in Japan and the United Kingdom, respectively. No other state or foreign jurisdiction accounted for more than five percent of our property casualty direct premiums.\nFor additional information on our business segments see Note 3 to the Consolidated Financial Statements.\nHow We Generate Revenues and Profitability\nWe earn revenues primarily from insurance premiums, policy fees and income from investments.\nOur expenses consist of policyholder benefits and losses incurred, interest credited to policyholders, commissions and other costs of selling and servicing our products, interest expense and general operating expenses.\nOur profitability is dependent on our ability to properly price and manage risk on insurance and annuity products, to manage our portfolio of investments effectively and to control costs through expense discipline.\nInvestment Activities of Our Insurance Operations\nOur insurance companies generally receive premiums and deposits well in advance of paying covered claims or benefits. In the intervening periods, we invest these premiums and deposits to generate net investment income that, along with the invested funds, is available to pay claims or benefits. As a result, we generate significant revenues from insurance investment activities.",
+          "bm25_score": 0.82051,
+          "embedding_score": 0.736024,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2022,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net worth",
+      "prediction": "65956",
+      "ground_truth": "65,956",
+      "correct": true,
+      "retrieval_rank": 2,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"65956\", \"supporting_docs\": [2, 3]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 60,
+          "year_index": 0,
+          "excerpt": "shareholders' equity\n$\n56,354\n$\n49,116\n$\n51,231\nTotal common shares outstanding 818.7\n861.6\n870.0\nBook value per common share\n$\n79.97\n$\n76.46\n$\n74.93\nAdjusted book value per common share 68.83\n57.01\n58.89\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2021\n2020\n2019\nActual or annualized net income (loss",
+          "full_text": "shareholders' equity\n$\n56,354\n$\n49,116\n$\n51,231\nTotal common shares outstanding 818.7\n861.6\n870.0\nBook value per common share\n$\n79.97\n$\n76.46\n$\n74.93\nAdjusted book value per common share 68.83\n57.01\n58.89\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2021\n2020\n2019\nActual or annualized net income (loss) attributable to AIG\ncommon shareholders\n$\n9,359\n$\n(5,973)\n$\n3,326\nActual or annualized adjusted after-tax income\nattributable to AIG common shareholders\n4,430\n2,201\n4,078\nAverage AIG common shareholders' equity\n$\n64,704\n$\n63,225\n$\n62,205\nLess: Average AOCI\n9,096\n7,529\n3,261\nAdd: Average cumulative unrealized gains and losses related to\nFortitude Re funds withheld assets\n3,200\n2,653\n-\nLess: Average DTA\n7,025\n8,437\n9,605\nAverage adjusted AIG common shareholders' equity\n$\n51,783\n$\n49,912\n$\n49,339\nReturn on common equity\n14.5\n%\n(9.4)\n%\n5.3\n%\nAdjusted return on common equity\n8.6\n%\n4.4\n%\n8.3\n%\nThe following table presents a reconciliation of revenues to adjusted revenues:",
+          "bm25_score": 1.0,
+          "embedding_score": 0.734291,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2022,
+          "section": "item 4",
+          "table_row_count": 52,
+          "year_index": 0,
+          "excerpt": "2020\n2019\nTotal AIG shareholders' equity\n$\n65,956",
+          "full_text": "41\n28,103\nDebt of consolidated investment entities 6,422\n9,431\nTotal AIG shareholders’ equity 65,956\n66,362\nBook value per common share 79.97\n76.46\nAdjusted book value per common share 68.83\n57.01\nThe following table presents a reconciliation of Book value per common share to Adjusted book value per common share, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nAt December 31,\n(in millions, except per common share data)\n2021\n2020\n2019\nTotal AIG shareholders' equity\n$\n65,956\n$\n66,362\n$\n65,675\nPreferred equity\nTotal AIG common shareholders' equity\n65,471\n65,877\n65,190\nLess: Accumulated other comprehensive income (loss)\n6,687\n13,511\n4,982\nAdd: Cumulative unrealized gains and losses related to\nFortitude Re funds withheld assets\n2,791\n4,657\n-\nLess: Deferred tax assets\n5,221\n7,907\n8,977\nAdjusted common shareholders' equity\n$\n56,354\n$\n49,116\n$\n51,231\nTotal common shares outstanding\n818.7\n861.6\n870.0\nBook value per common share\n$\n79.97\n$\n76.46\n$\n74.93\nAdjusted book value per common share\n68.83\n57.01\n58.89\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.",
+          "bm25_score": 0.996316,
+          "embedding_score": 0.540946,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 52,
+          "year_index": 0,
+          "excerpt": "2020\n2019\nTotal AIG shareholders' equity\n$\n65,956",
+          "full_text": "41\n28,103\nDebt of consolidated investment entities 6,422\n9,431\nTotal AIG shareholders’ equity 65,956\n66,362\nBook value per common share 79.97\n76.46\nAdjusted book value per common share 68.83\n57.01\nThe following table presents a reconciliation of Book value per common share to Adjusted book value per common share, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nAt December 31,\n(in millions, except per common share data)\n2021\n2020\n2019\nTotal AIG shareholders' equity\n$\n65,956\n$\n66,362\n$\n65,675\nPreferred equity\nTotal AIG common shareholders' equity\n65,471\n65,877\n65,190\nLess: Accumulated other comprehensive income (loss)\n6,687\n13,511\n4,982\nAdd: Cumulative unrealized gains and losses related to\nFortitude Re funds withheld assets\n2,791\n4,657\n-\nLess: Deferred tax assets\n5,221\n7,907\n8,977\nAdjusted common shareholders' equity\n$\n56,354\n$\n49,116\n$\n51,231\nTotal common shares outstanding\n818.7\n861.6\n870.0\nBook value per common share\n$\n79.97\n$\n76.46\n$\n74.93\nAdjusted book value per common share\n68.83\n57.01\n58.89\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.",
+          "bm25_score": 0.996316,
+          "embedding_score": 0.457741,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        2,
+        3
+      ]
+    },
+    {
+      "year": 2022,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "BBB+",
+      "ground_truth": "BBB+",
+      "correct": true,
+      "retrieval_rank": 2,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"BBB+\", \"supporting_docs\": [2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "fiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)\nS&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)\nFitch Ratings Inc. (Fitch) ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.",
+          "full_text": "fiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)\nS&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)\nFitch Ratings Inc. (Fitch) ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(d)\nAIG guarantees all obligations of AIG Financial Products Corp.\nThese credit ratings are current opinions of the rating agencies. They may be changed, suspended or withdrawn at any time by the rating agencies as a result of changes in, or unavailability of, information or based on other circumstances. Ratings may also be withdrawn at our request. For a discussion of rating agency actions in response to AIG’s announced intention to separate its Life and Retirement business from AIG, see Rating Agency Actions Related to the Announced Separation of Life and Retirement below.\nWe are party to some agreements that contain “ratings triggers.” Depending on the ratings maintained by one or more rating agencies, these triggers could result in (i) the termination or limitation of credit availability or a requirement for accelerated repayment, (ii) the termination of business contracts or (iii) a requirement to post collateral for the benefit of counterparties.\nIn the event of a downgrade of AIG’s long-term senior debt ratings, AIG Financial Products Corp. and related subsidiaries (collectively AIGFP) and certain other AIG entities would be required to post additional collateral under some derivative and other transactions, or certain of the counterparties of AIGFP or of such other AIG entities would be permitted to terminate such transactions early.\nThe actual amount of collateral that we would be required to post to counterparties in the event of such downgrades, or the aggregate amount of payments that we could be required to make, depends on market conditions, the fair value of outstanding affected transactions and other factors prevailing at the time of the downgrade.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.351041,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 32,
+          "year_index": 0,
+          "excerpt": "Credit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term Debt",
+          "full_text": "partnerships.\nDebt Maturities\nThe following table summarizes maturing long-term debt at December 31, 2021 of AIG for the next four quarters:\nFirst\nSecond\nThird\nFourth\nQuarter\nQuarter\nQuarter\nQuarter\n(in millions)\n2022\n2022\n2022\n2022\nTotal\nAIG general borrowings\n$\n-\n$\n-\n$\n-\n$\n$\nAIG borrowings supported by assets\n-\nOther subsidiaries' notes, bonds, loans and mortgages payable\n-\n-\n-\nTotal\n$\n-\n$\n$\n$\n$\nFor additional information on debt outstanding see Note 14 to the Consolidated Financial Statements.\nCredit Ratings\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term Debt\nSenior Long-Term Debt\nMoody’s\nS&P\nMoody’s(a)\nS&P(b)\nFitch(c)\nAmerican International Group, Inc.\nP-2 (2nd of 3)\nA-2 (2nd of 8)\nBaa 2 (4th of 9)\nBBB+ (4th of 9)\nBBB+ (4th of 9)\n/ Stable outlook\nCreditWatch\nRating Watch\nNegative\nNegative\nAIG Financial Products Corp.(d)\nP-2\nA-2\nBaa 2 (4th of 9)\nBBB+\n/ Stable outlook\nCreditWatch\nNegative\n(a)\nMoody’s appends numerical modifiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)\nS&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)\nFitch Ratings Inc. (Fitch) ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(d)",
+          "bm25_score": 0.981254,
+          "embedding_score": 0.250513,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2022,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": ", at December 31, 2021 and December 31, 2020. A bifurcated embedded derivative is generally presented with the host contract in the Consolidated Balance Sheets. Embedded derivatives are primarily related to guarantee features in variable annuity products, which include equity and interest rate components, and the funds withheld arrangement with Fortitude Re. For additional information see Note 7\n.\nCollateral\nWe engage in derivative transactions that are not subject to a clearing requirement dire",
+          "full_text": ", at December 31, 2021 and December 31, 2020. A bifurcated embedded derivative is generally presented with the host contract in the Consolidated Balance Sheets. Embedded derivatives are primarily related to guarantee features in variable annuity products, which include equity and interest rate components, and the funds withheld arrangement with Fortitude Re. For additional information see Note 7\n.\nCollateral\nWe engage in derivative transactions that are not subject to a clearing requirement directly with unaffiliated third parties, in most cases, under International Swaps and Derivatives Association, Inc. (ISDA) Master Agreements. Many of the ISDA Master Agreements also include Credit Support Annex provisions, which provide for collateral postings that may vary at various ratings and threshold levels. We attempt to reduce our risk with certain counterparties by entering into agreements that enable collateral to be obtained from a counterparty on an upfront or contingent basis. We minimize the risk that counterparties might be unable to fulfill their contractual obligations by monitoring counterparty credit exposure and collateral value and generally requiring additional collateral to be posted upon the occurrence of certain events or circumstances. In addition, certain derivative transactions have provisions that require collateral to be posted by us upon a downgrade of our long-term debt ratings or give the counterparty the right to terminate the transaction. In the case of some of the derivative transactions, upon a downgrade of our long-term debt ratings, as an alternative to posting collateral and subject to certain conditions, we may assign the transaction to an obligor with higher debt ratings or arrange for a substitute guarantee of our obligations by an obligor with higher debt ratings or take other similar action. The actual amount of collateral required to be posted to counterparties in the event of such downgrades, or the aggregate amount of payments that we could be required to make, depends on market conditions, the fair value of outstanding affected transactions and other factors prevailing at and after the time of the downgrade.",
+          "bm25_score": 0.828432,
+          "embedding_score": 0.365259,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        2
+      ]
+    },
+    {
+      "year": 2023,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary notes revenue table summary of revenues income details",
+      "prediction": "N/A",
+      "ground_truth": "56,437",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "nsurer based upon our financial reviews; reinsurers that are financially troubled (i.e., in run-off, have voluntarily or involuntarily been placed in receivership, are insolvent, are in the process of liquidation or otherwise subject to formal or informal regulatory restriction) are assigned ORRs that will generate a significant allowance; and\n•whether collateral and collateral arrangements exist.\nAn estimate of the reinsurance recoverables lifetime expected credit losses is established utilizin",
+          "full_text": "nsurer based upon our financial reviews; reinsurers that are financially troubled (i.e., in run-off, have voluntarily or involuntarily been placed in receivership, are insolvent, are in the process of liquidation or otherwise subject to formal or informal regulatory restriction) are assigned ORRs that will generate a significant allowance; and\n•whether collateral and collateral arrangements exist.\nAn estimate of the reinsurance recoverables lifetime expected credit losses is established utilizing a probability of default and loss given default method, which reflects the reinsurer’s ORR. The allowance for credit losses excludes disputed amounts. An allowance for disputes is established for a reinsurance recoverable using the losses incurred model for contingencies.\nThe total reinsurance recoverables as of December 31, 2022 were $73.7 billion. As of that date, utilizing AIG’s ORRs, (i) approximately 92 percent of the reinsurance recoverables were investment grade, of which 53 percent related to General Insurance and 39 percent related to Life and Retirement; (ii) approximately 7 percent of the reinsurance recoverables were non-investment grade, the majority of which related to General Insurance; (iii) less than one percent of the non-investment grade reinsurance recoverables related to Life and Retirement and (iv) approximately one percent of the reinsurance recoverables related to entities that were not rated by AIG.\nThe total reinsurance recoverables as of December 31, 2021 were $76.3 billion. As of that date, utilizing AIG’s ORRs, (i) approximately 92 percent of the reinsurance recoverables were investment grade, of which 52 percent related to General Insurance and 40 percent related to Life and Retirement; (ii) approximately 7 percent of the reinsurance recoverables were non-investment grade, the majority of which related to General Insurance; (iii) less than one percent of the non-investment grade reinsurance recoverables related to Life and Retirement and (iv) approximately one percent of the reinsurance recoverables related to entities that were not rated by AIG.\nAs of December 31, 2022 and December 31, 2021, approximately 77 percent and 71 percent, respectively, of our non-investment grade reinsurance exposure related to captive insurers. These arrangements are typically collateralized by letters of credit, funds withheld or trust agreements.",
+          "bm25_score": 0.342056,
+          "embedding_score": 0.761695,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "Other Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nSEGMENT RESULTS\nThe accounting policies of the segments are describe",
+          "full_text": "de term life and universal life insurance. International operations primarily include distribution of life and health products in the UK and Ireland.\n•Institutional Markets – consists of stable value wrap products, structured settlement and pension risk transfer annuities, corporate- and bank-owned life insurance, high net worth products and guaranteed investment contracts (GICs).\nOTHER OPERATIONS\nOTHER OPERATIONS\nOther Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nSEGMENT RESULTS\nThe accounting policies of the segments are described in Note 2. We evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and pre-tax income (loss), respectively. These items generally fall into one or more of the following broad categories: legacy matters having no relevance to our current businesses or operating performance; adjustments to enhance transparency to the underlying economics of transactions; and measures that we believe to be common to the industry. Legal entities are attributed to each segment based upon the predominance of activity in that legal entity. For the items excluded from adjusted revenues and adjusted pre-tax income (loss), see the table below.\nThe following table presents AIG’s continuing operations by operating segment:",
+          "bm25_score": 1.0,
+          "embedding_score": 0.036378,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2023,
+          "section": "item 1a",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "arryforwards arising from an ownership change under Section 382 of the Internal Revenue Code would be dependent on the value of our equity and the AFR at the time of any ownership change. If we were to experience an “ownership change,” it is possible that a significant portion of our tax loss and credit carryforwards could expire before we would be able to use them to offset future taxable income.\nAIG’s previous Tax Asset Protection Plan (the TAP Plan), which was designed to reduce the likelihoo",
+          "full_text": "arryforwards arising from an ownership change under Section 382 of the Internal Revenue Code would be dependent on the value of our equity and the AFR at the time of any ownership change. If we were to experience an “ownership change,” it is possible that a significant portion of our tax loss and credit carryforwards could expire before we would be able to use them to offset future taxable income.\nAIG’s previous Tax Asset Protection Plan (the TAP Plan), which was designed to reduce the likelihood of an “ownership change,” was not extended and thus expired in accordance with its terms on December 11, 2022. The protective amendment (the Protective Amendment) to the Amended and Restated Certificate of Incorporation, which is designed to prevent certain transfers of AIG Common Stock that could result in an “ownership change,” will expire in accordance with its terms on May 13, 2023. If AIG were to experience an “ownership change,” it will no longer have the benefit of the TAP Plan or the Protective Amendment after their respective expiration dates, which would limit its ability to utilize its then remaining tax attributes to offset future tax liability.\nNew and proposed changes to tax laws could increase our corporate taxes or make some of our products less attractive to consumers. The recently enacted Inflation Reduction Act (the IRA), which establishes a new 15 percent corporate alternative minimum tax (CAMT) on adjusted book income (of corporations that have an average adjusted book income in excess of $1 billion over a three tax year period) for tax years beginning after December 31, 2022 may impact AIG’s after-tax earnings or cash flow. AIG may be required to pay tax equal to 15% of AIG’s pre-tax financial statement income, as adjusted by the IRA, despite AIG’s U.S. federal net operating loss carryforwards and foreign tax credits.\nThe IRA also includes a nondeductible 1% excise tax on the repurchase of corporate stock for transactions occurring in taxable years after December 31, 2022. The 1% excise tax on share repurchases would increase AIG’s cost of share repurchases.",
+          "bm25_score": 0.0,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2023,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "40002.0",
+      "ground_truth": "40,002",
+      "correct": true,
+      "retrieval_rank": 3,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"40002.0\", \"supporting_docs\": [3]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 20,
+          "year_index": 0,
+          "excerpt": "hat are designated as hedging instruments when the change in the fair value of the hedged item is not reported in Net realized gains (losses).\n•Foreign exchange gains and losses resulting from foreign currency transactions.\n•Changes in fair value of the embedded derivative related to the Fortitude Re funds withheld assets.\nThe following table presents the components of Net realized gains (losses):\nYears Ended December 31,202220212020\n(in millions)ExcludingFortitudeRe FundsWithheldAssetsFortitude",
+          "full_text": "hat are designated as hedging instruments when the change in the fair value of the hedged item is not reported in Net realized gains (losses).\n•Foreign exchange gains and losses resulting from foreign currency transactions.\n•Changes in fair value of the embedded derivative related to the Fortitude Re funds withheld assets.\nThe following table presents the components of Net realized gains (losses):\nYears Ended December 31,202220212020\n(in millions)ExcludingFortitudeRe FundsWithheldAssetsFortitudeReFundsWithheldAssetsTotalExcludingFortitudeRe FundsWithheldAssetsFortitudeReFundsWithheldAssetsTotalExcludingFortitudeRe FundsWithheldAssetsFortitudeReFundsWithheldAssetsTotal\nSales of fixed maturity securities $(871) $(311) $(1,182)$211 $717 $928 | 307.0 | 707.0 | 1014.0\nIntent to sell (66)— (66)— — — (3)— (3)\nChange in allowance for credit losses on fixed maturity securities (184) (32) (216)19 7 26 | -270.0 | -10.0 | -280.0\nChange in allowance for credit losses on loans (55) (47) (102)163 9 | 172.0 | None | -103.0\nForeign exchange transactions (17) (5) (22)16 (5)11 | 365.0 | 13.0 | 378.0\nVariable annuity embedded derivatives, net of related hedges 1,221 — 1,221 (39)— (39)166 — 166\nAll other derivatives and hedge accounting 1,814 (134)1,680 179 28 207 | -672.0 | -249.0 | -921.0\nSales of alternative investments and real estate investments 193 43 236 988 237 1,225 143 — 143\nOther (39)— (39)214 10 224 13 — 13\nNet realized gains (losses) – excluding Fortitude Re funds withheld embedded derivative 1,996 (486)1,510 1,751 1,003 | 2754.0 | None | 407.0\nNet realized gains (losses) on Fortitude Re funds withheld embedded derivative— 7,481 7,481 — (603) (603)— | -2645.0 | -2645.0\nNet realized gains (losses)$1,996 $6,995 $8,991 $1,751 $400 $2,151 | -56.0 | -2182.0 | -2238.0\nCHANGE IN UNREALIZED APPRECIATION (DEPRECIATION) OF INVESTMENTS\nThe following table presents the increase (decrease) in unrealized appreciation (depreciation) of our available for sale securities and other investments:\nYears Ended December 31,\n(in millions)20222021\nIncrease (decrease) in unrealized appreciation (depreciation) of investments:\nFixed maturity securities | -47741.0 | -9255.0\nOther investments (25)—\nTotal increase (decrease) in unrealized appreciation (depreciation) of investments | -47766.0 | -9255.0\nThe following table summarizes the unrealized gains and losses recognized in Net investment income during the reporting period on equity securities and other investments still held at the reporting date:",
+          "bm25_score": 0.098309,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 6,
+          "year_index": 0,
+          "excerpt": "tion) of investments:\nFixed maturity securities | -47741.0 | -9255.0\nOther investments (25)—\nTotal increase (decrease) in unrealized appreciation (depreciation) of investments | -47766.0 | -9255.0\nThe following table summarizes the unrealized gains and losses recognized in Net investment income during the reporting period on equity securities and other investments still held at the reporting date:\nYears Ended December 31,20222021\n(in millions)EquitiesOtherInvestedAssetsTotalEquitiesOtherInvested",
+          "full_text": "tion) of investments:\nFixed maturity securities | -47741.0 | -9255.0\nOther investments (25)—\nTotal increase (decrease) in unrealized appreciation (depreciation) of investments | -47766.0 | -9255.0\nThe following table summarizes the unrealized gains and losses recognized in Net investment income during the reporting period on equity securities and other investments still held at the reporting date:\nYears Ended December 31,20222021\n(in millions)EquitiesOtherInvestedAssetsTotalEquitiesOtherInvestedAssetsTotal\nNet gains (losses) recognized during the period on equity securities and other investments $(53)$355 | 302.0 | None | 1791.0\nLess: Net gains (losses) recognized during the period on equity securities and other investments sold during the period 96 | None | None | -66.0\nUnrealized gains (losses) recognized during the reporting period on equity securities and other investments still held at the reporting date $(149)$378 | 229.0 | None | 1857.0",
+          "bm25_score": 0.229957,
+          "embedding_score": 0.863678,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2023,
+          "section": "item 7",
+          "table_row_count": 13,
+          "year_index": 0,
+          "excerpt": "At December 31,\n(in millions, except per common share data)202220212020\nTotal AIG shareholders' equity | 40002.0 | 65956.0 | 66362.0\nPreferred equity | 485.0 | 485.0 | 485.0\nTotal AIG common shareholders' equity | 39517.0 | 65471.0 | 65877.0",
+          "full_text": "to have a material impact on AIG’s financial results. However, the CAMT may impact our U.S. cash tax liabilities.\nFor additional information, see Note 21 to the Consolidated Financial Statements.\nThe following table presents a reconciliation of Book value per common share to Adjusted book value per common share, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nAt December 31,\n(in millions, except per common share data)202220212020\nTotal AIG shareholders' equity | 40002.0 | 65956.0 | 66362.0\nPreferred equity | 485.0 | 485.0 | 485.0\nTotal AIG common shareholders' equity | 39517.0 | 65471.0 | 65877.0\nLess: Deferred tax assets | 4518.0 | 5221.0 | 7907.0\nLess: Accumulated other comprehensive income (loss) | None | 13511.0\nAdd: Cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | None | 4657.0\nSubtotal: AOCI plus cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | None | 8854.0\nAdjusted common shareholders' equity | 54229.0 | 56354.0 | 49116.0\nTotal common shares outstanding 734.1 818.7 861.6\nBook value per common share $53.83 $79.97 $76.46\nAdjusted book value per common share 73.87 68.83 57.01\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        3
+      ]
+    },
+    {
+      "year": 2023,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "BBB+",
+      "ground_truth": "BBB+",
+      "correct": true,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"BBB+\", \"supporting_docs\": [3]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "ty - not guaranteed by AIG 3.00% - 5.50%\n2023\n1,500 —\nTotal Corebridge debt | 9368.0 | 426.0\nOther subsidiaries' notes, bonds, loans and mortgages payable - not guaranteed by AIG 2.76% - 4.50%\n2023 - 2024\n1 3\nTotal Short-term and long-term debt | 21299.0 | 23741.0\nDebt of consolidated investment entities - not guaranteed by AIG(c)\n0% - 7.95%\n2023 - 2051\n$5,880 $6,422\nTotal debt | 27179.0 | 30163.0\n(a)AIG Parent guarantees all such debt, except for Series AIGFP matched notes and bonds payable and",
+          "full_text": "ty - not guaranteed by AIG 3.00% - 5.50%\n2023\n1,500 —\nTotal Corebridge debt | 9368.0 | 426.0\nOther subsidiaries' notes, bonds, loans and mortgages payable - not guaranteed by AIG 2.76% - 4.50%\n2023 - 2024\n1 3\nTotal Short-term and long-term debt | 21299.0 | 23741.0\nDebt of consolidated investment entities - not guaranteed by AIG(c)\n0% - 7.95%\n2023 - 2051\n$5,880 $6,422\nTotal debt | 27179.0 | 30163.0\n(a)AIG Parent guarantees all such debt, except for Series AIGFP matched notes and bonds payable and AIG notes and bonds payable, which are direct obligations of AIG Parent. Collateral posted to third parties was $63 million at December 31, 2022 and $1.4 billion at December 31, 2021. This collateral primarily consists of securities of the U.S. government and government sponsored entities and generally cannot be repledged or resold by the counterparties.\n(b)We have entered into a guarantee reimbursement agreement with Corebridge and AIG Life Holdings, Inc. (AIGLH) which provides that Corebridge and AIGLH will reimburse AIG for the full amount of any payment made by or on behalf of AIG pursuant to AIG’s guarantee of the AIGLH notes and junior subordinated debt. We have also entered into a collateral agreement with Corebridge and AIGLH which provides that in the event of: (i) a ratings downgrade of Corebridge or AIGLH long-term unsecured indebtedness below specified levels or (ii) the failure by AIGLH to pay principal and interest on the AIGLH debt when due, Corebridge and AIGLH must collateralize an amount equal to the sum of: (i) 100 percent of the principal amount outstanding, (ii) accrued and unpaid interest and (iii) 100 percent of the net present value of scheduled interest payments. through the maturity dates of the AIGLH debt.\n(c)At December 31, 2022, includes debt of consolidated investment entities primarily related to real estate investments of $1.5 billion and other securitization vehicles of $4.4 billion. At December 31, 2021, includes debt of consolidated investment entities related to real estate investments of $1.9 billion and other securitization vehicles of $4.5 billion.\nThe following table presents maturities of short-term and long-term debt (including unamortized original issue discount, hedge accounting valuation adjustments and fair value adjustments, when applicable):",
+          "bm25_score": 0.72879,
+          "embedding_score": 0.513168,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 27,
+          "year_index": 0,
+          "excerpt": "les of $4.4 billion. At December 31, 2021, includes debt of consolidated investment entities related to real estate investments of $1.9 billion and other securitization vehicles of $4.5 billion.\nThe following table presents maturities of short-term and long-term debt (including unamortized original issue discount, hedge accounting valuation adjustments and fair value adjustments, when applicable):\nDecember 31, 2022Year Ending\n(in millions)Total 20232024202520262027Thereafter\nDebt issued or guara",
+          "full_text": "les of $4.4 billion. At December 31, 2021, includes debt of consolidated investment entities related to real estate investments of $1.9 billion and other securitization vehicles of $4.5 billion.\nThe following table presents maturities of short-term and long-term debt (including unamortized original issue discount, hedge accounting valuation adjustments and fair value adjustments, when applicable):\nDecember 31, 2022Year Ending\n(in millions)Total 20232024202520262027Thereafter\nDebt issued or guaranteed by AIG:\nAIG general borrowings:\nNotes and bonds payable\n$10,242 $401 $459 $997 | 783.0 | 1067.0 | 6535.0\nJunior subordinated debt 991 — — — — — 991\nAIG Japan Holdings Kabushiki Kaisha 273 179 — 94 — — —\nValidus notes and bonds payable 269 — — — — — 269\nTotal AIG general borrowings 11,775 580 459 1,091 | 783.0 | 1067.0 | 7795.0\nAIG borrowings supported by assets:\nAIG notes and bonds payable 81 62 — 12 7 — —\nSeries AIGFP matched notes and bonds payable 18 — — — — — 18\nGIAs, at fair value 56 — — — — — 56\nTotal AIG borrowings supported by assets 155 62 — 12 7 — 74\nTotal debt issued or guaranteed by AIG 11,930 642 459 1,103 | 790.0 | 1067.0 | 7869.0\nCorebridge debt:\nAIGLH notes and bonds payable 200 — — 101 — — 99\nAIGLH junior subordinated debt 227 — — — — — 227\nCorebridge senior unsecured notes 6,452 — — 994 — | 1240.0 | 4218.0\nCorebridge junior subordinated debt 989 — — — — — 989\nDDTL facility(a)\n1,500 1,500 — — — — —\nTotal Corebridge debt 9,368 1,500 — 1,095 — | 1240.0 | 5533.0\nOther subsidiaries notes, bonds, loans and mortgages payable 1 1 — — — — —\nTotal(b)\n$21,299 $2,143 $459 $2,198 | 790.0 | 2307.0 | 13402.0",
+          "bm25_score": 0.644063,
+          "embedding_score": 0.38114,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2023,
+          "section": "item 7",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "ated investment entities related to real estate investments of $1.9 billion and other securitization vehicles of $4.5 billion.\n(d)Includes reclassifications of debt between AIG general borrowings and AIG borrowings supported by assets.\n(e)Represents debt for AIGFP and its subsidiaries that were previously consolidated.\n(f)Includes the effect of consolidating previously unconsolidated partnerships.\n(e)Represents debt for AIGFP and its subsidiaries that were previously consolidated.\n(f)Includes th",
+          "full_text": "ated investment entities related to real estate investments of $1.9 billion and other securitization vehicles of $4.5 billion.\n(d)Includes reclassifications of debt between AIG general borrowings and AIG borrowings supported by assets.\n(e)Represents debt for AIGFP and its subsidiaries that were previously consolidated.\n(f)Includes the effect of consolidating previously unconsolidated partnerships.\n(e)Represents debt for AIGFP and its subsidiaries that were previously consolidated.\n(f)Includes the effect of consolidating previously unconsolidated partnerships.\nIn the next four quarters, unless redeemed or purchased, no material long-term debt is due to mature. Corebridge has the ability to further continue the DDTL borrowing (currently due June 21, 2023) through the final maturity date of the DDTL Facility on February 25, 2025.\nFor additional information on debt outstanding, see Note 14 to the Consolidated Financial Statements.\nCREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        3
+      ]
+    },
+    {
+      "year": 2024,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary statement of operations revenue table summary of revenues operating results",
+      "prediction": "N/A",
+      "ground_truth": "46,802",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "Other Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nSEGMENT RESULTS\nWe evaluate segment performance based on adjusted re",
+          "full_text": "side of plans.\n•Life Insurance – primary products in the U.S. include term life and universal life insurance. International operations primarily include distribution of life and health products in the UK and Ireland. Corebridge previously announced agreements to sell Laya and AIG Life. The sale of Laya closed on October 31, 2023 and the AIG Life sale is expected to close in the first half of 2024.\n•Institutional Markets – consists of stable value wrap products, structured settlement and pension risk transfer annuities, corporate- and bank-owned life insurance, high net worth products and guaranteed investment contracts (GICs).\nFor further discussion on the ongoing separation of the Life and Retirement business from AIG and other recent activity, see Note 1.\nOTHER OPERATIONS\nOther Operations primarily consists of income from assets held by AIG Parent and other corporate subsidiaries, deferred tax assets related to tax attributes, corporate expenses and intercompany eliminations, our institutional asset management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nSEGMENT RESULTS\nWe evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and pre-tax income (loss), respectively. These items generally fall into one or more of the following broad categories: legacy matters having no relevance to our current businesses or operating performance; adjustments to enhance transparency to the underlying economics of transactions; and measures that we believe to be common to the industry. Legal entities are attributed to each segment based upon the predominance of activity in that legal entity. For the items excluded from adjusted revenues and adjusted pre-tax income (loss), see the table below.\nThe following table presents AIG’s continuing operations by operating segment:",
+          "bm25_score": 1.0,
+          "embedding_score": 0.217377,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2024,
+          "section": "item 7",
+          "table_row_count": 23,
+          "year_index": 0,
+          "excerpt": "d index annuities, the proportion of account value subject to surrender charge at December 31, 2023 increased compared to December 31, 2022 primarily due to growth in business. The increase in the proportion of account value with no surrender charge for variable annuities as of December 31, 2023 compared to December 31, 2022 was principally due to normal aging of business.\nGROUP RETIREMENT RESULTS\nYears Ended December 31,Change\n(in millions)2023202220212023 vs 20222022 vs 2021\nAdjusted revenues:",
+          "full_text": "d index annuities, the proportion of account value subject to surrender charge at December 31, 2023 increased compared to December 31, 2022 primarily due to growth in business. The increase in the proportion of account value with no surrender charge for variable annuities as of December 31, 2023 compared to December 31, 2022 was principally due to normal aging of business.\nGROUP RETIREMENT RESULTS\nYears Ended December 31,Change\n(in millions)2023202220212023 vs 20222022 vs 2021\nAdjusted revenues:\nPremiums $20 $19 $22 5 %(14)%\nPolicy fees 406 415 | 480.0 | -2.0 | -14.0\nNet investment income 1,999 2,005 2,410 — (17)\nAdvisory fee and other income 309 305 | 337.0 | 1.0 | -9.0\nTotal adjusted revenues 2,734 2,744 3,249 — (16)\nBenefits and expenses:\nPolicyholder benefits 31 | 35.0 | 31.0 | None\nInterest credited to policyholder account balances 1,182 1,147 | 1159.0 | 3.0 | -1.0\nAmortization of deferred policy acquisition costs 82 80 | 78.0 | 3.0 | 3.0\nNon deferrable insurance commissions 124 123 | 112.0 | 1.0 | 10.0\nAdvisory fee expenses 118 124 | 133.0 | -5.0 | -7.0\nGeneral operating expenses 438 443 443 (1)—\nInterest expense 1 6 | 35.0 | -83.0 | -83.0\nTotal benefits and expenses 1,976 1,958 | 1991.0 | 1.0 | -2.0\nAdjusted pre-tax income $758 $786 $1,258 (4)%(38)%\nBase net investment spread:\nBase yield*4.27 %4.04 %4.11 %23 bps (7)bps\nCost of funds 2.76 2.60 2.62 | 16.0 | -2.0\nBase net investment spread 1.51 %1.44 %1.49 %7 bps (5)bps\n*Includes returns from base portfolio including accretion and income (loss) from certain other invested assets.\nBusiness and Financial Highlights\nAdjusted Pre-Tax Income (Loss) Comparison for the Years Ended December 31, 2023 and 2022\nAdjusted pre-tax income decreased $28 million primarily due to:",
+          "bm25_score": 0.3963,
+          "embedding_score": 0.749198,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2024,
+          "section": "item 4",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "ive to contract holders have driven better than expected persistency in fixed annuities, although the reserves for such contracts have continued to decrease over time in amount and as a percentage of the total annuity portfolio. We closely monitor surrenders of fixed annuities as contracts with lower minimum interest rates come out of the surrender charge period.\nReinvestment and Spread Management\nReinvestment and Spread Management\nWe actively monitor fixed income markets, including the level of",
+          "full_text": "ive to contract holders have driven better than expected persistency in fixed annuities, although the reserves for such contracts have continued to decrease over time in amount and as a percentage of the total annuity portfolio. We closely monitor surrenders of fixed annuities as contracts with lower minimum interest rates come out of the surrender charge period.\nReinvestment and Spread Management\nReinvestment and Spread Management\nWe actively monitor fixed income markets, including the level of interest rates, credit spreads and the shape of the yield curve. We also frequently review our interest rate assumptions and actively manage the crediting rates used for new and in-force business. Business strategies continue to evolve and we attempt to maintain profitability of the overall business in light of the interest rate environment. A rising interest rate environment results in improved yields on new investments and improves margins for our Life and Retirement business while also making certain products, such as fixed annuities, more attractive to potential customers. However, the rising rate environment has resulted in lower values on general and separate account assets, mutual fund assets and brokerage and advisory assets that hold investments in fixed income assets.\nFor additional information on our investment and asset-liability management strategies, see Investments.",
+          "bm25_score": 0.317511,
+          "embedding_score": 0.755405,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2024,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "52799.0",
+      "ground_truth": "45,351",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"52799.0\", \"supporting_docs\": [3]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "illions)Total VIEAssetsOn-BalanceSheet(c)\nOff-BalanceSheetTotal\nDecember | 31.0 | 2023.0\nReal estate and investment entities(a)\n$528,053 $9,125 $3,720 (d)\n$12,845\nOther(b)\n1,027 58 748 (e)\nTotal $529,080 | 9183.0 | 4468.0 | 13651.0\nDecember | 31.0 | 2022.0\nReal estate and investment entities(a)\n$504,219 $9,145 $3,938 (d)\n$13,083\nOther(b)\n1,302 247 747 (e)\nTotal $505,521 | 9392.0 | 4685.0 | 14077.0\n(a)Comprised primarily of hedge funds and private equity funds.\n(b)At December 31, 2023 and 2022, e",
+          "full_text": "illions)Total VIEAssetsOn-BalanceSheet(c)\nOff-BalanceSheetTotal\nDecember | 31.0 | 2023.0\nReal estate and investment entities(a)\n$528,053 $9,125 $3,720 (d)\n$12,845\nOther(b)\n1,027 58 748 (e)\nTotal $529,080 | 9183.0 | 4468.0 | 13651.0\nDecember | 31.0 | 2022.0\nReal estate and investment entities(a)\n$504,219 $9,145 $3,938 (d)\n$13,083\nOther(b)\n1,302 247 747 (e)\nTotal $505,521 | 9392.0 | 4685.0 | 14077.0\n(a)Comprised primarily of hedge funds and private equity funds.\n(b)At December 31, 2023 and 2022, excludes approximately $1,971 million and $2,057 million, respectively, of VIE assets related to AIGFP and its consolidated subsidiaries, with maximum off-balance sheet exposure to loss of $1,941 million and $2,033 million, respectively. For additional information, see Note 1.\n(c)At December 31, 2023 and 2022, $9.1 billion and $9.3 billion, respectively, of our total unconsolidated VIE assets were recorded as Other invested assets.\n(d)These amounts represent our unfunded commitments to invest in private equity funds and hedge funds.\n(e)These amounts represent our estimate of the maximum exposure to loss under certain insurance policies issued to VIEs if a hypothetical loss occurred to the extent of the full amount of the insured value. Our insurance policies cover defined risks and our estimate of liability is included in our insurance reserves on the balance sheet.\nREAL ESTATE AND INVESTMENT ENTITIES\nThrough our insurance operations and AIG Global Real Estate Investment Corp., we are an investor in various real estate investment entities, some of which are VIEs. These investments are typically with unaffiliated third-party developers via a partnership or limited liability company structure. The VIEs’ activities consist of the development or redevelopment of commercial, industrial and residential real estate. Our involvement varies from being a passive equity investor or finance provider to actively managing the activities of the VIEs.\nOur insurance operations participate as passive investors in the equity issued by certain third-party-managed hedge and private equity funds that are VIEs. Our insurance operations typically are not involved in the design or establishment of these VIEs, nor do they actively participate in the management of the VIEs.\nSECURITIZATION AND REPACKAGING VEHICLES",
+          "bm25_score": 0.427232,
+          "embedding_score": 0.919854,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2024,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "einsurance contracts. The derivatives are effective economic hedges of the exposures that they are meant to offset. In addition to hedging activities, we also enter into derivative contracts with respect to investment operations, which may include, among other things, CDSs, total return swaps and purchases of investments with embedded derivatives, such as equity-linked notes and convertible bonds.\nInterest rate, currency, equity and commodity swaps, credit contracts, swaptions, options and forwa",
+          "full_text": "einsurance contracts. The derivatives are effective economic hedges of the exposures that they are meant to offset. In addition to hedging activities, we also enter into derivative contracts with respect to investment operations, which may include, among other things, CDSs, total return swaps and purchases of investments with embedded derivatives, such as equity-linked notes and convertible bonds.\nInterest rate, currency, equity and commodity swaps, credit contracts, swaptions, options and forward transactions are accounted for as derivatives, recorded on a trade-date basis and carried at fair value. Unrealized gains and losses are reflected in income, when appropriate. Aggregate asset or liability positions are netted on the Consolidated Balance Sheets only to the extent permitted by qualifying master netting arrangements in place with each respective counterparty. Cash collateral posted with counterparties in conjunction with transactions supported by qualifying master netting arrangements is reported as a reduction of the corresponding net derivative liability, while cash collateral received in conjunction with transactions supported by qualifying master netting arrangements is reported as a reduction of the corresponding net derivative asset.\nDerivatives, with the exception of embedded derivatives, are reported at fair value in the Consolidated Balance Sheets in Other assets and Other liabilities. Embedded derivatives are generally presented with the host contract in the Consolidated Balance Sheets. A bifurcated embedded derivative is measured at fair value and accounted for in the same manner as a free standing derivative contract. The corresponding host contract is accounted for according to the accounting guidance applicable for that instrument.\nFor additional information on embedded derivatives, see Notes 5, 13 and 14.\nThe following table presents the notional amounts of our derivatives and the fair value of derivative assets and liabilities in the Consolidated Balance Sheets:",
+          "bm25_score": 0.325288,
+          "embedding_score": 0.825765,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2024,
+          "section": "item 4",
+          "table_row_count": 13,
+          "year_index": 0,
+          "excerpt": "hareholders' equity | 52799.0 | 55721.0 | 58082.0\nTotal common shares outstanding 688.8 734.1 818.7\nBook value per common share $65.14 $55.15 $80.11\nAdjusted book value per common share 76.65 75.90 70.94\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2023 | 2022.0 | 2021.0\nActual or annualized net incom",
+          "full_text": "hareholders' equity | 52799.0 | 55721.0 | 58082.0\nTotal common shares outstanding 688.8 734.1 818.7\nBook value per common share $65.14 $55.15 $80.11\nAdjusted book value per common share 76.65 75.90 70.94\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2023 | 2022.0 | 2021.0\nActual or annualized net income (loss) attributable to AIG common shareholders | 3614.0 | 10198.0 | 10338.0\nActual or annualized adjusted after-tax income attributable to AIG common shareholders | 4921.0 | 4036.0 | 4934.0\nAverage AIG common shareholders' equity | 41930.0 | 49338.0 | 64445.0\nLess: Average DTA | 4322.0 | 4796.0 | 7025.0\nLess: Average AOCI | -19499.0 | None\nAdd: Average cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | -2475.0 | None\nSubtotal: AOCI plus cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | -17024.0 | None\nAverage adjusted AIG common shareholders' equity | 54632.0 | 56957.0 | 53380.0\nReturn on common equity 8.6 %20.7 %16.0 %\nAdjusted return on common equity 9.0 %7.1 %9.2 %\nThe following table presents a reconciliation of revenues to adjusted revenues:",
+          "bm25_score": 0.917984,
+          "embedding_score": 0.221519,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        3
+      ]
+    },
+    {
+      "year": 2024,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "BBB+",
+      "ground_truth": "BBB+",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"BBB+\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 7",
+          "table_row_count": 23,
+          "year_index": 0,
+          "excerpt": "CREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\n",
+          "full_text": "bridge debt 9,368 1,240 (1,250)— | 10.0 | 9368.0\nGIAs, at fair value - supported by Corebridge assets(b)\n56 — — — (3)53\nOther subsidiaries' notes, bonds, loans and mortgages payable - not guaranteed by AIG 1 — (1)— — —\nTotal Short-term and long-term debt $21,299 $1,982 | None | 34.0 | 19796.0\nDebt of consolidated investment entities - not guaranteed by AIG(c)\n$5,880 $225 (606)34 (2,942) (d)\n$2,591\n(a)We have entered into a guarantee reimbursement agreement with Corebridge and Corebridge Life Holdings, Inc. (CRBGLH) (formerly known as AIG Life Holdings, Inc.) which provides that Corebridge and CRBGLH will reimburse AIG for the full amount of any payment made by or on behalf of AIG pursuant to AIG’s guarantee of the CRBGLH notes and junior subordinated debt. We have also entered into a collateral agreement with Corebridge and CRBGLH which provides that in the event of: (i) a ratings downgrade of Corebridge or CRBGLH long-term unsecured indebtedness below specified levels or (ii) the failure by CRBGLH to pay principal and interest on the CRBGLH debt when due, Corebridge and CRBGLH must collateralize an amount equal to the sum of: (i) 100 percent of the principal amount outstanding, (ii) accrued and unpaid interest, and (iii) 100 percent of the net present value of scheduled interest payments through the maturity dates of the CRBGLH debt.\n(b)Collateral posted to third parties was $63 million and $63 million at December 31, 2023 and 2022, respectively. This collateral primarily consists of securities of the U.S. government and government sponsored entities and generally cannot be repledged or resold by the counterparties.\n(c)At December 31, 2023, includes debt of consolidated investment entities primarily related to real estate investments of $1.5 billion and other securitization vehicles of $1.1 billion. At December 31, 2022, includes debt of consolidated investment entities related to real estate investments of $1.5 billion and other securitization vehicles of $4.4 billion.\n(d)Primarily relates to the sale of AIG Credit Management, LLC where certain consolidated investment entities were deconsolidated.\nDebt Maturities\nThe following table summarizes maturing short-term and long-term debt at December 31, 2023 of AIG for the next four quarters:\nFirstQuarterSecondQuarterThirdQuarterFourthQuarter\n(in millions)2024202420242024Total\nAIG general borrowings $459 $— $— $— $459\nDDTL facility*250 — — — 250\nTotal $709 $— $— $— $709\n*Corebridge has the ability to further continue this borrowing through February 25, 2025.\nCREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term DebtSenior Long-Term Debt\nMoody'sS&PMoody's(a)\nS&P(b)\nFitch(c)\nAmerican International Group, Inc.\nP-2 (2nd of 4)A-2 (2nd of 5)Baa 2 (4th of 9) / Positive\nBBB+ (4th of 9) /\nStable\nBBB+ (4th of 9) /\nStable\nCorebridge Financial, Inc.\nBaa 2 (4th of 9) / Stable\nBBB+ (4th of 9) /\nStable\nBBB+ (4th of 9) /\nStable",
+          "bm25_score": 1.0,
+          "embedding_score": 0.359224,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2024,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "022. A bifurcated embedded derivative is generally presented with the host contract in the Consolidated Balance Sheets. Embedded derivatives are primarily related to guarantee features in fixed index annuities and index universal life products, which include equity and interest rate components, and the funds withheld arrangement with Fortitude Re. For additional information, see Note 8.\nCOLLATERAL\nCOLLATERAL\nWe engage in derivative transactions that are not subject to a clearing requirement dire",
+          "full_text": "022. A bifurcated embedded derivative is generally presented with the host contract in the Consolidated Balance Sheets. Embedded derivatives are primarily related to guarantee features in fixed index annuities and index universal life products, which include equity and interest rate components, and the funds withheld arrangement with Fortitude Re. For additional information, see Note 8.\nCOLLATERAL\nCOLLATERAL\nWe engage in derivative transactions that are not subject to a clearing requirement directly with unaffiliated third parties, in most cases, under International Swaps and Derivatives Association, Inc. (ISDA) Master Agreements. Many of the ISDA Master Agreements also include Credit Support Annex provisions, which provide for collateral postings that may vary at various ratings and threshold levels. We attempt to reduce our risk with certain counterparties by entering into agreements that enable collateral to be obtained from a counterparty on an upfront or contingent basis. We minimize the risk that counterparties might be unable to fulfill their contractual obligations by monitoring counterparty credit exposure and collateral value and generally requiring additional collateral to be posted upon the occurrence of certain events or circumstances. In addition, certain derivative transactions have provisions that require collateral to be posted by us upon a downgrade of our long-term debt ratings or give the counterparty the right to terminate the transaction. In the case of some of the derivative transactions, upon a downgrade of our long-term debt ratings, as an alternative to posting collateral and subject to certain conditions, we may assign the transaction to an obligor with higher debt ratings or arrange for a substitute guarantee of our obligations by an obligor with higher debt ratings or take other similar action. The actual amount of collateral required to be posted to counterparties in the event of such downgrades, or the aggregate amount of payments that we could be required to make, depends on market conditions, the fair value of outstanding affected transactions and other factors prevailing at and after the time of the downgrade.",
+          "bm25_score": 0.846868,
+          "embedding_score": 0.468739,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2024,
+          "section": "item 7",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": ", creditors and debt-holders, including those arising from reasonably foreseeable contingencies or events. Nevertheless, some circumstances may cause our cash or capital needs to exceed projected liquidity or readily deployable capital resources.\nFor information regarding risks associated with our liquidity and capital resources, see Part I, Item 1A. – Risk Factors – Liquidity, Capital and Credit.\nFor information regarding risks associated with our liquidity and capital resources, see Part I, It",
+          "full_text": ", creditors and debt-holders, including those arising from reasonably foreseeable contingencies or events. Nevertheless, some circumstances may cause our cash or capital needs to exceed projected liquidity or readily deployable capital resources.\nFor information regarding risks associated with our liquidity and capital resources, see Part I, Item 1A. – Risk Factors – Liquidity, Capital and Credit.\nFor information regarding risks associated with our liquidity and capital resources, see Part I, Item 1A. – Risk Factors – Liquidity, Capital and Credit.\nDepending on market conditions, regulatory and rating agency considerations and other factors, we may take various liability and capital management actions. Liability management actions may include, but are not limited to, repurchasing or redeeming outstanding debt, issuing new debt or engaging in debt exchange offers. Capital management actions may include, but are not limited to, issuing preferred stock, paying dividends to our shareholders on the AIG Common Stock, par value $2.50 per share (AIG Common Stock), paying dividends to the holders of our Series A 5.85% Non-Cumulative Perpetual Preferred Stock (Series A Preferred Stock), and repurchases of AIG Common Stock.\nOn January 31, 2024, we announced that we will redeem all of the 20,000 outstanding shares of our Series A Preferred Stock and all 20,000,000 of the corresponding Depositary Shares (Depositary Shares), each representing a 1/1,000th interest in a share of Series A Preferred Stock, on March 15, 2024. The redemption price per share of Series A Preferred Stock will be $25,000 (equivalent to $25.00 per Depositary Share).\nLIQUIDITY AND CAPITAL RESOURCES HIGHLIGHTS",
+          "bm25_score": 0.394211,
+          "embedding_score": 0.799328,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2025,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary statement of operations revenue table summary of revenues operating results",
+      "prediction": "N/A",
+      "ground_truth": "27,251",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "(f)For additional information, see Note 1.\nFor the year ended December 31, 2024, we recorded severance charges of $353 million and asset impairment of $53 million as a result of restructuring activities.\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nTotal Revenues*",
+          "full_text": "in run-off(d)\n6 25\nPension expense related to lump sum payments to former employees— (59)\nIntegration and transaction costs associated with acquiring or divesting businesses— (12)\nRestructuring and other costs(e)\n— (423)\nNon-recurring costs related to regulatory or accounting changes— (26)\nNet impact from elimination of international reporting lag(f)\n41 127\nTotal AIG Consolidated | 2370.0 | 3772.0\n(a)The significant expense categories and amounts align with segment-level information that is regularly provided to the CODMs.\n(b)General operating expenses primarily comprised of employee compensation and benefits, as well as professional fees.\n(c)Includes all Net realized gains and losses except earned income (periodic settlements and changes in settlement accruals) on derivative instruments used for non-qualifying (economic) hedging or for asset replication and net realized gains and losses on Fortitude Re funds withheld assets held by AIG in support of Fortitude Re’s reinsurance obligations to AIG (Fortitude Re funds withheld assets).\n(d)In the fourth quarter of 2024, AIG realigned and began excluding the net results of run-off businesses previously reported in Other Operations from Adjusted pre-tax income. Historical results have been recast to reflect these changes.\n(e)In the year ended December 31, 2024, Restructuring and other costs increased primarily as a result of employee-related costs, including severance, and real estate impairment charges.\n(f)For additional information, see Note 1.\nFor the year ended December 31, 2024, we recorded severance charges of $353 million and asset impairment of $53 million as a result of restructuring activities.\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nTotal Revenues*",
+          "bm25_score": 0.901947,
+          "embedding_score": 0.264978,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "er to actively managing the activities of the VIEs.\nOur insurance operations participate as passive investors in the equity issued by certain third-party-managed hedge and private equity funds that are VIEs. Our insurance operations typically are not involved in the design or establishment of these VIEs, nor do they actively participate in the management of the VIEs.\nRMBS, CMBS, OTHER ABS AND CLOS\nRMBS, CMBS, OTHER ABS AND CLOS\nPrimarily through our insurance operations, we are a passive investo",
+          "full_text": "er to actively managing the activities of the VIEs.\nOur insurance operations participate as passive investors in the equity issued by certain third-party-managed hedge and private equity funds that are VIEs. Our insurance operations typically are not involved in the design or establishment of these VIEs, nor do they actively participate in the management of the VIEs.\nRMBS, CMBS, OTHER ABS AND CLOS\nRMBS, CMBS, OTHER ABS AND CLOS\nPrimarily through our insurance operations, we are a passive investor in RMBS, CMBS, other ABS and CLOs, the majority of which are issued by domestic special purpose entities. We generally do not sponsor or transfer assets to, or act as the servicer to these asset-backed structures, and were not involved in the design of these entities. Our maximum exposure in these types of structures is limited to our investment in securities issued by these entities and, where applicable, any unfunded commitments to these entities.\n11. Derivatives and Hedge Accounting\nWe use derivatives and other financial instruments as part of our financial risk management programs and as part of our investment operations. Interest rate derivatives (such as interest rate swaps) are used to manage interest rate risk associated with embedded derivatives contained in insurance contract liabilities, fixed maturity securities, outstanding medium- and long-term notes as well as other interest rate sensitive assets and liabilities. Foreign exchange derivatives (principally foreign exchange forwards and swaps) are used to economically mitigate risk associated with non-U.S. dollar denominated debt, net capital exposures, foreign currency transactions, and foreign denominated investments. Equity derivatives are used to economically mitigate financial risk associated with embedded derivatives. We use credit derivatives to manage our credit exposures. The derivatives are effective economic hedges of the exposures that they are meant to offset. In addition to hedging activities, we also enter into derivative contracts with respect to investment operations, which may include, among other things, CDSs, total return swaps and purchases of investments with embedded derivatives, such as equity-linked notes and convertible bonds.",
+          "bm25_score": 0.298966,
+          "embedding_score": 0.737776,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "ion that it is more likely than not that the fair value of a reporting unit is less than its carrying amount. If the qualitative assessment is not performed, or after assessing the totality of the events or circumstances, we determine it is more likely than not that the fair value of a reporting unit is less than its carrying amount, a quantitative assessment for potential impairment is performed.\nIf the qualitative test is not performed or if the test indicates a potential impairment is present",
+          "full_text": "ion that it is more likely than not that the fair value of a reporting unit is less than its carrying amount. If the qualitative assessment is not performed, or after assessing the totality of the events or circumstances, we determine it is more likely than not that the fair value of a reporting unit is less than its carrying amount, a quantitative assessment for potential impairment is performed.\nIf the qualitative test is not performed or if the test indicates a potential impairment is present, we estimate the fair value of each reporting unit and compare the estimated fair value with the carrying amount of the reporting unit, including allocated goodwill. The estimate of a reporting unit’s fair value involves management judgment and is based on one or a combination of approaches including discounted expected future cash flows, market-based earnings multiples of the unit’s peer companies, external appraisals or, in the case of reporting units being considered for sale, third-party indications of fair value, if available. We consider one or more of these estimates when determining the fair value of a reporting unit to be used in the impairment test.\nIf the estimated fair value of a reporting unit exceeds its carrying amount, goodwill is not impaired. If the carrying value of a reporting unit exceeds its estimated fair value, goodwill associated with that reporting unit potentially is impaired. The amount of impairment, if any, is measured as the excess of a reporting unit’s carrying amount over its fair value not to exceed the total amount of goodwill allocated to that reporting unit and recognized in income.\nThe following table presents the changes in goodwill:",
+          "bm25_score": 0.326268,
+          "embedding_score": 0.701535,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2025,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "N/A",
+      "ground_truth": "42,521",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 6",
+          "table_row_count": 19,
+          "year_index": 0,
+          "excerpt": "e 63.98 59.60 49.10\nAdjusted tangible book value per share 67.62 72.96 73.55\nCore operating book value per share 61.75 52.74 38.53\nThe following table presents reconciliations of Return on equity to Adjusted return on equity, Tangible return on equity and Core operating return on equity, which are non-GAAP measures. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2024 | 2023.0 | 2022.0\nActual or annualized net income (loss) attributable to ",
+          "full_text": "e 63.98 59.60 49.10\nAdjusted tangible book value per share 67.62 72.96 73.55\nCore operating book value per share 61.75 52.74 38.53\nThe following table presents reconciliations of Return on equity to Adjusted return on equity, Tangible return on equity and Core operating return on equity, which are non-GAAP measures. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2024 | 2023.0 | 2022.0\nActual or annualized net income (loss) attributable to AIG common shareholders | None | 10198.0\nActual or annualized adjusted after-tax income attributable to AIG common shareholders | 3254.0 | 3205.0 | 2121.0\nAverage AIG common shareholders' equity | 44051.0 | 41930.0 | 49338.0\nLess: Average investments AOCI | -5132.0 | -14836.0 | -9003.0\nAverage AIG adjusted common shareholders' equity | 49183.0 | 56766.0 | 58341.0\nAverage AIG common shareholders' equity | 44051.0 | 41930.0\nLess: Average intangibles | 3797.0 | 4070.0\nAverage AIG tangible common shareholders' equity | 40254.0 | 37860.0\nAverage AIG common shareholders' equity | 44051.0 | 41930.0\nLess: Average AIG's ownership interest in Corebridge | 6770.0 | 7376.0\nLess: Average Investments AOCI - AIG | -2351.0 | -3254.0\nLess: Average deferred tax assets | 3998.0 | 4322.0\nAverage AIG core operating shareholders' equity | 35634.0 | 33486.0\nReturn on equity (3.2)%8.6 %20.7 %\nAdjusted return on equity 6.6 5.6 3.6\nReturn on tangible equity 8.1 8.5 N/A\nCore operating return on equity 9.1 9.6 N/A\nThe following table presents a reconciliation of pre-tax income (loss)/net income (loss) attributable to AIG to adjusted pre-tax income (loss)/adjusted after-tax income (loss) attributable to AIG:",
+          "bm25_score": 1.0,
+          "embedding_score": 0.123682,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 15,
+          "year_index": 0,
+          "excerpt": "4 $200 $612 | 79.0 | 1774.0 | 3305.0\nDecember 31, 202320232022202120202019PriorTotal\n(in millions)\n>1.2X $398 $167 $394 $135 | 156.0 | 1784.0 | 3034.0\n1.00 - 1.20X 5 71 254 56 | 21.0 | 298.0 | 705.0\n<1.00X— 11 — — — | 86.0 | 97.0\nTotal commercial mortgages $403 $249 $648 $191 | 177.0 | 2168.0 | 3836.0\nThe following table presents loan-to-value ratios(b) for commercial mortgages by year of vintage:\nDecember 31, 202420242023202220212020PriorTotal\n(in millions)\nLess than 65%$107 $433 $177 $485 | 71",
+          "full_text": "4 $200 $612 | 79.0 | 1774.0 | 3305.0\nDecember 31, 202320232022202120202019PriorTotal\n(in millions)\n>1.2X $398 $167 $394 $135 | 156.0 | 1784.0 | 3034.0\n1.00 - 1.20X 5 71 254 56 | 21.0 | 298.0 | 705.0\n<1.00X— 11 — — — | 86.0 | 97.0\nTotal commercial mortgages $403 $249 $648 $191 | 177.0 | 2168.0 | 3836.0\nThe following table presents loan-to-value ratios(b) for commercial mortgages by year of vintage:\nDecember 31, 202420242023202220212020PriorTotal\n(in millions)\nLess than 65%$107 $433 $177 $485 | 71.0 | 1012.0 | 2285.0\n65% to 75%— 40 — 54 — | 317.0 | 411.0\n76% to 80%— — — 31 — | 51.0 | 82.0\nGreater than 80%39 21 23 42 | 8.0 | 394.0 | 527.0\nTotal commercial mortgages $146 $494 $200 $612 | 79.0 | 1774.0 | 3305.0\nDecember 31, 202320232022202120202019PriorTotal\n(in millions)\nLess than 65%$359 $159 $492 $177 | 156.0 | 1385.0 | 2728.0\n65% to 75%10 15 137 — | 21.0 | 367.0 | 550.0\n76% to 80%— 32 10 — — — 42\nGreater than 80%34 43 9 14 — | 416.0 | 516.0\nTotal commercial mortgages $403 $249 $648 $191 | 177.0 | 2168.0 | 3836.0",
+          "bm25_score": 0.0,
+          "embedding_score": 1.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "ided by the general partner or manager of each of these investments. Hedge funds are reported as of the balance sheet date. Private equity funds are generally reported on a one-quarter lag. The financial statements of these investees are generally audited annually. The carrying amount of equity method investments totaled $6.6 billion and $3.0 billion as of December 31, 2024 and 2023, respectively.\nSummarized Financial Information of Equity Method Investees\nThe following is the aggregated summari",
+          "full_text": "ided by the general partner or manager of each of these investments. Hedge funds are reported as of the balance sheet date. Private equity funds are generally reported on a one-quarter lag. The financial statements of these investees are generally audited annually. The carrying amount of equity method investments totaled $6.6 billion and $3.0 billion as of December 31, 2024 and 2023, respectively.\nSummarized Financial Information of Equity Method Investees\nThe following is the aggregated summarized financial information of our equity method investees, including those for which the fair value option has been elected:\nYears Ended December 31,",
+          "bm25_score": 0.295948,
+          "embedding_score": 0.697501,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2025,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "BBB+",
+      "ground_truth": "BBB+",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": \"BBB+\", \"supporting_docs\": [2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 1,
+          "year_index": 0,
+          "excerpt": "atives | -75.0 | None\nTotal | -130.0 | None\nBy Classification:\nNet investment income - excluding Fortitude Re funds withheld assets$— $— $4\nNet investment income - Fortitude Re funds withheld assets 1 — (1)\nNet realized gains (losses) - excluding Fortitude Re funds withheld assets (63) (172)156\nNet realized gains (losses) on Fortitude Re funds withheld assets*\n(68) (281)1,130\nTotal | -130.0 | None\n*Includes over-the-counter derivatives supporting the funds withheld arrangements with Fortitude Re",
+          "full_text": "atives | -75.0 | None\nTotal | -130.0 | None\nBy Classification:\nNet investment income - excluding Fortitude Re funds withheld assets$— $— $4\nNet investment income - Fortitude Re funds withheld assets 1 — (1)\nNet realized gains (losses) - excluding Fortitude Re funds withheld assets (63) (172)156\nNet realized gains (losses) on Fortitude Re funds withheld assets*\n(68) (281)1,130\nTotal | -130.0 | None\n*Includes over-the-counter derivatives supporting the funds withheld arrangements with Fortitude Re and the embedded derivative contained within the funds withheld payable with Fortitude Re.\nCREDIT RISK-RELATED CONTINGENT FEATURES\nWe estimate that at December 31, 2024, based on our outstanding financial derivative transactions, a downgrade of our long-term senior debt ratings to BBB or BBB– by Standard & Poor’s Financial Services LLC, a subsidiary of S&P Global Inc., and/or a downgrade to Baa2 or Baa3 by Moody’s Investors’ Service, Inc. would permit counterparties to make additional collateral calls and permit certain counterparties to elect early termination of contracts, resulting in corresponding collateral postings and termination payments in the total amount of up to approximately $5 million. The aggregate fair value of our derivatives that were in a net liability position and that contain such credit risk-related contingencies which can be triggered below our long-term senior debt ratings of BBB+ or Baa1 was approximately $30 million and $32 million at December 31, 2024 and 2023, respectively. The aggregate fair value of assets posted as collateral under these contracts at December 31, 2024 and 2023, was approximately $30 million and $34 million, respectively.\n12. Goodwill and Other Intangible Assets",
+          "bm25_score": 0.93304,
+          "embedding_score": 0.299578,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2025,
+          "section": "item 6",
+          "table_row_count": 17,
+          "year_index": 0,
+          "excerpt": "CREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG Parent as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term DebtSenior Lon",
+          "full_text": "bushiki Kaisha 267 — — (28)— 239\nTotal general borrowings 10,338 660 | -2046.0 | -113.0 | None\nBorrowings supported by assets 37 — (1)— | 1.0 | 37.0\nOther subsidiaries' notes, bonds, loans and mortgages payable - not guaranteed by AIG— 1 — — — 1\nTotal long-term debt $10,375 $661 | -2047.0 | -113.0 | None\nDebt of consolidated investment entities - not guaranteed by AIG(a)\n$231 $— (1)— (72) (b)\n$158\n(a)At December 31, 2024, includes debt of consolidated investment entities primarily related to real estate investments of $158 million. At December 31, 2023, includes debt of consolidated investment entities related to real estate investments of $79 million and other securitization vehicles of $152 million.\n(b)Includes the effect of consolidating previously unconsolidated partnerships.\nDebt Maturities\nThe following table summarizes maturing long-term debt at December 31, 2024 of AIG for the next four quarters:\nFirstQuarterSecondQuarterThirdQuarterFourthQuarter\n(in millions)2025202520252025Total\nGeneral borrowings $239 $146 $— $— $385\nBorrowings supported by assets— — — | 12.0 | 12.0\nOther subsidiaries' notes, bonds, loans and mortgages payable— — — | 1.0 | 1.0\nTotal $239 $146 $— | 13.0 | 398.0\nCREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG Parent as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term DebtSenior Long-Term Debt\nMoody'sS&PMoody's(a)\nS&P(b)\nFitch(c)\nAmerican International Group, Inc.\nP-2 (2nd of 4)A-2 (2nd of 5)Baa 2 (4th of 9) / Positive\nBBB+ (4th of 9) /\nPositive\nBBB+ (4th of 9) /\nStable",
+          "bm25_score": 1.0,
+          "embedding_score": 0.045421,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "on at December 31, 2023. Fair value of liabilities related to bifurcated embedded derivatives was zero at both December 31, 2024 and 2023. A bifurcated embedded derivative is generally presented with the host contract in the Consolidated Balance Sheets. Embedded derivatives are primarily related to the funds withheld arrangement with Fortitude Re. For additional information, see Note 8.\nCOLLATERAL\nCOLLATERAL\nWe engage in derivative transactions that are not subject to a clearing requirement dire",
+          "full_text": "on at December 31, 2023. Fair value of liabilities related to bifurcated embedded derivatives was zero at both December 31, 2024 and 2023. A bifurcated embedded derivative is generally presented with the host contract in the Consolidated Balance Sheets. Embedded derivatives are primarily related to the funds withheld arrangement with Fortitude Re. For additional information, see Note 8.\nCOLLATERAL\nCOLLATERAL\nWe engage in derivative transactions that are not subject to a clearing requirement directly with unaffiliated third parties, in most cases, under International Swaps and Derivatives Association, Inc. (ISDA) Master Agreements. Many of the ISDA Master Agreements also include Credit Support Annex provisions, which provide for collateral postings that may vary at various ratings and threshold levels. We attempt to reduce our risk with certain counterparties by entering into agreements that enable collateral to be obtained from a counterparty on an upfront or contingent basis. We minimize the risk that counterparties might be unable to fulfill their contractual obligations by monitoring counterparty credit exposure and collateral value and generally requiring additional collateral to be posted upon the occurrence of certain events or circumstances. In addition, certain derivative transactions have provisions that require collateral to be posted by us upon a downgrade of our long-term debt ratings or give the counterparty the right to terminate the transaction. In the case of some of the derivative transactions, upon a downgrade of our long-term debt ratings, as an alternative to posting collateral and subject to certain conditions, we may assign the transaction to an obligor with higher debt ratings or arrange for a substitute guarantee of our obligations by an obligor with higher debt ratings or take other similar action. The actual amount of\ncollateral required to be posted to counterparties in the event of such downgrades, or the aggregate amount of payments that we could be required to make, depends on market conditions, the fair value of outstanding affected transactions and other factors prevailing at and after the time of the downgrade.",
+          "bm25_score": 0.782606,
+          "embedding_score": 0.226185,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        2
+      ]
+    }
+  ]
+}
