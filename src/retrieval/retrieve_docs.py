@@ -30,37 +30,6 @@ class BaseRetriever:
         span = max_v - min_v
         return {k: (1.0 if v > 0 else 0.0) if span <= 1e-12 else (v - min_v) / span for k, v in score_map.items()}
 
-    def _embedding_similarity_map(self, pool, query, text_field="hybrid_embedding_text"):
-        if not pool:
-            return {}
-        
-        client = chromadb.EphemeralClient(settings=Settings(anonymized_telemetry=False))
-        col = client.get_or_create_collection(name="rank")
-
-        ids = [f"d_{i}" for i in range(len(pool))]
-        docs = [c.get(text_field, "") or c.get("text", "") for c in pool]
-        metas = [{"idx": i} for i in range(len(pool))]
-        col.add(ids=ids, documents=docs, metadatas=metas)
-
-        result = col.query(query_texts=[query], n_results=len(pool), include=["metadatas", "distances"])
-
-        meta_rows = result.get("metadatas", [[]])[0] or []
-        distance_rows = result.get("distances", [[]])[0] or []
-
-        similarity_map = {}
-        for meta, distance in zip(meta_rows, distance_rows):
-            idx = meta.get("idx") if isinstance(meta, dict) else None
-
-            try:
-                idx = int(idx)
-            except (TypeError, ValueError):
-                continue
-            if 0 <= idx < len(pool):
-                d = float(distance)
-                similarity_map[idx] = 1.0 / (1.0 + max(d, 0.0))
-
-        return similarity_map
-
 
 class BM25Retriever(BaseRetriever):
     def retrieve(self, variable_name, query, target_year, top_k=5, **kwargs):
@@ -80,23 +49,28 @@ class BM25Retriever(BaseRetriever):
             item = dict(pool[idx])
             item["bm25_score"] = round(norm.get(idx, 0.0), 6)
             ranked.append(item)
+
         return ranked
     
 
 class EmbeddingRetriever(BaseRetriever):
-    def retrieve(self, variable_name, query, target_year, top_k=5, **kwargs):
-        pool = self._target_scope_pool(target_year)
-        if not pool:
-            return []
-        
-        similarity_map = self._embedding_similarity_map(pool, query)
-        norm = self._normalize_score_map(similarity_map)
-        ranked_idx = sorted(norm.keys(), key=lambda i: norm.get(i, 0.0), reverse=True)[:top_k]
-        ranked = []
+    def retrieve(self, variable_name, query, target_year, top_k=5, query_embedding=None, **kwargs):
 
-        for _, idx in enumerate(ranked_idx, start=1):
-            item = dict(pool[idx])
-            item["embedding_score"] = round(norm.get(idx, 0.0), 6)
+        results = self.chroma_collection.query(
+            query_texts=[query],
+            n_results=top_k,
+            include=["documents", "metadatas", "distances"]
+        )
+
+        ranked = []
+        docs = results.get("documents", [[]])[0]
+        metas = results.get("metadatas", [[]])[0]
+        dists = results.get("distances", [[]])[0]
+
+        for doc, meta, dist in zip(docs, metas, dists):
+            item = dict(meta or {})
+            item["text"] = doc
+            item["embedding_score"] = dist
             ranked.append(item)
 
         return ranked
@@ -107,20 +81,33 @@ class HybridRetriever(BaseRetriever):
         pool = self._target_scope_pool(target_year)
         if not pool:
             return []
-        
         bm25_q = bm25_query or query
-        embedding_q = embedding_query or query
 
         # BM25
         tokenized = [(c.get("text", "")).split() for c in pool]
         bm25 = BM25Okapi(tokenized)
-
         bm25_scores = bm25.get_scores((bm25_q or "").split())
         bm25_map = {i: float(score) for i, score in enumerate(bm25_scores)}
         bm25_norm = self._normalize_score_map(bm25_map)
 
-        # Embedding
-        emb_map = self._embedding_similarity_map(pool, embedding_q)
+        # Embedding (ChromaDB)
+        results = self.chroma_collection.query(
+            query_texts=[query],
+            n_results=len(pool),
+            include=["metadatas", "distances"]
+        )
+
+        emb_map = {}
+        metas = results.get("metadatas", [[]])[0]
+        dists = results.get("distances", [[]])[0]
+        for meta, dist in zip(metas, dists):
+            idx = meta.get("chunk_index") if isinstance(meta, dict) else None
+            try:
+                idx = int(idx)
+            except (TypeError, ValueError):
+                continue
+            if 0 <= idx < len(pool):
+                emb_map[idx] = float(dist)
         emb_norm = self._normalize_score_map(emb_map)
 
         candidate_indices = sorted(set(bm25_norm.keys()) | set(emb_norm.keys()))

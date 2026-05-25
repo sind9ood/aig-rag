@@ -8,11 +8,12 @@ from pathlib import Path
 from src.config.variable_paths import VARIABLE_PATHS
 from src.config.runtime_aliases import build_retrieval_queries
 from src.retrieval.extraction import extract_from_metadata
-from src.retrieval.retrieve_docs import TableAwareRetriever
+from src.retrieval.retrieve_docs import RetrieverFactory
+
 
 VARIABLE_ORDER = list(VARIABLE_PATHS.keys())
 
-CHROMA_PATH = "db_test"
+CHROMA_PATH = "db_test_1K"
 COLLECTION_NAME = "rag"
 
 
@@ -51,8 +52,8 @@ def load_retriever_from_cache():
     )
     chroma_collection = client.get_or_create_collection(name=COLLECTION_NAME)
     chunks = _reconstruct_chunks(chroma_collection)
-    retriever = TableAwareRetriever(chunks=chunks, chroma_collection=chroma_collection)
-    return chunks, retriever
+    # Return chunks and the Chroma collection, let main() select retriever dynamically
+    return chunks, chroma_collection
 
 
 def available_years(chunks):
@@ -112,10 +113,24 @@ def format_retrieved_docs(retrieved_docs):
 
 
 def main():
+    import csv
     load_dotenv()
     st.set_page_config(page_title="AIG 10-K Variable Viewer", layout="wide")
     st.title("AIG 10-K Variable Viewer")
     st.caption("Select a year to retrieve source documents and summarize them with OpenRouter.")
+
+    # Load ground truth table from eval/ground_truth.csv
+    ground_truth = {}
+    gt_path = Path("eval/ground_truth.csv")
+    if gt_path.exists():
+        with open(gt_path, newline="") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                year = int(row["year"])
+                for k, v in row.items():
+                    if k == "year":
+                        continue
+                    ground_truth[(year, k)] = v
 
     if not Path(CHROMA_PATH).exists():
         st.error("ChromaDB index not found.")
@@ -128,7 +143,7 @@ def main():
         return
 
     with st.spinner("Loading prebuilt chunks and retrieval index..."):
-        chunks, retriever = load_retriever_from_cache()
+        chunks, chroma_collection = load_retriever_from_cache()
 
     if not chunks:
         st.error("ChromaDB is present but contains no indexed chunks.")
@@ -151,22 +166,34 @@ def main():
         index=0,
         help="Choose which retrieval method to use: hybrid (default), BM25 only, or embedding only."
     )
+    # Add menu to select target variable (or all)
+    variable_options = ["All Variables"] + [VARIABLE_PATHS[v].display_name for v in VARIABLE_ORDER]
+    variable_lookup = {VARIABLE_PATHS[v].display_name: v for v in VARIABLE_ORDER}
+    selected_variable_display = st.selectbox("Target Variable", variable_options, index=0, help="Choose a variable to extract or 'All Variables' to extract all.")
+
     if st.button("Run extraction", type="primary"):
         rows = []
         query_rows = []
-        for variable_name in VARIABLE_ORDER:
+        retriever = RetrieverFactory.get_retriever(match_method, chunks=chunks, chroma_collection=chroma_collection)
+        # Determine which variables to extract
+        if selected_variable_display == "All Variables":
+            variable_names = VARIABLE_ORDER
+        else:
+            variable_names = [variable_lookup[selected_variable_display]]
+        for variable_name in variable_names:
             config = VARIABLE_PATHS[variable_name]
-            # Pass match_method to extract_variable_for_year using a local variable
             result = extract_variable_for_year(retriever, variable_name, selected_year, match_method=match_method, table_bonus=True)
             query_rows.append({
                 "Variable": config.display_name,
                 "BM25 Query": result["bm25_query"],
                 "Embedding Query": result["embedding_query"],
             })
+            gt_val = ground_truth.get((selected_year, variable_name))
             rows.append(
                 {
                     "Variable": config.display_name,
                     "Value": result.get("value") or "N/A",
+                    "Ground Truth": gt_val if gt_val is not None else "N/A",
                     "Supporting Docs": result.get("supporting_docs", []),
                     "Retrieved Docs": format_retrieved_docs(result["retrieved_docs"]),
                 }
