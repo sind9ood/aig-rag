@@ -1,9 +1,8 @@
 # AIG 10-K RAG Workflow
 
 This repository builds a retrieval pipeline for AIG 10-K filings, with:
-- model-based line classification (`table_row` vs `narrative`, footer handled separately),
 - chunking for indexing,
-- Chroma indexing,
+- indexing by using Chroma DB
 - hybrid retrieval (BM25 on chunk text + embedding on summary/context),
 - LLM-based extraction and evaluation.
 
@@ -184,27 +183,30 @@ The table below summarizes evaluation result for `different chunking/retrieval m
 
 | Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
 |---|---|---|---|---|---|---|---|
-| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table | 2000 | 400 | 3 | 100% (15/15) |  100% (15/15) | 0.8556 |
-| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table |2000 | 400 | 1 | 80% (12/15) |  80% (12/15) | - |
-| Hybrid + M/L + Table Row Cleaning | Table | 2000 | 400 | 3 | 66.67% (10/15) |  53.33% (8/15) | 0.4222 |
-| Embedding + M/L + Table Row Cleaning | Table | 2000 | 400 | 3 | 13.33% (2/15) | 13.33% (2/15) | 0.0889 |
-| BM25 + M/L + Table Row Cleaning | Table | 2000 | 400 | 1 | 40% (6/15) | 40.00% (6/15) | - |
-| BM25 + M/L + Table Row Cleaning | Table | 2000 | 400 | 3 | 93.33% (14/15) | 93.33% (14/15) | 0.7222 |
-| BM25 + M/L + No Table Row Cleaning | Table | 2000 | 400 | 3 | 26.67% (4/15) | 26.67% (4/15) | 0.2667 |
-| BM25 + Regex + Table Row Cleaning | Table | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
-| BM25 + Regex + No Table Row Cleaning | Table | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
+| Hybrid + M/L + Table Row Normalization + Table Bonus | Table | 2000 | 400 | 3 | 100% (15/15) |  100% (15/15) | 0.8556 |
+| Hybrid + M/L + Table Row Normalization | Table | 2000 | 400 | 3 | 66.67% (10/15) |  53.33% (8/15) | 0.4222 |
+| Embedding + M/L + Table Row Normalization | Table | 2000 | 400 | 3 | 13.33% (2/15) | 13.33% (2/15) | 0.0889 |
+| BM25 + M/L + Table Row Normalization | Table | 2000 | 400 | 3 | 93.33% (14/15) | 93.33% (14/15) | 0.7222 |
+| BM25 + M/L + No Table Row Normalization | Table | 2000 | 400 | 3 | 26.67% (4/15) | 26.67% (4/15) | 0.2667 |
+| BM25 + Regex + Table Row Normalization | Table | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
+| BM25 + Regex + No Table Row Normalization | Table | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
 | BM25 | Simple | 2000 | 400 | 3 | 66.67% (10/15) | 66.67% (10/15) | 0.5111 |
 
+The table below summarizes evaluation result for `different top K` on the target task.
+
+| Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
+|---|---|---|---|---|---|---|---|
+| Hybrid + Table Bonus + M/L + Table Row Normalization | Table |2000 | 400 | 1 | 80% (12/15) |  80% (12/15) | - |
+| BM25 + M/L + Table Row Normalization | Table | 2000 | 400 | 1 | 40% (6/15) | 40.00% (6/15) | - |
 
 The table below summarize evaluation result for `different chunking configurations` on the target task.
 
 | Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
 |---|---|---|---|---|---|---|---|
-| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table | 1000 | 200 | 5 | 100% (15/15) |  100% (15/15) | 0.6444 |
-| BM25 + M/L + Table Row Cleaning | Table | 1000 | 200 | 5 | 80.00% (12/15) | 80.00% (12/15) | 0.4967 |
-| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table | 1000 | 200 | 3 | 93.33% |  93.33% (14/15) | 0.6222 |
-| BM25 + M/L + Table Row Cleaning | Table | 1000 | 200 | 3 | 53.33% (8/15) | 53.33% (8/15) | 0.4333 |
-
+| Hybrid + Table Bonus + M/L + Table Row Normalization | Table | 1000 | 200 | 5 | 100% (15/15) |  100% (15/15) | 0.6444 |
+| BM25 + M/L + Table Row Normalization | Table | 1000 | 200 | 5 | 80.00% (12/15) | 80.00% (12/15) | 0.4967 |
+| Hybrid + Table Bonus + M/L + Table Row Normalization | Table | 1000 | 200 | 3 | 93.33% |  93.33% (14/15) | 0.6222 |
+| BM25 + M/L + Table Row Normalization | Table | 1000 | 200 | 3 | 53.33% (8/15) | 53.33% (8/15) | 0.4333 |
 
 The table below summarize chunking stats with `different table detection/chunking mechanism` and chunk size.
 
@@ -228,5 +230,5 @@ The table below summarize chunking stats with `different table detection/chunkin
 
 | Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
 |---|---|---|---|---|---|---|---|
-| Hybrid + Table Bonus + M/L + Table Row Cleaning | Table | 1000 | 200 | 5 | 80.00% (4/5) | 80.00% (4/5) | 0.3000 |
-| BM25 + M/L + Table Row Cleaning | Table | 1000 | 200 | 5 | 0% (0/5) |  20% (1/5) | 0.0667 |
+| Hybrid + Table Bonus + M/L + Table Row Normalization | Table | 1000 | 200 | 5 | 80.00% (4/5) | 80.00% (4/5) | 0.3000 |
+| BM25 + M/L + Table Row Normalization | Table | 1000 | 200 | 5 | 0% (0/5) |  20% (1/5) | 0.0667 |
