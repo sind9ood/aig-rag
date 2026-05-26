@@ -19,7 +19,8 @@ load_dotenv()
 
 
 def _normalize_alias(alias):
-    alias = (alias or "").strip().lower()
+    # alias = (alias or "").strip().lower()
+    alias = (alias or "").strip()
     alias = alias.replace("\xa0", " ")
     alias = re.sub(r"\s+", " ", alias)
     alias = alias.strip(" .,:;|\"'")
