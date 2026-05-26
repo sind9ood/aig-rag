@@ -249,4 +249,4 @@ The table below summarize chunking stats with `different table detection/chunkin
 | Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@3 | MRR |
 |---|---|---|---|---|---|---|---|
 | Hybrid + Table Bonus + M/L + Table Row Normalization | Table | 1000 | 200 | 3 | 100.00% (5/5) | 100.00% (5/5) | 0.8667 |
-| BM25 + M/L + Table Row Normalization | Table | 1000 | 200 | 3 | 0% (3/5) |  60% (3/5) | 0.3667 |
+| BM25 + M/L + Table Row Normalization | Table | 1000 | 200 | 3 | 60% (3/5) |  60% (3/5) | 0.3667 |
