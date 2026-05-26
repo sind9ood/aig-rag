@@ -8,8 +8,7 @@ sys.path.insert(0, str(ROOT_DIR))
 
 import pytest
 
-from src.indexing.line_classification import classify_lines, LineLabel
-from src.indexing.table_row_detection import MODEL_PATH, predict_line_label
+from src.indexing.line_classification import LineLabel, MODEL_PATH, predict_line_label
 
 DATA_FILE = Path("data/filing_2025_Item_8_annotated.csv")
 

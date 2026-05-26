@@ -39,7 +39,7 @@ class RagEvaluationConfig:
 class RagEvaluationRunner:
     def __init__(
         self,
-        retriever: TableAwareRetriever,
+        retriever,
         eval_rows,
         variable_paths=VARIABLE_PATHS
     ):
