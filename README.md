@@ -136,17 +136,19 @@ e. Summary for each chunk: Summaries and derived metadata are recomputed once af
 
 Retrieval is implemented in `src/retrieval/retrieve_docs.py` by `TableAwareRetriever`. 
 
-a. It filters chunks for the target year then ranks candidates using BM25 on chunk `text` and embedding similarity on `hybrid_embedding_text`. 
+a. Generate expanded query by using LLM (cached)
 
-b. BM25 is computed with `rank_bm25` over tokenized chunk text; embedding similarity is measured by similarity between expanded query (LLM) and chunk summary. 
+B. Filters chunks for the target year then ranks candidates using BM25 on chunk `text` and embedding similarity on `hybrid_embedding_text`. 
 
-c. Scores are normalized and fused using the `BM25_SCORE_WEIGHT` and `EMBEDDING_SCORE_WEIGHT` environment-configurable weights; Boost weights for BM25 if target chunk nature is table. 
+c. BM25 is computed with `rank_bm25` over tokenized chunk text; embedding similarity is measured by similarity between expanded query (LLM) and chunk summary. 
 
-d. the retriever returns the requested `top_k`.
+d. Scores are normalized and fused using the `BM25_SCORE_WEIGHT` and `EMBEDDING_SCORE_WEIGHT` environment-configurable weights; Boost weights for BM25 if target chunk nature is table. 
+
+e. the retriever returns the requested `top_k`.
 
 ## 5. M/L Line Classifier
 
-Train table detector model:
+### 5.1. How to train line classifier (table detector)
 
 ```bash
 source .venv/bin/activate
@@ -160,12 +162,26 @@ Runtime behavior:
 - The app/retrieval code loads this saved model from `model/table_row_classifier.joblib`.
 - Model loading is cached in-process, so it is loaded once and reused until process restart.
 
-Generate pseudo labels for CSV line data: (Need human review for editing)
+### 5.2. Build train data
+
+a. Generate pseudo labels for CSV line data (psuedo_label_table_rows.py)
+b. Edit labels by human review
+* Current dataset: under data folder 
 
 ```bash
 source .venv/bin/activate
 python -m src.indexing.train.pseudo_label_table_rows --input-dir data
 ```
+
+### 5.3. Current performance
+|  | precision | recall | f1-score | support | 
+|---|---|---|---|--|
+| footer | 0.9645 | 0.9444 | 0.9544 | 144 |
+| narrative | 0.9736 | 0.9184 | 0.9452 | 441 | 
+| table_row | 0.9659 | 0.9889 | 0.9773 | 1173 |
+| accuracy | | | 0.9676 | 1758 |
+
+
 ## 6. Experimental Results
 ### 6.1. Ground Truth
 
