@@ -1,0 +1,811 @@
+{
+  "summary": {
+    "cases": 15,
+    "correct": 14,
+    "accuracy": 0.9333333333333333,
+    "retrieval_hit": 14,
+    "retrieval_hit_rate": 0.9333333333333333,
+    "mrr": 0.7222222222222222
+  },
+  "cases": [
+    {
+      "year": 2021,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary statement of operations revenue table summary of revenues operating results",
+      "prediction": "43736",
+      "ground_truth": "43,736",
+      "correct": true,
+      "retrieval_rank": 2,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"43736\", \"supporting_docs\": [2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 1",
+          "table_row_count": 5,
+          "year_index": 0,
+          "excerpt": "(dollars in millions)\n(a)\nOur Total revenues were $43.7 billion in 2020. The graph above represents Adjusted revenues. For reconciliation of Adjusted revenues to Total revenues see Note 3 to the Consolidated Financial Statements.\n(b)\nGeneral Insurance adjusted revenues is comprised of $10.3 billion and $13.4 billion of Net premiums earned in North America and International, respectively, and $2.9 billion in Net investment income.",
+          "full_text": "s, General Insurance portfolios in run-off previously reported within Legacy as well as the historical results of our legacy insurance lines ceded to Fortitude Reinsurance Company Ltd. (Fortitude Re).\nDiversified Mix of Businesses\n(dollars in millions)\n(a)\nOur Total revenues were $43.7 billion in 2020. The graph above represents Adjusted revenues. For reconciliation of Adjusted revenues to Total revenues see Note 3 to the Consolidated Financial Statements.\n(b)\nGeneral Insurance adjusted revenues is comprised of $10.3 billion and $13.4 billion of Net premiums earned in North America and International, respectively, and $2.9 billion in Net investment income.\n(c)\nOn October 26, 2020, we announced our intention to separate our Life and Retirement business from AIG.",
+          "bm25_score": 0.773371,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 68,
+          "year_index": 0,
+          "excerpt": "$\n$\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nReal Estate and Other Fixed Assets,\nTotal Revenues*",
+          "full_text": "Restructuring and other costs\n-\n-\n-\n-\n-\n(395)\nNon-recurring costs related to regulatory or accounting changes\n-\n-\n-\n-\n-\n-\nRevenues and pre-tax income\n$\n47,389\n$\n13,086\n$\n(3,137)\n$\n1,309\n$\n5,386\n$\n(a)\nRepresents activity subsequent to the deconsolidation of Fortitude Re on June 2, 2020.\n(b)\nIncludes all net realized capital gains and losses except earned income (periodic settlements and changes in settlement accruals) on derivative instruments used for non-qualifying (economic) hedging or for asset replication and net realized gains and losses on Fortitude Re funds withheld assets held by AIG in support of Fortitude Re’s reinsurance obligations to AIG (Fortitude Re funds withheld assets).\nThe following table presents AIG’s year-end identifiable assets and capital expenditures by segment:\nYear-End Identifiable Assets\nCapital Expenditures\n(in millions)\n2020\n2019\n2020\n2019\nGeneral Insurance\n$\n156,590\n$\n156,358\n$\n$\nLife and Retirement\n396,275\n371,742\nOther Operations\n33,616\n(3,036)\nTotal Assets\n$\n586,481\n$\n525,064\n$\n$\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nReal Estate and Other Fixed Assets,\nTotal Revenues*\nNet of Accumulated Depreciation\n(in millions)\n2020\n2019\n2018\n2020\n2019\n2018\nNorth America\n$\n30,204\n$\n36,930\n$\n31,376\n$\n1,230\n$\n1,333\n$\n1,479\nInternational\n13,532\n12,816\n16,013\nConsolidated\n$\n43,736\n$\n49,746\n$\n47,389\n$\n1,840\n$\n1,953\n$\n2,172",
+          "bm25_score": 0.558361,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        },
+        {
+          "rank": 3,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 15,
+          "year_index": 0,
+          "excerpt": "(dollars in millions, except per common share data)\n2018*\nTotal revenues\n$\n48,588",
+          "full_text": "t would have resulted had the acquisition been completed at the beginning of the applicable period and may not be indicative of the results that will be attained in the future.\nYear Ended December 31,\n(dollars in millions, except per common share data)\n2018*\nTotal revenues\n$\n48,588\nNet income\nNet loss attributable to AIG common shareholders\n(51)\nLoss per common share attributable to AIG common shareholders:\nBasic:\nNet loss attributable to AIG common shareholders\n(0.06)\nDiluted:\nNet loss attributable to AIG common shareholders\n(0.06)",
+          "bm25_score": 0.501673,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 4
+        }
+      ],
+      "supporting_docs": [
+        2
+      ]
+    },
+    {
+      "year": 2021,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "66362",
+      "ground_truth": "66,362",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"66362\", \"supporting_docs\": [1, 2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 52,
+          "year_index": 0,
+          "excerpt": "2019\n2018\nTotal AIG shareholders' equity\n$\n66,362",
+          "full_text": "es related to Fortitude Re’s Funds Withheld Assets and DTA (Adjusted book value per common share), which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nAt December 31,\n(in millions, except per common share data)\n2020\n2019\n2018\nTotal AIG shareholders' equity\n$\n66,362\n$\n65,675\n$\n56,361\nPreferred equity\n-\nTotal AIG common shareholders' equity\n65,877\n65,190\n56,361\nLess: Accumulated other comprehensive income (loss)\n13,511\n4,982\n(1,413)\nAdd: Cumulative unrealized gains and losses related to\nFortitude Re’s Funds Withheld Assets\n4,657\n-\n-\nLess: Deferred tax assets\n7,907\n8,977\n10,153\nAdjusted common shareholders' equity\n$\n49,116\n$\n51,231\n$\n47,621\nTotal common shares outstanding\n861,558,049\n869,999,031\n866,609,429\nBook value per common share\n$\n76.46\n$\n74.93\n$\n65.04\nAdjusted book value per common share\n57.01\n58.89\n54.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2021,
+          "section": "item 4",
+          "table_row_count": 52,
+          "year_index": 0,
+          "excerpt": "2019\n2018\nTotal AIG shareholders' equity\n$\n66,362",
+          "full_text": "es related to Fortitude Re’s Funds Withheld Assets and DTA (Adjusted book value per common share), which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nAt December 31,\n(in millions, except per common share data)\n2020\n2019\n2018\nTotal AIG shareholders' equity\n$\n66,362\n$\n65,675\n$\n56,361\nPreferred equity\n-\nTotal AIG common shareholders' equity\n65,877\n65,190\n56,361\nLess: Accumulated other comprehensive income (loss)\n13,511\n4,982\n(1,413)\nAdd: Cumulative unrealized gains and losses related to\nFortitude Re’s Funds Withheld Assets\n4,657\n-\n-\nLess: Deferred tax assets\n7,907\n8,977\n10,153\nAdjusted common shareholders' equity\n$\n49,116\n$\n51,231\n$\n47,621\nTotal common shares outstanding\n861,558,049\n869,999,031\n866,609,429\nBook value per common share\n$\n76.46\n$\n74.93\n$\n65.04\nAdjusted book value per common share\n57.01\n58.89\n54.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 60,
+          "year_index": 0,
+          "excerpt": "4.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2020\n2019\n2018\nActual or annualized net income (loss) attributable to AIG\ncommon shareholders\n$\n(5,973)\n$\n3,326\n$\n(6)\nActual or annualized adjusted after-tax income (loss) attributable\nto AIG common shareholders\n2,201\n4,078\n1,215\nAverage AIG common sha",
+          "full_text": "4.95\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2020\n2019\n2018\nActual or annualized net income (loss) attributable to AIG\ncommon shareholders\n$\n(5,973)\n$\n3,326\n$\n(6)\nActual or annualized adjusted after-tax income (loss) attributable\nto AIG common shareholders\n2,201\n4,078\n1,215\nAverage AIG common shareholders' equity\n$\n63,225\n$\n62,205\n$\n60,819\nLess: Average AOCI\n7,529\n3,261\n1,193\nAdd: Average cumulative unrealized gains and losses related to\nFortitude Re’s Funds Withheld Assets\n2,653\n-\n-\nLess: Average DTA\n8,437\n9,605\n10,133\nAverage adjusted AIG common shareholders' equity\n$\n49,912\n$\n49,339\n$\n49,493\nReturn on common equity\n(9.4)\n%\n5.3\n%\n0.0\n%\nAdjusted return on common equity\n4.4\n%\n8.3\n%\n2.5\n%\nThe following table presents a reconciliation of pre-tax income/net income (loss) attributable to AIG to adjusted pre-tax income/adjusted after-tax income attributable to AIG:",
+          "bm25_score": 0.881634,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        1,
+        2
+      ]
+    },
+    {
+      "year": 2021,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial summary debt rating",
+      "prediction": "BBB+",
+      "ground_truth": "BBB+",
+      "correct": true,
+      "retrieval_rank": 2,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"BBB+\", \"supporting_docs\": [2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 37,
+          "year_index": 0,
+          "excerpt": "5)\n-\n2,118\nTotal debt issued or guaranteed by AIG 25,432\n4,191\n(1,961)\n28,099\nOther subsidiaries' notes, bonds, loans and\nmortgages payable - not guaranteed by AIG (48)\n-\n-\nTotal long-term debt 25,479\n-\n2,118\nTotal debt issued or guaranteed by AIG\n25,432\n4,191\n(1,961)\n28,099\nOther subsidiaries' notes, bonds, loans and\nmortgages payable - not guaranteed by AIG\n(48)\n-\n-\nTotal long-term debt\n25,479\n4,196\n(2,009)\n28,103\nDebt of consolidated investment entities - not\nguaranteed by AIG(c)\n9,871\n2,128\n",
+          "full_text": "5)\n-\n2,118\nTotal debt issued or guaranteed by AIG 25,432\n4,191\n(1,961)\n28,099\nOther subsidiaries' notes, bonds, loans and\nmortgages payable - not guaranteed by AIG (48)\n-\n-\nTotal long-term debt 25,479\n-\n2,118\nTotal debt issued or guaranteed by AIG\n25,432\n4,191\n(1,961)\n28,099\nOther subsidiaries' notes, bonds, loans and\nmortgages payable - not guaranteed by AIG\n(48)\n-\n-\nTotal long-term debt\n25,479\n4,196\n(2,009)\n28,103\nDebt of consolidated investment entities - not\nguaranteed by AIG(c)\n9,871\n2,128\n(2,783)\n(d)\n9,431\nTotal debt\n$\n35,350\n$\n6,324\n$\n(4,792)\n$\n$\n$\n37,534\n(a)",
+          "bm25_score": 0.806993,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2021,
+          "section": "item 7",
+          "table_row_count": 34,
+          "year_index": 0,
+          "excerpt": "Credit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term Debt",
+          "full_text": "by assets\nOther subsidiaries' notes, bonds, loans and mortgages payable\n-\n-\nTotal\n$\n1,501\n$\n$\n$\n$\n1,896\nSee Note 15 to the Consolidated Financial Statements for additional details on debt outstanding.\nCredit Ratings\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term Debt\nSenior Long-Term Debt\nMoody’s\nS&P\nMoody’s(a)\nS&P(b)\nFitch(c)\nAmerican International Group, Inc.\nP-2 (2nd of 3)\nA-2 (2nd of 8)\nBaa 1 (4th of 9)\nBBB+ (4th of 9)\nBBB+ (4th of 9)\nOn review for\nCreditWatch\nRating Watch\ndowngrade\nNegative\nNegative\nAIG Financial Products Corp.(d)\nP-2\nA-2\nBaa 1\nBBB+\nOn review for\nCreditWatch\ndowngrade\nNegative\n(a)\nMoody’s appends numerical modifiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)\nS&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)\nFitch ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(d)",
+          "bm25_score": 0.725413,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2021,
+          "section": "item 8",
+          "table_row_count": 66,
+          "year_index": 0,
+          "excerpt": ",638) (1,318)\nOther invested assets (3,522) (3,346) (2,839)\nMortgage and other loans receivable (5,990) (9,515) (10,286)\nAcquisition of businesses, net of cash and restricted cash acquired\n-\n-\n(5,717)\n-\n-\n(5,717)\nNet change in short-term investments\n(4,925)\n(3,633)\n1,524\nOther, net\n1,503\nNet cash used in investing activities\n(6,202)\n(5,475)\n(223)\nCash flows from financing activities:\nProceeds from (payments for)\nPolicyholder contract deposits\n22,385\n25,453\n27,320\nPolicyholder contract withdrawal",
+          "full_text": ",638) (1,318)\nOther invested assets (3,522) (3,346) (2,839)\nMortgage and other loans receivable (5,990) (9,515) (10,286)\nAcquisition of businesses, net of cash and restricted cash acquired\n-\n-\n(5,717)\n-\n-\n(5,717)\nNet change in short-term investments\n(4,925)\n(3,633)\n1,524\nOther, net\n1,503\nNet cash used in investing activities\n(6,202)\n(5,475)\n(223)\nCash flows from financing activities:\nProceeds from (payments for)\nPolicyholder contract deposits\n22,385\n25,453\n27,320\nPolicyholder contract withdrawals\n(17,854)\n(19,823)\n(20,686)\nIssuance of long-term debt\n4,196\n2,657\nIssuance of debt of consolidated investment entities\n2,128\n3,147\n2,077\nRepayments of long-term debt\n(1,923)\n(1,504)\n(3,044)\nRepayments of debt of consolidated investment entities\n(2,783)\n(1,698)\n(628)\nIssuance of preferred stock, net of issuance costs\n-\n-\nPurchase of common stock\n(500)\n-\n(1,739)\nDividends paid on preferred stock\n(29)\n(22)\n-\nDividends paid on common stock\n(1,103)\n(1,114)\n(1,138)\nOther, net\n1,600\n(3,570)\nNet cash provided by financing activities\n5,058\n7,258\n1,249\nEffect of exchange rate changes on cash and restricted cash\n(11)\nNet increase (decrease) in cash and restricted cash\n(57)\n(8)",
+          "bm25_score": 0.68826,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        2
+      ]
+    },
+    {
+      "year": 2022,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary revenue section revenue table summary of revenues income details",
+      "prediction": "52057",
+      "ground_truth": "52,057",
+      "correct": true,
+      "retrieval_rank": 2,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"52057\", \"supporting_docs\": [2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 1",
+          "table_row_count": 5,
+          "year_index": 0,
+          "excerpt": "(dollars in millions)\n(a)\nOur Total revenues were $52.1 billion in 2021. The graph above represents Adjusted revenues. For reconciliation of Adjusted revenues to Total revenues see Note 3 to the Consolidated Financial Statements.\n(b)\nGeneral Insurance adjusted revenues is comprised of $11.0 billion and $14.1 billion of Net premiums earned in North America and International, respectively, and $3.3 billion in Net investment income.",
+          "full_text": "ur consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Reinsurance Company Ltd. (Fortitude Re).\nDiversified Mix of Businesses\n(dollars in millions)\n(a)\nOur Total revenues were $52.1 billion in 2021. The graph above represents Adjusted revenues. For reconciliation of Adjusted revenues to Total revenues see Note 3 to the Consolidated Financial Statements.\n(b)\nGeneral Insurance adjusted revenues is comprised of $11.0 billion and $14.1 billion of Net premiums earned in North America and International, respectively, and $3.3 billion in Net investment income.\n(c)\nOn October 26, 2020, we announced our intention to separate our Life and Retirement business from AIG.",
+          "bm25_score": 0.767632,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2022,
+          "section": "item 8",
+          "table_row_count": 68,
+          "year_index": 0,
+          "excerpt": "$\n*Certain reclassifications have been made to the prior year amounts for consistency with the current year presentation.\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nReal Estate and Other Fixed Assets,\nTotal Revenues*",
+          "full_text": "(24)\nRestructuring and other costs\n-\n-\n-\n-\n(218)\nNon-recurring costs related to regulatory or accounting changes\n-\n-\n-\n-\n(12)\nRevenues and pre-tax income\n$\n49,746\n$\n14,619\n$\n1,417\n$\n5,164\n$\n5,287\n(a)\nGeneral Insurance North America’s and General Insurance International’s Adjusted pre-tax income does not include Net investment income as the investment portfolio results are managed at the General Insurance level. Net investment income is shown separately as a component of General Insurance’s total Adjusted pre-tax income results.\n(b)\nIncludes all net realized gains and losses except earned income (periodic settlements and changes in settlement accruals) on derivative instruments used for non-qualifying (economic) hedging or for asset replication and net realized gains and losses on Fortitude Re funds withheld assets held by AIG in support of Fortitude Re’s reinsurance obligations to AIG (Fortitude Re funds withheld assets).\nThe following table presents AIG’s year-end identifiable assets and capital expenditures by segment:\nYear-End Identifiable Assets\nCapital Expenditures\n(in millions)\n2021\n2020*\n2021\n2020\nGeneral Insurance\n$\n159,000\n$\n155,751\n$\n$\nLife and Retirement\n406,104\n397,749\nOther Operations\n31,008\n32,981\nTotal Assets\n$\n596,112\n$\n586,481\n$\n$\n*Certain reclassifications have been made to the prior year amounts for consistency with the current year presentation.\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nReal Estate and Other Fixed Assets,\nTotal Revenues*\nNet of Accumulated Depreciation\n(in millions)\n2021\n2020\n2019\n2021\n2020\n2019\nNorth America\n$\n37,224\n$\n30,204\n$\n36,930\n$\n1,212\n$\n1,230\n$\n1,333\nInternational\n14,833\n13,532\n12,816\nConsolidated\n$\n52,057\n$\n43,736\n$\n49,746\n$\n1,712\n$\n1,840\n$\n1,953",
+          "bm25_score": 0.628321,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        },
+        {
+          "rank": 3,
+          "filing_year": 2022,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nThe accounting policies of the segments are the same as those described in Note 2. We evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and net in",
+          "full_text": "management business and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nThe accounting policies of the segments are the same as those described in Note 2. We evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and net income (loss) attributable to AIG, respectively. These items generally fall into one or more of the following broad categories: legacy matters having no relevance to our current businesses or operating performance; adjustments to enhance transparency to the underlying economics of transactions; and measures that we believe to be common to the industry. Legal entities are attributed to each segment based upon the predominance of activity in that legal entity. For the items excluded from adjusted revenues and adjusted pre-tax income (loss) see the table below.\nThe following table presents AIG’s continuing operations by operating segment:",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 4
+        }
+      ],
+      "supporting_docs": [
+        2
+      ]
+    },
+    {
+      "year": 2022,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net worth",
+      "prediction": "65956",
+      "ground_truth": "65,956",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"65956\", \"supporting_docs\": [1, 2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 52,
+          "year_index": 0,
+          "excerpt": "2020\n2019\nTotal AIG shareholders' equity\n$\n65,956",
+          "full_text": "following table presents a reconciliation of Book value per common share to Adjusted book value per common share, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nAt December 31,\n(in millions, except per common share data)\n2021\n2020\n2019\nTotal AIG shareholders' equity\n$\n65,956\n$\n66,362\n$\n65,675\nPreferred equity\nTotal AIG common shareholders' equity\n65,471\n65,877\n65,190\nLess: Accumulated other comprehensive income (loss)\n6,687\n13,511\n4,982\nAdd: Cumulative unrealized gains and losses related to\nFortitude Re funds withheld assets\n2,791\n4,657\n-\nLess: Deferred tax assets\n5,221\n7,907\n8,977\nAdjusted common shareholders' equity\n$\n56,354\n$\n49,116\n$\n51,231\nTotal common shares outstanding\n818.7\n861.6\n870.0\nBook value per common share\n$\n79.97\n$\n76.46\n$\n74.93\nAdjusted book value per common share\n68.83\n57.01\n58.89\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2022,
+          "section": "item 4",
+          "table_row_count": 52,
+          "year_index": 0,
+          "excerpt": "2020\n2019\nTotal AIG shareholders' equity\n$\n65,956",
+          "full_text": "following table presents a reconciliation of Book value per common share to Adjusted book value per common share, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nAt December 31,\n(in millions, except per common share data)\n2021\n2020\n2019\nTotal AIG shareholders' equity\n$\n65,956\n$\n66,362\n$\n65,675\nPreferred equity\nTotal AIG common shareholders' equity\n65,471\n65,877\n65,190\nLess: Accumulated other comprehensive income (loss)\n6,687\n13,511\n4,982\nAdd: Cumulative unrealized gains and losses related to\nFortitude Re funds withheld assets\n2,791\n4,657\n-\nLess: Deferred tax assets\n5,221\n7,907\n8,977\nAdjusted common shareholders' equity\n$\n56,354\n$\n49,116\n$\n51,231\nTotal common shares outstanding\n818.7\n861.6\n870.0\nBook value per common share\n$\n79.97\n$\n76.46\n$\n74.93\nAdjusted book value per common share\n68.83\n57.01\n58.89\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 60,
+          "year_index": 0,
+          "excerpt": "8.89\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2021\n2020\n2019\nActual or annualized net income (loss) attributable to AIG\ncommon shareholders\n$\n9,359\n$\n(5,973)\n$\n3,326\nActual or annualized adjusted after-tax income\nattributable to AIG common shareholders\n4,430\n2,201\n4,078\nAverage AIG common sharehol",
+          "full_text": "8.89\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)\n2021\n2020\n2019\nActual or annualized net income (loss) attributable to AIG\ncommon shareholders\n$\n9,359\n$\n(5,973)\n$\n3,326\nActual or annualized adjusted after-tax income\nattributable to AIG common shareholders\n4,430\n2,201\n4,078\nAverage AIG common shareholders' equity\n$\n64,704\n$\n63,225\n$\n62,205\nLess: Average AOCI\n9,096\n7,529\n3,261\nAdd: Average cumulative unrealized gains and losses related to\nFortitude Re funds withheld assets\n3,200\n2,653\n-\nLess: Average DTA\n7,025\n8,437\n9,605\nAverage adjusted AIG common shareholders' equity\n$\n51,783\n$\n49,912\n$\n49,339\nReturn on common equity\n14.5\n%\n(9.4)\n%\n5.3\n%\nAdjusted return on common equity\n8.6\n%\n4.4\n%\n8.3\n%\nThe following table presents a reconciliation of revenues to adjusted revenues:",
+          "bm25_score": 0.905319,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        1,
+        2
+      ]
+    },
+    {
+      "year": 2022,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "BBB+",
+      "ground_truth": "BBB+",
+      "correct": true,
+      "retrieval_rank": 3,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"BBB+\", \"supporting_docs\": [3]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2022,
+          "section": "item 8",
+          "table_row_count": 26,
+          "year_index": 0,
+          "excerpt": "at fair value 0.50% - 10.37%\n2030 - 2037\nTotal AIG borrowings supported by assets 1,889\n2,118\nTotal debt issued or guaranteed by AIG 23,738\n28,099\nOther subsidiaries notes, bonds, loans and mortgages\n0.50% - 10.37%\n2030 - 2037\nTotal AIG borrowings supported by assets\n1,889\n2,118\nTotal debt issued or guaranteed by AIG\n23,738\n28,099\nOther subsidiaries notes, bonds, loans and mortgages\npayable - not guaranteed by AIG\n2.76% - 5.70%\n2022 - 2024\nTotal long-term debt\n23,741\n28,103\nDebt of consolidated ",
+          "full_text": "at fair value 0.50% - 10.37%\n2030 - 2037\nTotal AIG borrowings supported by assets 1,889\n2,118\nTotal debt issued or guaranteed by AIG 23,738\n28,099\nOther subsidiaries notes, bonds, loans and mortgages\n0.50% - 10.37%\n2030 - 2037\nTotal AIG borrowings supported by assets\n1,889\n2,118\nTotal debt issued or guaranteed by AIG\n23,738\n28,099\nOther subsidiaries notes, bonds, loans and mortgages\npayable - not guaranteed by AIG\n2.76% - 5.70%\n2022 - 2024\nTotal long-term debt\n23,741\n28,103\nDebt of consolidated investment entities - not guaranteed by AIG(b)\n0% - 7.95%\n2022 - 2051\n6,422\n9,431\nTotal debt\n$\n30,163\n$\n37,534",
+          "bm25_score": 0.682046,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2022,
+          "section": "item 8",
+          "table_row_count": 66,
+          "year_index": 0,
+          "excerpt": "tgage and other loans receivable (9,013) (5,990) (9,515)\nNet change in short-term investments 5,088\n(4,925) (3,633)\nOther, net (995)\n1,503\nNet cash used in investing activities (3,280) (6,202) (5,475)\nCash flows from financing activities:\nProceeds from (payments for)\nPolicyholder contract deposits\n25,424\n22,385\n25,453\nPolicyholder contract withdrawals\n(22,481)\n(17,854)\n(19,823)\nIssuance of long-term debt\n4,196\nIssuance of debt of consolidated investment entities\n4,338\n2,128\n3,147\nRepayments of l",
+          "full_text": "tgage and other loans receivable (9,013) (5,990) (9,515)\nNet change in short-term investments 5,088\n(4,925) (3,633)\nOther, net (995)\n1,503\nNet cash used in investing activities (3,280) (6,202) (5,475)\nCash flows from financing activities:\nProceeds from (payments for)\nPolicyholder contract deposits\n25,424\n22,385\n25,453\nPolicyholder contract withdrawals\n(22,481)\n(17,854)\n(19,823)\nIssuance of long-term debt\n4,196\nIssuance of debt of consolidated investment entities\n4,338\n2,128\n3,147\nRepayments of long-term debt\n(4,147)\n(1,923)\n(1,504)\nRepayments of debt of consolidated investment entities\n(4,494)\n(2,783)\n(1,698)\nIssuance of preferred stock, net of issuance costs\n-\n-\nPurchase of common stock\n(2,592)\n(500)\n-\nDividends paid on preferred stock\n(29)\n(29)\n(22)\nDividends paid on common stock\n(1,083)\n(1,103)\n(1,114)\nOther, net\n1,222\n1,600\nNet cash provided by (used in) financing activities\n(3,735)\n5,058\n7,258\nEffect of exchange rate changes on cash and restricted cash\n(67)\nNet decrease in cash and restricted cash\n(803)\n(57)\n(8)\nCash and restricted cash at beginning of year\n3,230\n3,287\n3,358\nChange in cash of held for sale assets\n-\n-\n(63)\nCash and restricted cash at end of year\n$\n2,427\n$\n3,230",
+          "bm25_score": 0.680731,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2022,
+          "section": "item 7",
+          "table_row_count": 32,
+          "year_index": 0,
+          "excerpt": "Credit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term Debt",
+          "full_text": "in millions)\n2022\n2022\n2022\n2022\nTotal\nAIG general borrowings\n$\n-\n$\n-\n$\n-\n$\n$\nAIG borrowings supported by assets\n-\nOther subsidiaries' notes, bonds, loans and mortgages payable\n-\n-\n-\nTotal\n$\n-\n$\n$\n$\n$\nFor additional information on debt outstanding see Note 14 to the Consolidated Financial Statements.\nCredit Ratings\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term Debt\nSenior Long-Term Debt\nMoody’s\nS&P\nMoody’s(a)\nS&P(b)\nFitch(c)\nAmerican International Group, Inc.\nP-2 (2nd of 3)\nA-2 (2nd of 8)\nBaa 2 (4th of 9)\nBBB+ (4th of 9)\nBBB+ (4th of 9)\n/ Stable outlook\nCreditWatch\nRating Watch\nNegative\nNegative\nAIG Financial Products Corp.(d)\nP-2\nA-2\nBaa 2 (4th of 9)\nBBB+\n/ Stable outlook\nCreditWatch\nNegative\n(a)\nMoody’s appends numerical modifiers 1, 2 and 3 to the generic rating categories to show relative position within the rating categories.\n(b)\nS&P ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(c)\nFitch Ratings Inc. (Fitch) ratings may be modified by the addition of a plus or minus sign to show relative standing within the major rating categories.\n(d)",
+          "bm25_score": 0.678581,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        3
+      ]
+    },
+    {
+      "year": 2023,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary statement of operations revenue table summary of revenues operating results",
+      "prediction": "56437.0",
+      "ground_truth": "56,437",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"56437.0\", \"supporting_docs\": [1, 2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 12,
+          "year_index": 0,
+          "excerpt": "Other Operations 22,909 | 31008.0 | 40.0 | 205.0\nTotal Assets $526,634 | 596112.0 | 210.0 | 343.0\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nTotal Revenues*Real Estate and Other Fixed Assets,Net of Accumulated Depreciation\n(in millions)202220212020202220212020",
+          "full_text": "d transaction costs associated with acquiring or divesting businesses— — — — (12)\nRestructuring and other costs— — — — (435)\nNon-recurring costs related to regulatory or accounting changes— — — — (65)\nRevenues and pre-tax income (loss)$43,736 $13,631 $1,457 $4,211 $(7,293)\n(a)General Insurance North America’s and General Insurance International’s Adjusted pre-tax income does not include Net investment income as the investment portfolio results are managed at the General Insurance level. Net investment income is shown separately as a component of General Insurance’s total Adjusted pre-tax income results.\n(b)Includes all net realized gains and losses except earned income (periodic settlements and changes in settlement accruals) on derivative instruments used for non-qualifying (economic) hedging or for asset replication and net realized gains and losses on Fortitude Re funds withheld assets held by AIG in support of Fortitude Re’s reinsurance obligations to AIG (Fortitude Re funds withheld assets).\n(c)See Note 1.\nThe following table presents AIG’s year-end identifiable assets and capital expenditures by segment:\nYear-End Identifiable AssetsCapital Expenditures\n(in millions)2022202120222021\nGeneral Insurance $147,102 | 159000.0 | 68.0 | 76.0\nLife and Retirement 356,623 | 406104.0 | 102.0 | 62.0\nOther Operations 22,909 | 31008.0 | 40.0 | 205.0\nTotal Assets $526,634 | 596112.0 | 210.0 | 343.0\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nTotal Revenues*Real Estate and Other Fixed Assets,Net of Accumulated Depreciation\n(in millions)202220212020202220212020\nNorth America $41,605 $37,224 $30,204 | 1206.0 | 1212.0 | 1230.0\nInternational 14,832 14,833 13,532 | 387.0 | 500.0 | 610.0\nConsolidated $56,437 $52,057 $43,736 | 1593.0 | 1712.0 | 1840.0",
+          "bm25_score": 0.624408,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2023,
+          "section": "item 7",
+          "table_row_count": 16,
+          "year_index": 0,
+          "excerpt": "55528.0 | 51783.0 | 49912.0\nReturn on common equity 21.0 %14.5 %(9.4)%\nAdjusted return on common equity 6.5 %8.6 %4.4 %\nThe following table presents a reconciliation of revenues to adjusted revenues:\nYears Ended December 31,\n(in millions)202220212020\nRevenues | 56437.0 | 52057.0 | 43736.0\nChanges in fair value of securities used to hedge guaranteed living benefits | -55.0 | -60.0 | -56.0\nChanges in the fair value of equity securities | 53.0 | 237.0 | -200.0\nOther (income) expense - net | 29.0 | ",
+          "full_text": "55528.0 | 51783.0 | 49912.0\nReturn on common equity 21.0 %14.5 %(9.4)%\nAdjusted return on common equity 6.5 %8.6 %4.4 %\nThe following table presents a reconciliation of revenues to adjusted revenues:\nYears Ended December 31,\n(in millions)202220212020\nRevenues | 56437.0 | 52057.0 | 43736.0\nChanges in fair value of securities used to hedge guaranteed living benefits | -55.0 | -60.0 | -56.0\nChanges in the fair value of equity securities | 53.0 | 237.0 | -200.0\nOther (income) expense - net | 29.0 | 24.0 | -49.0\nNet investment income on Fortitude Re funds withheld assets | -943.0 | -1971.0 | -1053.0\nNet realized (gains) losses on Fortitude Re funds withheld assets | 486.0 | -1003.0 | -463.0\nNet realized (gains) losses on Fortitude Re funds withheld embedded derivative | None | 2645.0\nNet realized (gains) losses(a)\n(1,731) (1,585)148\nNon-operating litigation reserves and settlements (49)— (23)\nNet impact from elimination of international reporting lag(b)\n(978)— —\nAdjusted revenues | 45768.0 | 48302.0 | 44685.0",
+          "bm25_score": 0.561291,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 0,
+          "year_index": 0,
+          "excerpt": "SEGMENT RESULTS\nSEGMENT RESULTS\nThe accounting policies of the segments are described in Note 2. We evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and pre-tax income (loss), respectively. These items generally fall into one or more of the following broad categories: legacy matters having no relevance to our current businesses or operating pe",
+          "full_text": "ness and results of our consolidated investment entities, General Insurance portfolios in run-off as well as the historical results of our legacy insurance lines ceded to Fortitude Re.\nSEGMENT RESULTS\nSEGMENT RESULTS\nThe accounting policies of the segments are described in Note 2. We evaluate segment performance based on adjusted revenues and adjusted pre-tax income (loss). Adjusted revenues and adjusted pre-tax income (loss) are derived by excluding certain items from total revenues and pre-tax income (loss), respectively. These items generally fall into one or more of the following broad categories: legacy matters having no relevance to our current businesses or operating performance; adjustments to enhance transparency to the underlying economics of transactions; and measures that we believe to be common to the industry. Legal entities are attributed to each segment based upon the predominance of activity in that legal entity. For the items excluded from adjusted revenues and adjusted pre-tax income (loss), see the table below.\nThe following table presents AIG’s continuing operations by operating segment:",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        1,
+        2
+      ]
+    },
+    {
+      "year": 2023,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "40002.0",
+      "ground_truth": "40,002",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"40002.0\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 7",
+          "table_row_count": 13,
+          "year_index": 0,
+          "excerpt": "At December 31,\n(in millions, except per common share data)202220212020\nTotal AIG shareholders' equity | 40002.0 | 65956.0 | 66362.0\nPreferred equity | 485.0 | 485.0 | 485.0\nTotal AIG common shareholders' equity | 39517.0 | 65471.0 | 65877.0",
+          "full_text": "following table presents a reconciliation of Book value per common share to Adjusted book value per common share, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nAt December 31,\n(in millions, except per common share data)202220212020\nTotal AIG shareholders' equity | 40002.0 | 65956.0 | 66362.0\nPreferred equity | 485.0 | 485.0 | 485.0\nTotal AIG common shareholders' equity | 39517.0 | 65471.0 | 65877.0\nLess: Deferred tax assets | 4518.0 | 5221.0 | 7907.0\nLess: Accumulated other comprehensive income (loss) | None | 13511.0\nAdd: Cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | None | 4657.0\nSubtotal: AOCI plus cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | None | 8854.0\nAdjusted common shareholders' equity | 54229.0 | 56354.0 | 49116.0\nTotal common shares outstanding 734.1 818.7 861.6\nBook value per common share $53.83 $79.97 $76.46\nAdjusted book value per common share 73.87 68.83 57.01\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2023,
+          "section": "item 7",
+          "table_row_count": 13,
+          "year_index": 0,
+          "excerpt": ".01\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2022 | 2021.0 | 2020.0\nActual or annualized net income (loss) attributable to AIG common shareholders | 10247.0 | 9359.0 | -5973.0\nActual or annualized adjusted after-tax income attributable to AIG common shareholders | 3586.0 | 4430.0 | 2201.0\nAverage ",
+          "full_text": ".01\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2022 | 2021.0 | 2020.0\nActual or annualized net income (loss) attributable to AIG common shareholders | 10247.0 | 9359.0 | -5973.0\nActual or annualized adjusted after-tax income attributable to AIG common shareholders | 3586.0 | 4430.0 | 2201.0\nAverage AIG common shareholders' equity | 48769.0 | 64704.0 | 63225.0\nLess: Average DTA | 4739.0 | 7025.0 | 8437.0\nLess: Average AOCI | None | 7529.0\nAdd: Average cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | None | 2653.0\nSubtotal: AOCI plus cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | None | 4876.0\nAverage adjusted AIG common shareholders' equity | 55528.0 | 51783.0 | 49912.0\nReturn on common equity 21.0 %14.5 %(9.4)%\nAdjusted return on common equity 6.5 %8.6 %4.4 %\nThe following table presents a reconciliation of revenues to adjusted revenues:",
+          "bm25_score": 0.899549,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 17,
+          "year_index": 0,
+          "excerpt": "ts and guarantees to the VIE.\nThe following table presents total assets of unconsolidated VIEs in which we hold a variable interest, as well as our maximum exposure to loss associated with these VIEs:\nMaximum Exposure to Loss\n(in millions)Total VIEAssetsOn-BalanceSheet(b)\nOff-BalanceSheetTotal\nDecember | 31.0 | 2022.0\nReal estate and investment entities(a)\n$504,219 $9,145 $3,938 (c)\n$13,083\nOther(e)\n1,302 247 747 (d)\nTotal $505,521 | 9392.0 | 4685.0 | 14077.0\nDecember | 31.0 | 2021.0\nReal estate",
+          "full_text": "ts and guarantees to the VIE.\nThe following table presents total assets of unconsolidated VIEs in which we hold a variable interest, as well as our maximum exposure to loss associated with these VIEs:\nMaximum Exposure to Loss\n(in millions)Total VIEAssetsOn-BalanceSheet(b)\nOff-BalanceSheetTotal\nDecember | 31.0 | 2022.0\nReal estate and investment entities(a)\n$504,219 $9,145 $3,938 (c)\n$13,083\nOther(e)\n1,302 247 747 (d)\nTotal $505,521 | 9392.0 | 4685.0 | 14077.0\nDecember | 31.0 | 2021.0\nReal estate and investment entities(a)\n$457,335 $7,650 $3,448 (c)\n$11,098\nOther 1,738 237 528 (d)\nTotal $459,073 | 7887.0 | 3976.0 | 11863.0\n(a)Comprised primarily of hedge funds and private equity funds.",
+          "bm25_score": 0.403002,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2023,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "N/A",
+      "ground_truth": "BBB+",
+      "correct": false,
+      "retrieval_rank": -1,
+      "retrieval_hit": false,
+      "retrieval_hit_in_supporting_docs": false,
+      "raw_response": "{\"value\": null, \"supporting_docs\": []}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2023,
+          "section": "item 7",
+          "table_row_count": 16,
+          "year_index": 0,
+          "excerpt": "5\nTotal debt issued or guaranteed by AIG 23,312 26 | -9492.0 | -259.0 | None\nCorebridge debt:\nAIGLH notes and bonds payable(b)\n199 — — — | 1.0 | 200.0\nAIGLH junior subordinated debt(b)\n227 — — — — 227\nTotal debt issued or guaranteed by AIG 23,312 26 | -9492.0 | -259.0 | None\nCorebridge debt:\nAIGLH notes and bonds payable(b)\n199 — — — | 1.0 | 200.0\nAIGLH junior subordinated debt(b)\n227 — — — — 227\nCorebridge senior unsecured notes - not guaranteed by AIG— 6,461 — — (9)6,452\nCorebridge junior subo",
+          "full_text": "5\nTotal debt issued or guaranteed by AIG 23,312 26 | -9492.0 | -259.0 | None\nCorebridge debt:\nAIGLH notes and bonds payable(b)\n199 — — — | 1.0 | 200.0\nAIGLH junior subordinated debt(b)\n227 — — — — 227\nTotal debt issued or guaranteed by AIG 23,312 26 | -9492.0 | -259.0 | None\nCorebridge debt:\nAIGLH notes and bonds payable(b)\n199 — — — | 1.0 | 200.0\nAIGLH junior subordinated debt(b)\n227 — — — — 227\nCorebridge senior unsecured notes - not guaranteed by AIG— 6,461 — — (9)6,452\nCorebridge junior subordinated debt - not guaranteed by AIG— 990 — — (1)989\nDDTL facility - not guaranteed by AIG— 1,500 — — — 1,500\nTotal Corebridge debt 426 8,951 — — (9)9,368\nOther subsidiaries' notes, bonds, loans and mortgages payable - not guaranteed by AIG 3 — (2)— — 1\nTotal Short-term and long-term debt $23,741 $8,977 | -9494.0 | -259.0 | None\nDebt of consolidated investment entities - not guaranteed by AIG(c)\n$6,422 $933 $(1,251) $(70) $(154) (f)\n$5,880",
+          "bm25_score": 0.753081,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 29,
+          "year_index": 0,
+          "excerpt": "issued or guaranteed by AIG | 11930.0 | 23312.0\nCorebridge debt:\nAIGLH notes and bonds payable(b)\n6.63% - 7.50%\n2025 - 2029\n200 199\nAIGLH junior subordinated debt(b)\n7.57% - 8.50%\n2030 - 2046\n227 227\nCorebridge debt:\nAIGLH notes and bonds payable(b)\n6.63% - 7.50%\n2025 - 2029\n200 199\nAIGLH junior subordinated debt(b)\n7.57% - 8.50%\n2030 - 2046\n227 227\nCorebridge senior unsecured notes - not guaranteed by AIG 3.50% - 4.40%\n2025 - 2052\n6,452 —\nCorebridge junior subordinated debt - not guaranteed by ",
+          "full_text": "issued or guaranteed by AIG | 11930.0 | 23312.0\nCorebridge debt:\nAIGLH notes and bonds payable(b)\n6.63% - 7.50%\n2025 - 2029\n200 199\nAIGLH junior subordinated debt(b)\n7.57% - 8.50%\n2030 - 2046\n227 227\nCorebridge debt:\nAIGLH notes and bonds payable(b)\n6.63% - 7.50%\n2025 - 2029\n200 199\nAIGLH junior subordinated debt(b)\n7.57% - 8.50%\n2030 - 2046\n227 227\nCorebridge senior unsecured notes - not guaranteed by AIG 3.50% - 4.40%\n2025 - 2052\n6,452 —\nCorebridge junior subordinated debt - not guaranteed by AIG 6.88%\n2052\n989 —\nDDTL facility - not guaranteed by AIG 3.00% - 5.50%\n2023\n1,500 —\nTotal Corebridge debt | 9368.0 | 426.0\nOther subsidiaries' notes, bonds, loans and mortgages payable - not guaranteed by AIG 2.76% - 4.50%\n2023 - 2024\n1 3\nTotal Short-term and long-term debt | 21299.0 | 23741.0\nDebt of consolidated investment entities - not guaranteed by AIG(c)\n0% - 7.95%\n2023 - 2051\n$5,880 $6,422\nTotal debt | 27179.0 | 30163.0",
+          "bm25_score": 0.742931,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2023,
+          "section": "item 8",
+          "table_row_count": 23,
+          "year_index": 0,
+          "excerpt": "ollowing table presents maturities of short-term and long-term debt (including unamortized original issue discount, hedge accounting valuation adjustments and fair value adjustments, when applicable):\nDecember 31, 2022Year Ending\n(in millions)Total 20232024202520262027Thereafter\nDebt issued or guaranteed by AIG:\nAIG general borrowings:\nNotes and bonds payable\n$10,242 $401 $459 $997 | 783.0 | 1067.0 | 6535.0\nJunior subordinated debt 991 — — — — — 991\nAIG Japan Holdings Kabushiki Kaisha 273 179 — ",
+          "full_text": "ollowing table presents maturities of short-term and long-term debt (including unamortized original issue discount, hedge accounting valuation adjustments and fair value adjustments, when applicable):\nDecember 31, 2022Year Ending\n(in millions)Total 20232024202520262027Thereafter\nDebt issued or guaranteed by AIG:\nAIG general borrowings:\nNotes and bonds payable\n$10,242 $401 $459 $997 | 783.0 | 1067.0 | 6535.0\nJunior subordinated debt 991 — — — — — 991\nAIG Japan Holdings Kabushiki Kaisha 273 179 — 94 — — —\nValidus notes and bonds payable 269 — — — — — 269\nTotal AIG general borrowings 11,775 580 459 1,091 | 783.0 | 1067.0 | 7795.0\nAIG borrowings supported by assets:\nAIG notes and bonds payable 81 62 — 12 7 — —\nSeries AIGFP matched notes and bonds payable 18 — — — — — 18\nGIAs, at fair value 56 — — — — — 56\nTotal AIG borrowings supported by assets 155 62 — 12 7 — 74\nTotal debt issued or guaranteed by AIG 11,930 642 459 1,103 | 790.0 | 1067.0 | 7869.0\nCorebridge debt:\nAIGLH notes and bonds payable 200 — — 101 — — 99\nAIGLH junior subordinated debt 227 — — — — — 227\nCorebridge senior unsecured notes 6,452 — — 994 — | 1240.0 | 4218.0\nCorebridge junior subordinated debt 989 — — — — — 989\nDDTL facility(a)\n1,500 1,500 — — — — —",
+          "bm25_score": 0.677909,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": []
+    },
+    {
+      "year": 2024,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary statement of operations revenue table summary of revenues operating results",
+      "prediction": "46802.0",
+      "ground_truth": "46,802",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"46802.0\", \"supporting_docs\": [1, 2, 3]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 8",
+          "table_row_count": 11,
+          "year_index": 0,
+          "excerpt": "Other Operations 24,738 | 22451.0 | 39.0 | 40.0\nTotal Assets $539,306 | 522228.0 | 240.0 | 210.0\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nTotal Revenues*Real Estate and Other Fixed Assets,Net of Accumulated Depreciation\n(in millions)202320222021202320222021",
+          "full_text": "G in support of Fortitude Re’s reinsurance obligations to AIG (Fortitude Re funds withheld assets).\nThe following table presents AIG’s year-end identifiable assets and capital expenditures by segment:\nYear-End Identifiable AssetsCapital Expenditures\n(in millions)2023202220232022\nGeneral Insurance $139,371 | 147083.0 | 158.0 | 68.0\nLife and Retirement 375,197 | 352694.0 | 43.0 | 102.0\nOther Operations 24,738 | 22451.0 | 39.0 | 40.0\nTotal Assets $539,306 | 522228.0 | 240.0 | 210.0\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nTotal Revenues*Real Estate and Other Fixed Assets,Net of Accumulated Depreciation\n(in millions)202320222021202320222021\nNorth America $33,565 $39,618 $37,324 | 1006.0 | 1206.0 | 1230.0\nInternational 13,237 14,832 14,833 | 372.0 | 387.0 | 610.0\nConsolidated $46,802 $54,450 $52,157 | 1378.0 | 1593.0 | 1840.0",
+          "bm25_score": 0.717609,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2024,
+          "section": "item 7",
+          "table_row_count": 16,
+          "year_index": 0,
+          "excerpt": "| 54632.0 | 56957.0 | 53380.0\nReturn on common equity 8.6 %20.7 %16.0 %\nAdjusted return on common equity 9.0 %7.1 %9.2 %\nThe following table presents a reconciliation of revenues to adjusted revenues:\nYears Ended December 31,\n(in millions)202320222021\nRevenues | 46802.0 | 54450.0 | 52157.0\nChanges in fair value of securities used to hedge guaranteed living benefits | -55.0 | -55.0 | -60.0\nChanges in the fair value of equity securities | None | 237.0\nOther (income) expense - net | 27.0 | 29.0 | 2",
+          "full_text": "| 54632.0 | 56957.0 | 53380.0\nReturn on common equity 8.6 %20.7 %16.0 %\nAdjusted return on common equity 9.0 %7.1 %9.2 %\nThe following table presents a reconciliation of revenues to adjusted revenues:\nYears Ended December 31,\n(in millions)202320222021\nRevenues | 46802.0 | 54450.0 | 52157.0\nChanges in fair value of securities used to hedge guaranteed living benefits | -55.0 | -55.0 | -60.0\nChanges in the fair value of equity securities | None | 237.0\nOther (income) expense - net | 27.0 | 29.0 | 24.0\nNet investment income on Fortitude Re funds withheld assets | -1544.0 | -943.0 | -1971.0\nNet realized (gains) losses on Fortitude Re funds withheld assets | 295.0 | 486.0 | -1003.0\nNet realized (gains) losses on Fortitude Re funds withheld embedded derivative | 2007.0 | None\nNet realized (gains) losses(a)\n2,536 | 195.0 | -1705.0\nNon-operating litigation reserves and settlements (1) (49)—\nNet impact from elimination of international reporting lag(b)\n(4) (978)—\nAdjusted revenues | 49969.0 | 45707.0 | 48282.0",
+          "bm25_score": 0.532719,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2024,
+          "section": "item 4",
+          "table_row_count": 16,
+          "year_index": 0,
+          "excerpt": "| 54632.0 | 56957.0 | 53380.0\nReturn on common equity 8.6 %20.7 %16.0 %\nAdjusted return on common equity 9.0 %7.1 %9.2 %\nThe following table presents a reconciliation of revenues to adjusted revenues:\nYears Ended December 31,\n(in millions)202320222021\nRevenues | 46802.0 | 54450.0 | 52157.0\nChanges in fair value of securities used to hedge guaranteed living benefits | -55.0 | -55.0 | -60.0\nChanges in the fair value of equity securities | None | 237.0\nOther (income) expense - net | 27.0 | 29.0 | 2",
+          "full_text": "| 54632.0 | 56957.0 | 53380.0\nReturn on common equity 8.6 %20.7 %16.0 %\nAdjusted return on common equity 9.0 %7.1 %9.2 %\nThe following table presents a reconciliation of revenues to adjusted revenues:\nYears Ended December 31,\n(in millions)202320222021\nRevenues | 46802.0 | 54450.0 | 52157.0\nChanges in fair value of securities used to hedge guaranteed living benefits | -55.0 | -55.0 | -60.0\nChanges in the fair value of equity securities | None | 237.0\nOther (income) expense - net | 27.0 | 29.0 | 24.0\nNet investment income on Fortitude Re funds withheld assets | -1544.0 | -943.0 | -1971.0\nNet realized (gains) losses on Fortitude Re funds withheld assets | 295.0 | 486.0 | -1003.0\nNet realized (gains) losses on Fortitude Re funds withheld embedded derivative | 2007.0 | None\nNet realized (gains) losses(a)\n2,536 | 195.0 | -1705.0\nNon-operating litigation reserves and settlements (1) (49)—\nNet impact from elimination of international reporting lag(b)\n(4) (978)—\nAdjusted revenues | 49969.0 | 45707.0 | 48282.0",
+          "bm25_score": 0.532719,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "year": 2024,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net assets",
+      "prediction": "45351.0",
+      "ground_truth": "45,351",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"45351.0\", \"supporting_docs\": [1, 2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 7",
+          "table_row_count": 13,
+          "year_index": 0,
+          "excerpt": "December 31,\n(in millions, except per common share data)202320222021\nTotal AIG shareholders' equity | 45351.0 | 40970.0 | 66068.0\nPreferred equity | 485.0 | 485.0 | 485.0\nTotal AIG common shareholders' equity | 44866.0 | 40485.0 | 65583.0",
+          "full_text": "following table presents a reconciliation of Book value per common share to Adjusted book value per common share, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nDecember 31,\n(in millions, except per common share data)202320222021\nTotal AIG shareholders' equity | 45351.0 | 40970.0 | 66068.0\nPreferred equity | 485.0 | 485.0 | 485.0\nTotal AIG common shareholders' equity | 44866.0 | 40485.0 | 65583.0\nLess: Deferred tax assets | 4313.0 | 4518.0 | 5221.0\nLess: Accumulated other comprehensive income (loss) | -14037.0 | None\nAdd: Cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | -1791.0 | None\nSubtotal: AOCI plus cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | -12246.0 | None\nAdjusted common shareholders' equity | 52799.0 | 55721.0 | 58082.0\nTotal common shares outstanding 688.8 734.1 818.7\nBook value per common share $65.14 $55.15 $80.11\nAdjusted book value per common share 76.65 75.90 70.94\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2024,
+          "section": "item 4",
+          "table_row_count": 13,
+          "year_index": 0,
+          "excerpt": "December 31,\n(in millions, except per common share data)202320222021\nTotal AIG shareholders' equity | 45351.0 | 40970.0 | 66068.0\nPreferred equity | 485.0 | 485.0 | 485.0\nTotal AIG common shareholders' equity | 44866.0 | 40485.0 | 65583.0",
+          "full_text": "following table presents a reconciliation of Book value per common share to Adjusted book value per common share, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nDecember 31,\n(in millions, except per common share data)202320222021\nTotal AIG shareholders' equity | 45351.0 | 40970.0 | 66068.0\nPreferred equity | 485.0 | 485.0 | 485.0\nTotal AIG common shareholders' equity | 44866.0 | 40485.0 | 65583.0\nLess: Deferred tax assets | 4313.0 | 4518.0 | 5221.0\nLess: Accumulated other comprehensive income (loss) | -14037.0 | None\nAdd: Cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | -1791.0 | None\nSubtotal: AOCI plus cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | -12246.0 | None\nAdjusted common shareholders' equity | 52799.0 | 55721.0 | 58082.0\nTotal common shares outstanding 688.8 734.1 818.7\nBook value per common share $65.14 $55.15 $80.11\nAdjusted book value per common share 76.65 75.90 70.94\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2024,
+          "section": "item 7",
+          "table_row_count": 13,
+          "year_index": 0,
+          "excerpt": ".94\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2023 | 2022.0 | 2021.0\nActual or annualized net income (loss) attributable to AIG common shareholders | 3614.0 | 10198.0 | 10338.0\nActual or annualized adjusted after-tax income attributable to AIG common shareholders | 4921.0 | 4036.0 | 4934.0\nAverage ",
+          "full_text": ".94\nThe following table presents a reconciliation of Return on common equity to Adjusted return on common equity, which is a non-GAAP measure. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2023 | 2022.0 | 2021.0\nActual or annualized net income (loss) attributable to AIG common shareholders | 3614.0 | 10198.0 | 10338.0\nActual or annualized adjusted after-tax income attributable to AIG common shareholders | 4921.0 | 4036.0 | 4934.0\nAverage AIG common shareholders' equity | 41930.0 | 49338.0 | 64445.0\nLess: Average DTA | 4322.0 | 4796.0 | 7025.0\nLess: Average AOCI | -19499.0 | None\nAdd: Average cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | -2475.0 | None\nSubtotal: AOCI plus cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | -17024.0 | None\nAverage adjusted AIG common shareholders' equity | 54632.0 | 56957.0 | 53380.0\nReturn on common equity 8.6 %20.7 %16.0 %\nAdjusted return on common equity 9.0 %7.1 %9.2 %\nThe following table presents a reconciliation of revenues to adjusted revenues:",
+          "bm25_score": 0.903964,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        1,
+        2
+      ]
+    },
+    {
+      "year": 2024,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "BBB+",
+      "ground_truth": "BBB+",
+      "correct": true,
+      "retrieval_rank": 2,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"BBB+\", \"supporting_docs\": [2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2024,
+          "section": "item 8",
+          "table_row_count": 29,
+          "year_index": 0,
+          "excerpt": ")\n6.63% - 7.50%\n2025 - 2029\n200 200\nCRBGLH junior subordinated debt(a)\n7.57% - 8.50%\n2030 - 2046\n227 227\nCorebridge senior unsecured notes - not guaranteed by AIG 3.50% - 6.05%\n2025 - 2052\n7,702 6,452\n6.63% - 7.50%\n2025 - 2029\n200 200\nCRBGLH junior subordinated debt(a)\n7.57% - 8.50%\n2030 - 2046\n227 227\nCorebridge senior unsecured notes - not guaranteed by AIG 3.50% - 6.05%\n2025 - 2052\n7,702 6,452\nCorebridge junior subordinated debt - not guaranteed by AIG 6.88%\n2052\n989 989\nDDTL facility - not g",
+          "full_text": ")\n6.63% - 7.50%\n2025 - 2029\n200 200\nCRBGLH junior subordinated debt(a)\n7.57% - 8.50%\n2030 - 2046\n227 227\nCorebridge senior unsecured notes - not guaranteed by AIG 3.50% - 6.05%\n2025 - 2052\n7,702 6,452\n6.63% - 7.50%\n2025 - 2029\n200 200\nCRBGLH junior subordinated debt(a)\n7.57% - 8.50%\n2030 - 2046\n227 227\nCorebridge senior unsecured notes - not guaranteed by AIG 3.50% - 6.05%\n2025 - 2052\n7,702 6,452\nCorebridge junior subordinated debt - not guaranteed by AIG 6.88%\n2052\n989 989\nDDTL facility - not guaranteed by AIG 3.00% - 5.50%\n2025\n250 1,500\nTotal Corebridge debt | 9368.0 | 9368.0\nGIAs, at fair value - supported by Corebridge assets(b)\n4.88% - 5.04%\n2037 - 2038\n53 56\nOther subsidiaries' notes, bonds, loans and mortgages payable - not guaranteed by AIG— 1\nTotal Short-term and long-term debt | 19796.0 | 21299.0\nDebt of consolidated investment entities - not guaranteed by AIG(c)\n0% - 4.45%\n2024 - 2051\n$2,591 $5,880\nTotal debt | 22387.0 | 27179.0",
+          "bm25_score": 0.80609,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2024,
+          "section": "item 7",
+          "table_row_count": 22,
+          "year_index": 0,
+          "excerpt": "CREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\n",
+          "full_text": "ts of $1.5 billion and other securitization vehicles of $4.4 billion.\n(d)Primarily relates to the sale of AIG Credit Management, LLC where certain consolidated investment entities were deconsolidated.\nDebt Maturities\nThe following table summarizes maturing short-term and long-term debt at December 31, 2023 of AIG for the next four quarters:\nFirstQuarterSecondQuarterThirdQuarterFourthQuarter\n(in millions)2024202420242024Total\nAIG general borrowings $459 $— $— $— $459\nDDTL facility*250 — — — 250\nTotal $709 $— $— $— $709\n*Corebridge has the ability to further continue this borrowing through February 25, 2025.\nCREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG and certain of its subsidiaries as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term DebtSenior Long-Term Debt\nMoody'sS&PMoody's(a)\nS&P(b)\nFitch(c)\nAmerican International Group, Inc.\nP-2 (2nd of 4)A-2 (2nd of 5)Baa 2 (4th of 9) / Positive\nBBB+ (4th of 9) /\nStable\nBBB+ (4th of 9) /\nStable\nCorebridge Financial, Inc.\nBaa 2 (4th of 9) / Stable\nBBB+ (4th of 9) /\nStable\nBBB+ (4th of 9) /\nStable",
+          "bm25_score": 0.802971,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2024,
+          "section": "item 7",
+          "table_row_count": 17,
+          "year_index": 0,
+          "excerpt": "dge debt:\nCRBGLH notes and bonds payable(a)\n200 — — — — 200\nCRBGLH junior subordinated debt(a)\n227 — — — — 227\nCorebridge senior unsecured notes - not guaranteed by AIG 6,452 1,240 — — | 10.0 | 7702.0\nCorebridge debt:\nCRBGLH notes and bonds payable(a)\n200 — — — — 200\nCRBGLH junior subordinated debt(a)\n227 — — — — 227\nCorebridge senior unsecured notes - not guaranteed by AIG 6,452 1,240 — — | 10.0 | 7702.0\nCorebridge junior subordinated debt - not guaranteed by AIG 989 — — — — 989\nDDTL facility -",
+          "full_text": "dge debt:\nCRBGLH notes and bonds payable(a)\n200 — — — — 200\nCRBGLH junior subordinated debt(a)\n227 — — — — 227\nCorebridge senior unsecured notes - not guaranteed by AIG 6,452 1,240 — — | 10.0 | 7702.0\nCorebridge debt:\nCRBGLH notes and bonds payable(a)\n200 — — — — 200\nCRBGLH junior subordinated debt(a)\n227 — — — — 227\nCorebridge senior unsecured notes - not guaranteed by AIG 6,452 1,240 — — | 10.0 | 7702.0\nCorebridge junior subordinated debt - not guaranteed by AIG 989 — — — — 989\nDDTL facility - not guaranteed by AIG 1,500 — (1,250)— — 250\nTotal Corebridge debt 9,368 1,240 (1,250)— | 10.0 | 9368.0\nGIAs, at fair value - supported by Corebridge assets(b)\n56 — — — (3)53\nOther subsidiaries' notes, bonds, loans and mortgages payable - not guaranteed by AIG 1 — (1)— — —\nTotal Short-term and long-term debt $21,299 $1,982 | None | 34.0 | 19796.0\nDebt of consolidated investment entities - not guaranteed by AIG(c)\n$5,880 $225 (606)34 (2,942) (d)\n$2,591",
+          "bm25_score": 0.763966,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        2
+      ]
+    },
+    {
+      "year": 2025,
+      "variable": "total_revenues",
+      "query": "total revenues income statement financial summary notes revenue table statement of earnings summary of revenues",
+      "prediction": "27251.0",
+      "ground_truth": "27,251",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"27251.0\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 19,
+          "year_index": 0,
+          "excerpt": "tructuring activities.\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nTotal Revenues*\n(in millions)202420232022",
+          "full_text": "tructuring activities.\nThe following table presents AIG’s consolidated total revenues and real estate and other fixed assets, net of accumulated depreciation, by major geographic area:\nTotal Revenues*\n(in millions)202420232022\nNorth America Commercial | 8172.0 | 10233.0 | 10444.0\nInternational Commercial | 8145.0 | 7964.0 | 7701.0\nGlobal Personal | 7140.0 | 6894.0 | 7195.0\nNet investment income | 4255.0 | 3446.0 | 2370.0\nNet realized gains (losses) | -548.0 | None\nOther income | 7.0 | 6.0 | 34.0\nNet results of businesses in run-off | 83.0 | 475.0 | 478.0\nNet impact from elimination of international reporting lag— | 3.0 | 937.0\nElimination and consolidations | -3.0 | None\nTotal Revenue | 27251.0 | 27938.0 | 29996.0\nTotal Revenues*\n(in millions)202420232022\nNorth America | 13031.0 | 14701.0 | 15163.0\nInternational | 14220.0 | 13237.0 | 14833.0\nConsolidated | 27251.0 | 27938.0 | 29996.0\nReal Estate and Other Fixed Assets,Net of Accumulated Depreciation\n(in millions)202420232022\nNorth America | 804.0 | 760.0 | 768.0\nInternational | 312.0 | 372.0 | 385.0\nConsolidated | 1116.0 | 1132.0 | 1153.0",
+          "bm25_score": 0.81355,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 10,
+          "year_index": 0,
+          "excerpt": "(in millions)2024*20232022\nOperating results:\nTotal revenues | 21860.0 | 2320.0 | 6486.0\nTotal expenses | -18557.0 | -1668.0 | -1832.0\nIncome before income taxes | 3303.0 | 652.0 | 4654.0",
+          "full_text": "od Investees\nThe following is the aggregated summarized financial information of our equity method investees, including those for which the fair value option has been elected:\nYears Ended December 31,\n(in millions)2024*20232022\nOperating results:\nTotal revenues | 21860.0 | 2320.0 | 6486.0\nTotal expenses | -18557.0 | -1668.0 | -1832.0\nIncome before income taxes | 3303.0 | 652.0 | 4654.0\nAt December 31,\n(in millions)2024*2023\nBalance sheet:\nTotal assets | 418639.0 | 28264.0\nTotal liabilities | -383643.0 | -5196.0",
+          "bm25_score": 0.686957,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 8,
+          "year_index": 0,
+          "excerpt": "Developments related to prior tax years under IRS review(a)\n240 6.2 (467) (16.3)— —\nOther(d)\n9 0.3 150 5.2 184 4.8\nValuation allowance(e)\n(33) (0.9) (365) (12.7) (174) (4.6)\nConsolidated total amounts\n$3,870 $1,170 30.2 %$2,867 $126 4.4 %$3,772 $882 23.4 %",
+          "full_text": "Developments related to prior tax years under IRS review(a)\n240 6.2 (467) (16.3)— —\nOther(d)\n9 0.3 150 5.2 184 4.8\nValuation allowance(e)\n(33) (0.9) (365) (12.7) (174) (4.6)\nConsolidated total amounts\n$3,870 $1,170 30.2 %$2,867 $126 4.4 %$3,772 $882 23.4 %",
+          "bm25_score": 0.512067,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    },
+    {
+      "year": 2025,
+      "variable": "shareholders_equity",
+      "query": "total aig shareholders' equity balance sheet equity section financial position shareholders' equity equity statement net worth",
+      "prediction": "42521",
+      "ground_truth": "42,521",
+      "correct": true,
+      "retrieval_rank": 2,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"42521\", \"supporting_docs\": [2]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 6",
+          "table_row_count": 17,
+          "year_index": 0,
+          "excerpt": "djusted return on equity, Tangible return on equity and Core operating return on equity, which are non-GAAP measures. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2024 | 2023.0 | 2022.0\nActual or annualized net income (loss) attributable to AIG common shareholders | None | 10198.0\nActual or annualized adjusted after-tax income attributable to AIG common shareholders | 3254.0 | 3205.0 | 2121.0\nAverage AIG common shareholders' equity | 440",
+          "full_text": "djusted return on equity, Tangible return on equity and Core operating return on equity, which are non-GAAP measures. For additional information, see Use of Non-GAAP Measures.\nYears Ended December 31,\n(dollars in millions)2024 | 2023.0 | 2022.0\nActual or annualized net income (loss) attributable to AIG common shareholders | None | 10198.0\nActual or annualized adjusted after-tax income attributable to AIG common shareholders | 3254.0 | 3205.0 | 2121.0\nAverage AIG common shareholders' equity | 44051.0 | 41930.0 | 49338.0\nLess: Average investments AOCI | -5132.0 | -14836.0 | -9003.0\nAverage AIG adjusted common shareholders' equity | 49183.0 | 56766.0 | 58341.0\nAverage AIG common shareholders' equity | 44051.0 | 41930.0\nLess: Average intangibles | 3797.0 | 4070.0\nAverage AIG tangible common shareholders' equity | 40254.0 | 37860.0\nAverage AIG common shareholders' equity | 44051.0 | 41930.0\nLess: Average AIG's ownership interest in Corebridge | 6770.0 | 7376.0\nLess: Average Investments AOCI - AIG | -2351.0 | -3254.0\nLess: Average deferred tax assets | 3998.0 | 4322.0\nAverage AIG core operating shareholders' equity | 35634.0 | 33486.0\nReturn on equity (3.2)%8.6 %20.7 %\nAdjusted return on equity 6.6 5.6 3.6\nReturn on tangible equity 8.1 8.5 N/A",
+          "bm25_score": 1.0,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2025,
+          "section": "item 6",
+          "table_row_count": 19,
+          "year_index": 0,
+          "excerpt": "December 31,\n(in millions, except per share data)202420232022\nTotal AIG shareholders' equity | 42521.0 | 45351.0 | 40970.0\nPreferred equity— | 485.0 | 485.0\nTotal AIG common shareholders' equity | 42521.0 | 44866.0 | 40485.0",
+          "full_text": "er share to Adjusted book value per share, Tangible book value per share and Core operating book value per share, which are non-GAAP measures. For additional information, see Use of Non-GAAP Measures.\nDecember 31,\n(in millions, except per share data)202420232022\nTotal AIG shareholders' equity | 42521.0 | 45351.0 | 40970.0\nPreferred equity— | 485.0 | 485.0\nTotal AIG common shareholders' equity | 42521.0 | 44866.0 | 40485.0\nLess: Investments related AOCI | -2872.0 | -10994.0 | -20811.0\nAdd: Cumulative unrealized gains and losses related to Fortitude Re funds withheld assets | -667.0 | -1791.0 | -2862.0\nSubtotal: Investments AOCI | -2205.0 | -9203.0 | -17949.0\nAIG adjusted common shareholders' equity | 44726.0 | 54069.0 | 58434.0\nTotal AIG common shareholders' equity | 42521.0 | 44866.0 | 40485.0\nLess Intangible Assets:\nGoodwill | 3373.0 | 3422.0 | 3751.0\nValue of distribution channel acquired | 127.0 | 145.0 | 273.0\nOther intangibles | 243.0 | 249.0 | 415.0\nTotal intangibles assets | 3743.0 | 3816.0 | 4439.0\nAIG tangible common shareholders' equity | 38778.0 | 41050.0 | 36046.0\nAIG adjusted common shareholders' equity | 44726.0 | 54069.0 | 58434.0\nTotal intangibles assets | 3743.0 | 3816.0 | 4439.0\nAIG adjusted tangible common shareholders' equity | 40983.0 | 50253.0 | 53995.0",
+          "bm25_score": 0.988892,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2025,
+          "section": "item 6",
+          "table_row_count": 6,
+          "year_index": 0,
+          "excerpt": "ets | 3998.0 | 4322.0\nAverage AIG core operating shareholders' equity | 35634.0 | 33486.0\nReturn on equity (3.2)%8.6 %20.7 %\nAdjusted return on equity 6.6 5.6 3.6\nReturn on tangible equity 8.1 8.5 N/A\nAverage AIG core operating shareholders' equity | 35634.0 | 33486.0\nReturn on equity (3.2)%8.6 %20.7 %\nAdjusted return on equity 6.6 5.6 3.6\nReturn on tangible equity 8.1 8.5 N/A\nCore operating return on equity 9.1 9.6 N/A",
+          "full_text": "ets | 3998.0 | 4322.0\nAverage AIG core operating shareholders' equity | 35634.0 | 33486.0\nReturn on equity (3.2)%8.6 %20.7 %\nAdjusted return on equity 6.6 5.6 3.6\nReturn on tangible equity 8.1 8.5 N/A\nAverage AIG core operating shareholders' equity | 35634.0 | 33486.0\nReturn on equity (3.2)%8.6 %20.7 %\nAdjusted return on equity 6.6 5.6 3.6\nReturn on tangible equity 8.1 8.5 N/A\nCore operating return on equity 9.1 9.6 N/A",
+          "bm25_score": 0.963639,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        2
+      ]
+    },
+    {
+      "year": 2025,
+      "variable": "sp_rating",
+      "query": "s&p long-term debt rating senior long-term debt s&p ratings credit rating notes financial statements debt rating",
+      "prediction": "BBB+",
+      "ground_truth": "BBB+",
+      "correct": true,
+      "retrieval_rank": 1,
+      "retrieval_hit": true,
+      "retrieval_hit_in_supporting_docs": true,
+      "raw_response": "{\"value\": \"BBB+\", \"supporting_docs\": [1]}",
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "filing_year": 2025,
+          "section": "item 6",
+          "table_row_count": 17,
+          "year_index": 0,
+          "excerpt": "CREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG Parent as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term DebtSenior Lon",
+          "full_text": "es payable - not guaranteed by AIG— 1 — — — 1\nTotal long-term debt $10,375 $661 | -2047.0 | -113.0 | None\nDebt of consolidated investment entities - not guaranteed by AIG(a)\n$231 $— (1)— (72) (b)\n$158\n(a)At December 31, 2024, includes debt of consolidated investment entities primarily related to real estate investments of $158 million. At December 31, 2023, includes debt of consolidated investment entities related to real estate investments of $79 million and other securitization vehicles of $152 million.\n(b)Includes the effect of consolidating previously unconsolidated partnerships.\nDebt Maturities\nThe following table summarizes maturing long-term debt at December 31, 2024 of AIG for the next four quarters:\nFirstQuarterSecondQuarterThirdQuarterFourthQuarter\n(in millions)2025202520252025Total\nGeneral borrowings $239 $146 $— $— $385\nBorrowings supported by assets— — — | 12.0 | 12.0\nOther subsidiaries' notes, bonds, loans and mortgages payable— — — | 1.0 | 1.0\nTotal $239 $146 $— | 13.0 | 398.0\nCREDIT RATINGS\nCredit ratings estimate a company’s ability to meet its obligations and may directly affect the cost and availability of financing to that company. The following table presents the credit ratings of AIG Parent as of the date of this filing. Figures in parentheses indicate the relative ranking of the ratings within the agency’s rating categories; that ranking refers only to the major rating category and not to the modifiers assigned by the rating agencies.\nShort-Term DebtSenior Long-Term Debt\nMoody'sS&PMoody's(a)\nS&P(b)\nFitch(c)\nAmerican International Group, Inc.\nP-2 (2nd of 4)A-2 (2nd of 5)Baa 2 (4th of 9) / Positive\nBBB+ (4th of 9) /\nPositive\nBBB+ (4th of 9) /\nStable",
+          "bm25_score": 0.99662,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 1
+        },
+        {
+          "rank": 2,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 13,
+          "year_index": 0,
+          "excerpt": "million.\nThe following table presents maturities of long-term debt (including unamortized original issue discount, hedge accounting valuation adjustments and fair value adjustments, when applicable):\nDecember 31, 2024Year Ending\n(in millions)Total 20252026202720282029Thereafter\nGeneral borrowings:\nNotes and bonds payable\n$7,885 $146 $265 $848 | 830.0 | 257.0 | 5539.0\nJunior subordinated debt 602 — — — — — 602\nAIG Japan Holdings Kabushiki Kaisha 239 239 — — — — —\nTotal general borrowings 8,726 38",
+          "full_text": "million.\nThe following table presents maturities of long-term debt (including unamortized original issue discount, hedge accounting valuation adjustments and fair value adjustments, when applicable):\nDecember 31, 2024Year Ending\n(in millions)Total 20252026202720282029Thereafter\nGeneral borrowings:\nNotes and bonds payable\n$7,885 $146 $265 $848 | 830.0 | 257.0 | 5539.0\nJunior subordinated debt 602 — — — — — 602\nAIG Japan Holdings Kabushiki Kaisha 239 239 — — — — —\nTotal general borrowings 8,726 385 265 848 | 830.0 | 257.0 | 6141.0\nBorrowings supported by assets 37 12 7 — — — 18\nOther subsidiaries notes, bonds, loans and mortgages payable 1 1 — — — — —\nTotal long-term debt*\n$8,764 $398 $272 $848 | 830.0 | 257.0 | 6159.0",
+          "bm25_score": 0.69204,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 2
+        },
+        {
+          "rank": 3,
+          "filing_year": 2025,
+          "section": "item 8",
+          "table_row_count": 25,
+          "year_index": 0,
+          "excerpt": "bt outstanding at December 31, 2024 and 2023. The interest rates presented in the following table are the range of contractual rates in effect at December 31, 2024, including fixed and variable-rates:\nAt December 31, 2024Range ofInterest Rate(s)MaturityDate(s)Balance atDecember 31, 2024Balance atDecember | 31.0 | 2023.0\n(in millions)\nGeneral borrowings:\nNotes and bonds payable 1.58% - 6.82%\n2025 - 2055\n$7,885 $9,079\nJunior subordinated debt 5.75% - 8.18%\n2037 - 2058\n602 992\nAIG Japan Holdings Ka",
+          "full_text": "bt outstanding at December 31, 2024 and 2023. The interest rates presented in the following table are the range of contractual rates in effect at December 31, 2024, including fixed and variable-rates:\nAt December 31, 2024Range ofInterest Rate(s)MaturityDate(s)Balance atDecember 31, 2024Balance atDecember | 31.0 | 2023.0\n(in millions)\nGeneral borrowings:\nNotes and bonds payable 1.58% - 6.82%\n2025 - 2055\n$7,885 $9,079\nJunior subordinated debt 5.75% - 8.18%\n2037 - 2058\n602 992\nAIG Japan Holdings Kabushiki Kaisha 0.27% - 0.73%\n2025\n239 267\nTotal general borrowings | 8726.0 | 10338.0\nBorrowings supported by assets 4.48% - 7.05%\n2025 - 2046\n37 37\nOther subsidiaries' notes, bonds, loans and mortgages payable - not guaranteed by AIG 9.96% - 10.46%\n2027 - 2028\n1 —\nTotal long-term debt | 8764.0 | 10375.0\nDebt of consolidated investment entities - not guaranteed by AIG*\n4.15% - 4.48%\n2026 - 2028\n158 231\nTotal debt | 8922.0 | 10606.0\n*At December 31, 2024, includes debt of consolidated investment entities primarily related to real estate investments of $158 million. At December 31, 2023, includes debt of consolidated investment entities related to real estate investments of $79 million and other securitization vehicles of $152 million.\nThe following table presents maturities of long-term debt (including unamortized original issue discount, hedge accounting valuation adjustments and fair value adjustments, when applicable):",
+          "bm25_score": 0.690138,
+          "embedding_score": 0.0,
+          "hybrid_embedding_rank": 3
+        }
+      ],
+      "supporting_docs": [
+        1
+      ]
+    }
+  ]
+}

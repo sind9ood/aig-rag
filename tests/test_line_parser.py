@@ -13,5 +13,4 @@ from src.indexing.chunk_utils import parse_financial_table
 ])
 def test_parse_financial_table(line, expected):
     result = parse_financial_table(line)
-    print(result)
     assert result == expected
