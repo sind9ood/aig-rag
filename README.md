@@ -9,12 +9,11 @@ This repository builds a retrieval pipeline for AIG 10-K filings, with:
 ## 1. Architecture
 
 ### 1.1 Key Design Decisions
-1. **ML line classifier** (TF-IDF + logistic regression) instead of 
-   fixed-size chunking — EDGAR tables have broken structure that 
-   char-based splitting cannot handle.
-2. **Table-aware chunking** — split/merge preserving table row integrity
+1. **Table-aware chunking** — instead of fixed-size chunking — split/merge preserving table row integrity
    with lead chunk prepended to every sub-chunk.
-3. **Two-tower hybrid retrieval** — BM25 on raw text (base query) + 
+2. **ML line classifier for table row detection** improve the performance of table-aware chunking
+3. **Table row normalization and table bous** focus more on values inside of table  
+4. **Two-tower hybrid retrieval** — BM25 on raw text (base query) + 
    vector search on LLM-generated chunk summaries (expanded query).
 
 
