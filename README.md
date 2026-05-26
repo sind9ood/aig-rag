@@ -19,7 +19,7 @@ This repository builds a retrieval pipeline for AIG 10-K filings, with:
 
 
 ### 1.2 Pipeline
-<img src="doc/architecture.jpg" width="80%">
+<img src="doc/architecture.jpg" width="75%">
 
 ## 2. Setup
 
@@ -121,15 +121,7 @@ python rag_search.py --workers 4        # run in parallel
 
 ### 4.1 Chunking Logic
 
-a. Table detection: Chunking first cleans and classifies lines as `table_row`, `narrative`, or `footer` (by a simple classifier and REGEX), and groups consecutive same-type lines into chunks. 
-
-b. Table row normalization: Table rows are normalized with `parse_financial_table()` to align labels and numeric columns and to handle parenthesized negatives. 
-
-c. Split large chunk: Chunks larger than `max_chunk_chars` (default 4000) are split by character budget while respecting line boundaries, and narrative lead-ins before the first table row are peeled into a separate chunk. 
-
-d. Merge small chunks: Very small chunks below `SMALL_CHUNK_MAX_CHARS` (500) are merged into the previous chunk to avoid tiny fragments. A trailing overlap window (`chunk_overlap_chars`, default 800) is inserted at the start of the next chunk as a synthetic leading line so context and labels are preserved. 
-
-e. Summary for each chunk: Summaries and derived metadata are recomputed once after splitting, merging, and overlap are finalized; final chunks include metadata but omit internal helper fields.
+<img src="doc/chunking_mechanism.jpg" width="100%">
 
 
 ### 4.2. Retrieval Logic

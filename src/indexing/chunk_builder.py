@@ -389,7 +389,7 @@ class TableAwareChunkBuilder(ChunkBuilder):
 
             # Avoid adding overlap if it's already present at the start of the current chunk.
             # This can happen if the chunk was split from an oversized chunk and the split point was near the end of the previous chunk.
-            if cur_text.startswith(overlap):
+            if cur_text.startswith(overlap) or chunks[i].get("__split_from_oversized"):
                 continue
 
             cur_lines.insert(0, overlap)
