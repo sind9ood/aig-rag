@@ -214,7 +214,7 @@ The table below summarizes evaluation result for `different top K` on the target
 
 | Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@K | MRR |
 |---|---|---|---|---|---|---|---|
-| Hybrid + M/L + Table Row Normalization + Table Bonus | Table | 2000 | 400 | 3 | 93.33% |  93.33% (14/15) | 0.9333 |
+| Hybrid + M/L + Table Row Normalization + Table Bonus | Table | 2000 | 400 | 1 | 93.33% |  93.33% (14/15) | 0.9333 |
 | BM25 + M/L + Table Row Normalization | Table | 2000 | 400 | 1 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
 
 
