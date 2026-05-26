@@ -222,8 +222,8 @@ The table below summarize evaluation result for `different chunking configuratio
 
 | Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@K | MRR |
 |---|---|---|---|---|---|---|---|
-| Hybrid + Table Bonus + M/L + Table Row Normalization *patch | Table | 1000 | 200 | 3 | 93.33% |  93.33% (14/15) | 0.9333 |
-| BM25 + M/L + Table Row Normalization *patch | Table | 1000 | 200 | 3 | 53.33% (9/15) | 53.33% (9/15) | 0.5667 |
+| Hybrid + Table Bonus + M/L + Table Row Normalization | Table | 1000 | 200 | 3 | 93.33% |  93.33% (14/15) | 0.9333 |
+| BM25 + M/L + Table Row Normalization | Table | 1000 | 200 | 3 | 53.33% (9/15) | 53.33% (9/15) | 0.5667 |
 
 
 The table below summarize chunking stats with `different table detection/chunking mechanism` and chunk size.
