@@ -121,7 +121,8 @@ python rag_search.py --workers 4        # run in parallel
 
 ### 4.1 Chunking Logic
 
-<img src="doc/chunking_mechanism.jpg" width="100%">
+<img src="doc/chunking_1.png" width="100%">
+<img src="doc/chunking_2.png" width="100%">
 
 
 ### 4.2. Retrieval Logic
