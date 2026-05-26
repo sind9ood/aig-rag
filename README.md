@@ -209,27 +209,22 @@ The table below summarizes evaluation result for `different chunking/retrieval m
 | BM25 + Regex + No Table Row Normalization | Table | 2000 | 400 | 3 | 86.67% (13/15) | 86.67% (13/15) | 0.7444 |
 | BM25 | Simple | 2000 | 400 | 3 | 73.33% (11/15) | 66.67% (10/15) | 0.5889 |
 
+
 The table below summarizes evaluation result for `different top K` on the target task.
 
 | Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@K | MRR |
 |---|---|---|---|---|---|---|---|
-| Hybrid + Table Bonus + M/L + Table Row Normalization | Table |2000 | 400 | 1 | 80% (12/15) |  80% (12/15) | - |
-| BM25 + M/L + Table Row Normalization | Table | 2000 | 400 | 1 | 40% (6/15) | 40.00% (6/15) | - |
+| Hybrid + M/L + Table Row Normalization + Table Bonus | Table | 2000 | 400 | 3 | 93.33% |  93.33% (14/15) | 0.9333 |
+| BM25 + M/L + Table Row Normalization | Table | 2000 | 400 | 1 | 66.67% (10/15) | 66.67% (10/15) | 0.6667 |
+
 
 The table below summarize evaluation result for `different chunking configurations` on the target task.
 
 | Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@K | MRR |
 |---|---|---|---|---|---|---|---|
-| Hybrid + Table Bonus + M/L + Table Row Normalization | Table | 1000 | 200 | 5 | 100% (15/15) |  100% (15/15) | 0.6444 |
-| BM25 + M/L + Table Row Normalization | Table | 1000 | 200 | 5 | 80.00% (12/15) | 80.00% (12/15) | 0.4967 |
-| Hybrid + Table Bonus + M/L + Table Row Normalization | Table | 1000 | 200 | 3 | 93.33% |  93.33% (14/15) | 0.6222 |
-| BM25 + M/L + Table Row Normalization | Table | 1000 | 200 | 3 | 53.33% (8/15) | 53.33% (8/15) | 0.4333 |
-
-*** Patch
-| Method | Chunking | Chunk size | Chunk overlap | Top K | Accuracy | Recall@K | MRR |
-|---|---|---|---|---|---|---|---|
 | Hybrid + Table Bonus + M/L + Table Row Normalization *patch | Table | 1000 | 200 | 3 | 93.33% |  93.33% (14/15) | 0.9333 |
 | BM25 + M/L + Table Row Normalization *patch | Table | 1000 | 200 | 3 | 53.33% (9/15) | 53.33% (9/15) | 0.5667 |
+
 
 The table below summarize chunking stats with `different table detection/chunking mechanism` and chunk size.
 
