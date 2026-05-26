@@ -1,6 +1,7 @@
 import csv
 from pathlib import Path
 
+import logging
 import joblib
 import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -9,6 +10,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
+
+logging.basicConfig(level=logging.INFO)
 
 
 DATA_DIR = Path("data")
@@ -190,7 +193,6 @@ def main():
     }
     joblib.dump(model_bundle, MODEL_PATH)
 
-    import logging
     logging.info("=== Table-Row 2-Label Classifier ===")
     logging.info(f"Data dir: {DATA_DIR}")
     logging.info(f"CSV files found: {len(csv_files)}")
